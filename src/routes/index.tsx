@@ -26,9 +26,9 @@ const NAV = [
 ];
 
 const TOOLS = [
-  "Google Maps", "Google Business", "TripAdvisor", "Lovable", "GitHub",
-  "Vercel", "Hostinger", "Claude AI", "Google Stitch", "Antigravity",
-  "WhatsApp Business", "Instagram", "Facebook", "Stripe", "Supabase",
+  "Google Maps", "Google Business", "TripAdvisor", "TheFork", "ElTenedor",
+  "Just Eat", "Glovo", "Uber Eats", "WhatsApp Business", "Instagram",
+  "Facebook", "Stripe", "Bizum", "Redsys", "Covermanager",
 ];
 
 const STEPS = [
@@ -63,7 +63,6 @@ function Home() {
       <Nav />
       <Hero />
       <Marquee />
-      <HowItWorks />
       <Features />
       <About />
       <Pricing />
