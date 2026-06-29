@@ -8,10 +8,38 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Potencia tu negocio · Webs con IA para restaurantes" },
-      { name: "description", content: "Creamos webs profesionales con IA para restaurantes. Listas en menos de 7 días, con SEO, reservas y carta digital." },
-      { property: "og:title", content: "Potencia tu negocio · Webs con IA para restaurantes" },
-      { property: "og:description", content: "Webs profesionales con IA para restaurantes. Listas en días, no en meses." },
+      { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
+      { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 7 días desde 375€. Especialistas en hostelería." },
+      { property: "og:title", content: "Web para Negocios Locales con IA | Especialistas en Hostelería" },
+      { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 375€." },
+      { property: "og:url", content: "https://ai-restaurante-pro.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://ai-restaurante-pro.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Potencia tu Negocio",
+          description: "Agencia de diseño web con IA especializada en negocios locales y hostelería en España.",
+          url: "https://ai-restaurante-pro.lovable.app/",
+          areaServed: "ES",
+          serviceType: "Diseño web para negocios locales",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "¿Cuánto tarda en estar lista mi web?", acceptedAnswer: { "@type": "Answer", text: "Entre 3 y 7 días desde que nos facilitas la información de tu negocio." } },
+            { "@type": "Question", name: "¿Mi negocio aparecerá en Google con vuestra web?", acceptedAnswer: { "@type": "Answer", text: "Sí. Todas nuestras webs incluyen SEO local optimizado y configuración del perfil de Google Business." } },
+            { "@type": "Question", name: "¿Trabajáis con cualquier tipo de negocio?", acceptedAnswer: { "@type": "Answer", text: "Sí. Restaurantes, clínicas, talleres, veterinarias, gestorías, centros de estética y cualquier negocio local." } },
+          ],
+        }),
+      },
     ],
   }),
   component: Home,
@@ -31,37 +59,41 @@ const TOOLS = [
   "Facebook", "Stripe", "Bizum", "Redsys", "Covermanager",
 ];
 
-
 const FEATURES = [
-  { icon: Search, title: "SEO optimizado", desc: "Apareces en Google cuando te buscan." },
-  { icon: Calendar, title: "Reservas automáticas", desc: "Conectado a WhatsApp o email." },
-  { icon: UtensilsCrossed, title: "Carta digital", desc: "Con fotos, precios y categorías." },
-  { icon: MonitorSmartphone, title: "Diseño responsive", desc: "Perfecta en móvil, tablet y PC." },
-  { icon: MessageCircle, title: "Botón WhatsApp", desc: "Tus clientes contactan en un toque." },
-  { icon: Star, title: "Reseñas de Google", desc: "Valoraciones actualizadas automáticamente." },
-  { icon: Lock, title: "HTTPS seguro", desc: "Candado verde de seguridad incluido." },
-  { icon: FileText, title: "Textos legales", desc: "Aviso legal, privacidad y cookies." },
+  { icon: Search, title: "SEO local optimizado", desc: "Tu negocio aparece primero en Google cuando alguien busca en tu ciudad. Optimizamos tu web y tu perfil de Google Business para restaurantes, clínicas, talleres y cualquier negocio local." },
+  { icon: Calendar, title: "Reservas y citas automáticas", desc: "Sistema de reservas o citas conectado a WhatsApp o email. Perfecto para restaurantes, clínicas, veterinarias y cualquier negocio que trabaje con citas previas." },
+  { icon: UtensilsCrossed, title: "Carta digital o catálogo", desc: "Restaurantes con carta digital. Clínicas con tratamientos. Talleres con servicios. Todo con fotos, precios y categorías, actualizable en minutos." },
+  { icon: MonitorSmartphone, title: "Diseño 100% responsive", desc: "El 80% de tus clientes te buscan desde el móvil. Tu web se verá perfecta en cualquier pantalla y transmitirá profesionalidad al segundo." },
+  { icon: MessageCircle, title: "Botón WhatsApp directo", desc: "Un toque y tu cliente te escribe. Más consultas, más reservas, más ventas. Funciona en cualquier tipo de negocio local." },
+  { icon: Star, title: "Reseñas de Google en tiempo real", desc: "Tus valoraciones de Google aparecen automáticamente en tu web. Genera confianza en nuevos clientes antes de que llamen o reserven." },
+  { icon: Lock, title: "Seguridad SSL (HTTPS)", desc: "Protección total de los datos de tus clientes. Imprescindible para posicionar en Google, especialmente en clínicas, gestorías y negocios con datos sensibles." },
+  { icon: FileText, title: "Textos legales RGPD", desc: "Aviso legal, política de privacidad y cookies incluidos y correctamente redactados para tu sector. Sin multas, sin preocupaciones." },
 ];
 
 const FAQS = [
-  { q: "¿Cuánto tarda en estar lista mi web?", a: "Entre 3 y 7 días desde que nos facilitas la información de tu negocio." },
-  { q: "¿Necesito saber de tecnología?", a: "No. Nos encargamos de todo. Tú solo nos dices cómo quieres la web." },
-  { q: "¿Puedo hacer cambios después?", a: "Con el Plan Independencia puedes editar la web tú mismo. Con el Plan Mantenimiento nos encargas los cambios y los hacemos nosotros." },
-  { q: "¿El dominio es mío para siempre?", a: "En el Plan Independencia el dominio pasa a ser tuyo desde el primer día. En el Plan Mantenimiento lo gestionamos nosotros mientras dure el servicio." },
-  { q: "¿Aceptáis cualquier tipo de restaurante?", a: "Sí. Bares, tabernas, restaurantes de alta cocina, pizzerías, hamburgueserías... cualquier negocio de hostelería." },
+  { q: "¿Cuánto tarda en estar lista mi web?", a: "Entre 3 y 7 días desde que nos facilitas la información de tu negocio. El proceso es el mismo para un restaurante, una clínica o una gestoría." },
+  { q: "¿Necesito saber de tecnología?", a: "No. Nos encargamos de todo: desarrollo, publicación y configuración. Si eliges el Plan Mantenimiento, ni siquiera tendrás que pensar en actualizaciones." },
+  { q: "¿Puedo hacer cambios después?", a: "Con el Plan Independencia recibes acceso completo para gestionarla tú mismo. Con el Plan Mantenimiento nos dices qué cambiar —carta, precios, horarios, servicios— y lo hacemos nosotros sin límite de cambios." },
+  { q: "¿El dominio es mío para siempre?", a: "En el Plan Independencia el dominio pasa a ser tuyo desde el primer día. En el Plan Mantenimiento lo pagamos nosotros mientras dure la suscripción." },
+  { q: "¿Trabajáis con cualquier tipo de negocio?", a: "Sí. Creamos webs para restaurantes, bares, cafeterías, clínicas médicas y dentales, talleres mecánicos, veterinarias, gestorías, asesorías, centros de estética, peluquerías y cualquier negocio local. Nuestra especialidad es la hostelería, pero nuestra metodología funciona para cualquier sector." },
+  { q: "¿Mi negocio aparecerá en Google con vuestra web?", a: "Sí. Todas nuestras webs se entregan con SEO local optimizado: títulos, meta descripciones, velocidad de carga y estructura técnica listos para posicionar desde el día uno. Además, te guiamos para configurar tu perfil de Google Business, que es clave para aparecer cuando busquen tu tipo de negocio en tu ciudad." },
+  { q: "¿Cuánto tardará en aparecer mi negocio en Google?", a: "Los primeros resultados de SEO orgánico se ven entre 30 y 90 días según la competencia en tu zona y sector. Para visibilidad inmediata desde el día uno, también podemos gestionar Google Ads para tu negocio." },
+  { q: "¿Qué os diferencia de otras agencias web?", a: "Nos especializamos en negocios locales y trabajamos con inteligencia artificial para entregar webs en días, no en meses. Somos expertos en negocios con clientes en su ciudad que necesitan aparecer en Google cuando les buscan cerca. Y lo entregamos a un precio fijo, sin sorpresas." },
 ];
 
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
-      <Hero />
-      <Marquee />
-      <Features />
-      <About />
-      <Pricing />
-      <FAQ />
-      <Contact />
+      <main>
+        <Hero />
+        <Marquee />
+        <Features />
+        <About />
+        <Pricing />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );
@@ -71,10 +103,10 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <a href="#top" className="font-bold text-base tracking-tight">
+        <a href="#top" className="font-bold text-base tracking-tight" aria-label="Potencia tu Negocio - Inicio">
           Potencia <span className="text-primary">tu negocio</span>
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground" aria-label="Navegación principal">
           {NAV.map(n => (
             <a key={n.href} href={n.href} className="hover:text-foreground transition-colors">{n.label}</a>
           ))}
@@ -90,8 +122,7 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-hero">
-      {/* concentric rings decoration */}
-      <div className="absolute top-1/2 -right-40 lg:-right-20 -translate-y-1/2 pointer-events-none">
+      <div className="absolute top-1/2 -right-40 lg:-right-20 -translate-y-1/2 pointer-events-none" aria-hidden="true">
         <div className="relative w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] animate-float">
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div
@@ -104,8 +135,7 @@ function Hero() {
         </div>
       </div>
 
-      {/* particles */}
-      <div className="absolute inset-0 pointer-events-none">
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {Array.from({ length: 25 }).map((_, i) => (
           <span
             key={i}
@@ -122,20 +152,20 @@ function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         <div className="max-w-3xl animate-fade-up">
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-6 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-            Agencia de diseño web con IA
+            Agencia de diseño web con IA · Negocios locales
           </span>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-            Tu restaurante merece una web que <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">vende</span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6">
+            Páginas web profesionales para negocios locales que aparecen en <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Google</span> — listas en 7 días
           </h1>
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
-            Creamos webs profesionales con inteligencia artificial para restaurantes. Listas en días, no en meses.
+          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
+            Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#precios" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:scale-[1.02] transition">
-              Ver planes <ArrowRight className="w-4 h-4" />
+              Ver planes y precios <ArrowRight className="w-4 h-4" />
             </a>
             <a href="#nosotros" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
-              Ver ejemplo
+              Ver ejemplo de web
             </a>
           </div>
         </div>
@@ -147,39 +177,46 @@ function Hero() {
 function Marquee() {
   const items = [...TOOLS, ...TOOLS];
   return (
-    <section id="herramientas" className="border-y border-border bg-background/50 py-6 overflow-hidden">
-      <div className="flex animate-marquee whitespace-nowrap">
-        {items.map((t, i) => (
-          <div key={i} className="flex items-center gap-3 px-8 text-sm font-medium text-white/90">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-            <span>{t}</span>
-          </div>
-        ))}
+    <section id="herramientas" className="border-y border-border bg-background/50 py-10" aria-labelledby="herramientas-title">
+      <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center mb-8">
+        <h2 id="herramientas-title" className="text-2xl lg:text-3xl font-bold tracking-tight mb-3">Tu negocio, conectado con todo lo que necesita</h2>
+        <p className="text-muted-foreground text-sm lg:text-base">
+          Integramos tu web con Google Maps, WhatsApp Business, redes sociales, plataformas de reservas, pasarelas de pago y mucho más. Tanto si tienes un restaurante como una clínica, un taller o una gestoría, tu web trabaja por ti las 24 horas.
+        </p>
+      </div>
+      <div className="overflow-hidden">
+        <div className="flex animate-marquee whitespace-nowrap">
+          {items.map((t, i) => (
+            <div key={i} className="flex items-center gap-3 px-8 text-sm font-medium text-white/90">
+              <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+              <span>{t}</span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-
 function Features() {
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-10 bg-background">
+    <section id="servicios" className="py-24 lg:py-32 px-6 lg:px-10 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Todo lo que necesitas, incluido</h2>
-          <p className="text-muted-foreground text-lg">Sin extras ni cargos sorpresa.</p>
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Todo lo que tu negocio necesita para conseguir más clientes</h2>
+          <p className="text-muted-foreground text-lg">Sin costes ocultos ni sorpresas. Cada web incluye todo esto desde el primer día, sea cual sea tu sector.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {FEATURES.map((f, i) => {
             const Icon = f.icon;
             return (
-              <div key={i} className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/60 hover:shadow-glow transition-all">
+              <article key={i} className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/60 hover:shadow-glow transition-all">
                 <div className="w-11 h-11 rounded-xl bg-primary/15 border border-primary/30 flex items-center justify-center mb-4 group-hover:bg-primary/25 transition">
-                  <Icon className="w-5 h-5 text-primary" />
+                  <Icon className="w-5 h-5 text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="font-semibold mb-1.5">{f.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-              </div>
+              </article>
             );
           })}
         </div>
@@ -195,25 +232,33 @@ function About() {
         <div>
           <span className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4 inline-block">Sobre nosotros</span>
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
-            Diseño artesanal con la potencia de la IA
+            Especialistas en webs para negocios locales con inteligencia artificial
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-            En <strong className="text-foreground">Potencia tu negocio</strong> creemos que cada restaurante merece una presencia digital profesional, sin importar su tamaño. Combinamos inteligencia artificial de última generación con diseño artesanal para crear webs que no solo son bonitas, sino que convierten visitantes en clientes. Somos especialistas en el sector de la hostelería y conocemos sus necesidades mejor que nadie.
-          </p>
+          <div className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-10 space-y-4">
+            <p>
+              En <strong className="text-foreground">Potencia tu Negocio</strong> ayudamos a negocios locales de toda España a conseguir más clientes a través de una presencia digital profesional. Trabajamos con restaurantes, bares, clínicas, talleres mecánicos, veterinarias, gestorías, centros de estética y cualquier negocio que quiera aparecer el primero en Google cuando le busquen en su ciudad.
+            </p>
+            <p>
+              Combinamos inteligencia artificial de última generación con diseño artesanal para crear webs que no solo son bonitas: están construidas para posicionar y para convertir visitas en clientes reales.
+            </p>
+            <p>
+              Nuestra especialidad es la <strong className="text-foreground">hostelería</strong>. Conocemos el sector de la restauración mejor que nadie: cartas digitales, plataformas de reservas, integración con delivery, reseñas... Pero nuestra metodología funciona igual de bien para cualquier negocio local.
+            </p>
+          </div>
           <div className="grid grid-cols-3 gap-4">
             {[
-              { v: "< 7 días", l: "Tiempo de entrega" },
-              { v: "100%", l: "Personalización" },
-              { v: "24/7", l: "Soporte Plan Pro" },
+              { v: "< 7 días", l: "Tiempo medio hasta publicar tu web" },
+              { v: "100%", l: "Personalizado a tu sector y ciudad" },
+              { v: "24/7", l: "Soporte en el Plan Mantenimiento" },
             ].map((s, i) => (
               <div key={i} className="bg-card border border-border rounded-xl p-5 text-center">
                 <div className="text-2xl lg:text-3xl font-bold text-primary mb-1">{s.v}</div>
-                <div className="text-xs text-muted-foreground">{s.l}</div>
+                <div className="text-xs text-muted-foreground leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
         </div>
-        <div className="relative aspect-square max-w-md mx-auto w-full">
+        <div className="relative aspect-square max-w-md mx-auto w-full" aria-hidden="true">
           <div className="absolute inset-0 bg-gradient-glow rounded-full opacity-60" />
           {[0, 1, 2, 3, 4].map(i => (
             <div
@@ -237,15 +282,15 @@ function Pricing() {
   return (
     <section id="precios" className="py-24 lg:py-32 px-6 lg:px-10 bg-background">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Elige tu plan</h2>
-          <p className="text-muted-foreground text-lg">Sin letra pequeña. Sin sorpresas.</p>
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Elige el plan para tu negocio local</h2>
+          <p className="text-muted-foreground text-lg">Sin letra pequeña. Sin permanencias ocultas. Mismo precio para restaurantes, clínicas, talleres o cualquier negocio local.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {/* Plan 1 */}
-          <div className="bg-card border border-border rounded-3xl p-8 lg:p-10 flex flex-col">
+          <article className="bg-card border border-border rounded-3xl p-8 lg:p-10 flex flex-col">
             <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pago único</span>
-            <h3 className="text-2xl font-bold mb-6">Plan Independencia</h3>
+            <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Paga una vez y la web es tuya para siempre. Ideal para negocios que quieren autonomía total y no depender de nadie.</p>
             <div className="mb-6">
               <span className="text-5xl font-black">375€</span>
               <span className="text-muted-foreground ml-2">una sola vez</span>
@@ -253,33 +298,33 @@ function Pricing() {
             <ul className="space-y-3 mb-8 text-sm flex-1">
               {[
                 "Desarrollo web completo con IA",
-                "Diseño totalmente personalizado",
+                "Diseño totalmente personalizado a tu sector",
                 "Dominio propio incluido (pasa a ser tuyo)",
-                "SEO optimizado desde el primer día",
-                "Sistema de reservas integrado",
-                "Carta digital con fotos y precios",
-                "Galería, reseñas y WhatsApp",
-                "Textos legales completos",
+                "SEO local optimizado desde el primer día",
+                "Sistema de reservas o citas integrado",
+                "Carta digital o catálogo de servicios",
+                "Galería, reseñas y WhatsApp directo",
+                "Textos legales RGPD completos",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{f}</span>
                 </li>
               ))}
             </ul>
-            <p className="text-xs text-muted-foreground italic mb-5">Tú gestionas la web de forma autónoma</p>
+            <p className="text-xs text-muted-foreground italic mb-5">Tú tienes el control total de tu web</p>
             <a href="#contacto" className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
               Contratar ahora
             </a>
-          </div>
+          </article>
 
-          {/* Plan 2 - highlighted */}
-          <div className="relative bg-card border-2 border-primary rounded-3xl p-8 lg:p-10 flex flex-col shadow-glow">
+          <article className="relative bg-card border-2 border-primary rounded-3xl p-8 lg:p-10 flex flex-col shadow-glow">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider">
               Más elegido
             </span>
             <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Suscripción</span>
-            <h3 className="text-2xl font-bold mb-6">Plan Mantenimiento</h3>
+            <h3 className="text-2xl font-bold mb-2">Plan Mantenimiento</h3>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nosotros nos encargamos de todo. Tú solo gestiona tu negocio. Actualizamos tu carta, tus servicios, tus horarios y resolvemos cualquier incidencia sin que tengas que mover un dedo.</p>
             <div className="mb-6">
               <span className="text-5xl font-black">345€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
@@ -291,13 +336,13 @@ function Pricing() {
                 "Mantenimiento mensual incluido",
                 "Cambios y actualizaciones ilimitados",
                 "Dominio pagado por nosotros",
-                "Actualización de carta y horarios",
-                "Soporte prioritario en español",
+                "Actualización de carta, servicios y horarios",
+                "Soporte prioritario 24/7 en español",
                 "Copias de seguridad automáticas",
                 "Hosting gestionado por nosotros",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
                   <span>{f}</span>
                 </li>
               ))}
@@ -306,7 +351,7 @@ function Pricing() {
             <a href="#contacto" className="block text-center py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition">
               Contratar ahora
             </a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -316,9 +361,9 @@ function Pricing() {
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-10">
+    <section className="py-24 lg:py-32 px-6 lg:px-10" aria-labelledby="faq-title">
       <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-12 text-center">Preguntas frecuentes</h2>
+        <h2 id="faq-title" className="text-4xl lg:text-5xl font-bold tracking-tight mb-12 text-center">Preguntas frecuentes</h2>
         <div className="space-y-3">
           {FAQS.map((f, i) => {
             const isOpen = open === i;
@@ -327,9 +372,10 @@ function FAQ() {
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
                   className="w-full px-6 py-5 flex items-center justify-between gap-4 text-left hover:bg-white/[0.02] transition"
+                  aria-expanded={isOpen}
                 >
                   <span className="font-semibold">{f.q}</span>
-                  {isOpen ? <Minus className="w-4 h-4 text-primary flex-shrink-0" /> : <Plus className="w-4 h-4 text-primary flex-shrink-0" />}
+                  {isOpen ? <Minus className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" /> : <Plus className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />}
                 </button>
                 {isOpen && (
                   <div className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">{f.a}</div>
@@ -347,17 +393,17 @@ function Contact() {
   const [sent, setSent] = useState(false);
   return (
     <section id="contacto" className="relative py-24 lg:py-32 px-6 lg:px-10 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-glow opacity-40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-glow opacity-40 pointer-events-none" aria-hidden="true" />
       <div className="relative max-w-3xl mx-auto text-center">
         <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-4 leading-[1.05]">
-          ¿Listo para destacar online?
+          ¿Listo para que tu negocio aparezca primero en Google?
         </h2>
         <p className="text-muted-foreground text-lg mb-12">
-          Escríbenos y te preparamos una propuesta personalizada sin compromiso.
+          Escríbenos hoy y en menos de 24 horas te enviamos una propuesta personalizada y gratuita, adaptada a tu sector y tu ciudad.
         </p>
         {sent ? (
           <div className="bg-card border border-primary/50 rounded-2xl p-10 shadow-glow">
-            <div className="text-4xl mb-3">✅</div>
+            <div className="text-4xl mb-3" aria-hidden="true">✅</div>
             <h3 className="text-xl font-bold mb-2">¡Mensaje enviado!</h3>
             <p className="text-muted-foreground">Te contactaremos en menos de 24 horas.</p>
           </div>
@@ -367,22 +413,25 @@ function Contact() {
             className="bg-card border border-border rounded-3xl p-6 lg:p-10 text-left space-y-4 shadow-card"
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input required placeholder="Nombre" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
-              <input required type="email" placeholder="Email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+              <input required placeholder="Nombre" aria-label="Nombre" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+              <input required type="email" placeholder="Email" aria-label="Email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
             </div>
-            <input required placeholder="Nombre del restaurante" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
-            <textarea required rows={4} placeholder="Cuéntanos sobre tu proyecto" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition resize-none" />
+            <input required placeholder="Nombre y tipo de tu negocio" aria-label="Nombre y tipo de tu negocio" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+            <textarea required rows={4} aria-label="Mensaje" placeholder="Hola, tengo un [restaurante / clínica / taller / ...] en [ciudad] y quiero aparecer en Google cuando me busquen. Me gustaría saber más sobre vuestros planes." className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition resize-none" />
             <button type="submit" className="w-full py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition inline-flex items-center justify-center gap-2">
-              Enviar mensaje <ArrowRight className="w-4 h-4" />
+              Quiero más clientes <ArrowRight className="w-4 h-4" />
             </button>
+            <p className="text-xs text-center text-muted-foreground pt-2">
+              ✅ Respuesta en menos de 24 h · ✅ Sin compromiso · ✅ Propuesta gratuita y personalizada para tu sector
+            </p>
           </form>
         )}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm">
           <a href="mailto:info@potenciatunegocio.es" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition">
-            <Mail className="w-4 h-4" /> info@potenciatunegocio.es
+            <Mail className="w-4 h-4" aria-hidden="true" /> info@potenciatunegocio.es
           </a>
           <a href="https://wa.me/" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 text-[#25D366] font-medium hover:bg-[#25D366]/25 transition">
-            <Phone className="w-4 h-4" /> WhatsApp
+            <Phone className="w-4 h-4" aria-hidden="true" /> WhatsApp
           </a>
         </div>
       </div>
@@ -402,9 +451,9 @@ function Footer() {
           <a href="#" className="hover:text-foreground transition">Política de Privacidad</a>
           <a href="#" className="hover:text-foreground transition">Política de Cookies</a>
         </div>
-        <div className="text-xs text-center lg:text-right">
-          © 2026 Potencia tu negocio<br />
-          <span className="text-muted-foreground/70">Diseñado con IA · Hecho con 💙 en España</span>
+        <div className="text-xs text-center lg:text-right leading-relaxed">
+          © 2026 Potencia tu Negocio · Webs profesionales para negocios locales<br />
+          <span className="text-muted-foreground/70">Especialistas en hostelería · Hecho con 💙 en España</span>
         </div>
       </div>
     </footer>
