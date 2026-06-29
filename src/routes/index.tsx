@@ -26,17 +26,11 @@ const NAV = [
 ];
 
 const TOOLS = [
-  "Google Maps", "Google Business", "TripAdvisor", "Lovable", "GitHub",
-  "Vercel", "Hostinger", "Claude AI", "Google Stitch", "Antigravity",
-  "WhatsApp Business", "Instagram", "Facebook", "Stripe", "Supabase",
+  "Google Maps", "Google Business", "TripAdvisor", "TheFork", "ElTenedor",
+  "Just Eat", "Glovo", "Uber Eats", "WhatsApp Business", "Instagram",
+  "Facebook", "Stripe", "Bizum", "Redsys", "Covermanager",
 ];
 
-const STEPS = [
-  { icon: "🔍", title: "Recopilamos tu info", desc: "Analizamos tu negocio en Google Maps y hablamos contigo para entender tu identidad." },
-  { icon: "🤖", title: "Diseñamos con IA", desc: "Creamos el diseño visual y el contenido con las mejores herramientas de inteligencia artificial." },
-  { icon: "✨", title: "Personalizamos", desc: "Ajustamos cada detalle: carta, reservas, fotos, colores y textos legales incluidos." },
-  { icon: "🚀", title: "Publicamos", desc: "Tu web en línea con dominio propio y HTTPS en menos de 7 días." },
-];
 
 const FEATURES = [
   { icon: Search, title: "SEO optimizado", desc: "Apareces en Google cuando te buscan." },
@@ -63,7 +57,6 @@ function Home() {
       <Nav />
       <Hero />
       <Marquee />
-      <HowItWorks />
       <Features />
       <About />
       <Pricing />
@@ -167,35 +160,6 @@ function Marquee() {
   );
 }
 
-function HowItWorks() {
-  return (
-    <section id="servicios" className="py-24 lg:py-32 px-6 lg:px-10">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Cómo lo hacemos</h2>
-          <p className="text-muted-foreground text-lg">De cero a online en menos de una semana</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          {STEPS.map((s, i) => (
-            <div key={i} className="relative">
-              <div className="bg-card border border-border rounded-2xl p-6 h-full hover:border-primary/50 transition shadow-card">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-3xl">{s.icon}</span>
-                  <span className="text-xs font-mono text-primary">0{i + 1}</span>
-                </div>
-                <h3 className="font-bold text-lg mb-2">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
-              {i < STEPS.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 border-t border-dashed border-primary/40" />
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function Features() {
   return (
