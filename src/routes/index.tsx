@@ -237,13 +237,19 @@ function About() {
           </h2>
           <div className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-10 space-y-4">
             <p>
-              En <strong className="text-foreground">Potencia tu Negocio</strong> ayudamos a negocios locales de toda España a conseguir más clientes a través de una presencia digital profesional. Trabajamos con restaurantes, bares, clínicas, talleres mecánicos, veterinarias, gestorías, centros de estética y cualquier negocio que quiera aparecer el primero en Google cuando le busquen en su ciudad.
+              En <strong className="text-foreground">Potencia tu Negocio</strong> creamos webs profesionales para negocios locales en toda España que aparecen en Google cuando tus clientes te buscan en tu ciudad.
             </p>
             <p>
-              Combinamos inteligencia artificial de última generación con diseño artesanal para crear webs que no solo son bonitas: están construidas para posicionar y para convertir visitas en clientes reales.
+              Trabajamos con restaurantes, bares, clínicas, talleres mecánicos, veterinarias, gestorías y centros de estética. Si tienes un negocio local y quieres más clientes, tenemos una solución para ti.
             </p>
             <p>
-              Nuestra especialidad es la <strong className="text-foreground">hostelería</strong>. Conocemos el sector de la restauración mejor que nadie: cartas digitales, plataformas de reservas, integración con delivery, reseñas... Pero nuestra metodología funciona igual de bien para cualquier negocio local.
+              Diseñamos webs optimizadas para SEO local desde el primer día: rápidas, adaptadas a móvil y pensadas para convertir visitas en clientes reales. Cada web incluye dominio propio, ficha de Google Business optimizada y posicionamiento local en tu municipio o provincia.
+            </p>
+            <p>
+              Nuestra especialidad es la <strong className="text-foreground">hostelería</strong>. Creamos webs para restaurantes y bares con carta digital, sistema de reservas online, integración con plataformas de delivery y gestión de reseñas de Google. Pero nuestra metodología de diseño web para negocios locales funciona igual de bien para cualquier sector.
+            </p>
+            <p>
+              Si buscas una agencia de diseño web para negocios locales en España que combine resultados reales con precios claros, estás en el lugar correcto.
             </p>
           </div>
           <div className="grid grid-cols-3 gap-4">
