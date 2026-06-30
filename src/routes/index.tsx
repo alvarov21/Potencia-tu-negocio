@@ -259,87 +259,69 @@ function About() {
             ))}
           </div>
         </div>
-        <div className="relative aspect-square max-w-md mx-auto w-full" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-glow opacity-50 blur-2xl" />
-          <svg viewBox="0 0 400 400" className="relative w-full h-full">
-            <defs>
-              <linearGradient id="pnStroke" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="oklch(0.85 0.12 268)" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="oklch(0.52 0.24 268)" stopOpacity="0.4" />
-              </linearGradient>
-              <linearGradient id="pnFill" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="oklch(0.52 0.24 268)" />
-                <stop offset="100%" stopColor="oklch(0.42 0.22 268)" />
-              </linearGradient>
-              <linearGradient id="pnText" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#FFFFFF" />
-                <stop offset="100%" stopColor="#E8EEFF" />
-              </linearGradient>
-            </defs>
-
-            {/* Outer thin ring */}
-            <circle cx="200" cy="200" r="190" fill="none" stroke="url(#pnStroke)" strokeWidth="1" opacity="0.5" />
-            <circle cx="200" cy="200" r="170" fill="none" stroke="url(#pnStroke)" strokeWidth="1" opacity="0.3" strokeDasharray="2 6" />
-
-            {/* Hexagonal emblem */}
-            <g transform="translate(200 200)">
-              <polygon
-                points="0,-140 121,-70 121,70 0,140 -121,70 -121,-70"
-                fill="none"
-                stroke="url(#pnStroke)"
-                strokeWidth="1.5"
-              />
-              <polygon
-                points="0,-115 100,-57.5 100,57.5 0,115 -100,57.5 -100,-57.5"
-                fill="oklch(0.20 0.07 270 / 0.6)"
-                stroke="url(#pnStroke)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="0,-90 78,-45 78,45 0,90 -78,45 -78,-45"
-                fill="url(#pnFill)"
-                opacity="0.95"
-              />
-
-              {/* Monogram PN */}
-              <text
-                x="0"
-                y="18"
-                textAnchor="middle"
-                fontFamily="Inter, system-ui, sans-serif"
-                fontWeight="700"
-                fontSize="60"
-                letterSpacing="-2"
-                fill="url(#pnText)"
-              >
-                PN
-              </text>
-
-              {/* Corner accent dots */}
-              {[0, 60, 120, 180, 240, 300].map(a => {
-                const rad = (a * Math.PI) / 180;
-                return (
-                  <circle
-                    key={a}
-                    cx={Math.cos(rad) * 140}
-                    cy={Math.sin(rad) * 140}
-                    r="3"
-                    fill="oklch(0.85 0.12 268)"
-                  />
-                );
-              })}
-            </g>
-
-            {/* Tick marks around outer ring */}
-            {Array.from({ length: 24 }).map((_, i) => {
-              const a = (i * 15 * Math.PI) / 180;
-              const x1 = 200 + Math.cos(a) * 186;
-              const y1 = 200 + Math.sin(a) * 186;
-              const x2 = 200 + Math.cos(a) * 178;
-              const y2 = 200 + Math.sin(a) * 178;
-              return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="url(#pnStroke)" strokeWidth="1" opacity="0.6" />;
-            })}
-          </svg>
+        <div className="relative aspect-square max-w-md mx-auto w-full group [perspective:1000px]" aria-hidden="true">
+          {/* Background glow */}
+          <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transition-all duration-700 ease-out group-hover:scale-125 group-hover:bg-primary/30" />
+          
+          <div className="relative w-full h-full flex items-center justify-center transition-all duration-700 ease-out transform-gpu group-hover:[transform:rotateY(12deg)_rotateX(6deg)_scale(1.05)]">
+            
+            {/* Browser Window */}
+            <div className="w-[85%] h-[70%] bg-card border border-primary/30 rounded-2xl shadow-2xl overflow-hidden flex flex-col relative z-10 transition-all duration-500 group-hover:border-primary/60 group-hover:shadow-[0_0_30px] group-hover:shadow-primary/20">
+              
+              {/* Browser Header */}
+              <div className="h-10 border-b border-primary/20 bg-muted/30 flex items-center px-4 gap-2">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80 transition-transform group-hover:scale-110" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80 transition-transform delay-75 group-hover:scale-110" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80 transition-transform delay-150 group-hover:scale-110" />
+                </div>
+                <div className="mx-auto bg-background/50 rounded-md h-5 w-1/2 border border-primary/10 flex items-center justify-center">
+                  <div className="w-16 h-1.5 bg-primary/20 rounded-full transition-colors group-hover:bg-primary/40" />
+                </div>
+              </div>
+              
+              {/* Browser Body */}
+              <div className="flex-1 p-5 flex flex-col gap-4 relative overflow-hidden bg-background">
+                {/* Nav */}
+                <div className="flex justify-between items-center">
+                  <div className="w-8 h-8 rounded-lg bg-primary/20 transition-all group-hover:bg-primary/40 group-hover:shadow-[0_0_10px] group-hover:shadow-primary/30" />
+                  <div className="flex gap-2">
+                    <div className="w-6 h-1.5 rounded-full bg-primary/20 transition-colors group-hover:bg-primary/40" />
+                    <div className="w-6 h-1.5 rounded-full bg-primary/20 transition-colors group-hover:bg-primary/40" />
+                  </div>
+                </div>
+                
+                {/* Hero content */}
+                <div className="mt-4 flex flex-col items-center text-center gap-3">
+                  <div className="w-3/4 h-4 rounded-full bg-primary/30 transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_15px] group-hover:shadow-primary/50" />
+                  <div className="w-1/2 h-3 rounded-full bg-primary/20 transition-all duration-500 delay-75 group-hover:bg-primary/70" />
+                  <div className="mt-2 px-6 py-2 rounded-full border border-primary/30 transition-all duration-500 delay-150 group-hover:bg-primary/10 group-hover:border-primary/50">
+                    <div className="w-12 h-2 rounded-full bg-primary/40 transition-colors group-hover:bg-primary" />
+                  </div>
+                </div>
+                
+                {/* Content blocks */}
+                <div className="mt-auto grid grid-cols-3 gap-3">
+                  {[1,2,3].map((i) => (
+                    <div key={i} className="h-12 rounded-xl border border-primary/20 transition-all duration-500 flex items-center justify-center bg-card translate-y-0 group-hover:-translate-y-2 group-hover:border-primary/50 group-hover:shadow-[0_0_15px] group-hover:shadow-primary/30" style={{ transitionDelay: `${150 + i * 50}ms` }}>
+                       <div className="w-4 h-4 rounded-sm bg-primary/20 transition-colors group-hover:bg-primary/60" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Decorative Floating Elements */}
+            <div className="absolute top-[10%] right-[5%] w-16 h-16 rounded-xl bg-card border border-primary/30 shadow-xl flex items-center justify-center transition-all duration-700 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12 group-hover:scale-110 z-20">
+              <div className="w-6 h-6 border-2 border-primary rounded-full border-t-transparent animate-spin" style={{ animationDuration: '3s' }} />
+            </div>
+            
+            <div className="absolute bottom-[15%] left-[5%] w-24 h-12 rounded-lg bg-card border border-primary/30 shadow-xl flex items-center justify-center gap-2.5 transition-all duration-700 delay-100 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:-translate-x-6 group-hover:translate-y-4 group-hover:-rotate-6 group-hover:scale-110 z-20">
+              <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px] shadow-green-500/60" />
+              <div className="w-10 h-1.5 rounded-full bg-primary/40 transition-colors group-hover:bg-primary/80" />
+            </div>
+            
+          </div>
         </div>
       </div>
     </section>
@@ -358,12 +340,12 @@ function Pricing() {
           <article className="bg-card border border-border rounded-3xl p-8 lg:p-10 flex flex-col">
             <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pago único</span>
             <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Paga una vez y la web es tuya para siempre. Ideal para negocios que quieren autonomía total y no depender de nadie.</p>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Paga una vez y la web es tuya para siempre. Sin cuotas, sin dependencias, sin sorpresas. Ideal para negocios que quieren autonomía total y tenerlo todo en sus manos. El dominio pasa a tu nombre y el código es completamente tuyo.</p>
             <div className="mb-6">
               <span className="text-5xl font-black">375€</span>
               <span className="text-muted-foreground ml-2">una sola vez</span>
             </div>
-            <ul className="space-y-3 mb-8 text-sm flex-1">
+            <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
                 "Desarrollo web completo con IA",
                 "Diseño totalmente personalizado a tu sector",
@@ -373,6 +355,7 @@ function Pricing() {
                 "Carta digital o catálogo de servicios",
                 "Galería, reseñas y WhatsApp directo",
                 "Textos legales RGPD completos",
+                "QR físico personalizado para tu negocio",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -398,13 +381,14 @@ function Pricing() {
               <span className="text-muted-foreground ml-2">inicio</span>
               <div className="text-sm text-muted-foreground mt-1">+ 75€/mes</div>
             </div>
-            <ul className="space-y-3 mb-8 text-sm flex-1">
+            <p className="text-sm text-muted-foreground italic mb-4 mt-auto pt-4">Todo lo del Plan Independencia, y además:</p>
+            <ul className="space-y-3 mb-8 text-sm">
               {[
-                "Todo lo del Plan Independencia",
                 "Mantenimiento mensual incluido",
                 "Cambios y actualizaciones ilimitados",
                 "Dominio pagado por nosotros",
-                "Actualización de carta, servicios y horarios",
+                "Actualización de carta y servicios",
+                "Gestión de horarios y días festivos",
                 "Soporte prioritario 24/7 en español",
                 "Copias de seguridad automáticas",
                 "Hosting gestionado por nosotros",
