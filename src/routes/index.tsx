@@ -155,7 +155,8 @@ function Hero() {
             Agencia de diseño web con IA · Negocios locales
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-            Webs que posicionan tu negocio en <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Google</span> en 7 días
+            Tu negocio se merece una web que <span className="text-primary">venda</span>.<br />
+            Lista en <span className="text-primary">48 horas</span> con dominio incluido.
           </h1>
           <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
             Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
