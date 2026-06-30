@@ -508,8 +508,41 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="border-t border-border py-12 px-6 lg:px-10">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
+    <footer className="border-t border-border">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 border-b border-border">
+        <a
+          href="https://www.trustpilot.com/review/ai-restaurante-pro.lovable.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Déjanos tu reseña en Trustpilot"
+          className="group flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left"
+        >
+          <div className="flex items-center gap-2">
+            <svg viewBox="0 0 24 24" className="w-7 h-7 fill-[#00B67A]" aria-hidden="true">
+              <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.176L12 19.273l-7.336 3.9 1.402-8.176L.132 9.21l8.2-1.192z" />
+            </svg>
+            <span className="text-lg font-semibold text-foreground tracking-tight">
+              Trust<span className="text-[#00B67A]">pilot</span>
+            </span>
+          </div>
+          <div className="flex items-center gap-1">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <span key={i} className="w-7 h-7 bg-[#00B67A] flex items-center justify-center rounded-sm">
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white" aria-hidden="true">
+                  <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.176L12 19.273l-7.336 3.9 1.402-8.176L.132 9.21l8.2-1.192z" />
+                </svg>
+              </span>
+            ))}
+          </div>
+          <div className="text-sm">
+            <p className="text-foreground font-medium">¿Trabajamos juntos?</p>
+            <p className="text-muted-foreground group-hover:text-foreground transition">
+              Déjanos tu reseña en Trustpilot →
+            </p>
+          </div>
+        </a>
+      </div>
+      <div className="max-w-7xl mx-auto py-12 px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
         <div className="font-bold text-foreground">
           Potencia <span className="text-primary">tu negocio</span>
         </div>
@@ -526,3 +559,4 @@ function Footer() {
     </footer>
   );
 }
+
