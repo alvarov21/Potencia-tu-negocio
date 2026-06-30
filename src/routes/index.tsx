@@ -395,7 +395,7 @@ function Pricing() {
             <div className="mb-6">
               <span className="text-5xl font-black">345€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
-              <div className="text-sm text-muted-foreground mt-1">+ 45€/mes</div>
+              <div className="text-sm text-muted-foreground mt-1">+ 75€/mes</div>
             </div>
             <ul className="space-y-3 mb-8 text-sm flex-1">
               {[
