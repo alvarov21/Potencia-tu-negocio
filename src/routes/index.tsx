@@ -259,19 +259,86 @@ function About() {
           </div>
         </div>
         <div className="relative aspect-square max-w-md mx-auto w-full" aria-hidden="true">
-          <div className="absolute inset-0 bg-gradient-glow rounded-full opacity-60" />
-          {[0, 1, 2, 3, 4].map(i => (
-            <div
-              key={i}
-              className="absolute inset-0 rounded-full border border-accent/40"
-              style={{ transform: `scale(${1 - i * 0.18})`, opacity: 1 - i * 0.15 }}
-            />
-          ))}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-24 h-24 rounded-full bg-gradient-cta shadow-glow flex items-center justify-center text-4xl">
-              ⚡
-            </div>
-          </div>
+          <div className="absolute inset-0 bg-gradient-glow opacity-50 blur-2xl" />
+          <svg viewBox="0 0 400 400" className="relative w-full h-full">
+            <defs>
+              <linearGradient id="pnStroke" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="oklch(0.85 0.12 268)" stopOpacity="0.9" />
+                <stop offset="100%" stopColor="oklch(0.52 0.24 268)" stopOpacity="0.4" />
+              </linearGradient>
+              <linearGradient id="pnFill" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="oklch(0.52 0.24 268)" />
+                <stop offset="100%" stopColor="oklch(0.42 0.22 268)" />
+              </linearGradient>
+              <linearGradient id="pnText" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#FFFFFF" />
+                <stop offset="100%" stopColor="#E8EEFF" />
+              </linearGradient>
+            </defs>
+
+            {/* Outer thin ring */}
+            <circle cx="200" cy="200" r="190" fill="none" stroke="url(#pnStroke)" strokeWidth="1" opacity="0.5" />
+            <circle cx="200" cy="200" r="170" fill="none" stroke="url(#pnStroke)" strokeWidth="1" opacity="0.3" strokeDasharray="2 6" />
+
+            {/* Hexagonal emblem */}
+            <g transform="translate(200 200)">
+              <polygon
+                points="0,-140 121,-70 121,70 0,140 -121,70 -121,-70"
+                fill="none"
+                stroke="url(#pnStroke)"
+                strokeWidth="1.5"
+              />
+              <polygon
+                points="0,-115 100,-57.5 100,57.5 0,115 -100,57.5 -100,-57.5"
+                fill="oklch(0.20 0.07 270 / 0.6)"
+                stroke="url(#pnStroke)"
+                strokeWidth="1"
+              />
+              <polygon
+                points="0,-90 78,-45 78,45 0,90 -78,45 -78,-45"
+                fill="url(#pnFill)"
+                opacity="0.95"
+              />
+
+              {/* Monogram PN */}
+              <text
+                x="0"
+                y="18"
+                textAnchor="middle"
+                fontFamily="Inter, system-ui, sans-serif"
+                fontWeight="700"
+                fontSize="60"
+                letterSpacing="-2"
+                fill="url(#pnText)"
+              >
+                PN
+              </text>
+
+              {/* Corner accent dots */}
+              {[0, 60, 120, 180, 240, 300].map(a => {
+                const rad = (a * Math.PI) / 180;
+                return (
+                  <circle
+                    key={a}
+                    cx={Math.cos(rad) * 140}
+                    cy={Math.sin(rad) * 140}
+                    r="3"
+                    fill="oklch(0.85 0.12 268)"
+                  />
+                );
+              })}
+            </g>
+
+            {/* Tick marks around outer ring */}
+            {Array.from({ length: 24 }).map((_, i) => {
+              const a = (i * 15 * Math.PI) / 180;
+              const x1 = 200 + Math.cos(a) * 186;
+              const y1 = 200 + Math.sin(a) * 186;
+              const x2 = 200 + Math.cos(a) * 178;
+              const y2 = 200 + Math.sin(a) * 178;
+              return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="url(#pnStroke)" strokeWidth="1" opacity="0.6" />;
+            })}
+          </svg>
         </div>
       </div>
     </section>
