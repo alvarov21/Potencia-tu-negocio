@@ -540,8 +540,8 @@ function Footer() {
           Potencia <span className="text-primary">tu negocio</span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          <a href="#" className="hover:text-foreground transition">Aviso Legal</a>
-          <a href="#" className="hover:text-foreground transition">Política de Privacidad</a>
+          <Link to="/aviso-legal" className="hover:text-foreground transition">Aviso Legal</Link>
+          <Link to="/politica-de-privacidad" className="hover:text-foreground transition">Política de Privacidad</Link>
           <Link to="/politica-de-cookies" className="hover:text-foreground transition">Política de Cookies</Link>
         </div>
         <div className="text-xs text-center lg:text-right leading-relaxed">
