@@ -448,7 +448,15 @@ function Contact() {
       <div className="absolute inset-0 bg-gradient-glow opacity-40 pointer-events-none" aria-hidden="true" />
       <div className="relative max-w-3xl mx-auto text-center">
         <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-4 leading-[1.05]">
-          ¿Listo para que tu negocio aparezca primero en Google?
+          ¿Listo para que tu negocio aparezca primero en{" "}
+          <span>
+            <span className="text-[#4285F4]">G</span>
+            <span className="text-[#EA4335]">o</span>
+            <span className="text-[#FBBC05]">o</span>
+            <span className="text-[#4285F4]">g</span>
+            <span className="text-[#34A853]">l</span>
+            <span className="text-[#EA4335]">e</span>
+          </span>?
         </h2>
         <p className="text-muted-foreground text-lg mb-12">
           Escríbenos hoy y en menos de 24 horas te enviamos una propuesta personalizada y gratuita, adaptada a tu sector y tu ciudad.
