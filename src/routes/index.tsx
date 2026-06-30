@@ -155,7 +155,7 @@ function Hero() {
             Agencia de diseño web con IA · Negocios locales
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-            Páginas web profesionales para negocios locales que aparecen en <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Google</span> — listas en 7 días
+            Webs que posicionan tu negocio en <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Google</span> en 7 días
           </h1>
           <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
             Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
@@ -395,7 +395,7 @@ function Pricing() {
             <div className="mb-6">
               <span className="text-5xl font-black">345€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
-              <div className="text-sm text-muted-foreground mt-1">+ 45€/mes</div>
+              <div className="text-sm text-muted-foreground mt-1">+ 75€/mes</div>
             </div>
             <ul className="space-y-3 mb-8 text-sm flex-1">
               {[
