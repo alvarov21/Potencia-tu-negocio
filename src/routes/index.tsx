@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
@@ -542,7 +542,7 @@ function Footer() {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           <a href="#" className="hover:text-foreground transition">Aviso Legal</a>
           <a href="#" className="hover:text-foreground transition">Política de Privacidad</a>
-          <a href="#" className="hover:text-foreground transition">Política de Cookies</a>
+          <Link to="/politica-de-cookies" className="hover:text-foreground transition">Política de Cookies</Link>
         </div>
         <div className="text-xs text-center lg:text-right leading-relaxed">
           © 2026 Potencia tu Negocio · Webs profesionales para negocios locales
