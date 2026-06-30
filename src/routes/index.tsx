@@ -552,9 +552,9 @@ function Footer() {
           <a href="#" className="hover:text-foreground transition">Política de Cookies</a>
         </div>
         <div className="text-xs text-center lg:text-right leading-relaxed">
-          © 2026 Potencia tu Negocio · Webs profesionales para negocios locales<br />
-          <span className="text-muted-foreground/70">Especialistas en hostelería · Hecho con 💙 en España</span>
+          © 2026 Potencia tu Negocio · Webs profesionales para negocios locales
         </div>
+
       </div>
     </footer>
   );
