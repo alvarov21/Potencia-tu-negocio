@@ -89,6 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: "Webs profesionales con IA para negocios locales. SEO incluido, listas en 7 días desde 375€." },
     ],
     links: [
+      { rel: "icon", type: "image/jpeg", href: "/logo.jpg" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
