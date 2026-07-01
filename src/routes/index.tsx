@@ -266,7 +266,8 @@ function About() {
             ))}
           </div>
         </div>
-        <div className="relative aspect-square max-w-md mx-auto w-full group [perspective:1000px]" aria-hidden="true">
+        <div className="flex flex-col items-center gap-10 w-full max-w-md mx-auto">
+          <div className="relative aspect-square w-full group [perspective:1000px]" aria-hidden="true">
           {/* Background glow */}
           <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transition-all duration-700 ease-out group-hover:scale-125 group-hover:bg-primary/30" />
           
@@ -328,7 +329,12 @@ function About() {
               <div className="w-10 h-1.5 rounded-full bg-primary/40 transition-colors group-hover:bg-primary/80" />
             </div>
             
+            </div>
+            
           </div>
+          <Link to="/portfolio" className="inline-flex items-center justify-center h-14 px-10 rounded-full border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-glow hover:scale-105">
+            Nuestro portfolio
+          </Link>
         </div>
       </div>
     </section>
