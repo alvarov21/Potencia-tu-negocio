@@ -8,13 +8,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
+      { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | potenciatunegocio.es" },
       { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 7 días desde 375€. Especialistas en hostelería." },
-      { property: "og:title", content: "Web para Negocios Locales con IA | Especialistas en Hostelería" },
+      { property: "og:title", content: "Web para Negocios Locales con IA | potenciatunegocio.es" },
       { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 375€." },
-      { property: "og:url", content: "https://ai-restaurante-pro.lovable.app/" },
+      { property: "og:url", content: "https://potenciatunegocio.es/" },
     ],
-    links: [{ rel: "canonical", href: "https://ai-restaurante-pro.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://potenciatunegocio.es/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -23,7 +23,7 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "Potencia tu Negocio",
           description: "Agencia de diseño web con IA especializada en negocios locales y hostelería en España.",
-          url: "https://ai-restaurante-pro.lovable.app/",
+          url: "https://potenciatunegocio.es/",
           areaServed: "ES",
           serviceType: "Diseño web para negocios locales",
         }),
@@ -517,7 +517,7 @@ function Footer() {
     <footer className="border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 border-b border-border">
         <a
-          href="https://www.trustpilot.com/review/ai-restaurante-pro.lovable.app"
+          href="https://www.trustpilot.com/review/potenciatunegocio.es"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Déjanos tu reseña en Trustpilot"
