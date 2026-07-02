@@ -8,9 +8,9 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | potencia-tu-negocio.vercel.app" },
+      { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
       { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 7 días desde 375€. Especialistas en hostelería." },
-      { property: "og:title", content: "Web para Negocios Locales con IA | potencia-tu-negocio.vercel.app" },
+      { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
       { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 375€." },
       { property: "og:url", content: "https://potencia-tu-negocio.vercel.app/" },
     ],
