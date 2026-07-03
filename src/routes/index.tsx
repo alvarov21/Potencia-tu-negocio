@@ -445,8 +445,13 @@ function Pricing() {
                 <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">225€</span>
                 <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
               </div>
-              <span className="text-5xl font-black text-foreground">195€</span>
-              <div className="text-sm text-muted-foreground mt-1">+ 29,95€/mes</div>
+              <div className="flex items-baseline gap-1.5">
+                <span className="text-5xl font-black text-foreground">195€</span>
+                <span className="text-sm font-medium text-muted-foreground">una sola vez</span>
+              </div>
+              <div className="text-sm text-muted-foreground mt-2 leading-snug">
+                Primer año incluido &middot; después 89€/año (dominio, hosting y soporte)
+              </div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
