@@ -482,7 +482,6 @@ function Pricing() {
                 "Web multipágina: inicio, servicios, galería, contacto",
                 "Sistema de reservas o citas conectado a WhatsApp/email",
                 "Carta digital o catálogo de servicios con fotos y precios",
-                "Reseñas de Google en tiempo real en tu web",
                 "SEO local trabajado: palabras clave de tu sector y ciudad",
                 "QR físico personalizado para tu local",
                 "1 ronda de cambios gratis dentro de los primeros 30 días",
