@@ -443,7 +443,7 @@ function Pricing() {
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-xl font-bold text-muted-foreground line-through decoration-primary/60">225€</span>
-                <span className="text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-2 py-0.5 rounded-full">Oferta</span>
+                <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
               </div>
               <span className="text-5xl font-black text-foreground">195€</span>
               <div className="text-sm text-muted-foreground mt-1">+ 29,95€/mes</div>
@@ -510,7 +510,7 @@ function Pricing() {
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-xl font-bold text-muted-foreground line-through decoration-primary/60">735€</span>
-                <span className="text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-2 py-0.5 rounded-full">Oferta</span>
+                <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
               </div>
               <span className="text-5xl font-black text-foreground">595€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
