@@ -3,6 +3,7 @@ import { useState } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
   Star, Lock, FileText, ArrowRight, Check, Plus, Minus, Mail, Phone,
+  Paintbrush, Rocket
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -90,6 +91,7 @@ function Home() {
         <Marquee />
         <Features />
         <About />
+        <HowItWorks />
         <Pricing />
         <FAQ />
         <Contact />
@@ -335,6 +337,88 @@ function About() {
           <Link to="/portfolio" className="inline-flex items-center justify-center h-14 px-10 rounded-full border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-glow hover:scale-105">
             Nuestro portfolio
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function HowItWorks() {
+  return (
+    <section id="como-trabajamos" className="py-24 lg:py-32 px-6 lg:px-10 bg-background overflow-hidden border-t border-border/50">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-20 max-w-3xl mx-auto relative">
+          <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
+            Cómo trabajamos
+          </span>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+            Tu nueva web en <span className="text-primary">3 pasos simples</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Hemos eliminado toda la burocracia. Queremos que tengas tu web lista cuanto antes.
+          </p>
+        </div>
+
+        <div className="relative">
+          {/* Connecting Line (Desktop) */}
+          <div className="hidden md:block absolute top-[4.5rem] left-[15%] right-[15%] h-[1px] bg-border z-0"></div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative z-10">
+            {/* Step 1 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative w-36 h-36 flex items-center justify-center mb-6">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl"></div>
+                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow">
+                  <MessageCircle className="w-10 h-10" />
+                </div>
+                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm">
+                  1
+                </div>
+              </div>
+              <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase mb-2">Paso 1</span>
+              <h3 className="text-xl font-bold mb-3">Cuéntanos tu idea</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                Formulario de 2 minutos o llamada gratuita de 15. Analizamos tu negocio y definimos los objetivos de tu página web. <strong className="font-semibold text-foreground">SIN COMPROMISO.</strong>
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative w-36 h-36 flex items-center justify-center mb-6">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl"></div>
+                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow">
+                  <Paintbrush className="w-10 h-10" />
+                </div>
+                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm">
+                  2
+                </div>
+              </div>
+              <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase mb-2">Paso 2</span>
+              <h3 className="text-xl font-bold mb-3">Diseño web profesional en 48 horas</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                Creamos tu página web completa: diseño, hosting y textos que venden. Primera versión lista para revisar en solo 48 horas.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="flex flex-col items-center text-center">
+              <div className="relative w-36 h-36 flex items-center justify-center mb-6">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl"></div>
+                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow">
+                  <Rocket className="w-10 h-10" />
+                </div>
+                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm">
+                  3
+                </div>
+              </div>
+              <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase mb-2">Paso 3</span>
+              <h3 className="text-xl font-bold mb-3">Revisión y lanzamiento</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                Nos dices los cambios y los aplicamos hasta que todo quede tal y como quieres. Publicamos tu web y tu negocio empieza a ser visible en Google.
+              </p>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
