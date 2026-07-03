@@ -452,6 +452,7 @@ function Pricing() {
               {[
                 "Web de una página (landing) diseñada con IA, personalizada a tu sector",
                 "Dominio propio + hosting + SSL (primer año incluido)",
+                "Primera anualidad incluida",
                 "Botón de WhatsApp directo y formulario de contacto",
                 "Google Maps integrado y ficha de Google Business dada de alta",
                 "SEO básico: apareces en Google al buscar tu negocio",
