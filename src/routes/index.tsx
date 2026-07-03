@@ -540,6 +540,7 @@ function FAQ() {
 
 function Contact() {
   const [sent, setSent] = useState(false);
+  const [tipoNegocio, setTipoNegocio] = useState("");
   return (
     <section id="contacto" className="relative py-24 lg:py-32 px-6 lg:px-10 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-glow opacity-40 pointer-events-none" aria-hidden="true" />
@@ -573,7 +574,32 @@ function Contact() {
               <input required placeholder="Nombre" aria-label="Nombre" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
               <input required type="email" placeholder="Email" aria-label="Email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
             </div>
-            <input required placeholder="Nombre y tipo de tu negocio" aria-label="Nombre y tipo de tu negocio" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+            <select
+              required
+              aria-label="Tipo de negocio"
+              value={tipoNegocio}
+              onChange={(e) => setTipoNegocio(e.target.value)}
+              className={`w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition appearance-none ${tipoNegocio === "" ? "text-muted-foreground" : "text-foreground"}`}
+            >
+              <option value="" disabled hidden>Selecciona tipo de negocio</option>
+              <option value="Restaurante / bar / cafetería">Restaurante / bar / cafetería</option>
+              <option value="Hotel">Hotel</option>
+              <option value="Clínica dental">Clínica dental</option>
+              <option value="Psicólogo">Psicólogo</option>
+              <option value="Veterinaria">Veterinaria</option>
+              <option value="Academia">Academia</option>
+              <option value="Gimnasio">Gimnasio</option>
+              <option value="Inmobiliaria">Inmobiliaria</option>
+              <option value="Electricista">Electricista</option>
+              <option value="Peluquería">Peluquería</option>
+              <option value="Centro de estética">Centro de estética</option>
+              <option value="Fotografía">Fotografía</option>
+              <option value="Joyería">Joyería</option>
+              <option value="Otro">Otro</option>
+            </select>
+            {tipoNegocio === "Otro" && (
+              <input required placeholder="Especifica qué tipo de negocio" aria-label="Especifica qué tipo de negocio" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition animate-in fade-in slide-in-from-top-2" />
+            )}
             <textarea required rows={4} aria-label="Mensaje" placeholder="Hola, tengo un [restaurante / clínica / taller / ...] en [ciudad] y quiero aparecer en Google cuando me busquen. Me gustaría saber más sobre vuestros planes." className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition resize-none" />
             <button type="submit" className="w-full py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition inline-flex items-center justify-center gap-2">
               Quiero más clientes <ArrowRight className="w-4 h-4" />
