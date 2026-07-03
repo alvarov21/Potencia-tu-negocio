@@ -442,7 +442,7 @@ function Pricing() {
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.</p>
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xl font-bold text-muted-foreground line-through decoration-primary/60">225€</span>
+                <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">225€</span>
                 <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
               </div>
               <span className="text-5xl font-black text-foreground">195€</span>
@@ -509,7 +509,7 @@ function Pricing() {
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nos ocupamos de todo, tú solo gestiona tu negocio. Todo lo de Independencia, y además:</p>
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xl font-bold text-muted-foreground line-through decoration-primary/60">735€</span>
+                <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">735€</span>
                 <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
               </div>
               <span className="text-5xl font-black text-foreground">595€</span>
