@@ -433,26 +433,26 @@ function Pricing() {
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Elige el plan para tu negocio local</h2>
           <p className="text-muted-foreground text-lg">Sin letra pequeña. Sin permanencias ocultas. Mismo precio para restaurantes, clínicas, talleres o cualquier negocio local.</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          <article className="bg-card border border-border rounded-3xl p-8 lg:p-10 flex flex-col">
-            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pago único</span>
-            <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Paga una vez y la web es tuya para siempre. Sin cuotas, sin dependencias, sin sorpresas. Ideal para negocios que quieren autonomía total y tenerlo todo en sus manos. El dominio pasa a tu nombre y el código es completamente tuyo.</p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          
+          {/* Plan Presencia */}
+          <article className="bg-card border border-border rounded-3xl p-8 flex flex-col hover:border-primary/50 transition">
+            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
+            <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.</p>
             <div className="mb-6">
-              <span className="text-5xl font-black">375€</span>
-              <span className="text-muted-foreground ml-2">una sola vez</span>
+              <span className="text-5xl font-black">225€</span>
+              <div className="text-sm text-muted-foreground mt-1">+ 89€/año desde el 2º año</div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
-                "Desarrollo web completo con IA",
-                "Diseño totalmente personalizado a tu sector",
-                "Dominio propio incluido (pasa a ser tuyo)",
-                "SEO local optimizado desde el primer día",
-                "Sistema de reservas o citas integrado",
-                "Carta digital o catálogo de servicios",
-                "Galería, reseñas y WhatsApp directo",
-                "Textos legales RGPD completos",
-                "QR físico personalizado para tu negocio",
+                "Web de una página (landing) diseñada con IA, personalizada a tu sector",
+                "Dominio propio + hosting + SSL (primer año incluido)",
+                "Botón de WhatsApp directo y formulario de contacto",
+                "Google Maps integrado y ficha de Google Business dada de alta",
+                "SEO básico: apareces en Google al buscar tu negocio",
+                "Textos legales RGPD",
+                "Diseño responsive (móvil, tablet, ordenador)",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -460,35 +460,64 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <p className="text-xs text-muted-foreground italic mb-5">Tú tienes el control total de tu web</p>
             <a href="#contacto" className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
               Contratar ahora
             </a>
           </article>
 
-          <article className="relative bg-card border-2 border-primary rounded-3xl p-8 lg:p-10 flex flex-col shadow-glow">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider">
+          {/* Plan Independencia */}
+          <article className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow">
+            <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider whitespace-nowrap">
               Más elegido
             </span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Suscripción</span>
-            <h3 className="text-2xl font-bold mb-2">Plan Mantenimiento</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nosotros nos encargamos de todo. Tú solo gestiona tu negocio. Actualizamos tu carta, tus servicios, tus horarios y resolvemos cualquier incidencia sin que tengas que mover un dedo.</p>
+            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Avanzado</span>
+            <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Web completa para captar clientes. Todo lo de Presencia, y además:</p>
+            <div className="mb-6">
+              <span className="text-5xl font-black">375€</span>
+              <div className="text-sm text-muted-foreground mt-1">+ 89€/año desde el 2º año</div>
+            </div>
+            <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
+              {[
+                "Web multipágina: inicio, servicios, galería, contacto",
+                "Sistema de reservas o citas conectado a WhatsApp/email",
+                "Carta digital o catálogo de servicios con fotos y precios",
+                "Reseñas de Google en tiempo real en tu web",
+                "SEO local trabajado: palabras clave de tu sector y ciudad",
+                "QR físico personalizado para tu local",
+                "1 ronda de cambios gratis dentro de los primeros 30 días",
+                "Opción de transferirte dominio y código si quieres autonomía total",
+              ].map((f, i) => (
+                <li key={i} className="flex gap-3">
+                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="#contacto" className="block text-center py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition">
+              Contratar ahora
+            </a>
+          </article>
+
+          {/* Plan Crecimiento */}
+          <article className="bg-card border border-border rounded-3xl p-8 flex flex-col hover:border-primary/50 transition">
+            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Suscripción</span>
+            <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nos ocupamos de todo, tú solo gestiona tu negocio. Todo lo de Independencia, y además:</p>
             <div className="mb-6">
               <span className="text-5xl font-black">345€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
               <div className="text-sm text-muted-foreground mt-1">+ 75€/mes</div>
             </div>
-            <p className="text-sm text-muted-foreground italic mb-4 mt-auto pt-4">Todo lo del Plan Independencia, y además:</p>
-            <ul className="space-y-3 mb-8 text-sm">
+            <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
-                "Mantenimiento mensual incluido",
-                "Cambios y actualizaciones ilimitados",
-                "Dominio pagado por nosotros",
-                "Actualización de carta y servicios",
-                "Gestión de horarios y días festivos",
+                "Cambios ilimitados: carta, precios, horarios, festivos, promociones (en <24h)",
+                "Dominio y hosting pagados por nosotros, para siempre",
+                "Gestión de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
+                "SEO continuo: seguimiento de posiciones y ajustes mensuales",
+                "Informe mensual: visitas, llamadas y clics en WhatsApp",
                 "Soporte prioritario 24/7 en español",
                 "Copias de seguridad automáticas",
-                "Hosting gestionado por nosotros",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -497,10 +526,11 @@ function Pricing() {
               ))}
             </ul>
             <p className="text-xs text-muted-foreground italic mb-5">Permanencia mínima 3 meses</p>
-            <a href="#contacto" className="block text-center py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition">
+            <a href="#contacto" className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
               Contratar ahora
             </a>
           </article>
+
         </div>
       </div>
     </section>
