@@ -475,7 +475,7 @@ function Pricing() {
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Web completa para captar clientes. Todo lo de Presencia, y además:</p>
             <div className="mb-6">
               <span className="text-5xl font-black">375€</span>
-              <div className="text-sm text-muted-foreground mt-1">+ 89€/año desde el 2º año</div>
+              <div className="text-sm text-muted-foreground mt-1">+ 19,95€/mes</div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
