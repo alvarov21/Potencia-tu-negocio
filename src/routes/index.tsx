@@ -600,7 +600,7 @@ function Contact() {
             {tipoNegocio === "Otro" && (
               <input required placeholder="Especifica qué tipo de negocio" aria-label="Especifica qué tipo de negocio" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition animate-in fade-in slide-in-from-top-2" />
             )}
-            <textarea required rows={4} aria-label="Mensaje" placeholder="Hola, pues mi idea/ problema es ... " className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition resize-none" />
+            <textarea required rows={4} aria-label="Mensaje" placeholder="Cuentanos aqui un poco sobre tu propuesta" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition resize-none" />
             <button type="submit" className="w-full py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition inline-flex items-center justify-center gap-2">
               Quiero más clientes <ArrowRight className="w-4 h-4" />
             </button>
