@@ -452,12 +452,12 @@ function Pricing() {
               {[
                 "Web de una página (landing) diseñada con IA, personalizada a tu sector",
                 "Dominio propio + hosting + SSL (primer año incluido)",
-                "Primera anualidad incluida",
                 "Botón de WhatsApp directo y formulario de contacto",
                 "Google Maps integrado y ficha de Google Business dada de alta",
                 "SEO básico: apareces en Google al buscar tu negocio",
                 "Textos legales RGPD",
                 "Diseño responsive (móvil, tablet, ordenador)",
+                "Primera anualidad incluida",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
