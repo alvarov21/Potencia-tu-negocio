@@ -441,7 +441,11 @@ function Pricing() {
             <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.</p>
             <div className="mb-6">
-              <span className="text-5xl font-black">195€</span>
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-xl font-bold text-muted-foreground line-through decoration-primary/60">225€</span>
+                <span className="text-xs font-bold text-primary uppercase tracking-wider bg-primary/10 px-2 py-0.5 rounded-full">Oferta</span>
+              </div>
+              <span className="text-5xl font-black text-foreground">195€</span>
               <div className="text-sm text-muted-foreground mt-1">+ 29,95€/mes</div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
