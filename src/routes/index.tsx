@@ -504,7 +504,7 @@ function Pricing() {
             <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nos ocupamos de todo, tú solo gestiona tu negocio. Todo lo de Independencia, y además:</p>
             <div className="mb-6">
-              <span className="text-5xl font-black">345€</span>
+              <span className="text-5xl font-black">595€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
               <div className="text-sm text-muted-foreground mt-1">+ 75€/mes</div>
             </div>
