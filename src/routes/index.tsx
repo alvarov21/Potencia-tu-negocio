@@ -521,7 +521,7 @@ function Pricing() {
                 "Cambios ilimitados: carta, precios, horarios, festivos, promociones (en <24h)",
                 "Dominio y hosting pagados por nosotros, para siempre",
                 "Gestión de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
-                "SEO continuo: seguimiento de posiciones y ajustes mensuales",
+                <strong className="text-foreground">SEO técnico: destaca frente a la competencia</strong>,
                 "Informe mensual: visitas, llamadas y clics en WhatsApp",
                 "Soporte prioritario 24/7 en español",
                 "Copias de seguridad automáticas",
