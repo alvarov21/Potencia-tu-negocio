@@ -66,7 +66,7 @@ export function Portfolio3D() {
     { type: "envelope" },
     { title: "Catálogo: Taller Mecánico", type: "mockup", url: "#taller" },
     { type: "sparkle" },
-    { title: "Web Restaurante: Picoteo", type: "mockup", url: "https://picoteo-murex.vercel.app" },
+    { title: "Web Restaurante: Picoteo", type: "mockup", url: "https://picoteo-murex.vercel.app", image: "/picoteo.png" },
     { type: "cursor" },
   ];
 
@@ -243,15 +243,22 @@ export function Portfolio3D() {
               style={{ backfaceVisibility: "hidden", willChange: "transform, opacity, filter" }}
             >
               {m.type === "mockup" ? (
-                <a href={m.url} target="_blank" rel="noopener noreferrer" className="w-full h-full rounded-xl overflow-hidden flex flex-col p-4 bg-card border border-border shadow-2xl text-foreground relative transition-transform duration-500 ease-out hover:scale-110 cursor-pointer block">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
-                  <div className="h-10 w-full rounded bg-muted mb-3 relative z-10" />
-                  <div className="text-[12px] font-bold mb-2 leading-tight relative z-10">{m.title}</div>
-                  <div className="h-1.5 w-2/3 rounded bg-muted mb-1.5 relative z-10" />
-                  <div className="h-1.5 w-1/2 rounded bg-muted mb-auto relative z-10" />
-                  <div className="w-16 h-5 rounded-full bg-primary/20 flex items-center justify-center self-end mt-2 relative z-10">
-                    <div className="w-8 h-1.5 rounded-full bg-primary" />
-                  </div>
+                <a href={m.url} target="_blank" rel="noopener noreferrer" className="w-full h-full rounded-xl overflow-hidden flex flex-col bg-card border border-border shadow-2xl text-foreground relative transition-transform duration-500 ease-out hover:scale-110 cursor-pointer block group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none z-10" />
+                  
+                  {m.image ? (
+                    <img src={m.image} alt={m.title} className="w-full h-full object-cover object-top opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                  ) : (
+                    <div className="w-full h-full flex flex-col p-4 relative z-0">
+                      <div className="h-10 w-full rounded bg-muted mb-3 relative z-10" />
+                      <div className="text-[12px] font-bold mb-2 leading-tight relative z-10">{m.title}</div>
+                      <div className="h-1.5 w-2/3 rounded bg-muted mb-1.5 relative z-10" />
+                      <div className="h-1.5 w-1/2 rounded bg-muted mb-auto relative z-10" />
+                      <div className="w-16 h-5 rounded-full bg-primary/20 flex items-center justify-center self-end mt-2 relative z-10">
+                        <div className="w-8 h-1.5 rounded-full bg-primary" />
+                      </div>
+                    </div>
+                  )}
                 </a>
               ) : (
                 <div className="w-full h-full flex items-center justify-center pointer-events-none">
