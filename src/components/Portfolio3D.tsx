@@ -7,7 +7,6 @@ export function Portfolio3D() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [isTyping, setIsTyping] = useState(false);
   const [carouselFadingOut, setCarouselFadingOut] = useState(false);
-  const [cookieBarVisible, setCookieBarVisible] = useState(true);
 
   // Constants for carousel
   const R = 720;
@@ -15,13 +14,13 @@ export function Portfolio3D() {
   const STEP = 22.5;
 
   const mockups = [
-    { title: "$0 Electricity Bills. 7 years.", type: "mockup" },
+    { title: "Landing Page: Restaurante 'El Fuego'", type: "mockup" },
     { type: "cursor" },
-    { title: "Discover a faster path to financial flow", type: "mockup" },
+    { title: "Reserva Online: Clínica Dental", type: "mockup" },
     { type: "envelope" },
-    { title: "Nature's Perfect Hideaways", type: "mockup" },
+    { title: "Catálogo: Taller Mecánico", type: "mockup" },
     { type: "sparkle" },
-    { title: "We craft brands that move people", type: "mockup" },
+    { title: "Sitio Corporativo: Asesoría Gómez", type: "mockup" },
     { type: "cursor" },
   ];
 
@@ -40,7 +39,7 @@ export function Portfolio3D() {
         
         const t = Math.abs(a) / 90;
         const opacity = Math.max(0, 1 - Math.pow(t, 3));
-        const brightness = 0.7 + 0.3 * t;
+        const brightness = 0.8 + 0.2 * t; // Reduced brightness difference so it looks good in light mode too
         const zIndex = 100 + Math.round(t * 50);
 
         card.style.transform = `rotateY(${a}deg) translateZ(${-R}px)`;
@@ -80,67 +79,61 @@ export function Portfolio3D() {
   };
 
   return (
-    <div className="relative w-full h-[800px] bg-[#050505] text-[#f5f5f5] font-sans overflow-hidden font-['Inter'] selection:bg-white/20">
+    <div className="relative w-full h-[700px] bg-background text-foreground font-sans overflow-hidden selection:bg-primary/20 border-y border-border">
       
-      {/* Navbar */}
-      <nav className="absolute top-0 left-0 w-full h-16 flex items-center justify-between px-6 z-50">
-        <div className="flex items-center bg-[#151517] rounded-full px-3 py-1.5 border border-white/5">
-          <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 mr-2" />
-          <span className="text-xs font-semibold text-white">@viktoroddy</span>
+      {/* Navbar overlay */}
+      <nav className="absolute top-0 left-0 w-full h-16 flex items-center justify-between px-6 z-50 pointer-events-none">
+        <div className="hidden lg:flex items-center bg-card/80 backdrop-blur-md rounded-full px-3 py-1.5 border border-border shadow-sm pointer-events-auto">
+          <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-primary to-accent mr-2" />
+          <span className="text-xs font-semibold text-foreground">@potenciatunegocio</span>
         </div>
         
-        <div className="hidden md:flex overflow-hidden w-[420px] whitespace-nowrap mask-edges opacity-60 text-sm text-[#f5f5f5]">
-          <div className="animate-ticker inline-block">
-            We build websites that convert. Designed to reduce friction and maximize leads &rarr; &nbsp;&nbsp;&nbsp;&nbsp;
-            We build websites that convert. Designed to reduce friction and maximize leads &rarr; &nbsp;&nbsp;&nbsp;&nbsp;
+        <div className="hidden md:flex overflow-hidden w-[420px] whitespace-nowrap mask-edges opacity-60 text-sm text-foreground mx-auto">
+          <div className="animate-ticker inline-block font-medium">
+            Creamos webs que convierten. Diseñadas para reducir fricción y maximizar clientes &rarr; &nbsp;&nbsp;&nbsp;&nbsp;
+            Creamos webs que convierten. Diseñadas para reducir fricción y maximizar clientes &rarr; &nbsp;&nbsp;&nbsp;&nbsp;
           </div>
-        </div>
-
-        <div className="flex items-center gap-6 text-xs text-[#7a7a7a]">
-          <a href="#" className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20">About</a>
-          <a href="#" className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Portfolio</a>
-          <a href="#" className="hover:text-white transition-colors underline underline-offset-4 decoration-white/20">Contact</a>
         </div>
       </nav>
 
       {/* Headline */}
-      <div className={`absolute top-[22%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20 ${isTyping ? "opacity-15 blur-[5px] scale-[0.98]" : "opacity-100 blur-0 scale-100"}`}>
-        <h1 className="text-[clamp(26px,3.4vw,42px)] font-semibold tracking-[-0.02em] leading-tight text-[#f5f5f5]">
-          More High-Intent Leads.
-        </h1>
-        <h2 className="text-[clamp(24px,3.2vw,40px)] italic text-[#7a7a7a] font-serif" style={{ fontFamily: "'Instrument Serif', serif" }}>
-          Less Friction.
+      <div className={`absolute top-[18%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20 ${isTyping ? "opacity-15 blur-[5px] scale-[0.98]" : "opacity-100 blur-0 scale-100"}`}>
+        <h2 className="text-[clamp(32px,4vw,56px)] font-bold tracking-tight leading-tight text-foreground">
+          Más clientes potenciales.
         </h2>
+        <h3 className="text-[clamp(28px,3.5vw,48px)] italic text-muted-foreground font-light mt-2">
+          Menos fricción.
+        </h3>
       </div>
 
       {/* Funnel */}
-      <div className="absolute top-[42%] left-1/2 -translate-x-1/2 w-full max-w-lg z-30">
+      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-full max-w-lg z-30">
         <div className="relative h-24 flex items-center justify-center">
           
           {/* Step 1 */}
           <div className={`absolute flex items-center justify-center transition-all duration-500 ease-out ${step === 1 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : step > 1 ? 'opacity-0 blur-[10px] -translate-y-[14px] scale-[0.97] pointer-events-none' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center bg-white text-black font-bold mr-4 transition-opacity ${budget ? 'opacity-100' : 'opacity-[0.35]'}`}>$</div>
+            <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-primary text-primary-foreground font-bold mr-4 transition-opacity shadow-md ${budget ? 'opacity-100' : 'opacity-40'}`}>€</div>
             <input
               type="text"
               autoFocus
               value={budget}
               onChange={handleBudgetChange}
               onKeyDown={handleKeyDown}
-              placeholder="your budget"
-              className="bg-transparent text-[clamp(30px,4.4vw,46px)] font-medium text-white placeholder:text-[#3a3a3a] outline-none w-[280px]"
+              placeholder="tu presupuesto"
+              className="bg-transparent text-[clamp(30px,4.4vw,46px)] font-medium text-foreground placeholder:text-muted-foreground/40 outline-none w-[280px]"
             />
             <button 
               onClick={nextStep}
-              className={`absolute -right-12 px-4 py-2 bg-[#1c1c1e] border border-[#2a2a2e] rounded-full text-[13px] text-white whitespace-nowrap transition-all duration-300 ${budget ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
+              className={`absolute -right-16 px-5 py-2.5 bg-primary rounded-full text-sm font-semibold text-primary-foreground whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 ${budget ? 'opacity-100 translate-x-0 shadow-xl shadow-primary/20' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
             >
-              Okay, next &rarr;
+              Siguiente &rarr;
             </button>
           </div>
 
           {/* Step 2 */}
           <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 2 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : step > 2 ? 'opacity-0 blur-[10px] -translate-y-[14px] scale-[0.97] pointer-events-none' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
             <div className="flex items-center">
-              <svg className={`w-8 h-6 mr-4 transition-opacity ${email ? 'opacity-100' : 'opacity-[0.35]'}`} fill="none" stroke="white" strokeWidth="2.4" viewBox="0 0 24 24">
+              <svg className={`w-8 h-8 mr-4 transition-opacity ${email ? 'opacity-100 text-primary' : 'opacity-40 text-muted-foreground'}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <rect width="20" height="16" x="2" y="4" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
@@ -149,35 +142,35 @@ export function Portfolio3D() {
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); setIsTyping(e.target.value.length > 0); }}
                 onKeyDown={handleKeyDown}
-                placeholder="your email"
-                className="bg-transparent text-[clamp(30px,4.4vw,46px)] font-medium text-white placeholder:text-[#3a3a3a] outline-none w-[320px]"
+                placeholder="tu email"
+                className="bg-transparent text-[clamp(30px,4.4vw,46px)] font-medium text-foreground placeholder:text-muted-foreground/40 outline-none w-[320px]"
               />
             </div>
             <button 
               onClick={nextStep}
-              className={`mt-4 w-10 h-10 flex items-center justify-center text-white bg-[#1c1c1e] border border-[#2a2a2e] rounded-full transition-all duration-300 ${email.includes('@') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+              className={`mt-6 w-12 h-12 flex items-center justify-center text-primary-foreground bg-primary shadow-xl shadow-primary/20 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 ${email.includes('@') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
             >
-              &rarr;
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </div>
 
           {/* Step 3 */}
           <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 3 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
-            <div className="w-[34px] h-[34px] bg-white rounded-full flex items-center justify-center mb-4">
-              <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <div className="w-[48px] h-[48px] bg-green-500/10 rounded-full flex items-center justify-center mb-4 text-green-600 shadow-inner">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
             </div>
-            <div className="text-[34px] font-semibold leading-none text-white">Submission</div>
-            <div className="text-[32px] italic text-[#7a7a7a] font-serif mb-4" style={{ fontFamily: "'Instrument Serif', serif" }}>accepted.</div>
-            <div className="text-sm text-[#5c5c5c] mb-6">We'll be in touch shortly.</div>
+            <div className="text-[34px] font-bold tracking-tight leading-none text-foreground">Solicitud</div>
+            <div className="text-[32px] italic text-muted-foreground font-light mb-4">aceptada.</div>
+            <div className="text-sm font-medium text-muted-foreground mb-8">Nos pondremos en contacto pronto.</div>
             
-            <div className="flex gap-8 text-xs text-center border-t border-white/10 pt-4 w-full justify-center">
+            <div className="flex gap-10 text-xs text-center border-t border-border pt-6 w-full justify-center">
               <div>
-                <div className="text-[#5c5c5c] mb-1">BUDGET</div>
-                <div className="font-semibold text-white">$ {budget}</div>
+                <div className="text-muted-foreground mb-1.5 uppercase font-semibold tracking-wider">Presupuesto</div>
+                <div className="font-bold text-foreground text-lg">€ {budget}</div>
               </div>
               <div>
-                <div className="text-[#5c5c5c] mb-1">EMAIL</div>
-                <div className="font-semibold text-white">{email}</div>
+                <div className="text-muted-foreground mb-1.5 uppercase font-semibold tracking-wider">Email</div>
+                <div className="font-bold text-foreground text-lg">{email}</div>
               </div>
             </div>
           </div>
@@ -186,40 +179,32 @@ export function Portfolio3D() {
       </div>
 
       {/* 3D Carousel */}
-      <div className={`absolute bottom-[5vh] left-0 w-full h-[210px] z-10 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'}`} style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}>
+      <div className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-10 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'}`} style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}>
         <div ref={pivotRef} className="absolute top-1/2 left-1/2 w-0 h-0" style={{ transformStyle: "preserve-3d" }}>
           {mockups.map((m, i) => (
             <div 
               key={i} 
-              className="absolute w-[250px] h-[156px] -ml-[125px] -mt-[78px] rounded-lg overflow-hidden flex items-center justify-center bg-[#0f0f11] border border-[#232326]"
-              style={{ backfaceVisibility: "hidden", willChange: "transform, opacity, filter", boxShadow: "0 20px 40px -10px rgba(0,0,0,0.8)" }}
+              className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] rounded-xl overflow-hidden flex items-center justify-center bg-card border border-border shadow-2xl"
+              style={{ backfaceVisibility: "hidden", willChange: "transform, opacity, filter" }}
             >
               {m.type === "mockup" ? (
-                <div className="w-full h-full flex flex-col p-4 text-[#f5f5f5]">
-                  <div className="h-12 w-full rounded bg-white/5 mb-2" />
-                  <div className="text-[10px] font-semibold mb-2">{m.title}</div>
-                  <div className="h-2 w-2/3 rounded bg-white/10 mb-1" />
-                  <div className="h-2 w-1/2 rounded bg-white/10 mb-auto" />
-                  <div className="w-16 h-4 rounded-full bg-white/90 self-end mt-2" />
+                <div className="w-full h-full flex flex-col p-4 text-foreground relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+                  <div className="h-10 w-full rounded bg-muted mb-3 relative z-10" />
+                  <div className="text-[12px] font-bold mb-2 leading-tight relative z-10">{m.title}</div>
+                  <div className="h-1.5 w-2/3 rounded bg-muted mb-1.5 relative z-10" />
+                  <div className="h-1.5 w-1/2 rounded bg-muted mb-auto relative z-10" />
+                  <div className="w-16 h-5 rounded-full bg-primary/20 flex items-center justify-center self-end mt-2 relative z-10">
+                    <div className="w-8 h-1.5 rounded-full bg-primary" />
+                  </div>
                 </div>
               ) : (
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-white via-neutral-400 to-neutral-800 flex items-center justify-center opacity-80 mix-blend-screen">
-                  <div className="w-8 h-8 rounded-full bg-[#050505]" />
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg border border-primary/10">
+                  <div className="w-8 h-8 rounded-full bg-card shadow-sm" />
                 </div>
               )}
             </div>
           ))}
-        </div>
-      </div>
-
-      {/* Cookie bar */}
-      <div className={`absolute bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${cookieBarVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-        <div className="bg-[#121214] border border-white/10 rounded-full px-4 py-2 flex items-center gap-4 text-[11px] text-[#7a7a7a]">
-          <span>We use cookies to understand how you use our site. <span className="text-white">Accept</span> to help us improve. <a href="#" className="underline decoration-white/20">Privacy Policy</a></span>
-          <div className="flex items-center gap-3 ml-2 border-l border-white/10 pl-4">
-            <button onClick={() => setCookieBarVisible(false)} className="hover:text-white transition-colors">Decline</button>
-            <button onClick={() => setCookieBarVisible(false)} className="text-black bg-white rounded-full px-3 py-1 font-semibold hover:bg-white/90 transition-colors">Accept</button>
-          </div>
         </div>
       </div>
 
