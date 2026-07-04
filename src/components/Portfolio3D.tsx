@@ -2,10 +2,6 @@ import { useEffect, useRef, useState } from "react";
 
 export function Portfolio3D() {
   const pivotRef = useRef<HTMLDivElement>(null);
-  const [email, setEmail] = useState("");
-  const [step, setStep] = useState<1 | 2>(1);
-  const [isTyping, setIsTyping] = useState(false);
-  const [carouselFadingOut, setCarouselFadingOut] = useState(false);
   const isHovered = useRef(false);
   const hoveredIndexRef = useRef<number>(-1);
   const wrapperRef = useRef<HTMLDivElement>(null);
@@ -107,18 +103,6 @@ export function Portfolio3D() {
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
-  const nextStep = () => {
-    if (step === 1 && email.includes("@")) {
-      setStep(2);
-      setIsTyping(false);
-      setCarouselFadingOut(true);
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") nextStep();
-  };
-
   return (
     <div className="relative w-full h-[700px] bg-background text-foreground font-sans overflow-hidden selection:bg-primary/20 border-y border-border">
       
@@ -130,7 +114,7 @@ export function Portfolio3D() {
       </nav>
 
       {/* Headline */}
-      <div className={`absolute top-[16%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20 ${isTyping ? "opacity-15 blur-[5px] scale-[0.98]" : "opacity-100 blur-0 scale-100"}`}>
+      <div className={`absolute top-[16%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20`}>
         <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
           Algunos de nuestros diseños
         </span>
@@ -142,59 +126,10 @@ export function Portfolio3D() {
         </h3>
       </div>
 
-      {/* Funnel */}
-      <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-full max-w-lg z-30">
-        <div className="relative h-24 flex items-center justify-center">
-          
-          {/* Step 1 */}
-          <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 1 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : step > 1 ? 'opacity-0 blur-[10px] -translate-y-[14px] scale-[0.97] pointer-events-none' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
-            <div className="flex items-center">
-              <svg className={`w-8 h-8 mr-4 transition-opacity ${email ? 'opacity-100 text-primary' : 'opacity-40 text-muted-foreground'}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <rect width="20" height="16" x="2" y="4" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-              <input
-                type="email"
-                autoFocus
-                value={email}
-                onChange={(e) => { setEmail(e.target.value); setIsTyping(e.target.value.length > 0); }}
-                onKeyDown={handleKeyDown}
-                placeholder="tu email"
-                className="bg-transparent text-[clamp(30px,4.4vw,46px)] font-medium text-foreground placeholder:text-muted-foreground/40 outline-none w-[320px]"
-              />
-            </div>
-            <button 
-              onClick={nextStep}
-              className={`mt-6 w-12 h-12 flex items-center justify-center text-primary-foreground bg-primary shadow-xl shadow-primary/20 rounded-full transition-all duration-300 hover:scale-105 active:scale-95 ${email.includes('@') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-
-          {/* Step 2 */}
-          <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 2 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
-            <div className="w-[48px] h-[48px] bg-green-500/10 rounded-full flex items-center justify-center mb-4 text-green-600 shadow-inner">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
-            </div>
-            <div className="text-[34px] font-bold tracking-tight leading-none text-foreground">Solicitud</div>
-            <div className="text-[32px] italic text-muted-foreground font-light mb-4">aceptada.</div>
-            <div className="text-sm font-medium text-muted-foreground mb-8">Nos pondremos en contacto pronto.</div>
-            
-            <div className="flex gap-10 text-xs text-center border-t border-border pt-6 w-full justify-center">
-              <div>
-                <div className="text-muted-foreground mb-1.5 uppercase font-semibold tracking-wider">Email</div>
-                <div className="font-bold text-foreground text-lg">{email}</div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
       {/* 3D Carousel */}
       <div 
         ref={wrapperRef}
-        className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'}`} 
+        className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms]`} 
         style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
