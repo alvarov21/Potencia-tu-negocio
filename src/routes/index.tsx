@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
+import { Portfolio3D } from "../components/Portfolio3D";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
   Star, Lock, FileText, ArrowRight, Check, Plus, Minus, Mail, Phone,
@@ -48,6 +49,7 @@ export const Route = createFileRoute("/")({
 
 const NAV = [
   { href: "#servicios", label: "Servicios" },
+  { href: "#portfolio", label: "Portfolio" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#herramientas", label: "Herramientas" },
   { href: "#precios", label: "Precios" },
@@ -90,6 +92,9 @@ function Home() {
         <Hero />
         <Marquee />
         <Features />
+        <section id="portfolio" className="w-full">
+          <Portfolio3D />
+        </section>
         <About />
         <HowItWorks />
         <Pricing />
