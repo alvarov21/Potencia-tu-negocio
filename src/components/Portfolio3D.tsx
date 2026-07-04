@@ -104,7 +104,7 @@ export function Portfolio3D() {
   }, []);
 
   return (
-    <div className="relative w-full h-[700px] bg-background text-foreground font-sans overflow-hidden selection:bg-primary/20 border-y border-border">
+    <div className="relative w-full h-[550px] bg-background text-foreground font-sans overflow-hidden selection:bg-primary/20 border-y border-border">
       
       {/* Navbar overlay */}
       <nav className="absolute top-0 left-0 w-full h-16 flex items-center justify-between px-6 z-50 pointer-events-none">
@@ -114,16 +114,13 @@ export function Portfolio3D() {
       </nav>
 
       {/* Headline */}
-      <div className={`absolute top-[16%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20`}>
+      <div className={`absolute top-[12%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20`}>
         <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
-          Algunos de nuestros diseños
+          PORTFOLIO
         </span>
         <h2 className="text-[clamp(32px,4vw,56px)] font-bold tracking-tight leading-tight text-foreground">
-          Más clientes potenciales.
+          Algunos de nuestros diseños.
         </h2>
-        <h3 className="text-[clamp(28px,3.5vw,48px)] italic text-muted-foreground font-light mt-2">
-          Menos fricción.
-        </h3>
       </div>
 
       {/* 3D Carousel */}
