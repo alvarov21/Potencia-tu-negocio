@@ -176,23 +176,19 @@ export function Portfolio3D() {
         </div>
       </div>
 
-      {/* 3D Carousel Wrapper */}
+      {/* 3D Carousel */}
       <div 
-        className="absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms]" 
-        style={{ opacity: carouselFadingOut ? 0 : 1, filter: carouselFadingOut ? 'blur(8px)' : 'blur(0)' }}
-        onMouseEnter={() => { isHovered.current = true; }}
-        onMouseLeave={() => { isHovered.current = false; }}
+        className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'} pointer-events-none`} 
+        style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}
       >
-        <div 
-          className="absolute w-full h-full"
-          style={{ perspective: "900px" }}
-        >
-          <div ref={pivotRef} className="absolute top-1/2 left-1/2 w-0 h-0" style={{ transformStyle: "preserve-3d" }}>
+        <div ref={pivotRef} className="absolute top-1/2 left-1/2 w-0 h-0" style={{ transformStyle: "preserve-3d" }}>
           {mockups.map((m, i) => (
             <div 
               key={i} 
               className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] pointer-events-auto"
               style={{ backfaceVisibility: "hidden", willChange: "transform, opacity, filter" }}
+              onMouseEnter={() => { isHovered.current = true; }}
+              onMouseLeave={() => { isHovered.current = false; }}
             >
               {m.type === "mockup" ? (
                 <a href={m.url} target="_blank" rel="noopener noreferrer" className="w-full h-full rounded-xl overflow-hidden flex flex-col p-4 bg-card border border-border shadow-2xl text-foreground relative transition-transform duration-500 ease-out hover:scale-110 cursor-pointer block">
@@ -215,11 +211,6 @@ export function Portfolio3D() {
             </div>
           ))}
         </div>
-        </div>
-
-        {/* Fake masks for edges to prevent hit-testing bugs */}
-        <div className="absolute top-0 left-0 w-[15%] h-full bg-gradient-to-r from-background to-transparent pointer-events-none z-50" />
-        <div className="absolute top-0 right-0 w-[15%] h-full bg-gradient-to-l from-background to-transparent pointer-events-none z-50" />
       </div>
 
       <style dangerouslySetInnerHTML={{__html: `
