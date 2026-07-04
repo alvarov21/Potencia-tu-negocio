@@ -83,10 +83,7 @@ export function Portfolio3D() {
       
       {/* Navbar overlay */}
       <nav className="absolute top-0 left-0 w-full h-16 flex items-center justify-between px-6 z-50 pointer-events-none">
-        <div className="hidden lg:flex items-center bg-card/80 backdrop-blur-md rounded-full px-3 py-1.5 border border-border shadow-sm pointer-events-auto">
-          <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-primary to-accent mr-2" />
-          <span className="text-xs font-semibold text-foreground">@potenciatunegocio</span>
-        </div>
+
         
         <div className="hidden md:flex overflow-hidden w-[420px] whitespace-nowrap mask-edges opacity-60 text-sm text-foreground mx-auto">
           <div className="animate-ticker inline-block font-medium">
