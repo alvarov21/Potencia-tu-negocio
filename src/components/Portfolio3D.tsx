@@ -66,7 +66,7 @@ export function Portfolio3D() {
     { type: "envelope" },
     { title: "Catálogo: Taller Mecánico", type: "mockup", url: "#taller" },
     { type: "sparkle" },
-    { title: "Sitio Corporativo: Asesoría Gómez", type: "mockup", url: "#asesoria" },
+    { title: "Web Restaurante: Picoteo", type: "mockup", url: "https://picoteo-murex.vercel.app" },
     { type: "cursor" },
   ];
 
