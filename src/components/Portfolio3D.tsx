@@ -7,6 +7,7 @@ export function Portfolio3D() {
   const [step, setStep] = useState<1 | 2 | 3>(1);
   const [isTyping, setIsTyping] = useState(false);
   const [carouselFadingOut, setCarouselFadingOut] = useState(false);
+  const isHovered = useRef(false);
 
   // Constants for carousel
   const R = 720;
@@ -29,7 +30,9 @@ export function Portfolio3D() {
     let animationFrameId: number;
 
     const render = () => {
-      base += 0.09;
+      if (!isHovered.current) {
+        base += 0.09;
+      }
       if (!pivotRef.current) return;
 
       const cards = pivotRef.current.children;
@@ -174,16 +177,21 @@ export function Portfolio3D() {
       </div>
 
       {/* 3D Carousel */}
-      <div className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-10 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'}`} style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}>
+      <div 
+        className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'}`} 
+        style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}
+        onMouseEnter={() => { isHovered.current = true; }}
+        onMouseLeave={() => { isHovered.current = false; }}
+      >
         <div ref={pivotRef} className="absolute top-1/2 left-1/2 w-0 h-0" style={{ transformStyle: "preserve-3d" }}>
           {mockups.map((m, i) => (
             <div 
               key={i} 
-              className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] rounded-xl overflow-hidden flex items-center justify-center bg-card border border-border shadow-2xl group"
+              className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] rounded-xl overflow-hidden flex items-center justify-center bg-card border border-border shadow-2xl transition-transform duration-500 ease-out hover:scale-110 cursor-pointer pointer-events-auto"
               style={{ backfaceVisibility: "hidden", willChange: "transform, opacity, filter" }}
             >
               {m.type === "mockup" ? (
-                <div className="w-full h-full flex flex-col p-4 text-foreground relative overflow-hidden transition-transform duration-500 ease-out group-hover:scale-110">
+                <div className="w-full h-full flex flex-col p-4 text-foreground relative overflow-hidden pointer-events-none">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
                   <div className="h-10 w-full rounded bg-muted mb-3 relative z-10" />
                   <div className="text-[12px] font-bold mb-2 leading-tight relative z-10">{m.title}</div>
@@ -194,7 +202,7 @@ export function Portfolio3D() {
                   </div>
                 </div>
               ) : (
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg border border-primary/10 transition-transform duration-500 ease-out group-hover:scale-125">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg border border-primary/10 transition-transform duration-500 ease-out hover:scale-110 pointer-events-none">
                   <div className="w-8 h-8 rounded-full bg-card shadow-sm" />
                 </div>
               )}
