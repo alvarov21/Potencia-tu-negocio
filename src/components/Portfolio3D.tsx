@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from "react";
 
 export function Portfolio3D() {
   const pivotRef = useRef<HTMLDivElement>(null);
-  const [budget, setBudget] = useState("");
   const [email, setEmail] = useState("");
-  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [step, setStep] = useState<1 | 2>(1);
   const [isTyping, setIsTyping] = useState(false);
   const [carouselFadingOut, setCarouselFadingOut] = useState(false);
   const isHovered = useRef(false);
@@ -108,20 +107,9 @@ export function Portfolio3D() {
     return () => cancelAnimationFrame(animationFrameId);
   }, []);
 
-  const handleBudgetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let val = e.target.value.replace(/\D/g, "");
-    if (val.length > 9) val = val.slice(0, 9);
-    val = val.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    setBudget(val);
-    setIsTyping(val.length > 0);
-  };
-
   const nextStep = () => {
-    if (step === 1 && budget) {
+    if (step === 1 && email.includes("@")) {
       setStep(2);
-      setIsTyping(false);
-    } else if (step === 2 && email.includes("@")) {
-      setStep(3);
       setIsTyping(false);
       setCarouselFadingOut(true);
     }
@@ -159,27 +147,7 @@ export function Portfolio3D() {
         <div className="relative h-24 flex items-center justify-center">
           
           {/* Step 1 */}
-          <div className={`absolute flex items-center justify-center transition-all duration-500 ease-out ${step === 1 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : step > 1 ? 'opacity-0 blur-[10px] -translate-y-[14px] scale-[0.97] pointer-events-none' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
-            <div className={`w-10 h-10 rounded-full flex items-center justify-center bg-primary text-primary-foreground font-bold mr-4 transition-opacity shadow-md ${budget ? 'opacity-100' : 'opacity-40'}`}>€</div>
-            <input
-              type="text"
-              autoFocus
-              value={budget}
-              onChange={handleBudgetChange}
-              onKeyDown={handleKeyDown}
-              placeholder="tu presupuesto"
-              className="bg-transparent text-[clamp(30px,4.4vw,46px)] font-medium text-foreground placeholder:text-muted-foreground/40 outline-none w-[280px]"
-            />
-            <button 
-              onClick={nextStep}
-              className={`absolute -right-16 px-5 py-2.5 bg-primary rounded-full text-sm font-semibold text-primary-foreground whitespace-nowrap transition-all duration-300 hover:scale-105 active:scale-95 ${budget ? 'opacity-100 translate-x-0 shadow-xl shadow-primary/20' : 'opacity-0 -translate-x-4 pointer-events-none'}`}
-            >
-              Siguiente &rarr;
-            </button>
-          </div>
-
-          {/* Step 2 */}
-          <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 2 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : step > 2 ? 'opacity-0 blur-[10px] -translate-y-[14px] scale-[0.97] pointer-events-none' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
+          <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 1 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : step > 1 ? 'opacity-0 blur-[10px] -translate-y-[14px] scale-[0.97] pointer-events-none' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
             <div className="flex items-center">
               <svg className={`w-8 h-8 mr-4 transition-opacity ${email ? 'opacity-100 text-primary' : 'opacity-40 text-muted-foreground'}`} fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <rect width="20" height="16" x="2" y="4" rx="2" />
@@ -187,6 +155,7 @@ export function Portfolio3D() {
               </svg>
               <input
                 type="email"
+                autoFocus
                 value={email}
                 onChange={(e) => { setEmail(e.target.value); setIsTyping(e.target.value.length > 0); }}
                 onKeyDown={handleKeyDown}
@@ -202,8 +171,8 @@ export function Portfolio3D() {
             </button>
           </div>
 
-          {/* Step 3 */}
-          <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 3 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
+          {/* Step 2 */}
+          <div className={`absolute flex flex-col items-center justify-center transition-all duration-500 ease-out ${step === 2 ? 'opacity-100 blur-0 translate-y-0 scale-100 delay-[380ms]' : 'opacity-0 blur-[10px] translate-y-[14px] scale-[0.97] pointer-events-none'}`}>
             <div className="w-[48px] h-[48px] bg-green-500/10 rounded-full flex items-center justify-center mb-4 text-green-600 shadow-inner">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
             </div>
@@ -212,10 +181,6 @@ export function Portfolio3D() {
             <div className="text-sm font-medium text-muted-foreground mb-8">Nos pondremos en contacto pronto.</div>
             
             <div className="flex gap-10 text-xs text-center border-t border-border pt-6 w-full justify-center">
-              <div>
-                <div className="text-muted-foreground mb-1.5 uppercase font-semibold tracking-wider">Presupuesto</div>
-                <div className="font-bold text-foreground text-lg">€ {budget}</div>
-              </div>
               <div>
                 <div className="text-muted-foreground mb-1.5 uppercase font-semibold tracking-wider">Email</div>
                 <div className="font-bold text-foreground text-lg">{email}</div>
