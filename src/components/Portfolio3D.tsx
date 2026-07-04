@@ -121,9 +121,9 @@ export function Portfolio3D() {
         <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
           Algunos de nuestros diseños.
         </h2>
-        <p className="text-muted-foreground text-lg leading-relaxed">
-          Estas son algunas de las webs que hemos creado para negocios que buscaban exactamente lo mismo que tú: <br className="hidden sm:block" />
-          más presencia, más confianza y más clientes.
+        <p className="text-muted-foreground text-lg leading-relaxed mx-auto max-w-2xl text-balance">
+          Estas son algunas de las webs que hemos creado para negocios que buscaban <br className="hidden sm:block" />
+          exactamente lo mismo que tú: más presencia, más confianza y más clientes.
         </p>
       </div>
 
