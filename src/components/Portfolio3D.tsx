@@ -122,8 +122,8 @@ export function Portfolio3D() {
           Algunos de nuestros diseños.
         </h2>
         <p className="text-muted-foreground text-lg leading-relaxed">
-          Diseños modernos, rápidos y optimizados para convertir visitantes en clientes reales. <br className="hidden sm:block" />
-          Explora los últimos proyectos que hemos lanzado para negocios como el tuyo.
+          Estas son algunas de las webs que hemos creado para negocios que buscaban exactamente lo mismo que tú: <br className="hidden sm:block" />
+          más presencia, más confianza y más clientes.
         </p>
       </div>
 
