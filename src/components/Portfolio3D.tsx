@@ -89,7 +89,10 @@ export function Portfolio3D() {
       </nav>
 
       {/* Headline */}
-      <div className={`absolute top-[18%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20 ${isTyping ? "opacity-15 blur-[5px] scale-[0.98]" : "opacity-100 blur-0 scale-100"}`}>
+      <div className={`absolute top-[16%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20 ${isTyping ? "opacity-15 blur-[5px] scale-[0.98]" : "opacity-100 blur-0 scale-100"}`}>
+        <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
+          Algunos de nuestros diseños
+        </span>
         <h2 className="text-[clamp(32px,4vw,56px)] font-bold tracking-tight leading-tight text-foreground">
           Más clientes potenciales.
         </h2>
