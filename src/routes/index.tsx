@@ -608,10 +608,20 @@ function Contact() {
           Escríbenos hoy y en menos de 24 horas te enviamos una propuesta personalizada y gratuita, adaptada a tu sector y tu ciudad.
         </p>
         {sent ? (
-          <div className="bg-card border border-primary/50 rounded-2xl p-10 shadow-glow">
-            <div className="text-4xl mb-3" aria-hidden="true">✅</div>
-            <h3 className="text-xl font-bold mb-2">¡Mensaje enviado!</h3>
-            <p className="text-muted-foreground">Te contactaremos en menos de 24 horas.</p>
+          <div className="bg-card border border-border rounded-3xl p-6 lg:p-10 text-center shadow-card flex flex-col items-center justify-center min-h-[400px] animate-in fade-in zoom-in slide-in-from-bottom-4 duration-700 ease-out">
+            <div className="w-[64px] h-[64px] bg-green-500/10 rounded-full flex items-center justify-center mb-6 text-green-600 shadow-inner">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div className="text-[40px] font-bold tracking-tight leading-none text-foreground">Solicitud</div>
+            <div className="text-[38px] italic text-muted-foreground font-light mb-4">aceptada.</div>
+            <div className="text-base font-medium text-muted-foreground mb-10">Nos pondremos en contacto pronto en tu email.</div>
+            
+            <div className="flex gap-10 text-xs text-center border-t border-border pt-8 w-full justify-center">
+              <div>
+                <div className="text-muted-foreground mb-1.5 uppercase font-semibold tracking-wider">Estado</div>
+                <div className="font-bold text-foreground text-lg">Procesando propuesta</div>
+              </div>
+            </div>
           </div>
         ) : (
           <form
