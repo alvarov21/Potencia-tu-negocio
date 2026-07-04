@@ -8,6 +8,51 @@ export function Portfolio3D() {
   const [isTyping, setIsTyping] = useState(false);
   const [carouselFadingOut, setCarouselFadingOut] = useState(false);
   const isHovered = useRef(false);
+  const hoveredIndexRef = useRef<number>(-1);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    isHovered.current = true;
+    if (!pivotRef.current) return;
+    
+    let found = -1;
+    let minDist = Infinity;
+    const children = Array.from(pivotRef.current.children);
+    
+    for (let i = 0; i < children.length; i++) {
+      const rect = children[i].getBoundingClientRect();
+      if (e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom) {
+        // Find the card closest to the horizontal center of the screen
+        const dist = Math.abs((rect.left + rect.width / 2) - window.innerWidth / 2);
+        if (dist < minDist) {
+          minDist = dist;
+          found = i;
+        }
+      }
+    }
+    
+    hoveredIndexRef.current = found;
+    if (wrapperRef.current) {
+      wrapperRef.current.style.cursor = found !== -1 ? 'pointer' : 'default';
+    }
+  };
+
+  const handleMouseLeave = () => {
+    isHovered.current = false;
+    hoveredIndexRef.current = -1;
+    if (wrapperRef.current) {
+      wrapperRef.current.style.cursor = 'default';
+    }
+  };
+
+  const handleClick = () => {
+    if (hoveredIndexRef.current !== -1) {
+      const url = mockups[hoveredIndexRef.current]?.url;
+      if (url) {
+        window.open(url, '_blank', 'noopener,noreferrer');
+      }
+    }
+  };
 
   // Constants for carousel
   const R = 720;
@@ -45,7 +90,12 @@ export function Portfolio3D() {
         const brightness = 0.8 + 0.2 * t; // Reduced brightness difference so it looks good in light mode too
         const zIndex = 100 + Math.round(t * 50);
 
-        card.style.transform = `rotateY(${a}deg) translateZ(${-R}px)`;
+        const targetScale = hoveredIndexRef.current === i ? 1.15 : 1;
+        let currentScale = parseFloat(card.getAttribute('data-scale') || '1');
+        currentScale += (targetScale - currentScale) * 0.1; // Smooth lerp
+        card.setAttribute('data-scale', currentScale.toString());
+
+        card.style.transform = `rotateY(${a}deg) translateZ(${-R}px) scale(${currentScale})`;
         card.style.opacity = opacity.toString();
         card.style.filter = `brightness(${brightness})`;
         card.style.zIndex = zIndex.toString();
@@ -178,17 +228,19 @@ export function Portfolio3D() {
 
       {/* 3D Carousel */}
       <div 
-        className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'} pointer-events-none`} 
+        ref={wrapperRef}
+        className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms] ${carouselFadingOut ? 'opacity-0 blur-[8px]' : 'opacity-100 blur-0'}`} 
         style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
       >
         <div ref={pivotRef} className="absolute top-1/2 left-1/2 w-0 h-0" style={{ transformStyle: "preserve-3d" }}>
           {mockups.map((m, i) => (
             <div 
               key={i} 
-              className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] pointer-events-auto"
+              className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] pointer-events-none"
               style={{ backfaceVisibility: "hidden", willChange: "transform, opacity, filter" }}
-              onMouseEnter={() => { isHovered.current = true; }}
-              onMouseLeave={() => { isHovered.current = false; }}
             >
               {m.type === "mockup" ? (
                 <a href={m.url} target="_blank" rel="noopener noreferrer" className="w-full h-full rounded-xl overflow-hidden flex flex-col p-4 bg-card border border-border shadow-2xl text-foreground relative transition-transform duration-500 ease-out hover:scale-110 cursor-pointer block">
