@@ -179,11 +179,11 @@ export function Portfolio3D() {
           {mockups.map((m, i) => (
             <div 
               key={i} 
-              className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] rounded-xl overflow-hidden flex items-center justify-center bg-card border border-border shadow-2xl"
+              className="absolute w-[260px] h-[164px] -ml-[130px] -mt-[82px] rounded-xl overflow-hidden flex items-center justify-center bg-card border border-border shadow-2xl group"
               style={{ backfaceVisibility: "hidden", willChange: "transform, opacity, filter" }}
             >
               {m.type === "mockup" ? (
-                <div className="w-full h-full flex flex-col p-4 text-foreground relative overflow-hidden">
+                <div className="w-full h-full flex flex-col p-4 text-foreground relative overflow-hidden transition-transform duration-500 ease-out group-hover:scale-110">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
                   <div className="h-10 w-full rounded bg-muted mb-3 relative z-10" />
                   <div className="text-[12px] font-bold mb-2 leading-tight relative z-10">{m.title}</div>
@@ -194,7 +194,7 @@ export function Portfolio3D() {
                   </div>
                 </div>
               ) : (
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg border border-primary/10">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg border border-primary/10 transition-transform duration-500 ease-out group-hover:scale-125">
                   <div className="w-8 h-8 rounded-full bg-card shadow-sm" />
                 </div>
               )}
