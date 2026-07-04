@@ -85,12 +85,7 @@ export function Portfolio3D() {
       <nav className="absolute top-0 left-0 w-full h-16 flex items-center justify-between px-6 z-50 pointer-events-none">
 
         
-        <div className="hidden md:flex overflow-hidden w-[420px] whitespace-nowrap mask-edges opacity-60 text-sm text-foreground mx-auto">
-          <div className="animate-ticker inline-block font-medium">
-            Creamos webs que convierten. Diseñadas para reducir fricción y maximizar clientes &rarr; &nbsp;&nbsp;&nbsp;&nbsp;
-            Creamos webs que convierten. Diseñadas para reducir fricción y maximizar clientes &rarr; &nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-        </div>
+
       </nav>
 
       {/* Headline */}
