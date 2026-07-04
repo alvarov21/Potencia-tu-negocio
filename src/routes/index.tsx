@@ -92,11 +92,11 @@ function Home() {
         <Hero />
         <Marquee />
         <Features />
+        <About />
+        <HowItWorks />
         <section id="portfolio" className="w-full">
           <Portfolio3D />
         </section>
-        <About />
-        <HowItWorks />
         <Pricing />
         <FAQ />
         <Contact />
