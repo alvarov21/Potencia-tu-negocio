@@ -370,13 +370,13 @@ function HowItWorks() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 relative z-10">
             {/* Step 1 */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative w-36 h-36 flex items-center justify-center mb-6">
-                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl"></div>
-                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow">
-                  <MessageCircle className="w-10 h-10" />
+            <div className="flex flex-col items-center text-center group cursor-default">
+              <div className="relative w-36 h-36 flex items-center justify-center mb-6 transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:scale-105">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl transition-all duration-500 group-hover:bg-primary/20 group-hover:blur-3xl"></div>
+                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                  <MessageCircle className="w-10 h-10 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-12" />
                 </div>
-                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm">
+                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm transition-transform duration-500 group-hover:scale-110">
                   1
                 </div>
               </div>
@@ -388,13 +388,13 @@ function HowItWorks() {
             </div>
 
             {/* Step 2 */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative w-36 h-36 flex items-center justify-center mb-6">
-                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl"></div>
-                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow">
-                  <Paintbrush className="w-10 h-10" />
+            <div className="flex flex-col items-center text-center group cursor-default">
+              <div className="relative w-36 h-36 flex items-center justify-center mb-6 transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:scale-105">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl transition-all duration-500 group-hover:bg-primary/20 group-hover:blur-3xl"></div>
+                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                  <Paintbrush className="w-10 h-10 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-12" />
                 </div>
-                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm">
+                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm transition-transform duration-500 group-hover:scale-110">
                   2
                 </div>
               </div>
@@ -406,13 +406,13 @@ function HowItWorks() {
             </div>
 
             {/* Step 3 */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative w-36 h-36 flex items-center justify-center mb-6">
-                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl"></div>
-                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow">
-                  <Rocket className="w-10 h-10" />
+            <div className="flex flex-col items-center text-center group cursor-default">
+              <div className="relative w-36 h-36 flex items-center justify-center mb-6 transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:scale-105">
+                <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl transition-all duration-500 group-hover:bg-primary/20 group-hover:blur-3xl"></div>
+                <div className="relative w-28 h-28 rounded-full bg-gradient-cta flex items-center justify-center text-white shadow-glow transition-all duration-500 group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                  <Rocket className="w-10 h-10 transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-12" />
                 </div>
-                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm">
+                <div className="absolute top-2 right-2 w-8 h-8 rounded-full bg-foreground text-background font-bold flex items-center justify-center border-2 border-background z-10 text-sm transition-transform duration-500 group-hover:scale-110">
                   3
                 </div>
               </div>
