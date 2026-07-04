@@ -114,13 +114,17 @@ export function Portfolio3D() {
       </nav>
 
       {/* Headline */}
-      <div className={`absolute top-[12%] left-1/2 -translate-x-1/2 text-center w-full transition-all duration-[600ms] ease-out z-20`}>
+      <div className={`absolute top-[12%] left-1/2 -translate-x-1/2 text-center w-full max-w-3xl px-6 transition-all duration-[600ms] ease-out z-20`}>
         <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
           PORTFOLIO
         </span>
-        <h2 className="text-[clamp(32px,4vw,56px)] font-bold tracking-tight leading-tight text-foreground">
+        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
           Algunos de nuestros diseños.
         </h2>
+        <p className="text-muted-foreground text-lg leading-relaxed">
+          Diseños modernos, rápidos y optimizados para convertir visitantes en clientes reales. <br className="hidden sm:block" />
+          Explora los últimos proyectos que hemos lanzado para negocios como el tuyo.
+        </p>
       </div>
 
       {/* 3D Carousel */}
