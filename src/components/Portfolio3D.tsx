@@ -15,13 +15,13 @@ export function Portfolio3D() {
   const STEP = 22.5;
 
   const mockups = [
-    { title: "Landing Page: Restaurante 'El Fuego'", type: "mockup" },
+    { title: "Landing Page: Restaurante 'El Fuego'", type: "mockup", url: "#restaurante" },
     { type: "cursor" },
-    { title: "Reserva Online: Clínica Dental", type: "mockup" },
+    { title: "Reserva Online: Clínica Dental", type: "mockup", url: "#clinica" },
     { type: "envelope" },
-    { title: "Catálogo: Taller Mecánico", type: "mockup" },
+    { title: "Catálogo: Taller Mecánico", type: "mockup", url: "#taller" },
     { type: "sparkle" },
-    { title: "Sitio Corporativo: Asesoría Gómez", type: "mockup" },
+    { title: "Sitio Corporativo: Asesoría Gómez", type: "mockup", url: "#asesoria" },
     { type: "cursor" },
   ];
 
@@ -191,7 +191,7 @@ export function Portfolio3D() {
               onMouseLeave={() => { isHovered.current = false; }}
             >
               {m.type === "mockup" ? (
-                <div className="w-full h-full rounded-xl overflow-hidden flex flex-col p-4 bg-card border border-border shadow-2xl text-foreground relative transition-transform duration-500 ease-out hover:scale-110 cursor-pointer">
+                <a href={m.url} target="_blank" rel="noopener noreferrer" className="w-full h-full rounded-xl overflow-hidden flex flex-col p-4 bg-card border border-border shadow-2xl text-foreground relative transition-transform duration-500 ease-out hover:scale-110 cursor-pointer block">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
                   <div className="h-10 w-full rounded bg-muted mb-3 relative z-10" />
                   <div className="text-[12px] font-bold mb-2 leading-tight relative z-10">{m.title}</div>
@@ -200,7 +200,7 @@ export function Portfolio3D() {
                   <div className="w-16 h-5 rounded-full bg-primary/20 flex items-center justify-center self-end mt-2 relative z-10">
                     <div className="w-8 h-1.5 rounded-full bg-primary" />
                   </div>
-                </div>
+                </a>
               ) : (
                 <div className="w-full h-full flex items-center justify-center pointer-events-none">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center shadow-lg border border-primary/10 transition-transform duration-500 ease-out hover:scale-125 cursor-pointer pointer-events-auto">
