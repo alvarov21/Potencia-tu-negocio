@@ -104,12 +104,12 @@ function BlogPost1() {
             Es el plan para los que quieren empezar fuerte pero gastando lo mínimo. Por 195€ (un solo pago) te damos el dominio a tu nombre, el hosting rápido (el servidor donde vive tu web), el diseño adaptado al móvil, textos legales, botón de WhatsApp directo y la configuración de la ficha de Google Business para salir en Google Maps. Todo en menos de 7 días.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Independencia (375€ pago único)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Independencia (595€ pago único)</h3>
           <p>
             El plan más elegido. Aquí te damos la página web completa y, lo más importante: es 100% tuya. Si dentro de un año decides irte con otra empresa, te llevas el código entero. Cero "secuestros" y cero ataduras. Incluye secciones extra como servicios detallados, tabla de precios o carta de restaurante.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (595€ + 75€/mes)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (825€ + 75€/mes)</h3>
           <p>
             Para los que quieren desentenderse de todo. Incluye la web premium más una suscripción mensual con la que te hacemos cambios ilimitados. ¿Que cambias el menú? Nos mandas un WhatsApp y lo actualizamos en menos de 24 horas. (Es el único plan que tiene una permanencia inicial de 3 meses).
           </p>

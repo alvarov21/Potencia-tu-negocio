@@ -90,7 +90,7 @@ const FAQS = [
   { q: "¿Qué diferencia hay entre vosotros y una agencia de diseño web tradicional?", a: "Tres cosas: velocidad, precio y que no te mareamos. Una agencia tradicional en España suele cobrar de 800€ a 2.000€, tardar de 4 a 8 semanas y pedirte varias reuniones; en Potencia tu Negocio pagas desde 195€ cerrados, ves tu web en 48 horas y solo necesitamos 10 minutos de conversación. La diferencia está en el método: la inteligencia artificial hace el trabajo lento (primeros diseños, borradores) y nosotros lo personalizamos a mano para tu sector y tu ciudad. Mismo resultado profesional, sin las horas facturables de por medio." },
   { q: "¿Una página web hecha con inteligencia artificial no será peor que una \"de verdad\"?", a: "Es la duda más habitual y es razonable. La respuesta corta: la IA no decide cómo queda tu web, la usamos para ir rápido en lo mecánico. Los primeros diseños y borradores de texto salen de la IA; la adaptación a tu sector, las fotos de tu local, los textos finales y el SEO de tu ciudad los trabajamos nosotros. El resultado es una web única para tu negocio — no una plantilla — a una fracción del precio y del tiempo. Y la ves en 48 horas: si no te convence lo que ves, no pagas más rondas ni te quedas atrapado." },
   { q: "¿Para qué tipo de negocios hacéis páginas web?", a: "Para negocios locales de cualquier sector. Donde más experiencia tenemos es en hostelería — restaurantes, bares y cafeterías, con carta digital, reservas y reseñas — pero trabajamos también con clínicas dentales y de salud, psicólogos, veterinarias, talleres mecánicos, gestorías, academias, gimnasios, inmobiliarias, electricistas, peluquerías, centros de estética, fotógrafos y joyerías. Si tu negocio atiende a clientes de tu zona, la metodología es la misma: que te encuentren en Google antes que a tu competencia." },
-  { q: "Tengo tres planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia de 195€ — una página con tu información, WhatsApp y Google Maps. Si quieres una web que capte clientes activamente (un restaurante, una clínica), el Plan Independencia de 375€ — varias páginas, reservas, carta o catálogo y SEO local trabajado; es el que elige la mayoría. Y si no quieres volver a pensar en la web nunca más, el Plan Crecimiento (595€ + 75€/mes) — nosotros hacemos todos los cambios, gestionamos tu ficha de Google y te mandamos un informe mensual. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos, aunque sea el más barato." },
+  { q: "Tengo tres planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia de 195€ — una página con tu información, WhatsApp y Google Maps. Si quieres una web que capte clientes activamente (un restaurante, una clínica), el Plan Independencia de 375€ — varias páginas, reservas, carta o catálogo y SEO local trabajado; es el que elige la mayoría. Y si no quieres volver a pensar en la web nunca más, el Plan Crecimiento (825€ + 75€/mes) — nosotros hacemos todos los cambios, gestionamos tu ficha de Google y te mandamos un informe mensual. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos, aunque sea el más barato." },
   { q: "¿Qué es eso del SEO local y por qué insistís tanto?", a: "El SEO local es que tu negocio salga en Google cuando alguien de tu zona busca lo que tú vendes — \"fontanero en Móstoles\", \"cafetería con terraza en Salamanca\". Insistimos porque es la diferencia entre una web que decora y una web que trae clientes: 8 de cada 10 personas buscan un negocio local desde el móvil antes de llamar o ir. Por eso todas nuestras webs incluyen SEO local desde el primer día — textos optimizados para tu ciudad, ficha de Google Business dada de alta y Google Maps integrado — sin coste extra." },
   { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión, publicada en menos de 7 días. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
   { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Independencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en \"tu informático\": cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
@@ -105,7 +105,7 @@ function Home() {
     "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
     "email": "info@potenciatunegocio.es",
     "areaServed": "ES",
-    "priceRange": "195€-595€"
+    "priceRange": "195€-825€"
   };
 
   const faqPageSchema = {
@@ -536,7 +536,6 @@ function Pricing() {
                 "SEO básico: apareces en Google al buscar tu negocio",
                 "Textos legales RGPD",
                 "Diseño responsive (móvil, tablet, ordenador)",
-                "Primera anualidad incluida",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
                   <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
@@ -557,8 +556,8 @@ function Pricing() {
             <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Avanzado</span>
             <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Web completa para captar clientes. Todo lo de Presencia, y además:</p>
-            <div className="mb-6">
-              <span className="text-5xl font-black">375€</span>
+            <div className="mb-6 mt-4">
+              <span className="text-5xl font-black">595€</span>
               <div className="text-sm text-muted-foreground mt-1">+ 89€/año</div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
@@ -589,10 +588,10 @@ function Pricing() {
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nos ocupamos de todo, tú solo gestiona tu negocio. Todo lo de Independencia, y además:</p>
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">735€</span>
+                <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">1035€</span>
                 <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
               </div>
-              <span className="text-5xl font-black text-foreground">595€</span>
+              <span className="text-5xl font-black text-foreground">825€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
               <div className="text-sm text-muted-foreground mt-1">+ 75€/mes</div>
             </div>
