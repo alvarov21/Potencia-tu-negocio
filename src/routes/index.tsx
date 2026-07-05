@@ -555,7 +555,7 @@ function Pricing() {
             </span>
             <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Avanzado</span>
             <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Web completa para captar clientes. Todo lo de Presencia, y además:</p>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Web completa para captar clientes. Todo lo del Plan Presencia, y además:</p>
             <div className="mb-6 mt-4">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">750€</span>
@@ -592,7 +592,7 @@ function Pricing() {
           <article className="bg-card border border-border rounded-3xl p-8 flex flex-col hover:border-primary/50 transition">
             <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Suscripción</span>
             <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nos ocupamos de todo, tú solo gestiona tu negocio. Todo lo de Independencia, y además:</p>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nos ocupamos de todo, tú solo gestiona tu negocio. Todo lo del Plan Independencia, y además:</p>
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">1035€</span>
