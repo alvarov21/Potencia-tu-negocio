@@ -37,7 +37,7 @@ function BlogIndex() {
               Descubre los precios reales del mercado y qué incluye cada plan. Guía completa para dueños de negocios locales.
             </p>
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-              Leer artículo <ArrowRight className="w-4 h-4" />
+              Leer artículo en la web <ArrowRight className="w-4 h-4" />
             </div>
           </Link>
           <Link to="/blog/cuanto-cuesta-pagina-web-restaurante" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
@@ -49,9 +49,62 @@ function BlogIndex() {
               ¿Quieres saber cuánto cuesta crear la página web de tu bar o restaurante? Descubre precios y cómo evitar comisiones.
             </p>
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-              Leer artículo <ArrowRight className="w-4 h-4" />
+              Leer artículo en la web <ArrowRight className="w-4 h-4" />
             </div>
           </Link>
+          
+          {/* External links as requested */}
+          <a href="https://www.hubspot.es/marketing/seo-local" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">SEO Local</span>
+            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
+              Cómo aparecer en Google con mi negocio (guía básica)
+            </h2>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              Aprende qué es el SEO local y cómo hacer que tu negocio destaque en tu ciudad cuando los clientes buscan tus servicios.
+            </p>
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+              Leer artículo externo <ArrowRight className="w-4 h-4" />
+            </div>
+          </a>
+          
+          <a href="https://support.google.com/business/answer/3038063?hl=es" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Google Maps</span>
+            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
+              Cómo salir en Google Maps gratis: paso a paso
+            </h2>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              La herramienta más potente para captar clientes locales. Descubre cómo configurar tu ficha de empresa correctamente.
+            </p>
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+              Leer artículo externo <ArrowRight className="w-4 h-4" />
+            </div>
+          </a>
+
+          <a href="https://raiolanetworks.com/blog/wix-vs-wordpress/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Plataformas Web</span>
+            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
+              Página web gratis vs profesional: lo que Wix no te cuenta
+            </h2>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              Las verdaderas limitaciones de usar constructores web gratuitos para tu negocio, desde el SEO hasta la falta de control.
+            </p>
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+              Leer artículo externo <ArrowRight className="w-4 h-4" />
+            </div>
+          </a>
+
+          <a href="https://www.semrush.com/blog/es/por-que-mi-web-no-aparece-en-google/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Penalizaciones</span>
+            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
+              Por qué mi negocio no aparece en Google
+            </h2>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              Repasamos las causas técnicas y estratégicas más comunes que hacen que tu página web sea invisible en los buscadores.
+            </p>
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+              Leer artículo externo <ArrowRight className="w-4 h-4" />
+            </div>
+          </a>
         </div>
 
         <div className="mt-16 text-center">
