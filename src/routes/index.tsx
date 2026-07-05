@@ -314,19 +314,19 @@ function About() {
           </h2>
           <div className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-10 space-y-4">
             <p>
-              En <strong className="text-foreground">Potencia tu Negocio</strong> creamos webs profesionales para negocios locales en toda España que aparecen en Google cuando tus clientes te buscan en tu ciudad.
+              En <strong className="text-foreground">Potencia tu Negocio</strong> hacemos una sola cosa, y la hacemos rápido: webs que ponen a tu negocio delante de los clientes que ya te están buscando en Google. Primera versión en 48 horas, publicada en menos de 7 días y desde 195€ con todo incluido.
             </p>
             <p>
-              Trabajamos con restaurantes, bares, clínicas, talleres mecánicos, veterinarias, gestorías y centros de estética. Si tienes un negocio local y quieres más clientes, tenemos una solución para ti.
+              ¿Por qué con inteligencia artificial? Porque hace el trabajo lento — primeros diseños, borradores de textos — y nos deja tiempo para lo que de verdad posiciona: adaptar cada web a tu sector, a tu ciudad y a lo que busca tu cliente. Por eso cobramos 195€ donde otras agencias cobran 1.000€, sin que la web parezca de 195€.
             </p>
             <p>
-              Diseñamos webs optimizadas para SEO local desde el primer día: rápidas, adaptadas a móvil y pensadas para convertir visitas en clientes reales. Cada web incluye dominio propio, ficha de Google Business optimizada y posicionamiento local en tu municipio o provincia.
+              Cada proyecto sale con el SEO local trabajado desde el primer día: dominio a tu nombre, ficha de Google Business dada de alta y optimizada, y textos pensados para las búsquedas de tu municipio. No entregamos "una web bonita": entregamos un negocio que aparece cuando alguien busca "restaurante", "taller" o "clínica" en tu zona.
             </p>
             <p>
-              Nuestra especialidad es la <strong className="text-foreground">hostelería</strong>. Creamos webs para restaurantes y bares con carta digital, sistema de reservas online, integración con plataformas de delivery y gestión de reseñas de Google. Pero nuestra metodología de diseño web para negocios locales funciona igual de bien para cualquier sector.
+              Donde más hemos trabajado es en <strong className="text-foreground">hostelería</strong>: cartas digitales con QR, reservas directas sin comisiones, integración con TheFork o Glovo y reseñas de Google en tiempo real. Esa misma metodología la aplicamos a clínicas, veterinarias, gestorías, peluquerías, academias y cualquier negocio que viva de los clientes de su barrio.
             </p>
             <p>
-              Si buscas una agencia de diseño web para negocios locales en España que combine resultados reales con precios claros, estás en el lugar correcto.
+              Y una cosa más, porque sabemos que te la han hecho antes: precios cerrados, sin permanencia y sin letra pequeña. Si algún día quieres irte, el dominio es tuyo y te lo llevas. Trabajar así nos obliga a que quieras quedarte.
             </p>
           </div>
           <div className="grid grid-cols-3 gap-4">
