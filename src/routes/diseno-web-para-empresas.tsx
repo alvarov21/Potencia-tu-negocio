@@ -2,6 +2,19 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Check, Shield, Globe, MapPin, MessageCircle, FileText, ArrowRight, Paintbrush, Rocket, X, Star, ChevronDown } from "lucide-react";
 
+const FAQS = [
+  { q: "¿Cuánto cuesta hacer una página web para un negocio pequeño?", a: "En Potencia tu Negocio, desde 195€ en pago único, todo incluido. Ese precio ya lleva el dominio, el hosting, el certificado de seguridad, el diseño, los textos y la ficha de Google Business — a partir del segundo año solo pagas 89€/año por dominio y hosting. Para que te hagas una idea del mercado: una agencia tradicional en España suele cobrar entre 800€ y 2.000€ por lo mismo, y tardar semanas. Nuestro precio es cerrado: el número que ves es el número que pagas." },
+  { q: "¿Cuánto se tarda en tener lista una página web?", a: "Con nosotros, ves la primera versión de tu web en 48 horas y está publicada en internet en menos de 7 días. El estándar del sector son 4 a 8 semanas, así que sí, la diferencia es grande. ¿El truco? Usamos inteligencia artificial para diseñar y redactar más rápido, y luego lo personalizamos a mano para tu sector y tu ciudad. Tú solo necesitas dedicarnos 10 minutos para contarnos tu negocio y pasarnos unas fotos." },
+  { q: "No tengo ni idea de informática, ¿puedo tener una página web igualmente?", a: "Claro que sí — de hecho, la mayoría de nuestros clientes no sabe (ni quiere saber) de tecnología. Tú nos cuentas cómo es tu negocio, como se lo contarías a un amigo, y nosotros hacemos todo lo demás: diseño, textos, dominio, parte legal y publicación. Tu única tarea es mirar la web en tu móvil y decirnos \"me gusta\" o \"cámbiame esto\". No tocas ni un botón técnico, nunca." },
+  { q: "¿Qué incluye exactamente el precio? ¿Luego hay sorpresas?", a: "No hay sorpresas — es nuestra regla número uno. Los 195€ del plan básico incluyen: tu dominio (tunegocio.es, a tu nombre), hosting y SSL el primer año, diseño adaptado a móvil, textos escritos por nosotros, botón de WhatsApp, formulario de contacto, Google Maps, ficha de Google Business dada de alta y textos legales RGPD. Lo único que pagarás después son los 89€/año de dominio y hosting desde el segundo año, y eso lo sabes desde el primer día, no te lo encuentras en la factura." },
+  { q: "¿La página web será mía o me quedo atado a vosotros?", a: "Es tuya. El dominio se registra a tu nombre desde el día uno — no al nuestro, como hacen otros — y con el Plan Independencia (375€) puedes llevarte también el código completo de la web cuando quieras. Sin permanencias en los planes de pago único y sin \"secuestros\": si un día decides irte con otro proveedor, te llevas todo. Solo el plan de suscripción (Crecimiento) tiene permanencia, y es de 3 meses." },
+  { q: "¿Me va a servir la web para conseguir clientes o es solo para quedar bien?", a: "Para conseguir clientes — si no, no tendría sentido. Cada web se optimiza para que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad (\"cerrajero en Getafe\", \"restaurante en Vigo centro\"): eso es el SEO local, y va incluido desde el primer día, no como extra. Además te damos de alta la ficha de Google Business, que es lo que te saca en Google Maps. El 80% de tus clientes potenciales busca desde el móvil; el objetivo es que te encuentren a ti y te escriban por WhatsApp directamente." },
+  { q: "Tengo un restaurante, ¿qué me ponéis en la web?", a: "Los restaurantes son nuestra especialidad. Tu web incluye carta digital con fotos y precios (con QR físico para las mesas si eliges el Plan Independencia), reservas directas por WhatsApp o email sin pagar comisiones a plataformas, tus reseñas de Google mostradas en tiempo real y conexión con lo que ya uses: TheFork, TripAdvisor, Glovo, Just Eat, Uber Eats... La idea es que quien te busque reserve contigo directamente, no a través de un intermediario que te cobra por cada mesa." },
+  { q: "¿Qué pasa si quiero cambiar algo después, como el horario o los precios?", a: "Depende del plan, pero nunca te quedas tirado. Con el Plan Independencia tienes una ronda de cambios gratis los primeros 30 días. Con el Plan Crecimiento (75€/mes), los cambios son ilimitados y los hacemos en menos de 24 horas: nos escribes \"súbeme el menú nuevo\" por WhatsApp y al día siguiente está. Es la opción de quien no quiere volver a pensar en la web nunca más." },
+  { q: "¿Por qué sois tan baratos? ¿No será una plantilla cutre?", a: "Buena pregunta, y la respuesta es honesta: usamos inteligencia artificial para la parte lenta del trabajo (primeros diseños, borradores de textos), y eso recorta muchísimas horas. Lo que no recortamos es la personalización: cada web se adapta a tu sector, tu ciudad y tus fotos, con SEO local trabajado a mano. No es una plantilla genérica — es un proceso eficiente. Por eso podemos cobrar 195€ donde otros cobran 1.000€, y entregarte en 48 horas lo que otros entregan en un mes." },
+  { q: "¿Cómo empiezo? ¿Tengo que firmar algo o pagar por adelantado?", a: "Empiezas gratis y sin compromiso: nos escribes por WhatsApp o rellenas el formulario contándonos tu negocio en 2 minutos, y en menos de 24 horas te enviamos una propuesta personalizada con cómo sería tu web y su precio exacto. Si te encaja, arrancamos y en 48 horas ves la primera versión. Si no te encaja, no pasa nada — no hay llamadas comerciales ni insistencia. La propuesta es gratis precisamente para que decidas viendo algo concreto, no a ciegas." },
+];
+
 export const Route = createFileRoute("/diseno-web-para-empresas")({
   head: () => ({
     meta: [
@@ -15,8 +28,24 @@ export const Route = createFileRoute("/diseno-web-para-empresas")({
 });
 
 function DisenoWebEmpresas() {
+  const [open, setOpen] = useState<number | null>(0);
+
+  const faqPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }} />
       {/* Hero Section */}
       <section className="relative pt-32 lg:pt-40 pb-20 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,20,20,1)_0%,rgba(0,0,0,1)_100%)] z-[-1]" />
@@ -248,14 +277,29 @@ function DisenoWebEmpresas() {
         </div>
       </section>
 
-      {/* FAQ Placeholders */}
+      {/* FAQ */}
       <section className="py-24 lg:py-32 px-6 lg:px-10 bg-background">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-12 text-center text-balance">Preguntas frecuentes sobre crear la página web de tu negocio</h2>
-          <div className="space-y-4 text-center">
-             <p className="text-muted-foreground italic">
-               (Esperando volcado literal de faq-geo-crear-pagina-web-para-mi-negocio.md para inyectar preguntas y schemas)
-             </p>
+          <div className="space-y-3">
+            {FAQS.map((f, i) => {
+              const isOpen = open === i;
+              return (
+                <article key={i} className={`bg-card border ${isOpen ? "border-primary/50 shadow-glow" : "border-border hover:border-primary/30"} rounded-2xl overflow-hidden transition-all duration-300`}>
+                  <button onClick={() => setOpen(isOpen ? null : i)} className="flex items-center justify-between w-full p-5 lg:p-6 text-left" aria-expanded={isOpen}>
+                    <h3 className="font-semibold pr-8 text-sm lg:text-base">{f.q}</h3>
+                    <ChevronDown className={`w-5 h-5 text-primary shrink-0 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`} aria-hidden="true" />
+                  </button>
+                  <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div className="overflow-hidden">
+                      <div className="p-5 lg:p-6 pt-0 text-sm text-muted-foreground leading-relaxed">
+                        {f.a}
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
