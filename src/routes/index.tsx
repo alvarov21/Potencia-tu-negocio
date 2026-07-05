@@ -511,7 +511,7 @@ function Pricing() {
           
           {/* Plan Presencia */}
           <article className="bg-card border border-border rounded-3xl p-8 flex flex-col hover:border-primary/50 transition">
-            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pago único</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
             <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.</p>
             <div className="mb-6">

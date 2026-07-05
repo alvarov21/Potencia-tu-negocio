@@ -179,7 +179,7 @@ function DisenoWebEmpresas() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
             {/* Plan Presencia */}
             <article className="bg-card border border-border rounded-3xl p-8 flex flex-col">
-              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pago único</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
               <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">195€</span></div>
