@@ -40,6 +40,18 @@ function BlogIndex() {
               Leer artículo <ArrowRight className="w-4 h-4" />
             </div>
           </Link>
+          <Link to="/blog/cuanto-cuesta-pagina-web-restaurante" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Restaurantes</span>
+            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
+              Cuánto cuesta una página web para un restaurante
+            </h2>
+            <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
+              ¿Quieres saber cuánto cuesta crear la página web de tu bar o restaurante? Descubre precios y cómo evitar comisiones.
+            </p>
+            <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+              Leer artículo <ArrowRight className="w-4 h-4" />
+            </div>
+          </Link>
         </div>
 
         <div className="mt-16 text-center">

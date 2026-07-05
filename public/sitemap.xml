@@ -55,4 +55,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/blog/cuanto-cuesta-pagina-web-restaurante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
