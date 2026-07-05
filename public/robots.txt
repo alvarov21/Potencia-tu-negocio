@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://potencia-tu-negocio.vercel.app/sitemap.xml
