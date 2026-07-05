@@ -184,7 +184,7 @@ function DisenoWebEmpresas() {
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">195€</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                  Primer año incluido &middot; después 24,95€/mes<br />
+                  Pago único &middot; después 24,95€/mes<br />
                   (dominio, hosting y soporte)
                 </div>
               </div>
