@@ -10,10 +10,10 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
-      { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 7 días desde 375€. Especialistas en hostelería." },
-      { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-      { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 375€." },
+      { title: "Diseño de Páginas Web para Negocios Locales | Lista en 48h desde 195€" },
+      { name: "description", content: "Diseño de páginas web profesional para restaurantes, clínicas, talleres y cualquier negocio local. SEO local incluido, primera versión en 48 horas, desde 195€ con dominio y Google Business. Propuesta gratis en 24h." },
+      { property: "og:title", content: "Diseño de Páginas Web para Negocios Locales | Lista en 48h desde 195€" },
+      { property: "og:description", content: "Diseño de páginas web profesional para restaurantes, clínicas, talleres y cualquier negocio local. SEO local incluido, primera versión en 48 horas, desde 195€ con dominio y Google Business. Propuesta gratis en 24h." },
       { property: "og:url", content: "https://potencia-tu-negocio.vercel.app/" },
     ],
     links: [{ rel: "canonical", href: "https://potencia-tu-negocio.vercel.app/" }],
@@ -73,6 +73,17 @@ const FEATURES = [
   { icon: FileText, title: "Textos legales RGPD", desc: "Aviso legal, política de privacidad y cookies incluidos y correctamente redactados para tu sector.\u00a0" },
 ];
 
+const SECTORS = [
+  { href: "/web-para-restaurantes", title: "Para Restaurantes", desc: "Diseño web para restaurantes con carta digital y reservas." },
+  { href: "/web-para-clinicas-dentales", title: "Para Clínicas Dentales", desc: "Diseño web para clínicas dentales, médicas y fisioterapia." },
+  { href: "/web-para-peluquerias", title: "Para Peluquerías", desc: "Páginas web para peluquerías, barberías y centros de estética." },
+  { href: "/web-con-reservas", title: "Webs con Reservas", desc: "Página web de reservas integrada para citas automáticas." },
+  { href: "/diseno-tienda-online", title: "Tiendas Online", desc: "Diseño de tienda online para vender tus productos en internet." },
+  { href: "/diseno-web-para-empresas", title: "Para Empresas", desc: "Diseño web corporativo para captar clientes como empresa o pyme." },
+  { href: "/landing-page", title: "Landing Pages", desc: "Diseño de landing page para campañas de anuncios y captación." },
+  { href: "/diseno-web-seo", title: "Web con SEO", desc: "Diseño web SEO para posicionar primero en tu ciudad y sector." },
+];
+
 const FAQS = [
   { q: "¿Cuánto tarda en estar lista mi web?", a: "Entre 3 y 7 días desde que nos facilitas la información de tu negocio. El proceso es el mismo para un restaurante, una clínica o una gestoría." },
   { q: "¿Necesito saber de tecnología?", a: "No. Nos encargamos de todo: desarrollo, publicación y configuración. Si eliges el Plan Mantenimiento, ni siquiera tendrás que pensar en actualizaciones." },
@@ -92,6 +103,7 @@ function Home() {
         <Hero />
         <Marquee />
         <Features />
+        <Sectors />
         <About />
         <HowItWorks />
         <section id="portfolio" className="w-full">
@@ -162,9 +174,9 @@ function Hero() {
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-6 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
             Agencia de diseño web con IA · Negocios locales
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-            Tu negocio se merece una web que <span className="text-primary">venda</span>.<br />
-            Lista en <span className="text-primary">48 horas</span> con dominio incluido.
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6 text-balance">
+            Diseño de páginas web profesional para negocios locales. <br className="hidden lg:block" />
+            Lista en <span className="text-primary">48 horas</span>, desde 195€ con dominio incluido.
           </h1>
           <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
             Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
@@ -212,7 +224,7 @@ function Features() {
     <section id="servicios" className="py-24 lg:py-32 px-6 lg:px-10 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Todo lo que tu negocio necesita para conseguir más clientes</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Todo lo que incluye tu diseño web profesional (sin costes ocultos)</h2>
           <p className="text-muted-foreground text-lg">Sin costes ocultos ni sorpresas. Cada web incluye todo esto desde el primer día, sea cual sea tu sector.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -234,6 +246,27 @@ function Features() {
   );
 }
 
+function Sectors() {
+  return (
+    <section id="sectores" className="py-24 lg:py-32 px-6 lg:px-10 bg-muted/30 border-y border-border">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-balance">Páginas web para cada tipo de negocio</h2>
+          <p className="text-muted-foreground text-lg">Adaptamos el diseño y las funcionalidades a lo que tu sector necesita para captar clientes de forma eficaz.</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {SECTORS.map((s, i) => (
+            <Link key={i} to={s.href} className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/60 hover:shadow-glow transition-all block text-left">
+              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function About() {
   return (
     <section id="nosotros" className="py-24 lg:py-32 px-6 lg:px-10">
@@ -241,7 +274,7 @@ function About() {
         <div>
           <span className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4 inline-block">Sobre nosotros</span>
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
-            Especialistas en webs para negocios locales con inteligencia artificial
+            Especialistas en diseño de páginas web para negocios locales con inteligencia artificial
           </h2>
           <div className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-10 space-y-4">
             <p>
@@ -357,7 +390,7 @@ function HowItWorks() {
             Cómo trabajamos
           </span>
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-            Tu nueva web en <span className="text-primary">3 pasos simples</span>
+            Cómo creamos tu página web en <span className="text-primary">3 pasos simples</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Hemos eliminado toda la burocracia. Queremos que tengas tu web lista cuanto antes.
@@ -435,7 +468,7 @@ function Pricing() {
     <section id="precios" className="py-24 lg:py-32 px-6 lg:px-10 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">Elige el plan para tu negocio local</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-balance">Cuánto cuesta tu página web: elige el plan para tu negocio local</h2>
           <p className="text-muted-foreground text-lg">Sin letra pequeña. Sin permanencias ocultas. Mismo precio para restaurantes, clínicas, talleres o cualquier negocio local.</p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
