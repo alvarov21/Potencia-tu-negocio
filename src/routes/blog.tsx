@@ -28,7 +28,7 @@ function BlogIndex() {
 
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <a href="https://neoattack.com/blog/cuanto-cuesta-una-pagina-web/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          <a href="https://www.shopify.com/es/blog/cuanto-cuesta-crear-pagina-web" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Precios</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Cuánto cuesta una página web en España en 2026
@@ -41,7 +41,7 @@ function BlogIndex() {
             </div>
           </a>
           
-          <a href="https://www.theforkmanager.com/es-es/blog/marketing-restaurantes/pagina-web-restaurante" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          <a href="https://www.thefork.es/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Restaurantes</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Cuánto cuesta una página web para un restaurante
@@ -55,7 +55,7 @@ function BlogIndex() {
           </a>
           
           {/* External links as requested */}
-          <a href="https://www.hubspot.es/marketing/seo-local" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          <a href="https://mailchimp.com/es/resources/what-is-local-seo/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">SEO Local</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Cómo aparecer en Google con mi negocio (guía básica)
@@ -68,7 +68,7 @@ function BlogIndex() {
             </div>
           </a>
           
-          <a href="https://support.google.com/business/answer/3038063?hl=es" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          <a href="https://www.google.com/intl/es_es/business/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Google Maps</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Cómo salir en Google Maps gratis: paso a paso
@@ -81,7 +81,7 @@ function BlogIndex() {
             </div>
           </a>
 
-          <a href="https://raiolanetworks.com/blog/wix-vs-wordpress/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          <a href="https://wordpress.com/es/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Plataformas Web</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Página web gratis vs profesional: lo que Wix no te cuenta
@@ -94,7 +94,7 @@ function BlogIndex() {
             </div>
           </a>
 
-          <a href="https://www.semrush.com/blog/es/por-que-mi-web-no-aparece-en-google/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          <a href="https://developers.google.com/search/docs/fundamentals/do-i-need-seo?hl=es" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Penalizaciones</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Por qué mi negocio no aparece en Google
