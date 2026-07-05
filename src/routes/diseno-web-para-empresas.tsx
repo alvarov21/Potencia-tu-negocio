@@ -183,7 +183,7 @@ function DisenoWebEmpresas() {
               <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">195€</span></div>
-                <div className="text-sm text-muted-foreground mt-2 leading-snug">Primer año incluido &middot; después 89€/año</div>
+                <div className="text-sm text-muted-foreground mt-2 leading-snug">Primer año incluido &middot; después 89€/año (dominio, hosting y soporte)</div>
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto">
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Web Landing Page</li>
@@ -206,7 +206,7 @@ function DisenoWebEmpresas() {
                   <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
                 </div>
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">595€</span></div>
-                <div className="text-sm text-muted-foreground mt-2 leading-snug">Primer año incluido &middot; después 89€/año</div>
+                <div className="text-sm text-muted-foreground mt-2 leading-snug">Primer año incluido &middot; después 89€/año (dominio, hosting y soporte)</div>
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto">
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Web Multipágina</li>
@@ -224,6 +224,7 @@ function DisenoWebEmpresas() {
               <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">825€</span><span className="text-sm text-muted-foreground">+75€/mes</span></div>
+                <div className="text-sm text-muted-foreground mt-2 leading-snug">Mantenimiento incluido &middot; 75€/mes (dominio, hosting, cambios y soporte)</div>
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto">
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Cambios ilimitados</li>
