@@ -28,7 +28,7 @@ function BlogIndex() {
 
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Link to="/blog/cuanto-cuesta-pagina-web-espana" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          <a href="https://neoattack.com/blog/cuanto-cuesta-una-pagina-web/" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Precios</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Cuánto cuesta una página web en España en 2026
@@ -37,10 +37,11 @@ function BlogIndex() {
               Descubre los precios reales del mercado y qué incluye cada plan. Guía completa para dueños de negocios locales.
             </p>
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-              Leer artículo en la web <ArrowRight className="w-4 h-4" />
+              Leer artículo externo <ArrowRight className="w-4 h-4" />
             </div>
-          </Link>
-          <Link to="/blog/cuanto-cuesta-pagina-web-restaurante" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+          </a>
+          
+          <a href="https://www.theforkmanager.com/es-es/blog/marketing-restaurantes/pagina-web-restaurante" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
             <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Restaurantes</span>
             <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Cuánto cuesta una página web para un restaurante
@@ -49,9 +50,9 @@ function BlogIndex() {
               ¿Quieres saber cuánto cuesta crear la página web de tu bar o restaurante? Descubre precios y cómo evitar comisiones.
             </p>
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-              Leer artículo en la web <ArrowRight className="w-4 h-4" />
+              Leer artículo externo <ArrowRight className="w-4 h-4" />
             </div>
-          </Link>
+          </a>
           
           {/* External links as requested */}
           <a href="https://www.hubspot.es/marketing/seo-local" target="_blank" rel="noopener noreferrer" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
