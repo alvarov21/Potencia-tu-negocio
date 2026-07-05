@@ -9,12 +9,40 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WebParaRestaurantesRouteImport } from './routes/web-para-restaurantes'
+import { Route as WebParaPeluqueriasRouteImport } from './routes/web-para-peluquerias'
+import { Route as WebParaClinicasDentalesRouteImport } from './routes/web-para-clinicas-dentales'
+import { Route as WebConReservasRouteImport } from './routes/web-con-reservas'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as LandingPageRouteImport } from './routes/landing-page'
+import { Route as DisenoWebSeoRouteImport } from './routes/diseno-web-seo'
+import { Route as DisenoWebParaEmpresasRouteImport } from './routes/diseno-web-para-empresas'
+import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-online'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WebParaRestaurantesRoute = WebParaRestaurantesRouteImport.update({
+  id: '/web-para-restaurantes',
+  path: '/web-para-restaurantes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaPeluqueriasRoute = WebParaPeluqueriasRouteImport.update({
+  id: '/web-para-peluquerias',
+  path: '/web-para-peluquerias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaClinicasDentalesRoute = WebParaClinicasDentalesRouteImport.update({
+  id: '/web-para-clinicas-dentales',
+  path: '/web-para-clinicas-dentales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebConReservasRoute = WebConReservasRouteImport.update({
+  id: '/web-con-reservas',
+  path: '/web-con-reservas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
   path: '/portfolio',
@@ -28,6 +56,26 @@ const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
 const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
   id: '/politica-de-cookies',
   path: '/politica-de-cookies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LandingPageRoute = LandingPageRouteImport.update({
+  id: '/landing-page',
+  path: '/landing-page',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisenoWebSeoRoute = DisenoWebSeoRouteImport.update({
+  id: '/diseno-web-seo',
+  path: '/diseno-web-seo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisenoWebParaEmpresasRoute = DisenoWebParaEmpresasRouteImport.update({
+  id: '/diseno-web-para-empresas',
+  path: '/diseno-web-para-empresas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DisenoTiendaOnlineRoute = DisenoTiendaOnlineRouteImport.update({
+  id: '/diseno-tienda-online',
+  path: '/diseno-tienda-online',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AvisoLegalRoute = AvisoLegalRouteImport.update({
@@ -44,59 +92,143 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
+  '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
+  '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
+  '/diseno-web-seo': typeof DisenoWebSeoRoute
+  '/landing-page': typeof LandingPageRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
+  '/web-con-reservas': typeof WebConReservasRoute
+  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
+  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
+  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
+  '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
+  '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
+  '/diseno-web-seo': typeof DisenoWebSeoRoute
+  '/landing-page': typeof LandingPageRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
+  '/web-con-reservas': typeof WebConReservasRoute
+  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
+  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
+  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
+  '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
+  '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
+  '/diseno-web-seo': typeof DisenoWebSeoRoute
+  '/landing-page': typeof LandingPageRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
+  '/web-con-reservas': typeof WebConReservasRoute
+  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
+  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
+  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/aviso-legal'
+    | '/diseno-tienda-online'
+    | '/diseno-web-para-empresas'
+    | '/diseno-web-seo'
+    | '/landing-page'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
+    | '/web-con-reservas'
+    | '/web-para-clinicas-dentales'
+    | '/web-para-peluquerias'
+    | '/web-para-restaurantes'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/aviso-legal'
+    | '/diseno-tienda-online'
+    | '/diseno-web-para-empresas'
+    | '/diseno-web-seo'
+    | '/landing-page'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
+    | '/web-con-reservas'
+    | '/web-para-clinicas-dentales'
+    | '/web-para-peluquerias'
+    | '/web-para-restaurantes'
   id:
     | '__root__'
     | '/'
     | '/aviso-legal'
+    | '/diseno-tienda-online'
+    | '/diseno-web-para-empresas'
+    | '/diseno-web-seo'
+    | '/landing-page'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
+    | '/web-con-reservas'
+    | '/web-para-clinicas-dentales'
+    | '/web-para-peluquerias'
+    | '/web-para-restaurantes'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
+  DisenoTiendaOnlineRoute: typeof DisenoTiendaOnlineRoute
+  DisenoWebParaEmpresasRoute: typeof DisenoWebParaEmpresasRoute
+  DisenoWebSeoRoute: typeof DisenoWebSeoRoute
+  LandingPageRoute: typeof LandingPageRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
   PortfolioRoute: typeof PortfolioRoute
+  WebConReservasRoute: typeof WebConReservasRoute
+  WebParaClinicasDentalesRoute: typeof WebParaClinicasDentalesRoute
+  WebParaPeluqueriasRoute: typeof WebParaPeluqueriasRoute
+  WebParaRestaurantesRoute: typeof WebParaRestaurantesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/web-para-restaurantes': {
+      id: '/web-para-restaurantes'
+      path: '/web-para-restaurantes'
+      fullPath: '/web-para-restaurantes'
+      preLoaderRoute: typeof WebParaRestaurantesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-peluquerias': {
+      id: '/web-para-peluquerias'
+      path: '/web-para-peluquerias'
+      fullPath: '/web-para-peluquerias'
+      preLoaderRoute: typeof WebParaPeluqueriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-clinicas-dentales': {
+      id: '/web-para-clinicas-dentales'
+      path: '/web-para-clinicas-dentales'
+      fullPath: '/web-para-clinicas-dentales'
+      preLoaderRoute: typeof WebParaClinicasDentalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-con-reservas': {
+      id: '/web-con-reservas'
+      path: '/web-con-reservas'
+      fullPath: '/web-con-reservas'
+      preLoaderRoute: typeof WebConReservasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portfolio': {
       id: '/portfolio'
       path: '/portfolio'
@@ -116,6 +248,34 @@ declare module '@tanstack/react-router' {
       path: '/politica-de-cookies'
       fullPath: '/politica-de-cookies'
       preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/landing-page': {
+      id: '/landing-page'
+      path: '/landing-page'
+      fullPath: '/landing-page'
+      preLoaderRoute: typeof LandingPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseno-web-seo': {
+      id: '/diseno-web-seo'
+      path: '/diseno-web-seo'
+      fullPath: '/diseno-web-seo'
+      preLoaderRoute: typeof DisenoWebSeoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseno-web-para-empresas': {
+      id: '/diseno-web-para-empresas'
+      path: '/diseno-web-para-empresas'
+      fullPath: '/diseno-web-para-empresas'
+      preLoaderRoute: typeof DisenoWebParaEmpresasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/diseno-tienda-online': {
+      id: '/diseno-tienda-online'
+      path: '/diseno-tienda-online'
+      fullPath: '/diseno-tienda-online'
+      preLoaderRoute: typeof DisenoTiendaOnlineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/aviso-legal': {
@@ -138,9 +298,17 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
+  DisenoTiendaOnlineRoute: DisenoTiendaOnlineRoute,
+  DisenoWebParaEmpresasRoute: DisenoWebParaEmpresasRoute,
+  DisenoWebSeoRoute: DisenoWebSeoRoute,
+  LandingPageRoute: LandingPageRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
   PortfolioRoute: PortfolioRoute,
+  WebConReservasRoute: WebConReservasRoute,
+  WebParaClinicasDentalesRoute: WebParaClinicasDentalesRoute,
+  WebParaPeluqueriasRoute: WebParaPeluqueriasRoute,
+  WebParaRestaurantesRoute: WebParaRestaurantesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
