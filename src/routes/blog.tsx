@@ -28,10 +28,9 @@ function BlogIndex() {
 
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Placeholder for future blog posts */}
-          <article className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm">
-            <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Próximamente</span>
-            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+          <Link to="/blog/cuanto-cuesta-pagina-web-espana" className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+            <span className="text-xs font-bold uppercase tracking-wider text-primary mb-3 block">Precios</span>
+            <h2 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors text-foreground">
               Cuánto cuesta una página web en España en 2026
             </h2>
             <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
@@ -40,7 +39,7 @@ function BlogIndex() {
             <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
               Leer artículo <ArrowRight className="w-4 h-4" />
             </div>
-          </article>
+          </Link>
         </div>
 
         <div className="mt-16 text-center">

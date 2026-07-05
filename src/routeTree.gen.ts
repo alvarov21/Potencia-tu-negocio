@@ -23,6 +23,7 @@ import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-o
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BlogCuantoCuestaPaginaWebEspanaRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-espana'
 
 const WebParaRestaurantesRoute = WebParaRestaurantesRouteImport.update({
   id: '/web-para-restaurantes',
@@ -94,11 +95,17 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogCuantoCuestaPaginaWebEspanaRoute =
+  BlogCuantoCuestaPaginaWebEspanaRouteImport.update({
+    id: '/cuanto-cuesta-pagina-web-espana',
+    path: '/cuanto-cuesta-pagina-web-espana',
+    getParentRoute: () => BlogRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
@@ -110,11 +117,12 @@ export interface FileRoutesByFullPath {
   '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
   '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
@@ -126,12 +134,13 @@ export interface FileRoutesByTo {
   '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
   '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
@@ -143,6 +152,7 @@ export interface FileRoutesById {
   '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
   '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -161,6 +171,7 @@ export interface FileRouteTypes {
     | '/web-para-clinicas-dentales'
     | '/web-para-peluquerias'
     | '/web-para-restaurantes'
+    | '/blog/cuanto-cuesta-pagina-web-espana'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -177,6 +188,7 @@ export interface FileRouteTypes {
     | '/web-para-clinicas-dentales'
     | '/web-para-peluquerias'
     | '/web-para-restaurantes'
+    | '/blog/cuanto-cuesta-pagina-web-espana'
   id:
     | '__root__'
     | '/'
@@ -193,12 +205,13 @@ export interface FileRouteTypes {
     | '/web-para-clinicas-dentales'
     | '/web-para-peluquerias'
     | '/web-para-restaurantes'
+    | '/blog/cuanto-cuesta-pagina-web-espana'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   DisenoTiendaOnlineRoute: typeof DisenoTiendaOnlineRoute
   DisenoWebParaEmpresasRoute: typeof DisenoWebParaEmpresasRoute
   DisenoWebSeoRoute: typeof DisenoWebSeoRoute
@@ -312,13 +325,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/cuanto-cuesta-pagina-web-espana': {
+      id: '/blog/cuanto-cuesta-pagina-web-espana'
+      path: '/cuanto-cuesta-pagina-web-espana'
+      fullPath: '/blog/cuanto-cuesta-pagina-web-espana'
+      preLoaderRoute: typeof BlogCuantoCuestaPaginaWebEspanaRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogCuantoCuestaPaginaWebEspanaRoute: typeof BlogCuantoCuestaPaginaWebEspanaRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogCuantoCuestaPaginaWebEspanaRoute: BlogCuantoCuestaPaginaWebEspanaRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   DisenoTiendaOnlineRoute: DisenoTiendaOnlineRoute,
   DisenoWebParaEmpresasRoute: DisenoWebParaEmpresasRoute,
   DisenoWebSeoRoute: DisenoWebSeoRoute,
