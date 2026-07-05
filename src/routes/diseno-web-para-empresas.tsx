@@ -201,6 +201,10 @@ function DisenoWebEmpresas() {
               <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Avanzado</span>
               <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
               <div className="mb-6 mt-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">750€</span>
+                  <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
+                </div>
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">595€</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">Primer año incluido &middot; después 89€/año</div>
               </div>

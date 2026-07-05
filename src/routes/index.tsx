@@ -557,6 +557,10 @@ function Pricing() {
             <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Web completa para captar clientes. Todo lo de Presencia, y además:</p>
             <div className="mb-6 mt-4">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">750€</span>
+                <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
+              </div>
               <span className="text-5xl font-black">595€</span>
               <div className="text-sm text-muted-foreground mt-1">+ 89€/año</div>
             </div>
