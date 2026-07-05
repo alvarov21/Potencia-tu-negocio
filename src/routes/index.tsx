@@ -521,10 +521,10 @@ function Pricing() {
               </div>
               <div className="flex items-baseline gap-1.5">
                 <span className="text-5xl font-black text-foreground">195€</span>
-                <span className="text-sm font-medium text-muted-foreground">una sola vez</span>
               </div>
               <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                Primer año incluido &middot; después 89€/año (dominio, hosting y soporte)
+                Primer año incluido &middot; después 24,95€/mes<br />
+                (dominio, hosting y soporte)
               </div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
@@ -562,7 +562,10 @@ function Pricing() {
                 <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
               </div>
               <span className="text-5xl font-black">595€</span>
-              <div className="text-sm text-muted-foreground mt-2 leading-snug">Primer año incluido &middot; después 89€/año (dominio, hosting y soporte)</div>
+              <div className="text-sm text-muted-foreground mt-2 leading-snug">
+                Primer año incluido &middot; después 89€/año<br />
+                (dominio, hosting y soporte)
+              </div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
@@ -597,7 +600,10 @@ function Pricing() {
               </div>
               <span className="text-5xl font-black text-foreground">825€</span>
               <span className="text-muted-foreground ml-2">inicio</span>
-              <div className="text-sm text-muted-foreground mt-2 leading-snug">Mantenimiento incluido &middot; 75€/mes (dominio, hosting, cambios y soporte)</div>
+              <div className="text-sm text-muted-foreground mt-2 leading-snug">
+                Mantenimiento incluido &middot; 75€/mes<br />
+                (dominio, hosting, cambios y soporte)
+              </div>
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
