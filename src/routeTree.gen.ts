@@ -20,6 +20,7 @@ import { Route as LandingPageRouteImport } from './routes/landing-page'
 import { Route as DisenoWebSeoRouteImport } from './routes/diseno-web-seo'
 import { Route as DisenoWebParaEmpresasRouteImport } from './routes/diseno-web-para-empresas'
 import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-online'
+import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -78,6 +79,11 @@ const DisenoTiendaOnlineRoute = DisenoTiendaOnlineRouteImport.update({
   path: '/diseno-tienda-online',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AvisoLegalRoute = AvisoLegalRouteImport.update({
   id: '/aviso-legal',
   path: '/aviso-legal',
@@ -92,6 +98,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
+  '/blog': typeof BlogRoute
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
@@ -107,6 +114,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
+  '/blog': typeof BlogRoute
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
@@ -123,6 +131,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
+  '/blog': typeof BlogRoute
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
@@ -140,6 +149,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/aviso-legal'
+    | '/blog'
     | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
@@ -155,6 +165,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/aviso-legal'
+    | '/blog'
     | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
@@ -170,6 +181,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/aviso-legal'
+    | '/blog'
     | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
@@ -186,6 +198,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
+  BlogRoute: typeof BlogRoute
   DisenoTiendaOnlineRoute: typeof DisenoTiendaOnlineRoute
   DisenoWebParaEmpresasRoute: typeof DisenoWebParaEmpresasRoute
   DisenoWebSeoRoute: typeof DisenoWebSeoRoute
@@ -278,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DisenoTiendaOnlineRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/aviso-legal': {
       id: '/aviso-legal'
       path: '/aviso-legal'
@@ -298,6 +318,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
+  BlogRoute: BlogRoute,
   DisenoTiendaOnlineRoute: DisenoTiendaOnlineRoute,
   DisenoWebParaEmpresasRoute: DisenoWebParaEmpresasRoute,
   DisenoWebSeoRoute: DisenoWebSeoRoute,

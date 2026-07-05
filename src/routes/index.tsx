@@ -139,6 +139,15 @@ function Home() {
         <Pricing />
         <FAQ />
         <Contact />
+        <section className="py-12 border-t border-border bg-muted/20 text-center">
+          <div className="max-w-3xl mx-auto px-6">
+            <h2 className="text-2xl font-bold mb-4">¿Quieres aprender más sobre diseño web y SEO local?</h2>
+            <p className="text-muted-foreground mb-6">Visita nuestro blog para descubrir guías y estrategias que te ayudarán a captar más clientes en internet.</p>
+            <Link to="/blog" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              Ir al Blog de Potencia tu Negocio
+            </Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>
