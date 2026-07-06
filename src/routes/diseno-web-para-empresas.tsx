@@ -226,7 +226,7 @@ function DisenoWebEmpresas() {
 
             {/* Plan Crecimiento */}
             <article className="bg-card border border-border rounded-3xl p-8 flex flex-col">
-              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Suscripción</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pro</span>
               <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">825€</span><span className="text-sm text-muted-foreground">+75€/mes</span></div>

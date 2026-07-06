@@ -590,7 +590,7 @@ function Pricing() {
 
           {/* Plan Crecimiento */}
           <article className="bg-card border border-border rounded-3xl p-8 flex flex-col hover:border-primary/50 transition">
-            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Suscripción</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pro</span>
             <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Nos ocupamos de todo, tú solo gestiona tu negocio. Todo lo del Plan Independencia, y además:</p>
             <div className="mb-6">
