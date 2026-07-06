@@ -620,7 +620,7 @@ function Pricing() {
                 </li>
               ))}
             </ul>
-            <p className="text-xs text-muted-foreground italic mb-5">Permanencia mínima 3 meses</p>
+            <p className="text-xs text-muted-foreground italic mb-5">Cancela cuando quieras</p>
             <a href="#contacto" className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
               Contratar ahora
             </a>

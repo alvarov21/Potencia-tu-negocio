@@ -111,7 +111,7 @@ function BlogPost1() {
 
           <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (825€ + 75€/mes)</h3>
           <p>
-            Para los que quieren desentenderse de todo. Incluye la web premium más una suscripción mensual con la que te hacemos cambios ilimitados. ¿Que cambias el menú? Nos mandas un WhatsApp y lo actualizamos en menos de 24 horas. (Es el único plan que tiene una permanencia inicial de 3 meses).
+            Para los que quieren desentenderse de todo. Incluye la web premium más una suscripción mensual con la que te hacemos cambios ilimitados. ¿Que cambias el menú? Nos mandas un WhatsApp y lo actualizamos en menos de 24 horas.
           </p>
 
           <h2 className="text-3xl font-bold text-foreground mt-12 mb-6">Costes de mantenimiento: ¿cuánto cuesta mantener una web al mes?</h2>
