@@ -563,7 +563,7 @@ function Pricing() {
               </div>
               <span className="text-5xl font-black">595€</span>
               <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                Primer año incluido &middot; después 89€/año<br />
+                Primer año incluido &middot; después 89€/año o 24,95€/mes<br />
                 (dominio, hosting y soporte)
               </div>
             </div>
