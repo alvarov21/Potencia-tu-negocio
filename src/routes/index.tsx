@@ -610,7 +610,7 @@ function Pricing() {
                 "Dominio y hosting pagados por nosotros, para siempre",
                 "Gestión de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
                 <strong className="text-foreground">SEO técnico: destaca frente a la competencia</strong>,
-                "Informe mensual: visitas, llamadas y clics en WhatsApp",
+                "Análisis SEO exhaustivo: competencia, palabras clave y optimización técnica para destacar frente a otros negocios",
                 "Soporte prioritario 24/7 en español",
                 "Copias de seguridad automáticas",
               ].map((f, i) => (
