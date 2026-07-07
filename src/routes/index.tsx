@@ -606,7 +606,10 @@ function Pricing() {
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
-                <strong className="text-foreground">Análisis SEO exhaustivo: competencia, palabras clave y optimización técnica para destacar frente a otros negocios</strong>,
+                <span className="inline">
+                  <strong className="text-foreground">Análisis SEO exhaustivo: competencia, palabras clave y optimización técnica para destacar frente a otros negocios</strong>
+                  <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
+                </span>,
                 "Cambios ilimitados: carta, precios, horarios, festivos, promociones (en <24h)",
                 "Dominio y hosting pagados por nosotros, para siempre",
                 "Gestión de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
