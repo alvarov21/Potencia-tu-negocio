@@ -609,7 +609,7 @@ function Pricing() {
                 "Cambios ilimitados: carta, precios, horarios, festivos, promociones (en <24h)",
                 "Dominio y hosting pagados por nosotros, para siempre",
                 "Gestión de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
-                "Análisis SEO exhaustivo: competencia, palabras clave y optimización técnica para destacar frente a otros negocios",
+                <strong className="text-foreground">Análisis SEO exhaustivo: competencia, palabras clave y optimización técnica para destacar frente a otros negocios</strong>,
                 "Soporte prioritario 24/7 en español",
                 "Copias de seguridad automáticas",
               ].map((f, i) => (
