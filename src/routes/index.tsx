@@ -617,7 +617,11 @@ function Pricing() {
                 "Copias de seguridad automáticas",
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  {i === 0 ? (
+                    <Star fill="currentColor" className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  ) : (
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                  )}
                   <span>{f}</span>
                 </li>
               ))}
