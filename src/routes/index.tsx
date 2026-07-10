@@ -723,7 +723,7 @@ function Contact() {
               className={`w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition appearance-none ${tipoNegocio === "" ? "text-muted-foreground" : "text-foreground"}`}
             >
               <option value="" disabled hidden>Selecciona tipo de negocio</option>
-              <option value="Restaurante / bar / cafetería">Restaurante / bar / cafetería</option>
+              <option value="Restaurante / Hostelería">Restaurante / Hostelería</option>
               <option value="Hotel">Hotel</option>
               <option value="Clínica dental">Clínica dental</option>
               <option value="Psicólogo">Psicólogo</option>
