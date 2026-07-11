@@ -27,20 +27,23 @@ function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-export const Route = createFileRoute("/diseno-web-para-$sector/$ciudad")({
-  beforeLoad: ({ params: { sector, ciudad } }) => {
+export const Route = createFileRoute("/$landingType/$ciudad")({
+  beforeLoad: ({ params: { landingType, ciudad } }) => {
+    if (!landingType.startsWith("diseno-web-para-")) throw notFound();
+    const sector = landingType.replace("diseno-web-para-", "");
     if (!VALID_SECTORS[sector as keyof typeof VALID_SECTORS] || !VALID_CITIES.includes(ciudad.toLowerCase())) {
       throw notFound();
     }
   },
   head: ({ params }) => {
-    const sectorName = VALID_SECTORS[params.sector as keyof typeof VALID_SECTORS] || params.sector;
+    const sector = params.landingType.replace("diseno-web-para-", "");
+    const sectorName = VALID_SECTORS[sector as keyof typeof VALID_SECTORS] || sector;
     const cityName = capitalize(params.ciudad);
     
     return {
       meta: [
-        { title: `Diseño Web para ${capitalize(sectorName)} en ${cityName} | Potencia tu Negocio` },
-        { name: "description", content: `Expertos en diseño web con IA y SEO local para ${sectorName} en ${cityName}. Consigue más clientes y reservas en tu ciudad en 7 días.` }
+        { title: `Diseño de páginas web para ${sectorName} en ${cityName} | Potencia tu Negocio` },
+        { name: "description", content: `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 7 días y desde 595€.` },
       ]
     };
   },
@@ -48,7 +51,8 @@ export const Route = createFileRoute("/diseno-web-para-$sector/$ciudad")({
 });
 
 function GeoLanding() {
-  const { sector, ciudad } = Route.useParams({ from: '/diseno-web-para-$sector/$ciudad' });
+  const { landingType, ciudad } = Route.useParams();
+  const sector = landingType.replace("diseno-web-para-", "");
   const sectorDisplay = VALID_SECTORS[sector as keyof typeof VALID_SECTORS] || sector;
   const cityDisplay = capitalize(ciudad);
 

@@ -23,9 +23,9 @@ import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-o
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as DisenoWebParaSectorCiudadRouteImport } from './routes/diseno-web-para-$sector.$ciudad'
 import { Route as BlogCuantoCuestaPaginaWebRestauranteRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-restaurante'
 import { Route as BlogCuantoCuestaPaginaWebEspanaRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-espana'
+import { Route as LandingTypeCiudadRouteImport } from './routes/$landingType.$ciudad'
 
 const WebParaRestaurantesRoute = WebParaRestaurantesRouteImport.update({
   id: '/web-para-restaurantes',
@@ -97,12 +97,6 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DisenoWebParaSectorCiudadRoute =
-  DisenoWebParaSectorCiudadRouteImport.update({
-    id: '/diseno-web-para-$sector/$ciudad',
-    path: '/diseno-web-para-$sector/$ciudad',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const BlogCuantoCuestaPaginaWebRestauranteRoute =
   BlogCuantoCuestaPaginaWebRestauranteRouteImport.update({
     id: '/cuanto-cuesta-pagina-web-restaurante',
@@ -115,6 +109,11 @@ const BlogCuantoCuestaPaginaWebEspanaRoute =
     path: '/cuanto-cuesta-pagina-web-espana',
     getParentRoute: () => BlogRoute,
   } as any)
+const LandingTypeCiudadRoute = LandingTypeCiudadRouteImport.update({
+  id: '/$landingType/$ciudad',
+  path: '/$landingType/$ciudad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -131,9 +130,9 @@ export interface FileRoutesByFullPath {
   '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
   '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
-  '/diseno-web-para-$sector/$ciudad': typeof DisenoWebParaSectorCiudadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -150,9 +149,9 @@ export interface FileRoutesByTo {
   '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
   '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
-  '/diseno-web-para-$sector/$ciudad': typeof DisenoWebParaSectorCiudadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,9 +169,9 @@ export interface FileRoutesById {
   '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
   '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
-  '/diseno-web-para-$sector/$ciudad': typeof DisenoWebParaSectorCiudadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,9 +190,9 @@ export interface FileRouteTypes {
     | '/web-para-clinicas-dentales'
     | '/web-para-peluquerias'
     | '/web-para-restaurantes'
+    | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
-    | '/diseno-web-para-$sector/$ciudad'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -210,9 +209,9 @@ export interface FileRouteTypes {
     | '/web-para-clinicas-dentales'
     | '/web-para-peluquerias'
     | '/web-para-restaurantes'
+    | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
-    | '/diseno-web-para-$sector/$ciudad'
   id:
     | '__root__'
     | '/'
@@ -229,9 +228,9 @@ export interface FileRouteTypes {
     | '/web-para-clinicas-dentales'
     | '/web-para-peluquerias'
     | '/web-para-restaurantes'
+    | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
-    | '/diseno-web-para-$sector/$ciudad'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -249,7 +248,7 @@ export interface RootRouteChildren {
   WebParaClinicasDentalesRoute: typeof WebParaClinicasDentalesRoute
   WebParaPeluqueriasRoute: typeof WebParaPeluqueriasRoute
   WebParaRestaurantesRoute: typeof WebParaRestaurantesRoute
-  DisenoWebParaSectorCiudadRoute: typeof DisenoWebParaSectorCiudadRoute
+  LandingTypeCiudadRoute: typeof LandingTypeCiudadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -352,13 +351,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/diseno-web-para-$sector/$ciudad': {
-      id: '/diseno-web-para-$sector/$ciudad'
-      path: '/diseno-web-para-$sector/$ciudad'
-      fullPath: '/diseno-web-para-$sector/$ciudad'
-      preLoaderRoute: typeof DisenoWebParaSectorCiudadRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/blog/cuanto-cuesta-pagina-web-restaurante': {
       id: '/blog/cuanto-cuesta-pagina-web-restaurante'
       path: '/cuanto-cuesta-pagina-web-restaurante'
@@ -372,6 +364,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/blog/cuanto-cuesta-pagina-web-espana'
       preLoaderRoute: typeof BlogCuantoCuestaPaginaWebEspanaRouteImport
       parentRoute: typeof BlogRoute
+    }
+    '/$landingType/$ciudad': {
+      id: '/$landingType/$ciudad'
+      path: '/$landingType/$ciudad'
+      fullPath: '/$landingType/$ciudad'
+      preLoaderRoute: typeof LandingTypeCiudadRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -404,7 +403,7 @@ const rootRouteChildren: RootRouteChildren = {
   WebParaClinicasDentalesRoute: WebParaClinicasDentalesRoute,
   WebParaPeluqueriasRoute: WebParaPeluqueriasRoute,
   WebParaRestaurantesRoute: WebParaRestaurantesRoute,
-  DisenoWebParaSectorCiudadRoute: DisenoWebParaSectorCiudadRoute,
+  LandingTypeCiudadRoute: LandingTypeCiudadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
