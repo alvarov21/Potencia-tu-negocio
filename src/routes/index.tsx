@@ -168,12 +168,15 @@ function Hero() {
   return (
     <section id="top" className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-hero">
       <div className="absolute top-1/2 -right-40 lg:-right-20 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-        <div className="relative w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] animate-float flex items-center justify-center">
-          <img 
-            src="/blob-render.jpg" 
-            alt="3D Blob" 
-            className="w-[90%] h-[90%] object-contain mix-blend-screen invert hue-rotate-180 opacity-80 animate-[spin_30s_linear_infinite]" 
-          />
+        <div className="relative w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] animate-float">
+          {[1, 2, 3, 4, 5, 6].map(i => (
+            <div
+              key={i}
+              className="absolute inset-0 rounded-full border border-accent/30"
+              style={{ transform: `scale(${1 - i * 0.13})`, opacity: 1 - i * 0.12 }}
+            />
+          ))}
+          <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
       </div>
 
