@@ -643,7 +643,10 @@ function FAQ() {
   return (
     <section className="py-24 lg:py-32 px-6 lg:px-10" aria-labelledby="faq-title">
       <div className="max-w-3xl mx-auto">
-        <h2 id="faq-title" className="text-4xl lg:text-5xl font-bold tracking-tight mb-12 text-center">Preguntas frecuentes</h2>
+        <div className="text-center mb-12">
+          <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">FAQ</span>
+          <h2 id="faq-title" className="text-4xl lg:text-5xl font-bold tracking-tight">Preguntas frecuentes</h2>
+        </div>
         <div className="space-y-3">
           {FAQS.map((f, i) => {
             const isOpen = open === i;
