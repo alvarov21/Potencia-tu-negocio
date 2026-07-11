@@ -458,7 +458,7 @@ function Pricing() {
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@type": "Service",
+          "@type": "Product",
           "name": "Plan Presencia",
           "description": "Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.",
           "offers": {
@@ -472,7 +472,7 @@ function Pricing() {
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@type": "Service",
+          "@type": "Product",
           "name": "Plan Independencia",
           "description": "La que funciona para el 90%. Webs con reservas, catálogos y posicionamiento activo.",
           "offers": {
@@ -486,7 +486,7 @@ function Pricing() {
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@type": "Service",
+          "@type": "Product",
           "name": "Plan Crecimiento",
           "description": "Nosotros nos encargamos de todo. Mantenimiento total, cambios, SEO mensual y analítica.",
           "offers": {
