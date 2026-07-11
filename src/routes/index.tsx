@@ -73,16 +73,6 @@ const FEATURES = [
   { icon: FileText, title: "Textos legales RGPD", desc: "Aviso legal, política de privacidad y cookies incluidos y correctamente redactados para tu sector.\u00a0" },
 ];
 
-const SECTORS = [
-  { href: "/web-para-restaurantes", title: "Para Restaurantes", desc: "Diseño web para restaurantes con carta digital y reservas." },
-  { href: "/web-para-clinicas-dentales", title: "Para Clínicas Dentales", desc: "Diseño web para clínicas dentales, médicas y fisioterapia." },
-  { href: "/web-para-peluquerias", title: "Para Peluquerías", desc: "Páginas web para peluquerías, barberías y centros de estética." },
-  { href: "/web-con-reservas", title: "Webs con Reservas", desc: "Página web de reservas integrada para citas automáticas." },
-  { href: "/diseno-tienda-online", title: "Tiendas Online", desc: "Diseño de tienda online para vender tus productos en internet." },
-  { href: "/diseno-web-para-empresas", title: "Para Empresas", desc: "Diseño web corporativo para captar clientes como empresa o pyme." },
-  { href: "/landing-page", title: "Landing Pages", desc: "Diseño de landing page para campañas de anuncios y captación." },
-  { href: "/diseno-web-seo", title: "Web con SEO", desc: "Diseño web SEO para posicionar primero en tu ciudad y sector." },
-];
 
 const FAQS = [
   { q: "¿Qué es Potencia tu Negocio y qué hacéis exactamente?", a: "Potencia tu Negocio es una agencia de diseño web con inteligencia artificial especializada en negocios locales de España: restaurantes, bares, clínicas, talleres, peluquerías, gestorías... Creamos tu página web completa — diseño, textos, dominio, hosting y ficha de Google Business — desde 195€ en pago único, con la primera versión lista en 48 horas y publicada en menos de 7 días. Nuestro objetivo no es que \"tengas una web\": es que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad." },
@@ -130,7 +120,7 @@ function Home() {
         <Hero />
         <Marquee />
         <Features />
-        <Sectors />
+
         <About />
         <HowItWorks />
         <section id="portfolio" className="w-full">
@@ -282,26 +272,6 @@ function Features() {
   );
 }
 
-function Sectors() {
-  return (
-    <section id="sectores" className="py-24 lg:py-32 px-6 lg:px-10 bg-muted/30 border-y border-border">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-balance">Páginas web para cada tipo de negocio</h2>
-          <p className="text-muted-foreground text-lg">Adaptamos el diseño y las funcionalidades a lo que tu sector necesita para captar clientes de forma eficaz.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {SECTORS.map((s, i) => (
-            <Link key={i} to={s.href} className="group bg-card border border-border rounded-2xl p-6 hover:border-primary/60 hover:shadow-glow transition-all block text-left">
-              <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors">{s.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function About() {
   return (
