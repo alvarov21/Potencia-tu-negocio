@@ -212,7 +212,7 @@ function Hero() {
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6 text-balance">
             Diseño de páginas web profesional para negocios locales. <br className="hidden lg:block" />
-            Lista en <span className="text-primary">48 horas</span>, desde 195€ con dominio incluido.
+            Lista en <span className="text-primary">48 horas</span>, con dominio incluido.
           </h1>
           <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
             Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
