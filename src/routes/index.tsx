@@ -51,6 +51,7 @@ const NAV = [
   { href: "#servicios", label: "¿Qué ofrecemos?" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#precios", label: "Precios" },
+  { href: "#faq", label: "FAQ" },
   { href: "#contacto", label: "Contacto" },
 ];
 
@@ -609,7 +610,7 @@ function Pricing() {
 function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section className="py-24 lg:py-32 px-6 lg:px-10" aria-labelledby="faq-title">
+    <section id="faq" className="py-24 lg:py-32 px-6 lg:px-10" aria-labelledby="faq-title">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-12">
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">FAQ</span>
