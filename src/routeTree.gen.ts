@@ -23,6 +23,7 @@ import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-o
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DisenoWebParaSectorCiudadRouteImport } from './routes/diseno-web-para-$sector.$ciudad'
 import { Route as BlogCuantoCuestaPaginaWebRestauranteRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-restaurante'
 import { Route as BlogCuantoCuestaPaginaWebEspanaRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-espana'
 
@@ -96,6 +97,12 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DisenoWebParaSectorCiudadRoute =
+  DisenoWebParaSectorCiudadRouteImport.update({
+    id: '/diseno-web-para-$sector/$ciudad',
+    path: '/diseno-web-para-$sector/$ciudad',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const BlogCuantoCuestaPaginaWebRestauranteRoute =
   BlogCuantoCuestaPaginaWebRestauranteRouteImport.update({
     id: '/cuanto-cuesta-pagina-web-restaurante',
@@ -126,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
+  '/diseno-web-para-$sector/$ciudad': typeof DisenoWebParaSectorCiudadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -144,6 +152,7 @@ export interface FileRoutesByTo {
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
+  '/diseno-web-para-$sector/$ciudad': typeof DisenoWebParaSectorCiudadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -163,6 +172,7 @@ export interface FileRoutesById {
   '/web-para-restaurantes': typeof WebParaRestaurantesRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
+  '/diseno-web-para-$sector/$ciudad': typeof DisenoWebParaSectorCiudadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -183,6 +193,7 @@ export interface FileRouteTypes {
     | '/web-para-restaurantes'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
+    | '/diseno-web-para-$sector/$ciudad'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -201,6 +212,7 @@ export interface FileRouteTypes {
     | '/web-para-restaurantes'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
+    | '/diseno-web-para-$sector/$ciudad'
   id:
     | '__root__'
     | '/'
@@ -219,6 +231,7 @@ export interface FileRouteTypes {
     | '/web-para-restaurantes'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
+    | '/diseno-web-para-$sector/$ciudad'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -236,6 +249,7 @@ export interface RootRouteChildren {
   WebParaClinicasDentalesRoute: typeof WebParaClinicasDentalesRoute
   WebParaPeluqueriasRoute: typeof WebParaPeluqueriasRoute
   WebParaRestaurantesRoute: typeof WebParaRestaurantesRoute
+  DisenoWebParaSectorCiudadRoute: typeof DisenoWebParaSectorCiudadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -338,6 +352,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/diseno-web-para-$sector/$ciudad': {
+      id: '/diseno-web-para-$sector/$ciudad'
+      path: '/diseno-web-para-$sector/$ciudad'
+      fullPath: '/diseno-web-para-$sector/$ciudad'
+      preLoaderRoute: typeof DisenoWebParaSectorCiudadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/cuanto-cuesta-pagina-web-restaurante': {
       id: '/blog/cuanto-cuesta-pagina-web-restaurante'
       path: '/cuanto-cuesta-pagina-web-restaurante'
@@ -383,6 +404,7 @@ const rootRouteChildren: RootRouteChildren = {
   WebParaClinicasDentalesRoute: WebParaClinicasDentalesRoute,
   WebParaPeluqueriasRoute: WebParaPeluqueriasRoute,
   WebParaRestaurantesRoute: WebParaRestaurantesRoute,
+  DisenoWebParaSectorCiudadRoute: DisenoWebParaSectorCiudadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

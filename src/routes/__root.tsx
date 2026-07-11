@@ -105,10 +105,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Potencia tu Negocio",
+    "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
+    "email": "info@potenciatunegocio.es",
+    "url": "https://potencia-tu-negocio.vercel.app",
+    "areaServed": "ES",
+    "priceRange": "195€-825€",
+  };
+
   return (
     <html lang="es">
       <head>
         <HeadContent />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       </head>
       <body>
         {children}

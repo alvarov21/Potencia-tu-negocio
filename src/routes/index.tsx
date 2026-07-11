@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { Portfolio3D } from "../components/Portfolio3D";
+import { lazy, Suspense, useState } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
   Star, Lock, FileText, ArrowRight, Check, Plus, Minus, Mail, Phone,
   Paintbrush, Rocket
 } from "lucide-react";
+
+const Portfolio3D = lazy(() => import("../components/Portfolio3D").then(m => ({ default: m.Portfolio3D })));
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,16 +88,6 @@ const FAQS = [
 ];
 
 function Home() {
-  const professionalServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Potencia tu Negocio",
-    "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
-    "email": "info@potenciatunegocio.es",
-    "areaServed": "ES",
-    "priceRange": "195€-825€"
-  };
-
   const faqPageSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -112,7 +103,6 @@ function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(professionalServiceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }} />
       <Nav />
       <main>
@@ -123,7 +113,9 @@ function Home() {
         <About />
         <HowItWorks />
         <section id="portfolio" className="w-full">
-          <Portfolio3D />
+          <Suspense fallback={<div className="h-[500px] flex items-center justify-center text-muted-foreground">Cargando portfolio 3D...</div>}>
+            <Portfolio3D />
+          </Suspense>
         </section>
         <Pricing />
         <FAQ />
@@ -469,8 +461,58 @@ function HowItWorks() {
 }
 
 function Pricing() {
+  const pricingSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Plan Presencia",
+          "description": "Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.",
+          "offers": {
+            "@type": "Offer",
+            "price": "195.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Plan Independencia",
+          "description": "La que funciona para el 90%. Webs con reservas, catálogos y posicionamiento activo.",
+          "offers": {
+            "@type": "Offer",
+            "price": "595.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Plan Crecimiento",
+          "description": "Nosotros nos encargamos de todo. Mantenimiento total, cambios, SEO mensual y analítica.",
+          "offers": {
+            "@type": "Offer",
+            "price": "825.00",
+            "priceCurrency": "EUR"
+          }
+        }
+      }
+    ]
+  };
+
   return (
     <section id="precios" className="py-24 lg:py-32 px-6 lg:px-10 bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }} />
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-balance">Cuánto cuesta tu página web: elige el plan para tu negocio local</h2>
@@ -629,9 +671,13 @@ function FAQ() {
                   <span className="font-semibold">{f.q}</span>
                   {isOpen ? <Minus className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" /> : <Plus className="w-4 h-4 text-primary flex-shrink-0" aria-hidden="true" />}
                 </button>
-                {isOpen && (
-                  <div className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">{f.a}</div>
-                )}
+                <div className={`grid transition-all duration-300 ease-in-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-5 text-sm text-muted-foreground leading-relaxed">
+                      {f.a}
+                    </div>
+                  </div>
+                </div>
               </div>
             );
           })}
@@ -641,9 +687,9 @@ function FAQ() {
   );
 }
 
-function Contact() {
+export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
   const [sent, setSent] = useState(false);
-  const [tipoNegocio, setTipoNegocio] = useState("");
+  const [tipoNegocio, setTipoNegocio] = useState(defaultSector);
   return (
     <section id="contacto" className="relative py-24 lg:py-32 px-6 lg:px-10 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-glow opacity-40 pointer-events-none" aria-hidden="true" />
@@ -704,10 +750,12 @@ function Contact() {
               <option value="Gimnasio">Gimnasio</option>
               <option value="Inmobiliaria">Inmobiliaria</option>
               <option value="Electricista">Electricista</option>
+              <option value="Taller mecánico">Taller mecánico</option>
               <option value="Peluquería">Peluquería</option>
               <option value="Centro de estética">Centro de estética</option>
               <option value="Fotografía">Fotografía</option>
               <option value="Joyería">Joyería</option>
+              <option value="Gestoría">Gestoría</option>
               <option value="Otro">Otro</option>
             </select>
             {tipoNegocio === "Otro" && (
@@ -773,7 +821,7 @@ function Footer() {
       </div>
       <div className="max-w-7xl mx-auto py-12 px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
         <div className="font-bold text-foreground flex items-center gap-2">
-          <img src="/logo.jpg" alt="Logo Potencia tu Negocio" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
+          <img src="/logo.jpg" alt="Logo Potencia tu Negocio" loading="lazy" decoding="async" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
           <span>Potencia <span className="text-primary">tu negocio</span><sup className="text-[0.55em] ml-0.5 font-medium opacity-80">&reg;</sup></span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">

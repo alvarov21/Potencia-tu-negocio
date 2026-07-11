@@ -148,7 +148,7 @@ export function Portfolio3D() {
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none z-10" />
                   
                   {m.image ? (
-                    <img src={m.image} alt={m.title} className="w-full h-full object-cover object-top opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
+                    <img src={m.image} alt={m.title} loading="lazy" decoding="async" className="w-full h-full object-cover object-top opacity-90 transition-opacity duration-300 group-hover:opacity-100" />
                   ) : (
                     <div className="w-full h-full flex flex-col p-4 relative z-0">
                       <div className="h-10 w-full rounded bg-muted mb-3 relative z-10" />
