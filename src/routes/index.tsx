@@ -8,6 +8,19 @@ import {
 
 const Portfolio3D = lazy(() => import("../components/Portfolio3D").then(m => ({ default: m.Portfolio3D })));
 
+const FAQS = [
+  { q: "¿Qué es Potencia tu Negocio y qué hacéis exactamente?", a: "Potencia tu Negocio es una agencia de diseño web con inteligencia artificial especializada en negocios locales de España: restaurantes, bares, clínicas, talleres, peluquerías, gestorías... Creamos tu página web completa — diseño, textos, dominio, hosting y ficha de Google Business — desde 195€ en pago único, con la primera versión lista en 48 horas y publicada en menos de 7 días. Nuestro objetivo no es que \"tengas una web\": es que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad." },
+  { q: "¿Trabajáis en toda España o solo en algunas ciudades?", a: "En toda España. Todo el proceso es por WhatsApp, teléfono o email, así que da igual que tu negocio esté en Madrid, en Albacete o en un pueblo de 5.000 habitantes — de hecho, cuanto más local es la competencia, más fácil es posicionarte el primero en tu zona. Cada web se optimiza específicamente para las búsquedas de tu municipio y provincia, no con textos genéricos que valen para cualquier sitio." },
+  { q: "¿Qué diferencia hay entre vosotros y una agencia de diseño web tradicional?", a: "Tres cosas: velocidad, precio y que no te mareamos. Una agencia tradicional en España suele cobrar de 800€ a 2.000€, tardar de 4 a 8 semanas y pedirte varias reuniones; en Potencia tu Negocio pagas desde 195€ cerrados, ves tu web en 48 horas y solo necesitamos 10 minutos de conversación. La diferencia está en el método: la inteligencia artificial hace el trabajo lento (primeros diseños, borradores) y nosotros lo personalizamos a mano para tu sector y tu ciudad. Mismo resultado profesional, sin las horas facturables de por medio." },
+  { q: "¿Una página web hecha con inteligencia artificial no será peor que una \"de verdad\"?", a: "Es la duda más habitual y es razonable. La respuesta corta: la IA no decide cómo queda tu web, la usamos para ir rápido en lo mecánico. Los primeros diseños y borradores de texto salen de la IA; la adaptación a tu sector, las fotos de tu local, los textos finales y el SEO de tu ciudad los trabajamos nosotros. El resultado es una web única para tu negocio — no una plantilla — a una fracción del precio y del tiempo. Y la ves en 48 horas: si no te convence lo que ves, no pagas más rondas ni te quedas atrapado." },
+  { q: "¿Para qué tipo de negocios hacéis páginas web?", a: "Para negocios locales de cualquier sector. Donde más experiencia tenemos es en hostelería — restaurantes, bares y cafeterías, con carta digital, reservas y reseñas — pero trabajamos también con clínicas dentales y de salud, psicólogos, veterinarias, talleres mecánicos, gestorías, academias, gimnasios, inmobiliarias, electricistas, peluquerías, centros de estética, fotógrafos y joyerías. Si tu negocio atiende a clientes de tu zona, la metodología es la misma: que te encuentren en Google antes que a tu competencia." },
+  { q: "Tengo tres planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia de 195€ — una página con tu información, WhatsApp y Google Maps. Si quieres una web que capte clientes activamente (un restaurante, una clínica), el Plan Independencia de 375€ — varias páginas, reservas, carta o catálogo y SEO local trabajado; es el que elige la mayoría. Y si no quieres volver a pensar en la web nunca más, el Plan Crecimiento (825€ + 75€/mes) — nosotros hacemos todos los cambios, gestionamos tu ficha de Google y te mandamos un informe mensual. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos, aunque sea el más barato." },
+  { q: "¿Qué es eso del SEO local y por qué insistís tanto?", a: "El SEO local es que tu negocio salga en Google cuando alguien de tu zona busca lo que tú vendes — \"fontanero en Móstoles\", \"cafetería con terraza en Salamanca\". Insistimos porque es la diferencia entre una web que decora y una web que trae clientes: 8 de cada 10 personas buscan un negocio local desde el móvil antes de llamar o ir. Por eso todas nuestras webs incluyen SEO local desde el primer día — textos optimizados para tu ciudad, ficha de Google Business dada de alta y Google Maps integrado — sin coste extra." },
+  { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión, publicada en menos de 7 días. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
+  { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Independencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en \"tu informático\": cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
+  { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en Trustpilot, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -36,11 +49,14 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: [
-            { "@type": "Question", name: "¿Cuánto tarda en estar lista mi web?", acceptedAnswer: { "@type": "Answer", text: "Entre 3 y 7 días desde que nos facilitas la información de tu negocio." } },
-            { "@type": "Question", name: "¿Mi negocio aparecerá en Google con vuestra web?", acceptedAnswer: { "@type": "Answer", text: "Sí. Todas nuestras webs incluyen SEO local optimizado y configuración del perfil de Google Business." } },
-            { "@type": "Question", name: "¿Trabajáis con cualquier tipo de negocio?", acceptedAnswer: { "@type": "Answer", text: "Sí. Restaurantes, clínicas, talleres, veterinarias, gestorías, centros de estética y cualquier negocio local." } },
-          ],
+          mainEntity: FAQS.map(faq => ({
+            "@type": "Question",
+            name: faq.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.a
+            }
+          }))
         }),
       },
     ],
@@ -74,36 +90,9 @@ const FEATURES = [
 ];
 
 
-const FAQS = [
-  { q: "¿Qué es Potencia tu Negocio y qué hacéis exactamente?", a: "Potencia tu Negocio es una agencia de diseño web con inteligencia artificial especializada en negocios locales de España: restaurantes, bares, clínicas, talleres, peluquerías, gestorías... Creamos tu página web completa — diseño, textos, dominio, hosting y ficha de Google Business — desde 195€ en pago único, con la primera versión lista en 48 horas y publicada en menos de 7 días. Nuestro objetivo no es que \"tengas una web\": es que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad." },
-  { q: "¿Trabajáis en toda España o solo en algunas ciudades?", a: "En toda España. Todo el proceso es por WhatsApp, teléfono o email, así que da igual que tu negocio esté en Madrid, en Albacete o en un pueblo de 5.000 habitantes — de hecho, cuanto más local es la competencia, más fácil es posicionarte el primero en tu zona. Cada web se optimiza específicamente para las búsquedas de tu municipio y provincia, no con textos genéricos que valen para cualquier sitio." },
-  { q: "¿Qué diferencia hay entre vosotros y una agencia de diseño web tradicional?", a: "Tres cosas: velocidad, precio y que no te mareamos. Una agencia tradicional en España suele cobrar de 800€ a 2.000€, tardar de 4 a 8 semanas y pedirte varias reuniones; en Potencia tu Negocio pagas desde 195€ cerrados, ves tu web en 48 horas y solo necesitamos 10 minutos de conversación. La diferencia está en el método: la inteligencia artificial hace el trabajo lento (primeros diseños, borradores) y nosotros lo personalizamos a mano para tu sector y tu ciudad. Mismo resultado profesional, sin las horas facturables de por medio." },
-  { q: "¿Una página web hecha con inteligencia artificial no será peor que una \"de verdad\"?", a: "Es la duda más habitual y es razonable. La respuesta corta: la IA no decide cómo queda tu web, la usamos para ir rápido en lo mecánico. Los primeros diseños y borradores de texto salen de la IA; la adaptación a tu sector, las fotos de tu local, los textos finales y el SEO de tu ciudad los trabajamos nosotros. El resultado es una web única para tu negocio — no una plantilla — a una fracción del precio y del tiempo. Y la ves en 48 horas: si no te convence lo que ves, no pagas más rondas ni te quedas atrapado." },
-  { q: "¿Para qué tipo de negocios hacéis páginas web?", a: "Para negocios locales de cualquier sector. Donde más experiencia tenemos es en hostelería — restaurantes, bares y cafeterías, con carta digital, reservas y reseñas — pero trabajamos también con clínicas dentales y de salud, psicólogos, veterinarias, talleres mecánicos, gestorías, academias, gimnasios, inmobiliarias, electricistas, peluquerías, centros de estética, fotógrafos y joyerías. Si tu negocio atiende a clientes de tu zona, la metodología es la misma: que te encuentren en Google antes que a tu competencia." },
-  { q: "Tengo tres planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia de 195€ — una página con tu información, WhatsApp y Google Maps. Si quieres una web que capte clientes activamente (un restaurante, una clínica), el Plan Independencia de 375€ — varias páginas, reservas, carta o catálogo y SEO local trabajado; es el que elige la mayoría. Y si no quieres volver a pensar en la web nunca más, el Plan Crecimiento (825€ + 75€/mes) — nosotros hacemos todos los cambios, gestionamos tu ficha de Google y te mandamos un informe mensual. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos, aunque sea el más barato." },
-  { q: "¿Qué es eso del SEO local y por qué insistís tanto?", a: "El SEO local es que tu negocio salga en Google cuando alguien de tu zona busca lo que tú vendes — \"fontanero en Móstoles\", \"cafetería con terraza en Salamanca\". Insistimos porque es la diferencia entre una web que decora y una web que trae clientes: 8 de cada 10 personas buscan un negocio local desde el móvil antes de llamar o ir. Por eso todas nuestras webs incluyen SEO local desde el primer día — textos optimizados para tu ciudad, ficha de Google Business dada de alta y Google Maps integrado — sin coste extra." },
-  { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión, publicada en menos de 7 días. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
-  { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Independencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en \"tu informático\": cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
-  { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en Trustpilot, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
-];
-
 function Home() {
-  const faqPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": FAQS.map(faq => ({
-      "@type": "Question",
-      "name": faq.q,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.a
-      }
-    }))
-  };
-
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }} />
       <Nav />
       <main>
         <Hero />
@@ -469,7 +458,7 @@ function Pricing() {
         "@type": "ListItem",
         "position": 1,
         "item": {
-          "@type": "Product",
+          "@type": "Service",
           "name": "Plan Presencia",
           "description": "Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.",
           "offers": {
@@ -483,7 +472,7 @@ function Pricing() {
         "@type": "ListItem",
         "position": 2,
         "item": {
-          "@type": "Product",
+          "@type": "Service",
           "name": "Plan Independencia",
           "description": "La que funciona para el 90%. Webs con reservas, catálogos y posicionamiento activo.",
           "offers": {
@@ -497,7 +486,7 @@ function Pricing() {
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@type": "Product",
+          "@type": "Service",
           "name": "Plan Crecimiento",
           "description": "Nosotros nos encargamos de todo. Mantenimiento total, cambios, SEO mensual y analítica.",
           "offers": {
