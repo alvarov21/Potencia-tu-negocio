@@ -446,10 +446,16 @@ function Pricing() {
           "@type": "Product",
           "name": "Plan Presencia",
           "description": "Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos.",
+          "image": "https://potencia-tu-negocio.vercel.app/logo.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Potencia tu Negocio"
+          },
           "offers": {
             "@type": "Offer",
             "price": "195.00",
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
           }
         }
       },
@@ -460,10 +466,16 @@ function Pricing() {
           "@type": "Product",
           "name": "Plan Independencia",
           "description": "La que funciona para el 90%. Webs con reservas, catálogos y posicionamiento activo.",
+          "image": "https://potencia-tu-negocio.vercel.app/logo.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Potencia tu Negocio"
+          },
           "offers": {
             "@type": "Offer",
             "price": "595.00",
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
           }
         }
       },
@@ -474,10 +486,16 @@ function Pricing() {
           "@type": "Product",
           "name": "Plan Crecimiento",
           "description": "Nosotros nos encargamos de todo. Mantenimiento total, cambios, SEO mensual y analítica.",
+          "image": "https://potencia-tu-negocio.vercel.app/logo.jpg",
+          "brand": {
+            "@type": "Brand",
+            "name": "Potencia tu Negocio"
+          },
           "offers": {
             "@type": "Offer",
             "price": "825.00",
-            "priceCurrency": "EUR"
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
           }
         }
       }

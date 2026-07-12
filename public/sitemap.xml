@@ -26,17 +26,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://potencia-tu-negocio.vercel.app/web-con-reservas</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://potencia-tu-negocio.vercel.app/diseno-tienda-online</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://potencia-tu-negocio.vercel.app/landing-page</loc>
+    <loc>https://potencia-tu-negocio.vercel.app/web-con-reservas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -46,19 +41,44 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://potencia-tu-negocio.vercel.app/landing-page</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://potencia-tu-negocio.vercel.app/blog</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://potencia-tu-negocio.vercel.app/blog/cuanto-cuesta-pagina-web-espana</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://potencia-tu-negocio.vercel.app/blog/cuanto-cuesta-pagina-web-restaurante</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/aviso-legal</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/politica-de-privacidad</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/politica-de-cookies</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
   </url>
   <url>
     <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-restaurantes/madrid</loc>
@@ -92,6 +112,21 @@
   </url>
   <url>
     <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-restaurantes/zaragoza</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-restaurantes/bilbao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-restaurantes/alicante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-restaurantes/murcia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -131,6 +166,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-clinicas-dentales/bilbao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-clinicas-dentales/alicante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-clinicas-dentales/murcia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-talleres-mecanicos/madrid</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -162,6 +212,21 @@
   </url>
   <url>
     <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-talleres-mecanicos/zaragoza</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-talleres-mecanicos/bilbao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-talleres-mecanicos/alicante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-talleres-mecanicos/murcia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -201,6 +266,21 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-peluquerias/bilbao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-peluquerias/alicante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-peluquerias/murcia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-gestorias/madrid</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -232,6 +312,121 @@
   </url>
   <url>
     <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-gestorias/zaragoza</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-gestorias/bilbao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-gestorias/alicante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-gestorias/murcia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/madrid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/barcelona</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/sevilla</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/valencia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/cordoba</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/malaga</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/zaragoza</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/bilbao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/alicante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-veterinarias/murcia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/madrid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/barcelona</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/sevilla</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/valencia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/cordoba</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/malaga</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/zaragoza</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/bilbao</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/alicante</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://potencia-tu-negocio.vercel.app/diseno-web-para-centros-de-estetica/murcia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

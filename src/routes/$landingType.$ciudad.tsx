@@ -8,7 +8,9 @@ const VALID_SECTORS = {
   "clinicas-dentales": "clínicas dentales y de salud",
   "talleres-mecanicos": "talleres mecánicos",
   "peluquerias": "peluquerías y centros de estética",
-  "gestorias": "gestorías y asesorías"
+  "gestorias": "gestorías y asesorías",
+  "veterinarias": "clínicas veterinarias",
+  "centros-de-estetica": "centros de estética y belleza"
 };
 
 const FORM_SECTORS = {
@@ -16,11 +18,13 @@ const FORM_SECTORS = {
   "clinicas-dentales": "Clínica dental",
   "talleres-mecanicos": "Taller mecánico",
   "peluquerias": "Peluquería",
-  "gestorias": "Gestoría"
+  "gestorias": "Gestoría",
+  "veterinarias": "Veterinaria",
+  "centros-de-estetica": "Centro de estética"
 };
 
 const VALID_CITIES = [
-  "madrid", "barcelona", "sevilla", "valencia", "cordoba", "malaga", "zaragoza"
+  "madrid", "barcelona", "sevilla", "valencia", "cordoba", "malaga", "zaragoza", "bilbao", "alicante", "murcia"
 ];
 
 function capitalize(s: string) {
@@ -52,6 +56,16 @@ const SECTOR_CONTENT = {
     p1: `Las pymes y autónomos de {city} buscan asesores de confianza. Tu página web debe reflejar la seriedad y la tranquilidad que ofreces al gestionar sus impuestos.`,
     p2: `Desarrollamos una web corporativa que explica claramente tus servicios (fiscal, laboral, contable) y facilita que te contacten en un solo clic.`,
     p3: `Deja que la inteligencia artificial y el SEO capten clientes para tu despacho mientras tú te encargas de los números.`
+  },
+  "veterinarias": {
+    p1: `Cuando una mascota en {city} necesita atención, sus dueños buscan al mejor profesional cerca de casa. Tu web tiene que transmitir el mismo cariño y profesionalidad que das en la consulta.`,
+    p2: `Diseñamos webs para veterinarias que destacan tus servicios (vacunación, cirugía, urgencias 24h) e incluyen botones directos de llamada o cita previa.`,
+    p3: `Posiciónate por delante de la competencia local en Google y consigue que más dueños de mascotas de {city} te elijan.`
+  },
+  "centros-de-estetica": {
+    p1: `La primera impresión cuenta. Si tu centro de estética en {city} tiene tratamientos innovadores pero no sales en Google o tu web parece antigua, los clientes se van a otro lado.`,
+    p2: `Creamos una página elegante y optimizada donde puedes mostrar tus servicios (depilación, faciales, masajes) con listas de precios claras y un diseño visual muy cuidado.`,
+    p3: `Atrae nuevas clientas cada semana haciendo que descubran tu salón al buscar tratamientos estéticos en {city}.`
   }
 };
 
