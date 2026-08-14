@@ -644,7 +644,7 @@ function Pricing() {
           <div className="md:w-1/4 flex justify-center relative z-10">
             <div className="relative" style={{ perspective: '1000px' }}>
               <img 
-                src="/nfc-review-card.jpg" 
+                src="/nfc-review-card-hq.jpg" 
                 alt="Tarjeta NFC de reseñas de Google" 
                 className="w-48 rounded-xl mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
                 style={{ 
