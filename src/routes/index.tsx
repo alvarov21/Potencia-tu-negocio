@@ -661,7 +661,7 @@ function Pricing() {
               <h4 className="text-2xl font-bold">Placa NFC de Reseñas</h4>
               <div className="flex items-center gap-2">
                 <span className="text-lg font-black text-primary">35,50 €</span>
-                <span className="text-sm font-semibold text-primary whitespace-nowrap">Configuración y envío incl.</span>
+                <span className="text-sm font-medium text-white italic whitespace-nowrap">Configuración y envío incl.</span>
               </div>
             </div>
             <p className="text-muted-foreground leading-relaxed">
