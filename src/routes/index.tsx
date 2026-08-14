@@ -778,8 +778,8 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
           </form>
         )}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm">
-          <a href="mailto:info@potenciatunegocio.es" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition">
-            <Mail className="w-4 h-4" aria-hidden="true" /> info@potenciatunegocio.es
+          <a href="mailto:info@potenciatunegocio.eu" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition">
+            <Mail className="w-4 h-4" aria-hidden="true" /> info@potenciatunegocio.eu
           </a>
           <a href="https://wa.me/" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 text-[#25D366] font-medium hover:bg-[#25D366]/25 transition">
             <Phone className="w-4 h-4" aria-hidden="true" /> WhatsApp

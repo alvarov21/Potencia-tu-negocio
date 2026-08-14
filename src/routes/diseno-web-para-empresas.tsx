@@ -326,7 +326,7 @@ function DisenoWebEmpresas() {
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-balance">Pide tu propuesta gratis y sin compromiso (respuesta en 24 horas)</h2>
             <p className="text-lg text-muted-foreground mb-10">Escríbenos por WhatsApp o déjanos tu email y te responderemos con una propuesta personalizada.</p>
             <div className="flex justify-center gap-4">
-              <a href="mailto:info@potenciatunegocio.es" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-cta font-semibold shadow-glow hover:scale-[1.02] transition text-white">
+              <a href="mailto:info@potenciatunegocio.eu" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-cta font-semibold shadow-glow hover:scale-[1.02] transition text-white">
                 Solicitar Propuesta <ArrowRight className="w-5 h-5" />
               </a>
             </div>

@@ -110,7 +110,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "@type": "LocalBusiness",
     "name": "Potencia tu Negocio",
     "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
-    "email": "info@potenciatunegocio.es",
+    "email": "info@potenciatunegocio.eu",
     "url": "https://potencia-tu-negocio.vercel.app",
     "areaServed": "ES",
     "priceRange": "195€-825€",
