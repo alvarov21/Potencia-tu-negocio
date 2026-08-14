@@ -3,7 +3,7 @@ import { lazy, Suspense, useState } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
   Star, Lock, FileText, ArrowRight, Check, Plus, Minus, Mail, Phone,
-  Paintbrush, Rocket
+  Paintbrush, Rocket, X, Info
 } from "lucide-react";
 
 const Portfolio3D = lazy(() => import("../components/Portfolio3D").then(m => ({ default: m.Portfolio3D })));
@@ -435,6 +435,7 @@ function HowItWorks() {
 }
 
 function Pricing() {
+  const [isNfcModalOpen, setIsNfcModalOpen] = useState(false);
   const pricingSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -664,13 +665,72 @@ function Pricing() {
                 <span className="text-xs font-medium text-white italic whitespace-nowrap">Configuración y envío incl.</span>
               </div>
             </div>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed mb-4">
               Con esta placa inteligente, los clientes pueden poner directamente una reseña de su negocio solo con acercar el móvil a esta pequeña placa. Ideal para colocar en el mostrador, mesas o recepción y multiplicar tus opiniones de 5 estrellas en piloto automático.
             </p>
+            <button onClick={() => setIsNfcModalOpen(true)} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-4 py-2 rounded-full">
+              <Info className="w-4 h-4" /> Ver todos los detalles
+            </button>
           </div>
         </div>
 
       </div>
+
+      {/* NFC Modal */}
+      {isNfcModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm" onClick={() => setIsNfcModalOpen(false)}>
+          <div className="bg-card border border-border shadow-2xl rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative animate-in fade-in zoom-in-95 duration-200" onClick={(e) => e.stopPropagation()}>
+            <button onClick={() => setIsNfcModalOpen(false)} className="absolute top-4 right-4 p-2 text-muted-foreground hover:bg-muted hover:text-foreground rounded-full transition">
+              <X className="w-5 h-5" />
+            </button>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold mb-2">Placa NFC de Reseñas</h3>
+              <p className="text-xl font-black text-primary mb-1">
+                35,50 € <span className="text-sm font-medium text-muted-foreground bg-muted/50 px-2 py-0.5 rounded-sm ml-2">Configuración, programación y envío incluidos.</span>
+              </p>
+              
+              <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
+                <p className="text-foreground font-semibold text-lg text-balance">Convierte cada visita en una nueva oportunidad para conseguir una reseña de 5 estrellas.</p>
+                
+                <p>Con solo acercar el móvil a la placa, tus clientes accederán directamente a la página de reseñas de Google, sin buscar tu negocio, sin escribir nada y sin complicaciones. Además, incorpora un código QR totalmente programado, para que incluso los clientes que no utilicen NFC puedan escanearlo y dejar su valoración en cuestión de segundos.</p>
+                
+                <p>Colócala en el mostrador, la recepción, las mesas o la zona de pago y deja que haga el trabajo por ti. Su diseño discreto y profesional, junto con su adhesivo de alta fijación en la parte trasera, permite colocarla fácilmente sobre cualquier superficie sin necesidad de herramientas.</p>
+                
+                <p>Cuanto más fácil sea dejar una reseña, más opiniones conseguirás. Y más reseñas significan más confianza, mayor visibilidad en Google y más clientes para tu negocio.</p>
+                
+                <p className="italic text-foreground border-l-4 border-primary/30 pl-4 py-1">Porque hoy en día, antes de elegir un negocio, la mayoría de personas consulta las valoraciones. La pregunta es: cuando entren en tu ficha de Google, ¿verán 20 reseñas... o 200?</p>
+                
+                <div className="bg-muted/30 rounded-2xl p-6 mt-8 border border-border/50">
+                  <h4 className="font-bold text-foreground mb-4">Incluye:</h4>
+                  <ul className="space-y-3">
+                    {[
+                      "Tecnología NFC programada con tu perfil de Google.",
+                      "Código QR listo para escanear.",
+                      "Adhesivo trasero de alta resistencia para una instalación rápida.",
+                      "Configuración personalizada.",
+                      "Envío incluido.",
+                      "Sin cuotas ni suscripciones.",
+                      "Compatible con la gran mayoría de smartphones."
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-3 text-sm items-start">
+                        <span className="shrink-0 mt-0.5">✅</span> <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <p className="font-semibold text-foreground text-center mt-6 text-balance text-lg">Una pequeña placa. Un simple gesto de un segundo. Un flujo constante de reseñas que puede ayudarte a conseguir muchos más clientes durante años.</p>
+              </div>
+              
+              <div className="mt-8 flex justify-center">
+                <a href="#contacto" onClick={() => setIsNfcModalOpen(false)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-cta text-white font-semibold shadow-glow hover:scale-[1.02] transition">
+                  Añadir a mi pedido <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
