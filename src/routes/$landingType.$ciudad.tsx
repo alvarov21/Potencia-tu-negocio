@@ -10,7 +10,9 @@ const VALID_SECTORS = {
   "peluquerias": "peluquerías y centros de estética",
   "gestorias": "gestorías y asesorías",
   "veterinarias": "clínicas veterinarias",
-  "centros-de-estetica": "centros de estética y belleza"
+  "centros-de-estetica": "centros de estética y belleza",
+  "abogados": "despachos de abogados",
+  "fisioterapeutas": "clínicas de fisioterapia"
 };
 
 const FORM_SECTORS = {
@@ -20,7 +22,9 @@ const FORM_SECTORS = {
   "peluquerias": "Peluquería",
   "gestorias": "Gestoría",
   "veterinarias": "Veterinaria",
-  "centros-de-estetica": "Centro de estética"
+  "centros-de-estetica": "Centro de estética",
+  "abogados": "Abogados",
+  "fisioterapeutas": "Fisioterapia"
 };
 
 const VALID_CITIES = [
@@ -66,6 +70,16 @@ const SECTOR_CONTENT = {
     p1: `La primera impresión cuenta. Si tu centro de estética en {city} tiene tratamientos innovadores pero no sales en Google o tu web parece antigua, los clientes se van a otro lado.`,
     p2: `Creamos una página elegante y optimizada donde puedes mostrar tus servicios (depilación, faciales, masajes) con listas de precios claras y un diseño visual muy cuidado.`,
     p3: `Atrae nuevas clientas cada semana haciendo que descubran tu salón al buscar tratamientos estéticos en {city}.`
+  },
+  "abogados": {
+    p1: `La elección de un despacho legal se basa en la confianza y la autoridad. Cuando alguien en {city} necesita asesoría legal urgente, la primera impresión de tu web decide a quién llama.`,
+    p2: `Diseñamos webs corporativas sobrias y seguras para firmas legales, destacando tus áreas de especialización (penal, laboral, familia) y facilitando el contacto directo.`,
+    p3: `Posiciona tu bufete como el referente en {city} y atrae a clientes que necesitan respuestas hoy.`
+  },
+  "fisioterapeutas": {
+    p1: `El dolor no espera. Si alguien en {city} sufre una contractura y busca un "fisioterapeuta cerca", tu clínica debe aparecer la primera y ofrecer cita rápida.`,
+    p2: `Creamos páginas web funcionales para clínicas de fisioterapia con integración total de tu software de reservas y sección detallada de tratamientos y tarifas.`,
+    p3: `Llena la agenda de tus fisioterapeutas captando pacientes de tu zona de forma automática.`
   }
 };
 

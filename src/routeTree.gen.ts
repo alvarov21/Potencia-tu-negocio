@@ -9,14 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WebParaRestaurantesRouteImport } from './routes/web-para-restaurantes'
-import { Route as WebParaPeluqueriasRouteImport } from './routes/web-para-peluquerias'
-import { Route as WebParaClinicasDentalesRouteImport } from './routes/web-para-clinicas-dentales'
+import { Route as WebParaSectorRouteImport } from './routes/web-para-$sector'
 import { Route as WebConReservasRouteImport } from './routes/web-con-reservas'
+import { Route as SeoLocalRouteImport } from './routes/seo-local'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as MantenimientoWebRouteImport } from './routes/mantenimiento-web'
 import { Route as LandingPageRouteImport } from './routes/landing-page'
+import { Route as GoogleBusinessProfileRouteImport } from './routes/google-business-profile'
 import { Route as DisenoWebSeoRouteImport } from './routes/diseno-web-seo'
 import { Route as DisenoWebParaEmpresasRouteImport } from './routes/diseno-web-para-empresas'
 import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-online'
@@ -27,24 +28,19 @@ import { Route as BlogCuantoCuestaPaginaWebRestauranteRouteImport } from './rout
 import { Route as BlogCuantoCuestaPaginaWebEspanaRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-espana'
 import { Route as LandingTypeCiudadRouteImport } from './routes/$landingType.$ciudad'
 
-const WebParaRestaurantesRoute = WebParaRestaurantesRouteImport.update({
-  id: '/web-para-restaurantes',
-  path: '/web-para-restaurantes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WebParaPeluqueriasRoute = WebParaPeluqueriasRouteImport.update({
-  id: '/web-para-peluquerias',
-  path: '/web-para-peluquerias',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const WebParaClinicasDentalesRoute = WebParaClinicasDentalesRouteImport.update({
-  id: '/web-para-clinicas-dentales',
-  path: '/web-para-clinicas-dentales',
+const WebParaSectorRoute = WebParaSectorRouteImport.update({
+  id: '/web-para-$sector',
+  path: '/web-para-$sector',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WebConReservasRoute = WebConReservasRouteImport.update({
   id: '/web-con-reservas',
   path: '/web-con-reservas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeoLocalRoute = SeoLocalRouteImport.update({
+  id: '/seo-local',
+  path: '/seo-local',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -62,9 +58,19 @@ const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
   path: '/politica-de-cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MantenimientoWebRoute = MantenimientoWebRouteImport.update({
+  id: '/mantenimiento-web',
+  path: '/mantenimiento-web',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LandingPageRoute = LandingPageRouteImport.update({
   id: '/landing-page',
   path: '/landing-page',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GoogleBusinessProfileRoute = GoogleBusinessProfileRouteImport.update({
+  id: '/google-business-profile',
+  path: '/google-business-profile',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DisenoWebSeoRoute = DisenoWebSeoRouteImport.update({
@@ -122,14 +128,15 @@ export interface FileRoutesByFullPath {
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
+  '/google-business-profile': typeof GoogleBusinessProfileRoute
   '/landing-page': typeof LandingPageRoute
+  '/mantenimiento-web': typeof MantenimientoWebRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
+  '/seo-local': typeof SeoLocalRoute
   '/web-con-reservas': typeof WebConReservasRoute
-  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
-  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
-  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/web-para-$sector': typeof WebParaSectorRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
@@ -141,14 +148,15 @@ export interface FileRoutesByTo {
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
+  '/google-business-profile': typeof GoogleBusinessProfileRoute
   '/landing-page': typeof LandingPageRoute
+  '/mantenimiento-web': typeof MantenimientoWebRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
+  '/seo-local': typeof SeoLocalRoute
   '/web-con-reservas': typeof WebConReservasRoute
-  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
-  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
-  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/web-para-$sector': typeof WebParaSectorRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
@@ -161,14 +169,15 @@ export interface FileRoutesById {
   '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
+  '/google-business-profile': typeof GoogleBusinessProfileRoute
   '/landing-page': typeof LandingPageRoute
+  '/mantenimiento-web': typeof MantenimientoWebRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
+  '/seo-local': typeof SeoLocalRoute
   '/web-con-reservas': typeof WebConReservasRoute
-  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
-  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
-  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/web-para-$sector': typeof WebParaSectorRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
@@ -182,14 +191,15 @@ export interface FileRouteTypes {
     | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
+    | '/google-business-profile'
     | '/landing-page'
+    | '/mantenimiento-web'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
+    | '/seo-local'
     | '/web-con-reservas'
-    | '/web-para-clinicas-dentales'
-    | '/web-para-peluquerias'
-    | '/web-para-restaurantes'
+    | '/web-para-$sector'
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
@@ -201,14 +211,15 @@ export interface FileRouteTypes {
     | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
+    | '/google-business-profile'
     | '/landing-page'
+    | '/mantenimiento-web'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
+    | '/seo-local'
     | '/web-con-reservas'
-    | '/web-para-clinicas-dentales'
-    | '/web-para-peluquerias'
-    | '/web-para-restaurantes'
+    | '/web-para-$sector'
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
@@ -220,14 +231,15 @@ export interface FileRouteTypes {
     | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
+    | '/google-business-profile'
     | '/landing-page'
+    | '/mantenimiento-web'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
+    | '/seo-local'
     | '/web-con-reservas'
-    | '/web-para-clinicas-dentales'
-    | '/web-para-peluquerias'
-    | '/web-para-restaurantes'
+    | '/web-para-$sector'
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
@@ -240,38 +252,25 @@ export interface RootRouteChildren {
   DisenoTiendaOnlineRoute: typeof DisenoTiendaOnlineRoute
   DisenoWebParaEmpresasRoute: typeof DisenoWebParaEmpresasRoute
   DisenoWebSeoRoute: typeof DisenoWebSeoRoute
+  GoogleBusinessProfileRoute: typeof GoogleBusinessProfileRoute
   LandingPageRoute: typeof LandingPageRoute
+  MantenimientoWebRoute: typeof MantenimientoWebRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
   PortfolioRoute: typeof PortfolioRoute
+  SeoLocalRoute: typeof SeoLocalRoute
   WebConReservasRoute: typeof WebConReservasRoute
-  WebParaClinicasDentalesRoute: typeof WebParaClinicasDentalesRoute
-  WebParaPeluqueriasRoute: typeof WebParaPeluqueriasRoute
-  WebParaRestaurantesRoute: typeof WebParaRestaurantesRoute
+  WebParaSectorRoute: typeof WebParaSectorRoute
   LandingTypeCiudadRoute: typeof LandingTypeCiudadRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/web-para-restaurantes': {
-      id: '/web-para-restaurantes'
-      path: '/web-para-restaurantes'
-      fullPath: '/web-para-restaurantes'
-      preLoaderRoute: typeof WebParaRestaurantesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/web-para-peluquerias': {
-      id: '/web-para-peluquerias'
-      path: '/web-para-peluquerias'
-      fullPath: '/web-para-peluquerias'
-      preLoaderRoute: typeof WebParaPeluqueriasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/web-para-clinicas-dentales': {
-      id: '/web-para-clinicas-dentales'
-      path: '/web-para-clinicas-dentales'
-      fullPath: '/web-para-clinicas-dentales'
-      preLoaderRoute: typeof WebParaClinicasDentalesRouteImport
+    '/web-para-$sector': {
+      id: '/web-para-$sector'
+      path: '/web-para-$sector'
+      fullPath: '/web-para-$sector'
+      preLoaderRoute: typeof WebParaSectorRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/web-con-reservas': {
@@ -279,6 +278,13 @@ declare module '@tanstack/react-router' {
       path: '/web-con-reservas'
       fullPath: '/web-con-reservas'
       preLoaderRoute: typeof WebConReservasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seo-local': {
+      id: '/seo-local'
+      path: '/seo-local'
+      fullPath: '/seo-local'
+      preLoaderRoute: typeof SeoLocalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -302,11 +308,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PoliticaDeCookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mantenimiento-web': {
+      id: '/mantenimiento-web'
+      path: '/mantenimiento-web'
+      fullPath: '/mantenimiento-web'
+      preLoaderRoute: typeof MantenimientoWebRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/landing-page': {
       id: '/landing-page'
       path: '/landing-page'
       fullPath: '/landing-page'
       preLoaderRoute: typeof LandingPageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/google-business-profile': {
+      id: '/google-business-profile'
+      path: '/google-business-profile'
+      fullPath: '/google-business-profile'
+      preLoaderRoute: typeof GoogleBusinessProfileRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/diseno-web-seo': {
@@ -395,14 +415,15 @@ const rootRouteChildren: RootRouteChildren = {
   DisenoTiendaOnlineRoute: DisenoTiendaOnlineRoute,
   DisenoWebParaEmpresasRoute: DisenoWebParaEmpresasRoute,
   DisenoWebSeoRoute: DisenoWebSeoRoute,
+  GoogleBusinessProfileRoute: GoogleBusinessProfileRoute,
   LandingPageRoute: LandingPageRoute,
+  MantenimientoWebRoute: MantenimientoWebRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
   PortfolioRoute: PortfolioRoute,
+  SeoLocalRoute: SeoLocalRoute,
   WebConReservasRoute: WebConReservasRoute,
-  WebParaClinicasDentalesRoute: WebParaClinicasDentalesRoute,
-  WebParaPeluqueriasRoute: WebParaPeluqueriasRoute,
-  WebParaRestaurantesRoute: WebParaRestaurantesRoute,
+  WebParaSectorRoute: WebParaSectorRoute,
   LandingTypeCiudadRoute: LandingTypeCiudadRoute,
 }
 export const routeTree = rootRouteImport

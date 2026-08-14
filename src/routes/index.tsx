@@ -826,6 +826,48 @@ function Footer() {
           </div>
         </a>
       </div>
+      
+      <div className="max-w-7xl mx-auto py-16 px-6 lg:px-10 border-b border-border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div>
+          <h4 className="text-foreground font-semibold mb-6">Servicios Destacados</h4>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li><Link to="/seo-local" className="hover:text-primary transition">SEO Local y Mapas</Link></li>
+            <li><Link to="/google-business-profile" className="hover:text-primary transition">Google Business Profile</Link></li>
+            <li><Link to="/mantenimiento-web" className="hover:text-primary transition">Mantenimiento Web</Link></li>
+            <li><Link to="/diseno-web-seo" className="hover:text-primary transition">Diseño Web SEO</Link></li>
+            <li><Link to="/diseno-tienda-online" className="hover:text-primary transition">Tiendas Online E-commerce</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-foreground font-semibold mb-6">Páginas Web por Sector</h4>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li><Link to="/web-para-restaurantes" className="hover:text-primary transition">Web para Restaurantes</Link></li>
+            <li><Link to="/web-para-clinicas-dentales" className="hover:text-primary transition">Web para Clínicas Dentales</Link></li>
+            <li><Link to="/web-para-abogados" className="hover:text-primary transition">Web para Abogados</Link></li>
+            <li><Link to="/web-para-centros-estetica" className="hover:text-primary transition">Web para Centros de Estética</Link></li>
+            <li><Link to="/web-para-fisioterapeutas" className="hover:text-primary transition">Web para Fisioterapeutas</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-foreground font-semibold mb-6">Más Sectores</h4>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li><Link to="/web-para-talleres-mecanicos" className="hover:text-primary transition">Web para Talleres Mecánicos</Link></li>
+            <li><Link to="/web-para-veterinarias" className="hover:text-primary transition">Web para Veterinarias</Link></li>
+            <li><Link to="/web-para-peluquerias" className="hover:text-primary transition">Web para Peluquerías</Link></li>
+            <li><Link to="/web-para-gestorias" className="hover:text-primary transition">Web para Gestorías</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-foreground font-semibold mb-6">Recursos</h4>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li><Link to="/blog" className="hover:text-primary transition">Blog y Casos de Estudio</Link></li>
+            <li><Link to="/portfolio" className="hover:text-primary transition">Nuestro Portfolio</Link></li>
+            <li><a href="/#precios" className="hover:text-primary transition">Planes y Precios</a></li>
+            <li><a href="/#faq" className="hover:text-primary transition">Preguntas Frecuentes</a></li>
+          </ul>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto py-12 px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
         <div className="font-bold text-foreground flex items-center gap-2">
           <img src="/logo.jpg" alt="Logo Potencia tu Negocio" loading="lazy" decoding="async" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
