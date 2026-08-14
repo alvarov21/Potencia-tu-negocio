@@ -644,10 +644,13 @@ function Pricing() {
           <div className="md:w-1/4 flex justify-center relative z-10">
             <div className="relative" style={{ perspective: '1000px' }}>
               <img 
-                src="/nfc-review-card-3d.jpg" 
+                src="/nfc-review-card-v3.jpg" 
                 alt="Tarjeta NFC de reseñas de Google" 
                 className="w-48 rounded-xl mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
-                style={{ filter: 'drop-shadow(0 10px 15px rgba(0,0,0,0.1))' }}
+                style={{ 
+                  transform: 'rotateY(-15deg) rotateX(10deg)',
+                  filter: 'drop-shadow(-10px 15px 20px rgba(0,0,0,0.25)) contrast(1.1) brightness(1.02)'
+                }}
               />
             </div>
           </div>
