@@ -638,10 +638,10 @@ function Pricing() {
         </div>
         
         {/* Addon Tarjeta NFC */}
-        <div className="mt-16 bg-card border border-primary/30 rounded-3xl p-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 relative shadow-glow group">
+        <div className="mt-16 bg-card border border-primary/30 rounded-3xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 relative shadow-glow group">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent rounded-3xl pointer-events-none"></div>
           
-          <div className="md:w-1/3 flex justify-center relative z-10">
+          <div className="md:w-1/4 flex justify-center relative z-10">
             <div className="relative" style={{ perspective: '1000px' }}>
               <img 
                 src="/nfc-review-card.jpg" 
@@ -655,7 +655,7 @@ function Pricing() {
             </div>
           </div>
           
-          <div className="md:w-2/3 text-center md:text-left relative z-10">
+          <div className="md:w-3/4 text-center md:text-left relative z-10">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-2 bg-primary/10 px-3 py-1 rounded-full">Add-on Opcional</span>
             <div className="flex flex-col md:flex-row items-center md:items-baseline gap-3 mb-3">
               <h4 className="text-2xl font-bold">Placa NFC de Reseñas</h4>
