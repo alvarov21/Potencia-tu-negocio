@@ -659,7 +659,10 @@ function Pricing() {
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-2 bg-primary/10 px-3 py-1 rounded-full">Add-on Opcional</span>
             <div className="flex flex-col md:flex-row items-center md:items-baseline gap-3 mb-3">
               <h4 className="text-2xl font-bold">Placa NFC de Reseñas</h4>
-              <span className="text-lg font-black text-primary">35,50 €</span>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-3">
+                <span className="text-lg font-black text-primary">35,50 €</span>
+                <span className="text-xs font-medium text-muted-foreground bg-muted/50 px-2 py-0.5 rounded-sm whitespace-nowrap">Configuración y envío incl.</span>
+              </div>
             </div>
             <p className="text-muted-foreground leading-relaxed">
               Con esta placa inteligente, los clientes pueden poner directamente una reseña de su negocio solo con acercar el móvil a esta pequeña placa. Ideal para colocar en el mostrador, mesas o recepción y multiplicar tus opiniones de 5 estrellas en piloto automático.
