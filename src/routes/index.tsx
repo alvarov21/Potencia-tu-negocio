@@ -658,9 +658,9 @@ function Pricing() {
           <div className="md:w-3/4 text-center md:text-left relative z-10">
             <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-2 bg-primary/10 px-3 py-1 rounded-full">Add-on Opcional</span>
             <div className="flex flex-col md:flex-row items-center md:items-baseline gap-3 mb-3">
-              <h4 className="text-2xl font-bold">Placa NFC de Reseñas</h4>
+              <h4 className="text-3xl font-bold">Placa NFC de Reseñas</h4>
               <div className="flex items-center gap-2">
-                <span className="text-lg font-black text-primary">35,50 €</span>
+                <span className="text-xl font-black text-primary">35,50 €</span>
                 <span className="text-xs font-medium text-white italic whitespace-nowrap">Configuración y envío incl.</span>
               </div>
             </div>
