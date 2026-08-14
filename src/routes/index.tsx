@@ -638,7 +638,7 @@ function Pricing() {
         </div>
         
         {/* Addon Tarjeta NFC */}
-        <div className="mt-16 bg-card border border-primary/30 rounded-3xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 relative shadow-glow group">
+        <div className="mt-16 bg-card border border-primary/30 rounded-3xl p-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 relative shadow-glow group">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent rounded-3xl pointer-events-none"></div>
           
           <div className="md:w-1/3 flex justify-center relative z-10">
