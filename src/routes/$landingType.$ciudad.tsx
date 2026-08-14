@@ -28,7 +28,8 @@ const FORM_SECTORS = {
 };
 
 const VALID_CITIES = [
-  "madrid", "barcelona", "sevilla", "valencia", "cordoba", "malaga", "zaragoza", "bilbao", "alicante", "murcia"
+  "madrid", "barcelona", "sevilla", "valencia", "cordoba", "malaga", "zaragoza", 
+  "bilbao", "alicante", "murcia", "granada", "jaen", "cadiz", "huelva", "almeria"
 ];
 
 function capitalize(s: string) {

@@ -4,9 +4,13 @@ const sitemapPath = "./public/sitemap.xml";
 let content = fs.readFileSync(sitemapPath, "utf-8");
 
 const sectors = ["restaurantes", "clinicas-dentales", "talleres-mecanicos", "peluquerias", "gestorias", "veterinarias", "centros-de-estetica", "abogados", "fisioterapeutas"];
-const cities = ["madrid", "barcelona", "sevilla", "valencia", "cordoba", "malaga", "zaragoza", "bilbao", "alicante", "murcia"];
+const cities = [
+  "madrid", "barcelona", "sevilla", "valencia", "cordoba", "malaga", "zaragoza", 
+  "bilbao", "alicante", "murcia", "granada", "jaen", "cadiz", "huelva", "almeria"
+];
 
 const newServices = ["seo-local", "google-business-profile", "mantenimiento-web"];
+const localServices = ["diseno-web", "seo-local"];
 
 let newUrls = "";
 
@@ -22,7 +26,15 @@ for (const service of newServices) {
   newUrls += `  <url>\n    <loc>${url}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
 }
 
-// 3. Local cluster combinations
+// 3. Local service pages (e.g. /diseno-web/granada)
+for (const lService of localServices) {
+  for (const city of cities) {
+    const url = `https://potencia-tu-negocio.vercel.app/${lService}/${city}`;
+    newUrls += `  <url>\n    <loc>${url}</loc>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+  }
+}
+
+// 4. Local cluster combinations
 for (const sector of sectors) {
   for (const city of cities) {
     const url = `https://potencia-tu-negocio.vercel.app/diseno-web-para-${sector}/${city}`;

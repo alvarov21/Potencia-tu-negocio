@@ -827,9 +827,9 @@ function Footer() {
         </a>
       </div>
       
-      <div className="max-w-7xl mx-auto py-16 px-6 lg:px-10 border-b border-border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        <div>
-          <h4 className="text-foreground font-semibold mb-6">Servicios Destacados</h4>
+      <div className="max-w-7xl mx-auto py-16 px-6 lg:px-10 border-b border-border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="lg:col-span-1">
+          <h4 className="text-foreground font-semibold mb-6">Servicios</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/seo-local" className="hover:text-primary transition">SEO Local y Mapas</Link></li>
             <li><Link to="/google-business-profile" className="hover:text-primary transition">Google Business Profile</Link></li>
@@ -838,27 +838,36 @@ function Footer() {
             <li><Link to="/diseno-tienda-online" className="hover:text-primary transition">Tiendas Online E-commerce</Link></li>
           </ul>
         </div>
-        <div>
-          <h4 className="text-foreground font-semibold mb-6">Páginas Web por Sector</h4>
+        <div className="lg:col-span-1">
+          <h4 className="text-foreground font-semibold mb-6">Agencias Locales</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/web-para-restaurantes" className="hover:text-primary transition">Web para Restaurantes</Link></li>
-            <li><Link to="/web-para-clinicas-dentales" className="hover:text-primary transition">Web para Clínicas Dentales</Link></li>
-            <li><Link to="/web-para-abogados" className="hover:text-primary transition">Web para Abogados</Link></li>
-            <li><Link to="/web-para-centros-estetica" className="hover:text-primary transition">Web para Centros de Estética</Link></li>
-            <li><Link to="/web-para-fisioterapeutas" className="hover:text-primary transition">Web para Fisioterapeutas</Link></li>
+            <li><Link to="/diseno-web/sevilla" className="hover:text-primary transition">Diseño Web Sevilla</Link></li>
+            <li><Link to="/diseno-web/malaga" className="hover:text-primary transition">Diseño Web Málaga</Link></li>
+            <li><Link to="/diseno-web/granada" className="hover:text-primary transition">Diseño Web Granada</Link></li>
+            <li><Link to="/seo-local/madrid" className="hover:text-primary transition">SEO Local Madrid</Link></li>
+            <li><Link to="/seo-local/barcelona" className="hover:text-primary transition">SEO Local Barcelona</Link></li>
           </ul>
         </div>
-        <div>
-          <h4 className="text-foreground font-semibold mb-6">Más Sectores</h4>
+        <div className="lg:col-span-1">
+          <h4 className="text-foreground font-semibold mb-6">Sectores (I)</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/web-para-talleres-mecanicos" className="hover:text-primary transition">Web para Talleres Mecánicos</Link></li>
+            <li><Link to="/web-para-restaurantes" className="hover:text-primary transition">Web para Restaurantes</Link></li>
+            <li><Link to="/web-para-clinicas-dentales" className="hover:text-primary transition">Web Clínicas Dentales</Link></li>
+            <li><Link to="/web-para-abogados" className="hover:text-primary transition">Web para Abogados</Link></li>
+            <li><Link to="/web-para-centros-estetica" className="hover:text-primary transition">Web Centros Estética</Link></li>
+          </ul>
+        </div>
+        <div className="lg:col-span-1">
+          <h4 className="text-foreground font-semibold mb-6">Sectores (II)</h4>
+          <ul className="space-y-3 text-sm text-muted-foreground">
+            <li><Link to="/web-para-talleres-mecanicos" className="hover:text-primary transition">Web para Talleres</Link></li>
             <li><Link to="/web-para-veterinarias" className="hover:text-primary transition">Web para Veterinarias</Link></li>
             <li><Link to="/web-para-peluquerias" className="hover:text-primary transition">Web para Peluquerías</Link></li>
             <li><Link to="/web-para-gestorias" className="hover:text-primary transition">Web para Gestorías</Link></li>
           </ul>
         </div>
-        <div>
-          <h4 className="text-foreground font-semibold mb-6">Recursos</h4>
+        <div className="lg:col-span-1">
+          <h4 className="text-foreground font-semibold mb-6">Empresa</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/blog" className="hover:text-primary transition">Blog y Casos de Estudio</Link></li>
             <li><Link to="/portfolio" className="hover:text-primary transition">Nuestro Portfolio</Link></li>

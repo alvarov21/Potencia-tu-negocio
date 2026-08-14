@@ -24,6 +24,8 @@ import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-o
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SeoLocalCiudadRouteImport } from './routes/seo-local.$ciudad'
+import { Route as DisenoWebCiudadRouteImport } from './routes/diseno-web.$ciudad'
 import { Route as BlogCuantoCuestaPaginaWebRestauranteRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-restaurante'
 import { Route as BlogCuantoCuestaPaginaWebEspanaRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-espana'
 import { Route as LandingTypeCiudadRouteImport } from './routes/$landingType.$ciudad'
@@ -103,6 +105,16 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SeoLocalCiudadRoute = SeoLocalCiudadRouteImport.update({
+  id: '/$ciudad',
+  path: '/$ciudad',
+  getParentRoute: () => SeoLocalRoute,
+} as any)
+const DisenoWebCiudadRoute = DisenoWebCiudadRouteImport.update({
+  id: '/diseno-web/$ciudad',
+  path: '/diseno-web/$ciudad',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogCuantoCuestaPaginaWebRestauranteRoute =
   BlogCuantoCuestaPaginaWebRestauranteRouteImport.update({
     id: '/cuanto-cuesta-pagina-web-restaurante',
@@ -134,12 +146,14 @@ export interface FileRoutesByFullPath {
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
-  '/seo-local': typeof SeoLocalRoute
+  '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
   '/web-para-$sector': typeof WebParaSectorRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
+  '/diseno-web/$ciudad': typeof DisenoWebCiudadRoute
+  '/seo-local/$ciudad': typeof SeoLocalCiudadRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -154,12 +168,14 @@ export interface FileRoutesByTo {
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
-  '/seo-local': typeof SeoLocalRoute
+  '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
   '/web-para-$sector': typeof WebParaSectorRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
+  '/diseno-web/$ciudad': typeof DisenoWebCiudadRoute
+  '/seo-local/$ciudad': typeof SeoLocalCiudadRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -175,12 +191,14 @@ export interface FileRoutesById {
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRoute
-  '/seo-local': typeof SeoLocalRoute
+  '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
   '/web-para-$sector': typeof WebParaSectorRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
+  '/diseno-web/$ciudad': typeof DisenoWebCiudadRoute
+  '/seo-local/$ciudad': typeof SeoLocalCiudadRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -203,6 +221,8 @@ export interface FileRouteTypes {
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
+    | '/diseno-web/$ciudad'
+    | '/seo-local/$ciudad'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -223,6 +243,8 @@ export interface FileRouteTypes {
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
+    | '/diseno-web/$ciudad'
+    | '/seo-local/$ciudad'
   id:
     | '__root__'
     | '/'
@@ -243,6 +265,8 @@ export interface FileRouteTypes {
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
+    | '/diseno-web/$ciudad'
+    | '/seo-local/$ciudad'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -258,10 +282,11 @@ export interface RootRouteChildren {
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
   PortfolioRoute: typeof PortfolioRoute
-  SeoLocalRoute: typeof SeoLocalRoute
+  SeoLocalRoute: typeof SeoLocalRouteWithChildren
   WebConReservasRoute: typeof WebConReservasRoute
   WebParaSectorRoute: typeof WebParaSectorRoute
   LandingTypeCiudadRoute: typeof LandingTypeCiudadRoute
+  DisenoWebCiudadRoute: typeof DisenoWebCiudadRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -371,6 +396,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/seo-local/$ciudad': {
+      id: '/seo-local/$ciudad'
+      path: '/$ciudad'
+      fullPath: '/seo-local/$ciudad'
+      preLoaderRoute: typeof SeoLocalCiudadRouteImport
+      parentRoute: typeof SeoLocalRoute
+    }
+    '/diseno-web/$ciudad': {
+      id: '/diseno-web/$ciudad'
+      path: '/diseno-web/$ciudad'
+      fullPath: '/diseno-web/$ciudad'
+      preLoaderRoute: typeof DisenoWebCiudadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/cuanto-cuesta-pagina-web-restaurante': {
       id: '/blog/cuanto-cuesta-pagina-web-restaurante'
       path: '/cuanto-cuesta-pagina-web-restaurante'
@@ -408,6 +447,18 @@ const BlogRouteChildren: BlogRouteChildren = {
 
 const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
+interface SeoLocalRouteChildren {
+  SeoLocalCiudadRoute: typeof SeoLocalCiudadRoute
+}
+
+const SeoLocalRouteChildren: SeoLocalRouteChildren = {
+  SeoLocalCiudadRoute: SeoLocalCiudadRoute,
+}
+
+const SeoLocalRouteWithChildren = SeoLocalRoute._addFileChildren(
+  SeoLocalRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
@@ -421,10 +472,11 @@ const rootRouteChildren: RootRouteChildren = {
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
   PortfolioRoute: PortfolioRoute,
-  SeoLocalRoute: SeoLocalRoute,
+  SeoLocalRoute: SeoLocalRouteWithChildren,
   WebConReservasRoute: WebConReservasRoute,
   WebParaSectorRoute: WebParaSectorRoute,
   LandingTypeCiudadRoute: LandingTypeCiudadRoute,
+  DisenoWebCiudadRoute: DisenoWebCiudadRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
