@@ -132,7 +132,7 @@ function BlogPost2() {
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center mt-12">
             <h3 className="text-2xl font-bold text-foreground mb-4">¿Preparado para llenar tu local sin comisiones?</h3>
             <p className="mb-6">Escríbenos por WhatsApp contándonos un poco sobre tu restaurante y te mandamos una propuesta gratuita en 24 horas. Sin reuniones pesadas y sin compromiso.</p>
-            <a href="https://wa.me/" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-cta text-white font-semibold shadow-glow hover:scale-[1.02] transition">
+            <a href="https://wa.me/34644905837" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-cta text-white font-semibold shadow-glow hover:scale-[1.02] transition">
               Pedir presupuesto gratis para mi local <ArrowRight className="w-5 h-5" />
             </a>
           </div>

@@ -770,7 +770,7 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
           <a href="mailto:info@potenciatunegocio.eu" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition">
             <Mail className="w-4 h-4" aria-hidden="true" /> info@potenciatunegocio.eu
           </a>
-          <a href="https://wa.me/" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 text-[#25D366] font-medium hover:bg-[#25D366]/25 transition">
+          <a href="https://wa.me/34644905837" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 text-[#25D366] font-medium hover:bg-[#25D366]/25 transition">
             <Phone className="w-4 h-4" aria-hidden="true" /> WhatsApp
           </a>
         </div>
