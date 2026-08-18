@@ -242,13 +242,13 @@ function About() {
   return (
     <section id="nosotros" className="relative py-24 lg:py-32 px-6 lg:px-10 overflow-hidden">
       {/* Tattoo Watermark Logo */}
-      <div className="absolute right-[-10%] md:right-0 bottom-0 pointer-events-none z-0 opacity-10 select-none">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-20 select-none">
         <img 
           src="/logo.jpg" 
           alt="" 
-          className="w-[400px] md:w-[600px] lg:w-[800px] h-auto object-contain transform translate-y-24 translate-x-12 md:translate-y-32"
+          className="w-[150%] md:w-[110%] h-auto object-cover opacity-80"
           style={{ 
-            filter: 'invert(1) hue-rotate(180deg) contrast(1.2)', 
+            filter: 'invert(1) hue-rotate(180deg) contrast(1.5)', 
             mixBlendMode: 'screen' 
           }}
         />
