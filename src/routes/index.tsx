@@ -555,6 +555,7 @@ function Pricing() {
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
+                "Todo lo incluido en el Plan Presencia, además de:",
                 <span className="inline" key="seo">
                   <strong className="text-foreground">Análisis SEO exhaustivo: estudio de competencia, palabras clave de tu sector y ciudad, y optimización técnica continua para destacar frente a otros negocios de tu zona.</strong>
                   <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
@@ -566,7 +567,7 @@ function Pricing() {
                 "Copias de seguridad automáticas"
               ].map((f, i) => (
                 <li key={i} className="flex gap-3">
-                  {i === 0 ? (
+                  {i === 1 ? (
                     <Star fill="currentColor" className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
                   ) : (
                     <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
