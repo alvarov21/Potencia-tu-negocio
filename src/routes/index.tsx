@@ -278,70 +278,27 @@ function About() {
           </div>
         </div>
         <div className="flex flex-col items-center gap-10 w-full max-w-md mx-auto">
-          <div className="relative aspect-square w-full group [perspective:1000px]" aria-hidden="true">
-          {/* Background glow */}
-          <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transition-all duration-700 ease-out group-hover:scale-125 group-hover:bg-primary/30" />
-          
-          <div className="relative w-full h-full flex items-center justify-center transition-all duration-700 ease-out transform-gpu group-hover:[transform:rotateY(12deg)_rotateX(6deg)_scale(1.05)]">
+          <div className="relative aspect-square w-full group [perspective:1000px]">
+            {/* Background glow */}
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transition-all duration-700 ease-out group-hover:scale-125 group-hover:bg-primary/30" />
             
-            {/* Browser Window */}
-            <div className="w-[85%] h-[70%] bg-card border border-primary/30 rounded-2xl shadow-2xl overflow-hidden flex flex-col relative z-10 transition-all duration-500 group-hover:border-primary/60 group-hover:shadow-[0_0_30px] group-hover:shadow-primary/20">
+            <div className="relative w-full h-full flex items-center justify-center transition-all duration-700 ease-out transform-gpu group-hover:[transform:rotateY(12deg)_rotateX(6deg)_scale(1.05)]">
+              <img 
+                src="/about_us.jpg" 
+                alt="Agencia de diseño web trabajando" 
+                className="w-[85%] h-[85%] object-cover rounded-2xl shadow-2xl border border-primary/30 relative z-10 transition-all duration-500 group-hover:border-primary/60 group-hover:shadow-[0_0_30px] group-hover:shadow-primary/20"
+              />
               
-              {/* Browser Header */}
-              <div className="h-10 border-b border-primary/20 bg-muted/30 flex items-center px-4 gap-2">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-400/80 transition-transform group-hover:scale-110" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-amber-400/80 transition-transform delay-75 group-hover:scale-110" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-400/80 transition-transform delay-150 group-hover:scale-110" />
-                </div>
-                <div className="mx-auto bg-background/50 rounded-md h-5 w-1/2 border border-primary/10 flex items-center justify-center">
-                  <div className="w-16 h-1.5 bg-primary/20 rounded-full transition-colors group-hover:bg-primary/40" />
-                </div>
+              {/* Decorative Floating Elements */}
+              <div className="absolute top-[5%] right-[5%] w-16 h-16 rounded-xl bg-card border border-primary/30 shadow-xl flex items-center justify-center transition-all duration-700 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12 group-hover:scale-110 z-20">
+                <div className="w-6 h-6 border-2 border-primary rounded-full border-t-transparent animate-spin" style={{ animationDuration: '3s' }} />
               </div>
               
-              {/* Browser Body */}
-              <div className="flex-1 p-5 flex flex-col gap-4 relative overflow-hidden bg-background">
-                {/* Nav */}
-                <div className="flex justify-between items-center">
-                  <div className="w-8 h-8 rounded-lg bg-primary/20 transition-all group-hover:bg-primary/40 group-hover:shadow-[0_0_10px] group-hover:shadow-primary/30" />
-                  <div className="flex gap-2">
-                    <div className="w-6 h-1.5 rounded-full bg-primary/20 transition-colors group-hover:bg-primary/40" />
-                    <div className="w-6 h-1.5 rounded-full bg-primary/20 transition-colors group-hover:bg-primary/40" />
-                  </div>
-                </div>
-                
-                {/* Hero content */}
-                <div className="mt-4 flex flex-col items-center text-center gap-3">
-                  <div className="w-3/4 h-4 rounded-full bg-primary/30 transition-all duration-500 group-hover:bg-primary group-hover:shadow-[0_0_15px] group-hover:shadow-primary/50" />
-                  <div className="w-1/2 h-3 rounded-full bg-primary/20 transition-all duration-500 delay-75 group-hover:bg-primary/70" />
-                  <div className="mt-2 px-6 py-2 rounded-full border border-primary/30 transition-all duration-500 delay-150 group-hover:bg-primary/10 group-hover:border-primary/50">
-                    <div className="w-12 h-2 rounded-full bg-primary/40 transition-colors group-hover:bg-primary" />
-                  </div>
-                </div>
-                
-                {/* Content blocks */}
-                <div className="mt-auto grid grid-cols-3 gap-3">
-                  {[1,2,3].map((i) => (
-                    <div key={i} className="h-12 rounded-xl border border-primary/20 transition-all duration-500 flex items-center justify-center bg-card translate-y-0 group-hover:-translate-y-2 group-hover:border-primary/50 group-hover:shadow-[0_0_15px] group-hover:shadow-primary/30" style={{ transitionDelay: `${150 + i * 50}ms` }}>
-                       <div className="w-4 h-4 rounded-sm bg-primary/20 transition-colors group-hover:bg-primary/60" />
-                    </div>
-                  ))}
-                </div>
+              <div className="absolute bottom-[5%] left-[5%] w-24 h-12 rounded-lg bg-card border border-primary/30 shadow-xl flex items-center justify-center gap-2.5 transition-all duration-700 delay-100 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:-translate-x-6 group-hover:translate-y-4 group-hover:-rotate-6 group-hover:scale-110 z-20">
+                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px] shadow-green-500/60" />
+                <div className="w-10 h-1.5 rounded-full bg-primary/40 transition-colors group-hover:bg-primary/80" />
               </div>
             </div>
-            
-            {/* Decorative Floating Elements */}
-            <div className="absolute top-[10%] right-[5%] w-16 h-16 rounded-xl bg-card border border-primary/30 shadow-xl flex items-center justify-center transition-all duration-700 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12 group-hover:scale-110 z-20">
-              <div className="w-6 h-6 border-2 border-primary rounded-full border-t-transparent animate-spin" style={{ animationDuration: '3s' }} />
-            </div>
-            
-            <div className="absolute bottom-[15%] left-[5%] w-24 h-12 rounded-lg bg-card border border-primary/30 shadow-xl flex items-center justify-center gap-2.5 transition-all duration-700 delay-100 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:-translate-x-6 group-hover:translate-y-4 group-hover:-rotate-6 group-hover:scale-110 z-20">
-              <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px] shadow-green-500/60" />
-              <div className="w-10 h-1.5 rounded-full bg-primary/40 transition-colors group-hover:bg-primary/80" />
-            </div>
-            
-            </div>
-            
           </div>
           <Link to="/portfolio" className="inline-flex items-center justify-center h-14 px-10 rounded-full border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-glow hover:scale-105">
             Nuestro portfolio
