@@ -240,9 +240,22 @@ function Features() {
 
 function About() {
   return (
-    <section id="nosotros" className="py-24 lg:py-32 px-6 lg:px-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div>
+    <section id="nosotros" className="relative py-24 lg:py-32 px-6 lg:px-10 overflow-hidden">
+      {/* Tattoo Watermark Logo */}
+      <div className="absolute right-[-10%] md:right-0 bottom-0 pointer-events-none z-0 opacity-10 select-none">
+        <img 
+          src="/logo.jpg" 
+          alt="" 
+          className="w-[400px] md:w-[600px] lg:w-[800px] h-auto object-contain transform translate-y-24 translate-x-12 md:translate-y-32"
+          style={{ 
+            filter: 'invert(1) hue-rotate(180deg) contrast(1.2)', 
+            mixBlendMode: 'screen' 
+          }}
+        />
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-3xl">
           <span className="text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4 inline-block">Sobre nosotros</span>
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6 leading-[1.1]">
             Especialistas en diseño de páginas web para negocios locales con inteligencia artificial
@@ -264,49 +277,19 @@ function About() {
               Y una cosa más, porque sabemos que te la han hecho antes: precios cerrados, sin permanencia y sin letra pequeña. Si algún día quieres irte, el dominio es tuyo y te lo llevas. Trabajar así nos obliga a que quieras quedarte.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             {[
               { v: "< 7 días", l: "Tiempo medio hasta publicar tu web" },
               { v: "100%", l: "Personalizado a tu sector y ciudad" },
               { v: "24/7", l: "Soporte en el Plan Mantenimiento" },
             ].map((s, i) => (
-              <div key={i} className="bg-card border border-border rounded-xl p-5 text-center">
+              <div key={i} className="bg-card/80 backdrop-blur-sm border border-border rounded-xl p-5 text-center shadow-sm">
                 <div className="text-2xl lg:text-3xl font-bold text-primary mb-1">{s.v}</div>
                 <div className="text-xs text-muted-foreground leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
-        </div>
-        <div className="flex flex-col items-center gap-10 w-full max-w-md mx-auto">
-          <div className="relative aspect-square w-full group [perspective:1000px]">
-            {/* Background glow */}
-            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transition-all duration-700 ease-out group-hover:scale-125 group-hover:bg-primary/30" />
-            
-            <div className="relative w-full h-full flex items-center justify-center transition-all duration-700 ease-out transform-gpu group-hover:[transform:rotateY(12deg)_rotateX(6deg)_scale(1.05)]">
-              <div className="relative w-[85%] h-[85%] flex items-center justify-center rounded-2xl">
-                {/* Logo without background (using CSS trick for dark themes: invert + screen) */}
-                <img 
-                  src="/logo.jpg" 
-                  alt="Potencia tu Negocio Logo 3D" 
-                  className="w-[80%] h-auto object-contain relative z-10 transition-all duration-500 drop-shadow-[0_20px_30px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_30px_40px_rgba(255,255,255,0.25)] group-hover:-translate-y-4"
-                  style={{ 
-                    filter: 'invert(1) hue-rotate(180deg) contrast(1.2)', 
-                    mixBlendMode: 'screen' 
-                  }}
-                />
-              </div>
-              
-              {/* Decorative Floating Elements */}
-              <div className="absolute top-[5%] right-[5%] w-16 h-16 rounded-xl bg-card border border-primary/30 shadow-xl flex items-center justify-center transition-all duration-700 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12 group-hover:scale-110 z-20">
-                <div className="w-6 h-6 border-2 border-primary rounded-full border-t-transparent animate-spin" style={{ animationDuration: '3s' }} />
-              </div>
-              
-              <div className="absolute bottom-[5%] left-[5%] w-24 h-12 rounded-lg bg-card border border-primary/30 shadow-xl flex items-center justify-center gap-2.5 transition-all duration-700 delay-100 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:-translate-x-6 group-hover:translate-y-4 group-hover:-rotate-6 group-hover:scale-110 z-20">
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px] shadow-green-500/60" />
-                <div className="w-10 h-1.5 rounded-full bg-primary/40 transition-colors group-hover:bg-primary/80" />
-              </div>
-            </div>
-          </div>
+          
           <Link to="/portfolio" className="inline-flex items-center justify-center h-14 px-10 rounded-full border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-glow hover:scale-105">
             Nuestro portfolio
           </Link>
