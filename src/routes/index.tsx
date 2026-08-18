@@ -291,10 +291,6 @@ function About() {
               </div>
             ))}
           </div>
-          
-          <Link to="/portfolio" className="inline-flex items-center justify-center h-14 px-10 rounded-full border-2 border-primary text-primary font-semibold text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:shadow-glow hover:scale-105">
-            Nuestro portfolio
-          </Link>
         </div>
       </div>
     </section>
