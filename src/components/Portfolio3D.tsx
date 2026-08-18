@@ -55,7 +55,7 @@ export function Portfolio3D() {
   const STEP = 22.5;
 
   const mockups = [
-    { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "https://veterinaria-m-laga-premium-landing.vercel.app/" },
+    { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "https://veterinaria-m-laga-premium-landing.vercel.app/", image: "/veterinaria.jpg" },
     { type: "cursor" },
     { title: "Reserva Online: Clínica Dental", type: "mockup", url: "#clinica" },
     { type: "envelope" },
