@@ -130,11 +130,19 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+import { CookieConsentProvider } from '../context/CookieConsentContext';
+import { CookieBanner } from '../components/CookieBanner';
+import { TrackingScripts } from '../components/TrackingScripts';
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <CookieConsentProvider>
+        <TrackingScripts />
+        <Outlet />
+        <CookieBanner />
+      </CookieConsentProvider>
     </QueryClientProvider>
   );
 }
