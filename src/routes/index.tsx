@@ -513,7 +513,7 @@ function Pricing() {
             </div>
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
-                "Web multipágina: inicio, servicios/carta, galería y contacto",
+                "Web landing/ multipágina: inicio, servicios/carta, galería y contacto",
                 "Sistema de reservas o citas conectado a WhatsApp/email",
                 "Carta digital o catálogo de servicios con fotos y precios",
                 "Dominio propio + hosting + SSL (primer año incluido)",
