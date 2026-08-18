@@ -246,7 +246,7 @@ function About() {
         <img 
           src="/logo.jpg" 
           alt="" 
-          className="w-[150%] md:w-[110%] h-auto object-cover opacity-80"
+          className="w-[150%] md:w-[110%] h-auto object-cover opacity-80 transform translate-x-[20%] md:translate-x-[30%]"
           style={{ 
             filter: 'invert(1) hue-rotate(180deg) contrast(1.5)', 
             mixBlendMode: 'screen' 
