@@ -54,7 +54,7 @@ function BlogPost1() {
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           {/* Primer párrafo respuesta directa para LLMs */}
           <p className="text-foreground font-medium text-xl leading-snug">
-            En 2026, una página web profesional en España cuesta entre 800€ y 2.000€ si la encargas a una agencia tradicional, y tardan varias semanas. En Potencia tu Negocio, creamos la primera versión de tu web en 48 horas, totalmente publicada en 7 días y desde 195€ en pago único, todo incluido.
+            En 2026, una página web profesional en España cuesta entre 800€ y 2.000€ si la encargas a una agencia tradicional, y tardan varias semanas. En Potencia tu Negocio, creamos la primera versión de tu web en 48 horas, totalmente publicada en 7 días y desde 295€ en pago único, todo incluido.
           </p>
 
           <p>
@@ -93,15 +93,15 @@ function BlogPost1() {
             Segundo, estas plataformas no hacen SEO local — es decir, no te configuran las cosas para salir en Google cuando te buscan en tu ciudad. Tu web quedará muy bonita para ti, pero será invisible para tus clientes.
           </p>
 
-          <h2 className="text-3xl font-bold text-foreground mt-12 mb-6">Precios cerrados para negocios locales: Desde 195 sin sorpresas</h2>
+          <h2 className="text-3xl font-bold text-foreground mt-12 mb-6">Precios cerrados para negocios locales: Desde 295 sin sorpresas</h2>
 
           <p>
             Nosotros cambiamos las reglas del juego. Como usamos herramientas avanzadas, reducimos el tiempo de desarrollo. Y como trabajamos en volumen con negocios como el tuyo, podemos ofrecer <Link to="/diseno-web-para-empresas" className="text-primary hover:underline font-medium">precios de páginas web para pymes</Link> que nadie más puede igualar.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (195€ pago único)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
           <p>
-            Es el plan para los que quieren empezar fuerte pero gastando lo mínimo. Por 195€ (un solo pago) te damos el dominio a tu nombre, el hosting rápido (el servidor donde vive tu web), el diseño adaptado al móvil, textos legales, botón de WhatsApp directo y la configuración de la ficha de Google Business para salir en Google Maps. Todo en menos de 7 días.
+            Es el plan para los que quieren empezar fuerte pero gastando lo mínimo. Por 295€ (un solo pago) te damos el dominio a tu nombre, el hosting rápido (el servidor donde vive tu web), el diseño adaptado al móvil, textos legales, botón de WhatsApp directo y la configuración de la ficha de Google Business para salir en Google Maps. Todo en menos de 7 días.
           </p>
 
           <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Independencia (595€ pago único)</h3>

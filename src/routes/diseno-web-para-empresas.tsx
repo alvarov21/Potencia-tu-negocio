@@ -3,25 +3,25 @@ import { useState } from "react";
 import { Check, Shield, Globe, MapPin, MessageCircle, FileText, ArrowRight, Paintbrush, Rocket, X, Star, ChevronDown } from "lucide-react";
 
 const FAQS = [
-  { q: "¿Cuánto cuesta hacer una página web para un negocio pequeño?", a: "En Potencia tu Negocio, desde 195€ de configuración inicial (+24,95€/mes de mantenimiento). Ese precio inicial ya lleva el diseño, los textos y la ficha de Google Business, y la cuota mensual cubre el dominio, el hosting, el certificado de seguridad y el soporte. Para que te hagas una idea del mercado: una agencia tradicional en España suele cobrar entre 800€ y 2.000€ por lo mismo, y tardar semanas. Nuestro precio es cerrado: el número que ves es el número que pagas." },
+  { q: "¿Cuánto cuesta hacer una página web para un negocio pequeño?", a: "En Potencia tu Negocio, desde 295€ de configuración inicial (+24,95€/mes de mantenimiento). Ese precio inicial ya lleva el diseño, los textos y la ficha de Google Business, y la cuota mensual cubre el dominio, el hosting, el certificado de seguridad y el soporte. Para que te hagas una idea del mercado: una agencia tradicional en España suele cobrar entre 800€ y 2.000€ por lo mismo, y tardar semanas. Nuestro precio es cerrado: el número que ves es el número que pagas." },
   { q: "¿Cuánto se tarda en tener lista una página web?", a: "Con nosotros, ves la primera versión de tu web en 48 horas y está publicada en internet en menos de 7 días. El estándar del sector son 4 a 8 semanas, así que sí, la diferencia es grande. ¿El truco? Usamos inteligencia artificial para diseñar y redactar más rápido, y luego lo personalizamos a mano para tu sector y tu ciudad. Tú solo necesitas dedicarnos 10 minutos para contarnos tu negocio y pasarnos unas fotos." },
   { q: "No tengo ni idea de informática, ¿puedo tener una página web igualmente?", a: "Claro que sí — de hecho, la mayoría de nuestros clientes no sabe (ni quiere saber) de tecnología. Tú nos cuentas cómo es tu negocio, como se lo contarías a un amigo, y nosotros hacemos todo lo demás: diseño, textos, dominio, parte legal y publicación. Tu única tarea es mirar la web en tu móvil y decirnos \"me gusta\" o \"cámbiame esto\". No tocas ni un botón técnico, nunca." },
-  { q: "¿Qué incluye exactamente el precio? ¿Luego hay sorpresas?", a: "No hay sorpresas — es nuestra regla número uno. En el plan básico pagas 195€ de configuración y una cuota de 24,95€ al mes. Ese precio lo incluye todo: tu dominio (tunegocio.es, a tu nombre), hosting y SSL, diseño adaptado a móvil, textos escritos por nosotros, botón de WhatsApp, formulario de contacto, Google Maps, ficha de Google Business dada de alta y textos legales RGPD. Sabes lo que te va a costar desde el primer día, no te lo encuentras en la factura." },
+  { q: "¿Qué incluye exactamente el precio? ¿Luego hay sorpresas?", a: "No hay sorpresas — es nuestra regla número uno. En el plan básico pagas 295€ de configuración y una cuota de 24,95€ al mes. Ese precio lo incluye todo: tu dominio (tunegocio.es, a tu nombre), hosting y SSL, diseño adaptado a móvil, textos escritos por nosotros, botón de WhatsApp, formulario de contacto, Google Maps, ficha de Google Business dada de alta y textos legales RGPD. Sabes lo que te va a costar desde el primer día, no te lo encuentras en la factura." },
   { q: "¿La página web será mía o me quedo atado a vosotros?", a: "Es tuya. El dominio se registra a tu nombre desde el día uno — no al nuestro, como hacen otros — y con el Plan Independencia (595€) o Superior puedes llevarte también el código completo de la web cuando quieras. Sin permanencias y sin \"secuestros\": si un día decides irte con otro proveedor, te llevas todo. Nuestro plan de suscripción (Crecimiento) tampoco tiene permanencia: cancela cuando quieras." },
   { q: "¿Me va a servir la web para conseguir clientes o es solo para quedar bien?", a: "Para conseguir clientes — si no, no tendría sentido. Cada web se optimiza para que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad (\"cerrajero en Getafe\", \"restaurante en Vigo centro\"): eso es el SEO local, y va incluido desde el primer día, no como extra. Además te damos de alta la ficha de Google Business, que es lo que te saca en Google Maps. El 80% de tus clientes potenciales busca desde el móvil; el objetivo es que te encuentren a ti y te escriban por WhatsApp directamente." },
   { q: "Tengo un restaurante, ¿qué me ponéis en la web?", a: "Los restaurantes son nuestra especialidad. Tu web incluye carta digital con fotos y precios (con QR físico para las mesas si eliges el Plan Independencia), reservas directas por WhatsApp o email sin pagar comisiones a plataformas, tus reseñas de Google mostradas en tiempo real y conexión con lo que ya uses: TheFork, TripAdvisor, Glovo, Just Eat, Uber Eats... La idea es que quien te busque reserve contigo directamente, no a través de un intermediario que te cobra por cada mesa." },
   { q: "¿Qué pasa si quiero cambiar algo después, como el horario o los precios?", a: "Depende del plan, pero nunca te quedas tirado. Con el Plan Independencia tienes una ronda de cambios gratis los primeros 30 días. Con el Plan Crecimiento (75€/mes), los cambios son ilimitados y los hacemos en menos de 24 horas: nos escribes \"súbeme el menú nuevo\" por WhatsApp y al día siguiente está. Es la opción de quien no quiere volver a pensar en la web nunca más." },
-  { q: "¿Por qué sois tan baratos? ¿No será una plantilla cutre?", a: "Buena pregunta, y la respuesta es honesta: usamos inteligencia artificial para la parte lenta del trabajo (primeros diseños, borradores de textos), y eso recorta muchísimas horas. Lo que no recortamos es la personalización: cada web se adapta a tu sector, tu ciudad y tus fotos, con SEO local trabajado a mano. No es una plantilla genérica — es un proceso eficiente. Por eso podemos cobrar 195€ donde otros cobran 1.000€, y entregarte en 48 horas lo que otros entregan en un mes." },
+  { q: "¿Por qué sois tan baratos? ¿No será una plantilla cutre?", a: "Buena pregunta, y la respuesta es honesta: usamos inteligencia artificial para la parte lenta del trabajo (primeros diseños, borradores de textos), y eso recorta muchísimas horas. Lo que no recortamos es la personalización: cada web se adapta a tu sector, tu ciudad y tus fotos, con SEO local trabajado a mano. No es una plantilla genérica — es un proceso eficiente. Por eso podemos cobrar 295€ donde otros cobran 1.000€, y entregarte en 48 horas lo que otros entregan en un mes." },
   { q: "¿Cómo empiezo? ¿Tengo que firmar algo o pagar por adelantado?", a: "Empiezas gratis y sin compromiso: nos escribes por WhatsApp o rellenas el formulario contándonos tu negocio en 2 minutos, y en menos de 24 horas te enviamos una propuesta personalizada con cómo sería tu web y su precio exacto. Si te encaja, arrancamos y en 48 horas ves la primera versión. Si no te encaja, no pasa nada — no hay llamadas comerciales ni insistencia. La propuesta es gratis precisamente para que decidas viendo algo concreto, no a ciegas." },
 ];
 
 export const Route = createFileRoute("/diseno-web-para-empresas")({
   head: () => ({
     meta: [
-      { title: "Crear una Página Web para tu Negocio | Lista en 48h desde 195€" },
-      { name: "description", content: "Crear una página web para tu negocio nunca fue tan fácil. Incluye dominio, hosting, SEO local y ficha de Google. Lista en 48h, desde 195€ sin costes ocultos." },
-      { property: "og:title", content: "Crear una Página Web para tu Negocio | Lista en 48h desde 195€" },
-      { property: "og:description", content: "Crear una página web para tu negocio nunca fue tan fácil. Incluye dominio, hosting, SEO local y ficha de Google. Lista en 48h, desde 195€ sin costes ocultos." },
+      { title: "Crear una Página Web para tu Negocio | Lista en 48h desde 295€" },
+      { name: "description", content: "Crear una página web para tu negocio nunca fue tan fácil. Incluye dominio, hosting, SEO local y ficha de Google. Lista en 48h, desde 295€ sin costes ocultos." },
+      { property: "og:title", content: "Crear una Página Web para tu Negocio | Lista en 48h desde 295€" },
+      { property: "og:description", content: "Crear una página web para tu negocio nunca fue tan fácil. Incluye dominio, hosting, SEO local y ficha de Google. Lista en 48h, desde 295€ sin costes ocultos." },
     ],
   }),
   component: DisenoWebEmpresas,
@@ -56,7 +56,7 @@ function DisenoWebEmpresas() {
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6 text-balance">
               Crear una página web para tu negocio: <br className="hidden lg:block" />
-              lista en <span className="text-primary">48 horas</span>, desde 195€ y sin que tú hagas nada.
+              lista en <span className="text-primary">48 horas</span>, desde 295€ y sin que tú hagas nada.
             </h1>
             <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
               Diseño web profesional para empresas y negocios locales. Todo incluido (dominio, hosting, SEO local) sin costes ocultos ni permanencias abusivas.
@@ -182,7 +182,7 @@ function DisenoWebEmpresas() {
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
               <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
               <div className="mb-6 mt-4">
-                <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">195€</span></div>
+                <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">295€</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
                   Pago único &middot; después 24,95€/mes<br />
                   (dominio, hosting y soporte)

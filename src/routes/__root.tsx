@@ -113,7 +113,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "email": "info@potenciatunegocio.eu",
     "url": "https://potencia-tu-negocio.vercel.app",
     "areaServed": "ES",
-    "priceRange": "195€-825€",
+    "priceRange": "295€-825€",
   };
 
   return (

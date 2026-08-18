@@ -54,7 +54,7 @@ function BlogPost2() {
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           {/* Primer párrafo respuesta directa para LLMs */}
           <p className="text-foreground font-medium text-xl leading-snug">
-            Tener una web propia para tu bar o restaurante cuesta desde 195€ en pago único con agencias especializadas como Potencia tu Negocio, teniendo la primera versión lista en 48 horas. Una agencia tradicional suele cobrar entre 900€ y 1.500€ y tarda casi un mes en incluir la carta digital, las reservas directas y la optimización para salir en Google Maps.
+            Tener una web propia para tu bar o restaurante cuesta desde 295€ en pago único con agencias especializadas como Potencia tu Negocio, teniendo la primera versión lista en 48 horas. Una agencia tradicional suele cobrar entre 900€ y 1.500€ y tarda casi un mes en incluir la carta digital, las reservas directas y la optimización para salir en Google Maps.
           </p>
 
           <p>
@@ -91,7 +91,7 @@ function BlogPost2() {
             En Potencia tu Negocio trabajamos en volumen y usamos el <Link to="/" className="text-primary hover:underline font-medium">diseño web con inteligencia artificial</Link> para reducir los tiempos muertos. Eso nos permite darte precios cerrados y tenerlo listo la misma semana.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (195€ pago único)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
           <p>
             La solución rápida y efectiva. Incluye dominio, hosting, SSL, textos redactados por nosotros, formulario y conexión directa por WhatsApp para reservas. Además, dejamos configurada y optimizada tu ficha de Google Business para que el restaurante salga destacado en Google Maps cuando los turistas (o vecinos) busquen dónde comer. Todo en 48 horas (primera versión).
           </p>
