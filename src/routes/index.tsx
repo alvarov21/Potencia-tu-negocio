@@ -514,6 +514,8 @@ function Pricing() {
             <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
               {[
                 "Web multipágina: inicio, servicios/carta, galería y contacto",
+                "Sistema de reservas o citas conectado a WhatsApp/email",
+                "Carta digital o catálogo de servicios con fotos y precios",
                 "Dominio propio + hosting + SSL (primer año incluido)",
                 "Botón de WhatsApp directo y formulario de contacto",
                 "Google Maps integrado y ficha de Google Business dada de alta",
@@ -533,7 +535,7 @@ function Pricing() {
           </article>
 
           {/* Plan Crecimiento (Premium) */}
-          <article className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow">
+          <article className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow h-full">
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider whitespace-nowrap">
               Más elegido
             </span>
@@ -557,8 +559,6 @@ function Pricing() {
                   <strong className="text-foreground">Análisis SEO exhaustivo: estudio de competencia, palabras clave de tu sector y ciudad, y optimización técnica continua para destacar frente a otros negocios de tu zona.</strong>
                   <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
                 </span>,
-                "Sistema de reservas o citas conectado a WhatsApp/email",
-                "Carta digital o catálogo de servicios con fotos y precios",
                 "Cambios ilimitados de contenido (carta, precios, horarios, promociones) en menos de 24h",
                 "Gestión activa de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
                 "Informe mensual de resultados: visitas, llamadas y contactos por WhatsApp",
