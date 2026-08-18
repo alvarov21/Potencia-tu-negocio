@@ -283,11 +283,18 @@ function About() {
             <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full transition-all duration-700 ease-out group-hover:scale-125 group-hover:bg-primary/30" />
             
             <div className="relative w-full h-full flex items-center justify-center transition-all duration-700 ease-out transform-gpu group-hover:[transform:rotateY(12deg)_rotateX(6deg)_scale(1.05)]">
-              <img 
-                src="/about_us.jpg" 
-                alt="Agencia de diseño web trabajando" 
-                className="w-[85%] h-[85%] object-cover rounded-2xl shadow-2xl border border-primary/30 relative z-10 transition-all duration-500 group-hover:border-primary/60 group-hover:shadow-[0_0_30px] group-hover:shadow-primary/20"
-              />
+              <div className="relative w-[85%] h-[85%] flex items-center justify-center rounded-2xl">
+                {/* Logo without background (using CSS trick for dark themes: invert + screen) */}
+                <img 
+                  src="/logo.jpg" 
+                  alt="Potencia tu Negocio Logo 3D" 
+                  className="w-[80%] h-auto object-contain relative z-10 transition-all duration-500 drop-shadow-[0_20px_30px_rgba(255,255,255,0.15)] group-hover:drop-shadow-[0_30px_40px_rgba(255,255,255,0.25)] group-hover:-translate-y-4"
+                  style={{ 
+                    filter: 'invert(1) hue-rotate(180deg) contrast(1.2)', 
+                    mixBlendMode: 'screen' 
+                  }}
+                />
+              </div>
               
               {/* Decorative Floating Elements */}
               <div className="absolute top-[5%] right-[5%] w-16 h-16 rounded-xl bg-card border border-primary/30 shadow-xl flex items-center justify-center transition-all duration-700 translate-x-0 translate-y-0 rotate-0 scale-100 group-hover:translate-x-4 group-hover:-translate-y-4 group-hover:rotate-12 group-hover:scale-110 z-20">
