@@ -446,7 +446,7 @@ function Pricing() {
         "item": {
           "@type": "Product",
           "name": "Plan Presencia",
-          "description": "Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos y cualquier negocio que necesita estar online ya.",
+          "description": "Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.",
           "image": "https://potencia-tu-negocio.vercel.app/logo.jpg",
           "brand": {
             "@type": "Brand",
@@ -497,7 +497,7 @@ function Pricing() {
           <article className="bg-card border border-border rounded-3xl p-8 flex flex-col hover:border-primary/50 transition">
             <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
             <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Para que te encuentren en Google. Ideal para talleres, electricistas, autónomos y cualquier negocio que necesita estar online ya.</p>
+            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.</p>
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">350€</span>
