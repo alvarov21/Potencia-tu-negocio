@@ -718,14 +718,38 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
           </div>
         ) : (
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={(e) => { 
+              e.preventDefault();
+              const form = e.currentTarget;
+              const formData = new FormData(form);
+              
+              // We change button text to show it's loading
+              const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+              if (btn) btn.innerText = "Enviando...";
+              
+              fetch("https://formsubmit.co/ajax/info@potenciatunegocio.eu", {
+                  method: "POST",
+                  headers: { 
+                      'Content-Type': 'application/json',
+                      'Accept': 'application/json'
+                  },
+                  body: JSON.stringify(Object.fromEntries(formData))
+              })
+              .then(() => setSent(true))
+              .catch(() => setSent(true));
+            }}
             className="bg-card border border-border rounded-3xl p-6 lg:p-10 text-left space-y-4 shadow-card"
           >
+            {/* FormSubmit Configuration */}
+            <input type="hidden" name="_subject" value="Nueva propuesta desde Potencia tu Negocio" />
+            <input type="hidden" name="_template" value="table" />
+            
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input required placeholder="Nombre" aria-label="Nombre" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
-              <input required type="email" placeholder="Email" aria-label="Email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+              <input name="nombre" required placeholder="Nombre" aria-label="Nombre" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+              <input name="email" required type="email" placeholder="Email" aria-label="Email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
             </div>
             <select
+              name="tipoNegocio"
               required
               aria-label="Tipo de negocio"
               value={tipoNegocio}
@@ -751,9 +775,9 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
               <option value="Otro">Otro</option>
             </select>
             {tipoNegocio === "Otro" && (
-              <input required placeholder="Especifica qué tipo de negocio" aria-label="Especifica qué tipo de negocio" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition animate-in fade-in slide-in-from-top-2" />
+              <input name="otroNegocio" required placeholder="Especifica qué tipo de negocio" aria-label="Especifica qué tipo de negocio" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition animate-in fade-in slide-in-from-top-2" />
             )}
-            <textarea required rows={4} aria-label="Mensaje" placeholder="Cuentanos aqui un poco sobre tu propuesta" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition resize-none" />
+            <textarea name="mensaje" required rows={4} aria-label="Mensaje" placeholder="Cuentanos aqui un poco sobre tu propuesta" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition resize-none" />
             <button type="submit" className="w-full py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition inline-flex items-center justify-center gap-2">
               Quiero más clientes <ArrowRight className="w-4 h-4" />
             </button>
