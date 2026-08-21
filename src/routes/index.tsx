@@ -804,10 +804,10 @@ function Footer() {
     <footer className="border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 border-b border-border">
         <a
-          href="https://www.trustpilot.com/review/potencia-tu-negocio.vercel.app"
+          href="mailto:potenciatunegocio.eu+e60fa6de11@invite.trustpilot.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Déjanos tu reseña en Trustpilot"
+          aria-label="Valóranos en Trustpilot"
           className="group flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left"
         >
           <div className="flex items-center gap-2">
@@ -830,7 +830,7 @@ function Footer() {
           <div className="text-sm">
             <p className="text-foreground font-medium">¿Trabajamos juntos?</p>
             <p className="text-muted-foreground group-hover:text-foreground transition">
-              Déjanos tu reseña en Trustpilot →
+              Valóranos en Trustpilot →
             </p>
           </div>
         </a>
