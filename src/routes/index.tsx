@@ -804,7 +804,7 @@ function Footer() {
     <footer className="border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 border-b border-border">
         <a
-          href="mailto:potenciatunegocio.eu+e60fa6de11@invite.trustpilot.com"
+          href="https://www.trustpilot.com/review/potenciatunegocio.eu"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Valóranos en Trustpilot"
