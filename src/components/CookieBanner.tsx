@@ -12,6 +12,10 @@ export function CookieBanner() {
     marketing: false,
   });
 
+  const [mounted, setMounted] = useState(false);
+  React.useEffect(() => setMounted(true), []);
+
+  if (!mounted) return null;
   if (hasInteracted && !isSettingsOpen) return null;
 
   const handleSave = () => {
