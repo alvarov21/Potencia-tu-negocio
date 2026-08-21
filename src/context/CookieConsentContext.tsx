@@ -26,21 +26,25 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     // Check localStorage on mount
-    const stored = localStorage.getItem('cookie-consent');
-    if (stored) {
-      try {
+    try {
+      const stored = localStorage.getItem('cookie-consent');
+      if (stored) {
         setPreferences(JSON.parse(stored));
         setHasInteracted(true);
-      } catch (e) {
-        // Invalid JSON, ignore
       }
+    } catch (e) {
+      console.warn("localStorage is not available:", e);
     }
   }, []);
 
   const saveAndSet = (prefs: CookiePreferences) => {
     setPreferences(prefs);
     setHasInteracted(true);
-    localStorage.setItem('cookie-consent', JSON.stringify(prefs));
+    try {
+      localStorage.setItem('cookie-consent', JSON.stringify(prefs));
+    } catch (e) {
+      console.warn("Could not save to localStorage:", e);
+    }
   };
 
   const acceptAll = () => {

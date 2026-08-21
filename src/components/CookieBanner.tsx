@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useCookieConsent, CookiePreferences } from '../context/CookieConsentContext';
 import { X, Check } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 
 export function CookieBanner() {
   const { hasInteracted, acceptAll, rejectAll, savePreferences, isSettingsOpen, openSettings, closeSettings } = useCookieConsent();
@@ -27,7 +28,7 @@ export function CookieBanner() {
               <h3 className="text-lg font-bold mb-2">Valoramos tu privacidad</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Utilizamos cookies propias y de terceros para garantizar el correcto funcionamiento de la web, analizar nuestro tráfico y mostrarte publicidad personalizada en base a un perfil elaborado a partir de tus hábitos de navegación. 
-                Puedes aceptar todas las cookies, rechazarlas o configurarlas a tu medida.
+                Puedes aceptar todas las cookies, rechazarlas o configurarlas a tu medida. Tienes más información en nuestra <Link to="/politica-de-privacidad" className="underline hover:text-foreground">Política de Privacidad</Link> y <Link to="/politica-de-cookies" className="underline hover:text-foreground">Política de Cookies</Link>.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
