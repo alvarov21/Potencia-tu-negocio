@@ -91,7 +91,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "canonical", href: "https://potencia-tu-negocio.vercel.app/" },
-      { rel: "icon", type: "image/jpeg", href: "/logo.jpg" },
+      { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
+      { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
       { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
