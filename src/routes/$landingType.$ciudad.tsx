@@ -36,59 +36,7 @@ function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-const SECTOR_CONTENT = {
-  "restaurantes": {
-    p1: `La hostelería en {city} no perdona. Si la gente busca dónde comer esta noche o un buen menú del día y tu restaurante no sale en la primera página de Google, están yendo a la competencia.`,
-    p2: `No necesitas otra web anticuada. Creamos con IA una página atractiva, integramos tu sistema de reservas y optimizamos tu ficha de Maps para que las reseñas trabajen por ti.`,
-    p3: `Todo listo en menos de 7 días, sin que tengas que dejar la cocina o la barra para hacer de informático.`
-  },
-  "clinicas-dentales": {
-    p1: `La confianza es clave en la salud. Cuando un paciente en {city} busca "implantes dentales" o "urgencia dental", la imagen que transmite tu web decide si piden cita o se van.`,
-    p2: `Diseñamos webs médicas que inspiran profesionalidad, con formularios de primera visita optimizados y destacando los tratamientos más rentables de tu clínica.`,
-    p3: `Consigue más primeras visitas cada mes posicionándote por encima de las franquicias en el mapa de {city}.`
-  },
-  "talleres-mecanicos": {
-    p1: `Nadie busca un taller por aburrimiento. Cuando alguien en {city} necesita arreglar el coche, busca urgencia, transparencia y un taller cerca de su ubicación.`,
-    p2: `Tu nueva web incluirá un botón directo a WhatsApp para presupuestos rápidos, listado de tus servicios (chapa, pintura, diagnosis) y opiniones verificadas para dar seguridad.`,
-    p3: `Convierte tu web en tu mejor comercial y recibe solicitudes de cita previa mientras estás debajo del elevador.`
-  },
-  "peluquerias": {
-    p1: `El sector de la belleza en {city} se mueve por imagen. Si tu salón hace trabajos increíbles pero tu presencia en internet es invisible, estás perdiendo clientes todos los días.`,
-    p2: `Creamos un portfolio visual impactante para tus mejores peinados y coloraciones, junto con un sistema de reservas integrado si lo necesitas.`,
-    p3: `Llena tu agenda de citas semanales haciendo que los vecinos de tu zona te descubran en su móvil.`
-  },
-  "gestorias": {
-    p1: `Las pymes y autónomos de {city} buscan asesores de confianza. Tu página web debe reflejar la seriedad y la tranquilidad que ofreces al gestionar sus impuestos.`,
-    p2: `Desarrollamos una web corporativa que explica claramente tus servicios (fiscal, laboral, contable) y facilita que te contacten en un solo clic.`,
-    p3: `Deja que la inteligencia artificial y el SEO capten clientes para tu despacho mientras tú te encargas de los números.`
-  },
-  "veterinarias": {
-    p1: `Cuando una mascota en {city} necesita atención, sus dueños buscan al mejor profesional cerca de casa. Tu web tiene que transmitir el mismo cariño y profesionalidad que das en la consulta.`,
-    p2: `Diseñamos webs para veterinarias que destacan tus servicios (vacunación, cirugía, urgencias 24h) e incluyen botones directos de llamada o cita previa.`,
-    p3: `Posiciónate por delante de la competencia local en Google y consigue que más dueños de mascotas de {city} te elijan.`
-  },
-  "centros-de-estetica": {
-    p1: `La primera impresión cuenta. Si tu centro de estética en {city} tiene tratamientos innovadores pero no sales en Google o tu web parece antigua, los clientes se van a otro lado.`,
-    p2: `Creamos una página elegante y optimizada donde puedes mostrar tus servicios (depilación, faciales, masajes) con listas de precios claras y un diseño visual muy cuidado.`,
-    p3: `Atrae nuevas clientas cada semana haciendo que descubran tu salón al buscar tratamientos estéticos en {city}.`
-  },
-  "abogados": {
-    p1: `La elección de un despacho legal se basa en la confianza y la autoridad. Cuando alguien en {city} necesita asesoría legal urgente, la primera impresión de tu web decide a quién llama.`,
-    p2: `Diseñamos webs corporativas sobrias y seguras para firmas legales, destacando tus áreas de especialización (penal, laboral, familia) y facilitando el contacto directo.`,
-    p3: `Posiciona tu bufete como el referente en {city} y atrae a clientes que necesitan respuestas hoy.`
-  },
-  "fisioterapeutas": {
-    p1: `El dolor no espera. Si alguien en {city} sufre una contractura y busca un "fisioterapeuta cerca", tu clínica debe aparecer la primera y ofrecer cita rápida.`,
-    p2: `Creamos páginas web funcionales para clínicas de fisioterapia con integración total de tu software de reservas y sección detallada de tratamientos y tarifas.`,
-    p3: `Llena la agenda de tus fisioterapeutas captando pacientes de tu zona de forma automática.`
-  }
-};
-
-const DEFAULT_CONTENT = {
-  p1: `Si tienes un negocio en {city}, sabes que la competencia es brutal. Cuando alguien busca en Google lo que ofreces, o apareces tú, o aparece tu competencia.`,
-  p2: `En Potencia tu Negocio creamos webs con inteligencia artificial diseñadas específicamente para captar clientes en tu ciudad. Integramos Maps, WhatsApp y SEO local.`,
-  p3: `Lo mejor: la primera versión está lista en 48 horas. Te enseñamos cómo queda y, si te gusta, la publicamos. Sin complicaciones.`
-};
+import { getGeoContent } from "../data/geoContent";
 
 export const Route = createFileRoute("/$landingType/$ciudad")({
   beforeLoad: ({ params: { landingType, ciudad } }) => {
@@ -151,13 +99,13 @@ function GeoLanding() {
         
         <div className="text-lg text-muted-foreground mb-12 space-y-6 text-left max-w-3xl mx-auto">
           <p>
-            {(SECTOR_CONTENT[sector as keyof typeof SECTOR_CONTENT] || DEFAULT_CONTENT).p1.replace("{city}", cityDisplay)}
+            {getGeoContent(sector, ciudad).p1}
           </p>
           <p>
-            {(SECTOR_CONTENT[sector as keyof typeof SECTOR_CONTENT] || DEFAULT_CONTENT).p2.replace("{city}", cityDisplay)}
+            {getGeoContent(sector, ciudad).p2}
           </p>
           <p>
-            {(SECTOR_CONTENT[sector as keyof typeof SECTOR_CONTENT] || DEFAULT_CONTENT).p3.replace("{city}", cityDisplay)}
+            {getGeoContent(sector, ciudad).p3}
           </p>
         </div>
       </div>
