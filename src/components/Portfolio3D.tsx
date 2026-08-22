@@ -55,13 +55,13 @@ export function Portfolio3D() {
   const STEP = 22.5;
 
   const mockups = [
-    { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "https://veterinaria-m-laga-premium-landing.vercel.app/", image: "/veterinaria-mockup.jpg" },
+    { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "/portfolio/veterinaria-malaga", image: "/veterinaria-mockup.jpg" },
     { type: "cursor" },
-    { title: "Centro de Estética: Estetimagen", type: "mockup", url: "https://estetimagen-granada.vercel.app", image: "/estetimagen-mockup.jpg" },
+    { title: "Centro de Estética: Estetimagen", type: "mockup", url: "/portfolio/estetimagen", image: "/estetimagen-mockup.jpg" },
     { type: "envelope" },
-    { title: "Catálogo: Taller Mecánico", type: "mockup", url: "#taller" },
+    { title: "Catálogo: Taller Mecánico", type: "mockup", url: "/portfolio/taller-mecanico" },
     { type: "sparkle" },
-    { title: "Web Restaurante: Picoteo", type: "mockup", url: "https://picoteo-murex.vercel.app", image: "/picoteo.png" },
+    { title: "Web Restaurante: Picoteo", type: "mockup", url: "/portfolio/picoteo", image: "/picoteo.png" },
     { type: "cursor" },
   ];
 

@@ -28,9 +28,9 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Diseño de páginas web profesional para restaurantes, clínicas, talleres y cualquier negocio local. SEO local incluido, primera versión en 48 horas, desde 295€ con dominio y Google Business. Propuesta gratis en 24h." },
       { property: "og:title", content: "Diseño de Páginas Web para Negocios Locales | Lista en 48h desde 295€" },
       { property: "og:description", content: "Diseño de páginas web profesional para restaurantes, clínicas, talleres y cualquier negocio local. SEO local incluido, primera versión en 48 horas, desde 295€ con dominio y Google Business. Propuesta gratis en 24h." },
-      { property: "og:url", content: "https://potencia-tu-negocio.vercel.app/" },
+      { property: "og:url", content: "https://www.potenciatunegocio.eu/" },
     ],
-    links: [{ rel: "canonical", href: "https://potencia-tu-negocio.vercel.app/" }],
+    links: [{ rel: "canonical", href: "https://www.potenciatunegocio.eu/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/")({
           "@type": "ProfessionalService",
           name: "Potencia tu Negocio",
           description: "Agencia de diseño web con IA especializada en negocios locales y hostelería en España.",
-          url: "https://potencia-tu-negocio.vercel.app/",
+          url: "https://www.potenciatunegocio.eu/",
           areaServed: "ES",
           serviceType: "Diseño web para negocios locales",
         }),
@@ -392,7 +392,7 @@ function Pricing() {
           "@type": "Product",
           "name": "Plan Presencia",
           "description": "Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.",
-          "image": "https://potencia-tu-negocio.vercel.app/logo.jpg",
+          "image": "https://www.potenciatunegocio.eu/logo.jpg",
           "brand": {
             "@type": "Brand",
             "name": "Potencia tu Negocio"
@@ -412,7 +412,7 @@ function Pricing() {
           "@type": "Product",
           "name": "Plan Crecimiento",
           "description": "No solo tienes web: nos encargamos de que te encuentren antes que a tu competencia. Todo lo del Plan Presencia, y además:",
-          "image": "https://potencia-tu-negocio.vercel.app/logo.jpg",
+          "image": "https://www.potenciatunegocio.eu/logo.jpg",
           "brand": {
             "@type": "Brand",
             "name": "Potencia tu Negocio"
@@ -503,7 +503,13 @@ function Pricing() {
               {[
                 "Todo lo incluido en el Plan Presencia, además de:",
                 <span className="inline" key="seo">
-                  <strong className="text-foreground">Análisis SEO exhaustivo: estudio de competencia, palabras clave de tu sector y ciudad, y optimización técnica continua para destacar frente a otros negocios de tu zona.</strong>
+                  <strong className="text-foreground">Análisis SEO exhaustivo con entregables claros:</strong>
+                  <ul className="mt-2 space-y-1 ml-4 text-sm text-muted-foreground list-disc list-outside">
+                    <li>Auditoría técnica inicial (Core Web Vitals, Schema.org, Indexación).</li>
+                    <li><strong>[X]</strong> palabras clave locales analizadas al mes para tu sector y ciudad.</li>
+                    <li>Optimización de contenido <strong>[Frecuencia: Semanal/Mensual]</strong>.</li>
+                    <li>Informe <strong>[Mensual]</strong> (tráfico, posiciones, clics en Maps).</li>
+                  </ul>
                   <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
                 </span>,
                 "Cambios ilimitados de contenido (carta, precios, horarios, promociones) en menos de 24h",

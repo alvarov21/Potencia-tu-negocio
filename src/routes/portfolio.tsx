@@ -19,10 +19,8 @@ function Portfolio() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           {/* Opción 1 - Picoteo */}
-          <a 
-            href="https://picoteo-murex.vercel.app" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/portfolio/picoteo" 
             className="group relative bg-card border border-border rounded-3xl p-8 overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-glow flex flex-col items-center text-center isolate"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
@@ -39,13 +37,11 @@ function Portfolio() {
             <div className="mt-auto flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
               Visitar proyecto <ExternalLink className="w-4 h-4" />
             </div>
-          </a>
+          </Link>
 
           {/* Opción 2 - Taberna Padre Pío */}
-          <a 
-            href="https://padre-pio-web-experience.vercel.app" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            to="/portfolio/padre-pio" 
             className="group relative bg-card border border-border rounded-3xl p-8 overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-glow flex flex-col items-center text-center isolate"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
@@ -62,7 +58,7 @@ function Portfolio() {
             <div className="mt-auto flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
               Visitar proyecto <ExternalLink className="w-4 h-4" />
             </div>
-          </a>
+          </Link>
         </div>
         
         <div className="text-center">

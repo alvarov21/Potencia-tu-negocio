@@ -73,33 +73,36 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
-      { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 7 días desde 595€. Especialistas en hostelería." },
-      { name: "keywords", content: "diseño web negocios locales, web para restaurantes, SEO local, web con IA, agencia web hostelería, web para clínicas, web para talleres" },
-      { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-      { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://potencia-tu-negocio.vercel.app/" },
-      { property: "og:locale", content: "es_ES" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-      { name: "twitter:description", content: "Webs profesionales con IA para negocios locales. SEO incluido, listas en 7 días desde 595€." },
-    ],
-    links: [
-      { rel: "canonical", href: "https://potencia-tu-negocio.vercel.app/" },
-      { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
-      { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
-      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@1&display=swap", type: "text/css" },
-    ],
-  }),
+  head: ({ location }) => {
+    const currentUrl = `https://www.potenciatunegocio.eu${location.pathname === '/' ? '' : location.pathname}`;
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
+        { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 7 días desde 595€. Especialistas en hostelería." },
+        { name: "keywords", content: "diseño web negocios locales, web para restaurantes, SEO local, web con IA, agencia web hostelería, web para clínicas, web para talleres" },
+        { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
+        { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: currentUrl },
+        { property: "og:locale", content: "es_ES" },
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
+        { name: "twitter:description", content: "Webs profesionales con IA para negocios locales. SEO incluido, listas en 7 días desde 595€." },
+      ],
+      links: [
+        { rel: "canonical", href: currentUrl },
+        { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
+        { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
+        { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+        { rel: "stylesheet", href: appCss },
+        { rel: "preconnect", href: "https://fonts.googleapis.com" },
+        { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@1&display=swap", type: "text/css" },
+      ],
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -113,7 +116,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "name": "Potencia tu Negocio",
     "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
     "email": "info@potenciatunegocio.eu",
-    "url": "https://potencia-tu-negocio.vercel.app",
+    "url": "https://www.potenciatunegocio.eu",
     "areaServed": "ES",
     "priceRange": "295€-825€",
   };

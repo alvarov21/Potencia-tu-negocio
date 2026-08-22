@@ -23,6 +23,26 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
       meta: [
         { title: `Agencia Experta en SEO Local en ${cityName} | Potencia tu Negocio` },
         { name: "description", content: `Servicios de SEO Local en ${cityName}. Posiciona tu empresa en Google Maps y capta clientes cercanos que buscan tus servicios hoy mismo.` },
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: `Servicios de SEO Local en ${cityName}`,
+            provider: {
+              "@type": "LocalBusiness",
+              name: "Potencia tu Negocio",
+              url: "https://www.potenciatunegocio.eu"
+            },
+            areaServed: {
+              "@type": "City",
+              name: cityName
+            },
+            description: `Servicios de SEO Local en ${cityName}. Posiciona tu empresa en Google Maps y capta clientes cercanos.`
+          }),
+        }
       ]
     };
   },

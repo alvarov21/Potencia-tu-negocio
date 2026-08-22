@@ -107,6 +107,26 @@ export const Route = createFileRoute("/$landingType/$ciudad")({
       meta: [
         { title: `Diseño de páginas web para ${sectorName} en ${cityName} | Potencia tu Negocio` },
         { name: "description", content: `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 7 días y desde 595€.` },
+      ],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: `Diseño web para ${sectorName} en ${cityName}`,
+            provider: {
+              "@type": "LocalBusiness",
+              name: "Potencia tu Negocio",
+              url: "https://www.potenciatunegocio.eu"
+            },
+            areaServed: {
+              "@type": "City",
+              name: cityName
+            },
+            description: `Servicio especializado de diseño web para ${sectorName} enfocado en captar clientes en ${cityName}.`
+          }),
+        }
       ]
     };
   },
