@@ -122,8 +122,8 @@ function Nav() {
             <a key={n.href} href={n.href} className="hover:text-foreground transition-colors">{n.label}</a>
           ))}
         </nav>
-        <a href="#precios" className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-gradient-cta shadow-glow hover:opacity-90 transition">
-          Ver planes <ArrowRight className="w-3.5 h-3.5" />
+        <a href="#contacto" className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-gradient-cta shadow-glow hover:opacity-90 transition">
+          Prediseño gratis <ArrowRight className="w-3.5 h-3.5" />
         </a>
       </div>
     </header>
