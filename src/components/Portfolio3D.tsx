@@ -57,7 +57,7 @@ export function Portfolio3D() {
   const mockups = [
     { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "https://veterinaria-m-laga-premium-landing.vercel.app/", image: "/veterinaria-mockup.jpg" },
     { type: "cursor" },
-    { title: "Centro de Estética: Estetimagen", type: "mockup", url: "https://estetimagen-granada.vercel.app" },
+    { title: "Centro de Estética: Estetimagen", type: "mockup", url: "https://estetimagen-granada.vercel.app", image: "/estetimagen-mockup.jpg" },
     { type: "envelope" },
     { title: "Catálogo: Taller Mecánico", type: "mockup", url: "#taller" },
     { type: "sparkle" },
