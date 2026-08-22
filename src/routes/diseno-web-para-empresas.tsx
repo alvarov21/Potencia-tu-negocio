@@ -193,7 +193,8 @@ function DisenoWebEmpresas() {
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Dominio y SSL</li>
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Google Maps y WhatsApp</li>
               </ul>
-              <a href="#contacto" className="block text-center mt-4 py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
+              <p className="text-xs text-muted-foreground italic mb-5 mt-4">Renovación anual opcional por 89,90 € o transferencia del dominio a tu nombre (gratis).</p>
+              <a href="#contacto" className="block text-center mt-auto py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
                 Solicitar Propuesta
               </a>
             </article>
