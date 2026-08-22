@@ -11,6 +11,8 @@ function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+import { getGeoContent } from "../data/geoContent";
+
 export const Route = createFileRoute("/seo-local/$ciudad")({
   beforeLoad: ({ params: { ciudad } }) => {
     if (!VALID_CITIES.includes(ciudad.toLowerCase())) {
@@ -18,11 +20,17 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
     }
   },
   head: ({ params }) => {
-    const cityName = capitalize(params.ciudad);
+    const cityName = getGeoContent("seo-local", params.ciudad).cityName;
+    const url = `https://www.potenciatunegocio.eu/seo-local/${params.ciudad}`;
+    
     return {
       meta: [
         { title: `Agencia Experta en SEO Local en ${cityName} | Potencia tu Negocio` },
         { name: "description", content: `Servicios de SEO Local en ${cityName}. Posiciona tu empresa en Google Maps y capta clientes cercanos que buscan tus servicios hoy mismo.` },
+        { property: "og:url", content: url },
+      ],
+      links: [
+        { rel: "canonical", href: url }
       ],
       scripts: [
         {

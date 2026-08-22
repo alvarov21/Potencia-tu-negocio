@@ -49,12 +49,19 @@ export const Route = createFileRoute("/$landingType/$ciudad")({
   head: ({ params }) => {
     const sector = params.landingType.replace("diseno-web-para-", "");
     const sectorName = VALID_SECTORS[sector as keyof typeof VALID_SECTORS] || sector;
-    const cityName = capitalize(params.ciudad);
+    // Usar la función getGeoContent para acceder al nombre correcto con tilde indirectamente, 
+    // o simplemente importar la constante si la exportamos. Para no complicar, usaremos un hack rápido o capitalizaremos si no.
+    const cityName = getGeoContent(sector, params.ciudad).cityName || capitalize(params.ciudad);
+    const url = `https://www.potenciatunegocio.eu/${params.landingType}/${params.ciudad}`;
     
     return {
       meta: [
         { title: `Diseño de páginas web para ${sectorName} en ${cityName} | Potencia tu Negocio` },
         { name: "description", content: `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 7 días y desde 595€.` },
+        { property: "og:url", content: url },
+      ],
+      links: [
+        { rel: "canonical", href: url }
       ],
       scripts: [
         {

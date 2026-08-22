@@ -11,6 +11,8 @@ function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+import { getGeoContent } from "../data/geoContent";
+
 export const Route = createFileRoute("/diseno-web/$ciudad")({
   beforeLoad: ({ params: { ciudad } }) => {
     if (!VALID_CITIES.includes(ciudad.toLowerCase())) {
@@ -18,11 +20,17 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
     }
   },
   head: ({ params }) => {
-    const cityName = capitalize(params.ciudad);
+    const cityName = getGeoContent("diseno-web", params.ciudad).cityName;
+    const url = `https://www.potenciatunegocio.eu/diseno-web/${params.ciudad}`;
+    
     return {
       meta: [
         { title: `Agencia de Diseño Web en ${cityName} | Potencia tu Negocio` },
         { name: "description", content: `Servicios de diseño de páginas web profesionales en ${cityName}. Atrae más clientes locales con una web rápida, adaptada a móviles y optimizada para Google.` },
+        { property: "og:url", content: url },
+      ],
+      links: [
+        { rel: "canonical", href: url }
       ],
       scripts: [
         {
