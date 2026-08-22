@@ -11,7 +11,7 @@ function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-import { getGeoContent } from "../data/geoContent";
+import { getGeoContent, CITIES_DATA, FALLBACK_DATA } from "../data/geoContent";
 
 export const Route = createFileRoute("/seo-local/$ciudad")({
   beforeLoad: ({ params: { ciudad } }) => {
@@ -59,7 +59,9 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
 
 function SeoLocalCiudad() {
   const { ciudad } = Route.useParams();
-  const cityDisplay = capitalize(ciudad);
+  const cityKey = ciudad.toLowerCase();
+  const cityData = CITIES_DATA[cityKey] || FALLBACK_DATA;
+  const cityDisplay = cityData.properName || capitalize(ciudad);
 
   return (
     <div className="min-h-screen bg-background text-foreground pt-32 px-6 lg:px-10">
@@ -68,33 +70,33 @@ function SeoLocalCiudad() {
           Posicionamiento en {cityDisplay}
         </span>
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-8 text-balance">
-          SEO Local en <span className="text-primary">{cityDisplay}</span>: Domina tu ciudad
+          SEO Local en <span className="text-primary">{cityDisplay}</span> para multiplicar tus ventas
         </h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Tener el mejor negocio de {cityDisplay} no sirve de nada si la gente encuentra antes a tu competencia en Google Maps. Te ayudamos a ser el número uno.
+          Destaca en Google Maps por encima de los competidores locales. Atrae a clientes de {cityData.barrios[0]}, {cityData.barrios[2]} y todo {cityDisplay} justo cuando buscan tus servicios.
         </p>
       </div>
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">
           <MapPin className="w-10 h-10 text-primary mb-6" />
-          <h3 className="text-xl font-bold mb-3">Google Business Profile</h3>
+          <h3 className="text-xl font-bold mb-3">Google Maps 1º Posición</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Reclamamos, verificamos y optimizamos al 100% tu ficha de Google para que destaques en las búsquedas locales de {cityDisplay}.
+            Optimizamos tu Perfil de Empresa para que seas el negocio {cityData.adjetivo} más visible y con mejores reseñas en {cityData.zona_centro}.
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">
           <Search className="w-10 h-10 text-primary mb-6" />
-          <h3 className="text-xl font-bold mb-3">Búsquedas Cercanas</h3>
+          <h3 className="text-xl font-bold mb-3">Búsquedas Locales</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Atacamos palabras clave con alta intención de compra, ej: "abogado urgencias cerca de mi" o "mejor fontanero en {cityDisplay}".
+            Te posicionamos para las palabras clave exactas que usan tus clientes. Si buscan "tu servicio cerca de mi", te encontrarán a ti desde {cityData.referencia}.
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">
           <Navigation className="w-10 h-10 text-primary mb-6" />
-          <h3 className="text-xl font-bold mb-3">Atracción Peatonal</h3>
+          <h3 className="text-xl font-bold mb-3">Rutas y Llamadas</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Convierte búsquedas online en visitas físicas a tu local. El 76% de las personas que buscan algo "cerca de mí" visitan el negocio ese mismo día.
+            Más clics en "Cómo llegar" y en el botón de llamar. Convertimos tu presencia digital en clientes físicos visitando tu local en {cityDisplay}.
           </p>
         </div>
       </div>

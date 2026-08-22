@@ -11,7 +11,7 @@ function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-import { getGeoContent } from "../data/geoContent";
+import { getGeoContent, CITIES_DATA, FALLBACK_DATA } from "../data/geoContent";
 
 export const Route = createFileRoute("/diseno-web/$ciudad")({
   beforeLoad: ({ params: { ciudad } }) => {
@@ -59,7 +59,9 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
 
 function DisenoWebLocal() {
   const { ciudad } = Route.useParams();
-  const cityDisplay = capitalize(ciudad);
+  const cityKey = ciudad.toLowerCase();
+  const cityData = CITIES_DATA[cityKey] || FALLBACK_DATA;
+  const cityDisplay = cityData.properName || capitalize(ciudad);
 
   return (
     <div className="min-h-screen bg-background text-foreground pt-32 px-6 lg:px-10">
@@ -71,7 +73,7 @@ function DisenoWebLocal() {
           Diseño Web en <span className="text-primary">{cityDisplay}</span> para captar clientes
         </h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Si alguien en {cityDisplay} busca tus servicios y tu web tarda en cargar o se ve antigua, se irá a tu competencia. Creamos webs que venden por ti 24/7.
+          Si alguien cerca de {cityData.barrios[0]} o {cityData.barrios[1]} busca tus servicios y tu web tarda en cargar o se ve antigua, se irá a la competencia. Creamos webs para el público {cityData.adjetivo} que venden por ti 24/7.
         </p>
       </div>
 
@@ -80,21 +82,21 @@ function DisenoWebLocal() {
           <MonitorSmartphone className="w-10 h-10 text-primary mb-6" />
           <h3 className="text-xl font-bold mb-3">Diseño 100% Móvil</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Más del 80% de tus clientes en {cityDisplay} te buscarán desde su teléfono. Tu web se verá perfecta y cargará al instante en cualquier pantalla.
+            Más del 80% de tus clientes en {cityDisplay} te buscarán desde su teléfono móvil. Tu web se verá perfecta y cargará al instante en cualquier pantalla.
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">
           <Rocket className="w-10 h-10 text-primary mb-6" />
           <h3 className="text-xl font-bold mb-3">Velocidad Extrema</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Google penaliza las webs lentas. Desarrollamos con la última tecnología para que tu página vuele y Google te ponga en los primeros resultados.
+            Google penaliza las webs lentas. Desarrollamos con la última tecnología para que tu página vuele y destaque sobre el resto de negocios en {cityData.zona_centro}.
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">
           <CheckCircle className="w-10 h-10 text-primary mb-6" />
           <h3 className="text-xl font-bold mb-3">Textos que Venden</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            No usamos plantillas aburridas. Redactamos mensajes claros que convencen a tus visitantes de que eres la mejor opción en {cityDisplay}.
+            No usamos plantillas aburridas. Redactamos mensajes claros que convencen a tus visitantes de que eres la mejor opción en {cityData.referencia}.
           </p>
         </div>
       </div>

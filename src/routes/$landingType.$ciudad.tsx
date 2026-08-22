@@ -92,7 +92,7 @@ function GeoLanding() {
   const { landingType, ciudad } = Route.useParams();
   const sector = landingType.replace("diseno-web-para-", "");
   const sectorDisplay = VALID_SECTORS[sector as keyof typeof VALID_SECTORS] || sector;
-  const cityDisplay = capitalize(ciudad);
+  const cityDisplay = getGeoContent(sector, ciudad).cityName;
 
   return (
     <div className="min-h-screen bg-background text-foreground pt-32 px-6 lg:px-10">

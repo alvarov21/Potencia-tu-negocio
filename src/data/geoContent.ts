@@ -1,4 +1,4 @@
-type CityData = {
+export type CityData = {
   barrios: string[];
   adjetivo: string;
   zona_centro: string;
@@ -6,7 +6,7 @@ type CityData = {
   properName: string;
 };
 
-const CITIES_DATA: Record<string, CityData> = {
+export const CITIES_DATA: Record<string, CityData> = {
   madrid: {
     barrios: ["Malasaña", "Chamberí", "Salamanca", "La Latina"],
     adjetivo: "madrileño",
@@ -114,7 +114,7 @@ const CITIES_DATA: Record<string, CityData> = {
   }
 };
 
-const FALLBACK_DATA: CityData = {
+export const FALLBACK_DATA: CityData = {
   barrios: ["el centro", "los barrios principales", "tu zona", "las afueras"],
   adjetivo: "local",
   zona_centro: "el centro",
@@ -130,6 +130,8 @@ export function getGeoContent(sector: string, city: string) {
   const cityKey = city.toLowerCase();
   const data = CITIES_DATA[cityKey] || FALLBACK_DATA;
   const cityName = data.properName || capitalize(cityKey);
+
+  const baseResponse = { cityName, data };
 
   switch (sector) {
     case "restaurantes":
