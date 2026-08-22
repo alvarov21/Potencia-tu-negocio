@@ -73,8 +73,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: ({ location }) => {
-    const currentUrl = `https://www.potenciatunegocio.eu${location.pathname === '/' ? '' : location.pathname}`;
+  head: () => {
     return {
       meta: [
         { charSet: "utf-8" },
@@ -85,14 +84,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
         { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: currentUrl },
+        { property: "og:url", content: "https://www.potenciatunegocio.eu" },
         { property: "og:locale", content: "es_ES" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
         { name: "twitter:description", content: "Webs profesionales con IA para negocios locales. SEO incluido, listas en 7 días desde 595€." },
       ],
       links: [
-        { rel: "canonical", href: currentUrl },
+        { rel: "canonical", href: "https://www.potenciatunegocio.eu" },
         { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
         { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
