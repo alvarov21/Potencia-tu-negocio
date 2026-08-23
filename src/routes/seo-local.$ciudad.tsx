@@ -23,11 +23,17 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
     const cityName = getGeoContent("seo-local", params.ciudad).cityName;
     const url = `https://www.potenciatunegocio.eu/seo-local/${params.ciudad}`;
     
+    const title = `Agencia Experta en SEO Local en ${cityName} | Potencia tu Negocio`;
+    const description = `Servicios de SEO Local en ${cityName}. Posiciona tu empresa en Google Maps y capta clientes cercanos que buscan tus servicios hoy mismo.`;
     return {
       meta: [
-        { title: `Agencia Experta en SEO Local en ${cityName} | Potencia tu Negocio` },
-        { name: "description", content: `Servicios de SEO Local en ${cityName}. Posiciona tu empresa en Google Maps y capta clientes cercanos que buscan tus servicios hoy mismo.` },
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
         { property: "og:url", content: url },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
       ],
       links: [
         { rel: "canonical", href: url }

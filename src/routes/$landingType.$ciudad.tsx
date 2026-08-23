@@ -54,11 +54,17 @@ export const Route = createFileRoute("/$landingType/$ciudad")({
     const cityName = getGeoContent(sector, params.ciudad).cityName || capitalize(params.ciudad);
     const url = `https://www.potenciatunegocio.eu/${params.landingType}/${params.ciudad}`;
     
+    const title = `Diseño de páginas web para ${sectorName} en ${cityName} | Potencia tu Negocio`;
+    const description = `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 7 días y desde 595€.`;
     return {
       meta: [
-        { title: `Diseño de páginas web para ${sectorName} en ${cityName} | Potencia tu Negocio` },
-        { name: "description", content: `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 7 días y desde 595€.` },
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
         { property: "og:url", content: url },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
       ],
       links: [
         { rel: "canonical", href: url }
