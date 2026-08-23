@@ -503,12 +503,12 @@ function Pricing() {
               {[
                 "Todo lo incluido en el Plan Presencia, además de:",
                 <span className="inline" key="seo">
-                  <strong className="text-foreground">Análisis SEO exhaustivo con entregables claros:</strong>
+                  <strong className="text-foreground">Análisis SEO exhaustivo con seguimiento continuo:</strong>
                   <ul className="mt-2 space-y-1 ml-4 text-sm text-muted-foreground list-disc list-outside">
-                    <li>Auditoría técnica inicial (Core Web Vitals, Schema.org, Indexación).</li>
-                    <li><strong>[X]</strong> palabras clave locales analizadas al mes para tu sector y ciudad.</li>
-                    <li>Optimización de contenido <strong>[Frecuencia: Semanal/Mensual]</strong>.</li>
-                    <li>Informe <strong>[Mensual]</strong> (tráfico, posiciones, clics en Maps).</li>
+                    <li>Auditoría técnica inicial (Core Web Vitals, Schema.org, Indexación)</li>
+                    <li>Investigación y seguimiento de palabras clave locales de tu sector y ciudad</li>
+                    <li>Optimización continua de contenido para mejorar tu posicionamiento</li>
+                    <li>Informe de resultados con tráfico, posiciones y clics en Maps</li>
                   </ul>
                   <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
                 </span>,
