@@ -851,7 +851,6 @@ function Footer() {
             <li><Link to="/google-business-profile" className="hover:text-primary transition">Google Business Profile</Link></li>
             <li><Link to="/mantenimiento-web" className="hover:text-primary transition">Mantenimiento Web</Link></li>
             <li><Link to="/diseno-web-seo" className="hover:text-primary transition">Diseño Web SEO</Link></li>
-            <li><Link to="/diseno-tienda-online" className="hover:text-primary transition">Tiendas Online E-commerce</Link></li>
           </ul>
         </div>
         <div className="lg:col-span-1">

@@ -20,7 +20,6 @@ import { Route as LandingPageRouteImport } from './routes/landing-page'
 import { Route as GoogleBusinessProfileRouteImport } from './routes/google-business-profile'
 import { Route as DisenoWebSeoRouteImport } from './routes/diseno-web-seo'
 import { Route as DisenoWebParaEmpresasRouteImport } from './routes/diseno-web-para-empresas'
-import { Route as DisenoTiendaOnlineRouteImport } from './routes/diseno-tienda-online'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
@@ -86,11 +85,6 @@ const DisenoWebParaEmpresasRoute = DisenoWebParaEmpresasRouteImport.update({
   path: '/diseno-web-para-empresas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DisenoTiendaOnlineRoute = DisenoTiendaOnlineRouteImport.update({
-  id: '/diseno-tienda-online',
-  path: '/diseno-tienda-online',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BlogRoute = BlogRouteImport.update({
   id: '/blog',
   path: '/blog',
@@ -143,7 +137,6 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
-  '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
   '/google-business-profile': typeof GoogleBusinessProfileRoute
@@ -166,7 +159,6 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
-  '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
   '/google-business-profile': typeof GoogleBusinessProfileRoute
@@ -190,7 +182,6 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
   '/blog': typeof BlogRouteWithChildren
-  '/diseno-tienda-online': typeof DisenoTiendaOnlineRoute
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
   '/google-business-profile': typeof GoogleBusinessProfileRoute
@@ -215,7 +206,6 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/blog'
-    | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
     | '/google-business-profile'
@@ -238,7 +228,6 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/blog'
-    | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
     | '/google-business-profile'
@@ -261,7 +250,6 @@ export interface FileRouteTypes {
     | '/'
     | '/aviso-legal'
     | '/blog'
-    | '/diseno-tienda-online'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
     | '/google-business-profile'
@@ -285,7 +273,6 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
   BlogRoute: typeof BlogRouteWithChildren
-  DisenoTiendaOnlineRoute: typeof DisenoTiendaOnlineRoute
   DisenoWebParaEmpresasRoute: typeof DisenoWebParaEmpresasRoute
   DisenoWebSeoRoute: typeof DisenoWebSeoRoute
   GoogleBusinessProfileRoute: typeof GoogleBusinessProfileRoute
@@ -378,13 +365,6 @@ declare module '@tanstack/react-router' {
       path: '/diseno-web-para-empresas'
       fullPath: '/diseno-web-para-empresas'
       preLoaderRoute: typeof DisenoWebParaEmpresasRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/diseno-tienda-online': {
-      id: '/diseno-tienda-online'
-      path: '/diseno-tienda-online'
-      fullPath: '/diseno-tienda-online'
-      preLoaderRoute: typeof DisenoTiendaOnlineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -494,7 +474,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
   BlogRoute: BlogRouteWithChildren,
-  DisenoTiendaOnlineRoute: DisenoTiendaOnlineRoute,
   DisenoWebParaEmpresasRoute: DisenoWebParaEmpresasRoute,
   DisenoWebSeoRoute: DisenoWebSeoRoute,
   GoogleBusinessProfileRoute: GoogleBusinessProfileRoute,
