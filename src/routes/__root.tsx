@@ -85,9 +85,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
         { property: "og:type", content: "website" },
         { property: "og:locale", content: "es_ES" },
+        { property: "og:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-        { name: "twitter:description", content: "Webs profesionales con IA para negocios locales. SEO incluido, listas en 7 días desde 595€." },
+        { name: "twitter:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
+        { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
       ],
       links: [
         { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
