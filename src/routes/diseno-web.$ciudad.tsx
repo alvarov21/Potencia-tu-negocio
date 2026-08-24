@@ -32,8 +32,10 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
+        { property: "og:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
+        { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
       ],
       links: [
         { rel: "canonical", href: url }
