@@ -114,7 +114,7 @@ function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#top" className="font-bold text-base tracking-tight flex items-center gap-2" aria-label="Potencia tu Negocio - Inicio">
-          <img src="/logo.jpg" alt="Logo Potencia tu Negocio" className="w-7 h-7 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen" />
+          <img src="/logo.png" alt="Logo Potencia tu Negocio" className="w-7 h-7 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen" />
           <span>Potencia <span className="text-primary">tu negocio</span><sup className="text-[0.55em] ml-0.5 font-medium opacity-80">&reg;</sup></span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground" aria-label="Navegación principal">
@@ -244,7 +244,7 @@ function About() {
       {/* Tattoo Watermark Logo */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-20 select-none">
         <img 
-          src="/logo.jpg" 
+          src="/logo.png" 
           alt="" 
           className="w-[150%] md:w-[110%] h-auto object-cover opacity-30 transform translate-x-[20%] md:translate-x-[30%] -rotate-12"
           style={{ 
@@ -392,7 +392,7 @@ function Pricing() {
           "@type": "Product",
           "name": "Plan Presencia",
           "description": "Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.",
-          "image": "https://www.potenciatunegocio.eu/logo.jpg",
+          "image": "https://www.potenciatunegocio.eu/logo.png",
           "brand": {
             "@type": "Brand",
             "name": "Potencia tu Negocio"
@@ -412,7 +412,7 @@ function Pricing() {
           "@type": "Product",
           "name": "Plan Crecimiento",
           "description": "No solo tienes web: nos encargamos de que te encuentren antes que a tu competencia. Todo lo del Plan Presencia, y además:",
-          "image": "https://www.potenciatunegocio.eu/logo.jpg",
+          "image": "https://www.potenciatunegocio.eu/logo.png",
           "brand": {
             "@type": "Brand",
             "name": "Potencia tu Negocio"
@@ -895,7 +895,7 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto py-12 px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
         <div className="font-bold text-foreground flex items-center gap-2">
-          <img src="/logo.jpg" alt="Logo Potencia tu Negocio" loading="lazy" decoding="async" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
+          <img src="/logo.png" alt="Logo Potencia tu Negocio" loading="lazy" decoding="async" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
           <span>Potencia <span className="text-primary">tu negocio</span><sup className="text-[0.55em] ml-0.5 font-medium opacity-80">&reg;</sup></span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
