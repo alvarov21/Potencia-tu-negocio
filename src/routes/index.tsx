@@ -41,6 +41,8 @@ function CanvasWebM() {
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
           }
+          // Apply contrast/brightness directly to canvas context to avoid Safari CSS filter bug
+          ctx.filter = 'contrast(1.8) brightness(0.6)';
           ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         }
       }
@@ -53,7 +55,7 @@ function CanvasWebM() {
   }, []);
 
   return (
-    <>
+    <div style={{ isolation: 'isolate' }} className="w-64 h-64 lg:w-96 lg:h-96">
       <video
         ref={videoRef}
         src="/logo-3d_sin_fondo.webm"
@@ -65,12 +67,13 @@ function CanvasWebM() {
       />
       <canvas
         ref={canvasRef}
-        className="w-64 h-64 lg:w-96 lg:h-96 object-cover mix-blend-screen"
+        className="w-full h-full object-cover mix-blend-screen"
         style={{ 
-          filter: 'contrast(1.8) brightness(0.6) drop-shadow(0 0 20px rgba(37,99,235,0.4))'
+          // Drop shadow is safe to keep if applied here, but Safari hates filters with mix-blend.
+          // Since we moved contrast/brightness to ctx, we'll omit CSS filters entirely to guarantee Safari compatibility.
         }}
       />
-    </>
+    </div>
   );
 }
 
