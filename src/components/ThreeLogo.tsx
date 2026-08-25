@@ -13,8 +13,8 @@ export function ThreeLogo() {
     const scene = new THREE.Scene();
     scene.background = null;
 
-    const camera = new THREE.PerspectiveCamera(38, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
-    camera.position.set(0, 0.3, 9);
+    const camera = new THREE.PerspectiveCamera(35, wrap.clientWidth / wrap.clientHeight, 0.1, 100);
+    camera.position.set(0, 0, 8.5);
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -66,36 +66,38 @@ export function ThreeLogo() {
     
     scene.environment = buildEnvMap();
 
-    // Geometry: Ribbon
-    const curvePts = [
-      new THREE.Vector3(-1.7, -2.1, 0.0),
-      new THREE.Vector3(-1.55, -1.0, 0.35),
-      new THREE.Vector3(-1.15, -0.15, 0.55),
-      new THREE.Vector3(-0.35, 0.25, -0.15),
-      new THREE.Vector3(0.35, 0.15, -0.55),
-      new THREE.Vector3(1.05, 0.55, -0.15),
-      new THREE.Vector3(1.55, 1.25, 0.15),
-      new THREE.Vector3(1.95, 2.05, 0.0),
+    // ---- silueta REAL extraida de la imagen (contorno trazado, 53 puntos) ----
+    const outline = [
+      [0.7891,0.7969], [0.7412,0.7998], [0.5781,0.7158], [0.2549,0.6143], [0.2451,0.5791],
+      [0.3242,0.4668], [0.3662,0.4375], [0.3672,0.418], [0.1924,0.2129], [0.1387,0.2109],
+      [0.0674,0.2705], [0.0527,0.3018], [0.0117,0.3184], [-0.0918,0.3066], [-0.2324,0.332],
+      [-0.335,0.3262], [-0.3584,0.3018], [-0.3496,0.2441], [-0.4062,0.1387], [-0.5186,-0.165],
+      [-0.5576,-0.1787], [-0.5723,-0.2139], [-0.623,-0.2412], [-0.7861,-0.4326], [-0.8574,-0.5928],
+      [-0.8584,-0.6152], [-0.8369,-0.627], [-0.8408,-0.667], [-0.6904,-0.7227], [-0.4834,-0.7412],
+      [-0.3799,-0.7217], [-0.3096,-0.6074], [-0.2451,-0.4639], [-0.2383,-0.415], [-0.209,-0.4121],
+      [-0.2041,-0.3818], [-0.0996,-0.3711], [-0.0918,-0.3564], [-0.0078,-0.375], [0.0977,-0.3691],
+      [0.2861,-0.2861], [0.3799,-0.1641], [0.4561,0.0098], [0.6006,0.1963], [0.666,0.2021],
+      [0.7412,0.1475], [0.7891,0.1318], [0.7939,0.2168], [0.8223,0.2695], [0.8428,0.3613],
+      [0.8213,0.5342], [0.7969,0.5713], [0.8105,0.7178]
     ];
-    const curve = new THREE.CatmullRomCurve3(curvePts, false, 'catmullrom', 0.5);
 
-    const ribbonShape = new THREE.Shape();
-    const rw = 0.42, rh = 0.16;
-    ribbonShape.moveTo(-rw, -rh);
-    ribbonShape.lineTo(rw, -rh);
-    ribbonShape.lineTo(rw, rh);
-    ribbonShape.lineTo(-rw, rh);
-    ribbonShape.closePath();
+    const shape = new THREE.Shape();
+    outline.forEach(([x, y], i) => {
+      const X = x * 2.6, Y = y * 2.6;
+      if (i === 0) shape.moveTo(X, Y); else shape.lineTo(X, Y);
+    });
+    shape.closePath();
 
     const extrudeSettings = {
-      steps: 220,
+      depth: 0.55,
       bevelEnabled: true,
-      bevelThickness: 0.045,
-      bevelSize: 0.045,
-      bevelSegments: 4,
-      extrudePath: curve,
+      bevelThickness: 0.11,
+      bevelSize: 0.09,
+      bevelSegments: 6,
+      curveSegments: 4,
     };
-    const ribbonGeo = new THREE.ExtrudeGeometry(ribbonShape, extrudeSettings);
+    const logoGeo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+    logoGeo.center();
 
     // Glass Material
     const glassMat = new THREE.MeshPhysicalMaterial({
@@ -103,48 +105,22 @@ export function ThreeLogo() {
       metalness: 0,
       roughness: 0.02,
       transmission: 1.0,
-      thickness: 1.4,
+      thickness: 1.6,
       ior: 1.5,
       reflectivity: 0.6,
       clearcoat: 1,
       clearcoatRoughness: 0.05,
       attenuationColor: new THREE.Color(0xffffff),
-      attenuationDistance: 2.2,
-      envMapIntensity: 1.6,
+      attenuationDistance: 2.4,
+      envMapIntensity: 1.7,
       transparent: true,
     });
 
-    const ribbon = new THREE.Mesh(ribbonGeo, glassMat);
-
-    // Geometry: Arrow Head
-    function arrowHeadGeo(scale: number) {
-      const s = new THREE.Shape();
-      s.moveTo(0, 0.55 * scale);
-      s.lineTo(0.5 * scale, -0.4 * scale);
-      s.lineTo(0.12 * scale, -0.18 * scale);
-      s.lineTo(-0.12 * scale, -0.4 * scale);
-      s.lineTo(-0.5 * scale, -0.4 * scale);
-      s.closePath();
-      return new THREE.ExtrudeGeometry(s, { 
-        depth: 0.3 * scale, 
-        bevelEnabled: true, 
-        bevelThickness: 0.03, 
-        bevelSize: 0.03, 
-        bevelSegments: 3, 
-        curveSegments: 24 
-      });
-    }
-    const head = new THREE.Mesh(arrowHeadGeo(1.15), glassMat);
-    head.position.set(2.35, 2.75, -0.12);
-    head.rotation.z = -0.55;
-    head.rotation.y = 0.25;
+    const logo = new THREE.Mesh(logoGeo, glassMat);
 
     // Grouping
     const group = new THREE.Group();
-    group.add(ribbon);
-    group.add(head);
-    group.scale.setScalar(1.0);
-    group.position.set(-0.15, -0.2, 0);
+    group.add(logo);
     scene.add(group);
 
     // Lighting
@@ -155,7 +131,7 @@ export function ThreeLogo() {
 
     // Interaction & Animation state
     let isDragging = false, prevX = 0, prevY = 0;
-    let targetRotY = 0.6, targetRotX = -0.15;
+    let targetRotY = 0.5, targetRotX = -0.1;
     let rotY = targetRotY, rotX = targetRotX;
     let autoRotate = true;
 
