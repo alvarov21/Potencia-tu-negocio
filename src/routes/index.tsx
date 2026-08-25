@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { lazy, Suspense, useState } from "react";
+import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
   Star, Lock, FileText, ArrowRight, Check, Plus, Minus, Mail, Phone,
@@ -20,6 +20,71 @@ const FAQS = [
   { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Independencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en 'tu informático': cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
   { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en Trustpilot, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
 ];
+
+function CanvasWebM() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+    if (!video || !canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationId: number;
+    let playing = false;
+
+    const drawFrame = () => {
+      if (video.readyState >= video.HAVE_CURRENT_DATA && playing) {
+        if (video.videoWidth > 0 && video.videoHeight > 0) {
+          if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+          }
+          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        }
+      }
+      animationId = requestAnimationFrame(drawFrame);
+    };
+
+    video.addEventListener('play', () => {
+      playing = true;
+      drawFrame();
+    });
+    
+    video.addEventListener('pause', () => { playing = false; });
+    video.addEventListener('ended', () => { playing = false; });
+
+    if (!video.paused && !video.ended) {
+      playing = true;
+      drawFrame();
+    }
+
+    return () => cancelAnimationFrame(animationId);
+  }, []);
+
+  return (
+    <>
+      <video
+        ref={videoRef}
+        src="/logo-3d_sin_fondo.webm"
+        autoPlay
+        loop
+        muted
+        playsInline
+        style={{ display: 'none' }}
+      />
+      <canvas
+        ref={canvasRef}
+        className="w-64 h-64 lg:w-96 lg:h-96 object-cover mix-blend-screen"
+        style={{ 
+          filter: 'contrast(1.8) brightness(0.6) drop-shadow(0 0 20px rgba(37,99,235,0.4))'
+        }}
+      />
+    </>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -145,20 +210,7 @@ function Hero() {
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-float">
-          <video
-            src="/logo-3d_sin_fondo.webm" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-64 h-64 lg:w-96 lg:h-96 object-cover"
-            style={{ 
-              mixBlendMode: 'screen',
-              filter: 'contrast(1.8) brightness(0.6) drop-shadow(0 0 20px rgba(37,99,235,0.4))',
-              transform: 'translateZ(0)',
-              WebkitTransform: 'translateZ(0)'
-            }}
-          />
+          <CanvasWebM />
         </div>
       </div>
 
