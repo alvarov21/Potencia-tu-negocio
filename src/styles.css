@@ -138,11 +138,11 @@
 }
 
 @keyframes spin-3d {
-  0% { transform: rotateY(-40deg) translateY(0); }
-  50% { transform: rotateY(40deg) translateY(-15px); }
-  100% { transform: rotateY(-40deg) translateY(0); }
+  0% { transform: rotateY(0deg) translateY(0); }
+  50% { transform: rotateY(180deg) translateY(-15px); }
+  100% { transform: rotateY(360deg) translateY(0); }
 }
 @utility animate-spin-3d {
-  animation: spin-3d 10s ease-in-out infinite;
+  animation: spin-3d 14s linear infinite;
   transform-style: preserve-3d;
 }
