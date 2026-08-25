@@ -154,8 +154,9 @@ function Hero() {
                 className="absolute inset-0 w-full h-full object-contain"
                 style={{ 
                   transform: `translateZ(${-i * 1.5}px)`,
-                  filter: i === 0 ? 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))' : 'brightness(0.6)',
-                  opacity: i === 0 || i === 19 ? 1 : 0.8
+                  filter: i === 0 ? 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))' : 'none',
+                  opacity: i === 0 ? 1 : (i === 19 ? 0.4 : 0.08),
+                  mixBlendMode: i > 0 ? 'screen' : 'normal'
                 }}
               />
             ))}
