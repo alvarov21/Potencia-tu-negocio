@@ -126,3 +126,12 @@
 @utility animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+@keyframes spin-y {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+@utility animate-spin-y {
+  animation: spin-y 10s linear infinite;
+  transform-style: preserve-3d;
+}

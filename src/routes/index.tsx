@@ -143,6 +143,18 @@ function Hero() {
             />
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
+          
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <img 
+              src="/3d-logo.jpg" 
+              alt="Logo 3D" 
+              className="w-48 h-48 lg:w-64 lg:h-64 object-contain mix-blend-screen animate-spin-y"
+              style={{ 
+                transformPerspective: '1000px',
+                filter: 'drop-shadow(0 0 20px rgba(37,99,235,0.4))'
+              }}
+            />
+          </div>
         </div>
       </div>
 
