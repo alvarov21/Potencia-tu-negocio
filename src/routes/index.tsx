@@ -21,57 +21,7 @@ const FAQS = [
   { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en Trustpilot, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
 ];
 
-function CanvasWebM() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    const canvas = canvasRef.current;
-    if (!video || !canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationId: number;
-
-    const drawFrame = () => {
-      if (video.readyState >= video.HAVE_CURRENT_DATA) {
-        if (video.videoWidth > 0 && video.videoHeight > 0) {
-          if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-          }
-          // Apply contrast/brightness directly to canvas context to avoid Safari CSS filter bug
-          ctx.filter = 'contrast(1.8) brightness(0.6)';
-          ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        }
-      }
-      animationId = requestAnimationFrame(drawFrame);
-    };
-
-    drawFrame();
-
-    return () => cancelAnimationFrame(animationId);
-  }, []);
-
-  return (
-    <div className="w-64 h-64 lg:w-96 lg:h-96">
-      <video
-        ref={videoRef}
-        src="/logo-3d_sin_fondo.webm"
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{ position: 'absolute', opacity: 0, width: '1px', height: '1px', pointerEvents: 'none' }}
-      />
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full object-cover"
-      />
-    </div>
-  );
-}
+import { ThreeLogo } from "../components/ThreeLogo";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -196,8 +146,8 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-float mix-blend-screen">
-          <CanvasWebM />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-float">
+          <ThreeLogo />
         </div>
       </div>
 
