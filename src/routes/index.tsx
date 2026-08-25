@@ -146,17 +146,17 @@ function Hero() {
         </div>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ perspective: '1200px' }}>
           <div className="relative w-80 h-80 lg:w-[32rem] lg:h-[32rem] animate-spin-3d" style={{ transformStyle: 'preserve-3d' }}>
-            {Array.from({ length: 35 }).map((_, i) => (
+            {Array.from({ length: 120 }).map((_, i) => (
               <img 
                 key={i}
                 src="/logo-cristal.png" 
                 alt={i === 0 ? "Logo Cristal 3D" : ""} 
                 className="absolute inset-0 w-full h-full object-contain"
                 style={{ 
-                  transform: `translateZ(${-i * 1}px)`,
+                  transform: `translateZ(${-i * 0.3}px)`,
                   filter: i === 0 ? 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))' : 'none',
-                  opacity: i === 0 || i === 34 ? 1 : 0.07,
-                  mixBlendMode: i > 0 && i < 34 ? 'screen' : 'normal'
+                  opacity: i === 0 || i === 119 ? 1 : 0.015,
+                  mixBlendMode: i > 0 && i < 119 ? 'screen' : 'normal'
                 }}
               />
             ))}
