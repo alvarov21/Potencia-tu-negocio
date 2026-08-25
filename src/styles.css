@@ -127,11 +127,12 @@
   animation: float 6s ease-in-out infinite;
 }
 
-@keyframes spin-y {
-  from { transform: rotateY(0deg); }
-  to { transform: rotateY(360deg); }
+@keyframes rock-3d {
+  0% { transform: rotateY(-12deg) rotateX(4deg) translateY(0); }
+  50% { transform: rotateY(12deg) rotateX(-4deg) translateY(-15px); }
+  100% { transform: rotateY(-12deg) rotateX(4deg) translateY(0); }
 }
-@utility animate-spin-y {
-  animation: spin-y 10s linear infinite;
+@utility animate-rock-3d {
+  animation: rock-3d 8s ease-in-out infinite;
   transform-style: preserve-3d;
 }

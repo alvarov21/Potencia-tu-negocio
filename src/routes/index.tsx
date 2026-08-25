@@ -148,7 +148,7 @@ function Hero() {
             <img 
               src="/3d-logo.jpg" 
               alt="Logo 3D" 
-              className="w-48 h-48 lg:w-64 lg:h-64 object-contain mix-blend-screen animate-spin-y"
+              className="w-48 h-48 lg:w-64 lg:h-64 object-contain mix-blend-screen animate-rock-3d"
               style={{ 
                 transformPerspective: '1000px',
                 filter: 'drop-shadow(0 0 20px rgba(37,99,235,0.4))'
