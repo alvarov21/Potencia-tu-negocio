@@ -144,16 +144,22 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <img 
-            src="/logo-cristal.png" 
-            alt="Logo Cristal 3D" 
-            className="w-80 h-80 lg:w-[32rem] lg:h-[32rem] object-contain animate-spin-3d"
-            style={{ 
-              transformPerspective: '1200px',
-              filter: 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))'
-            }}
-          />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ perspective: '1200px' }}>
+          <div className="relative w-80 h-80 lg:w-[32rem] lg:h-[32rem] animate-spin-3d" style={{ transformStyle: 'preserve-3d' }}>
+            {Array.from({ length: 20 }).map((_, i) => (
+              <img 
+                key={i}
+                src="/logo-cristal.png" 
+                alt={i === 0 ? "Logo Cristal 3D" : ""} 
+                className="absolute inset-0 w-full h-full object-contain"
+                style={{ 
+                  transform: `translateZ(${-i * 1.5}px)`,
+                  filter: i === 0 ? 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))' : 'brightness(0.6)',
+                  opacity: i === 0 || i === 19 ? 1 : 0.8
+                }}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
