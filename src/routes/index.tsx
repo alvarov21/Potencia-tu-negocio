@@ -134,7 +134,7 @@ function Hero() {
   return (
     <section id="top" className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-hero">
       <div className="absolute top-1/2 -right-40 lg:-right-20 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-        <div className="relative w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] animate-float">
+        <div className="relative w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] animate-float mix-blend-screen">
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div
               key={i}
@@ -144,7 +144,7 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
           
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ mixBlendMode: 'screen' }}>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <video
               src="/logo-3d_sin_fondo.webm" 
               autoPlay 
@@ -153,8 +153,7 @@ function Hero() {
               playsInline
               className="w-64 h-64 lg:w-96 lg:h-96 object-cover"
               style={{ 
-                mixBlendMode: 'screen',
-                filter: 'contrast(2) brightness(0.5) drop-shadow(0 0 20px rgba(37,99,235,0.4))'
+                filter: 'contrast(1.5) brightness(0.7) drop-shadow(0 0 20px rgba(37,99,235,0.4))'
               }}
             />
           </div>
