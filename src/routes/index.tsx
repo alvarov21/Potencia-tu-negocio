@@ -148,7 +148,7 @@ function Hero() {
           <img 
             src="/logo-cristal.png" 
             alt="Logo Cristal 3D" 
-            className="w-80 h-80 lg:w-[32rem] lg:h-[32rem] object-contain animate-rock-3d"
+            className="w-80 h-80 lg:w-[32rem] lg:h-[32rem] object-contain animate-spin-3d"
             style={{ 
               transformPerspective: '1200px',
               filter: 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))'
