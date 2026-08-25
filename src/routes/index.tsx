@@ -151,9 +151,9 @@ function Hero() {
               loop 
               muted 
               playsInline
-              className="w-48 h-48 lg:w-64 lg:h-64 object-contain mix-blend-screen"
+              className="w-64 h-64 lg:w-96 lg:h-96 object-contain mix-blend-screen"
               style={{ 
-                filter: 'drop-shadow(0 0 20px rgba(37,99,235,0.4))'
+                filter: 'contrast(1.2) brightness(0.9) drop-shadow(0 0 20px rgba(37,99,235,0.4))'
               }}
             />
           </div>
