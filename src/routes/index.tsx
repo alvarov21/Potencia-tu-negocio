@@ -33,10 +33,9 @@ function CanvasWebM() {
     if (!ctx) return;
 
     let animationId: number;
-    let playing = false;
 
     const drawFrame = () => {
-      if (video.readyState >= video.HAVE_CURRENT_DATA && playing) {
+      if (video.readyState >= video.HAVE_CURRENT_DATA) {
         if (video.videoWidth > 0 && video.videoHeight > 0) {
           if (canvas.width !== video.videoWidth || canvas.height !== video.videoHeight) {
             canvas.width = video.videoWidth;
@@ -48,18 +47,7 @@ function CanvasWebM() {
       animationId = requestAnimationFrame(drawFrame);
     };
 
-    video.addEventListener('play', () => {
-      playing = true;
-      drawFrame();
-    });
-    
-    video.addEventListener('pause', () => { playing = false; });
-    video.addEventListener('ended', () => { playing = false; });
-
-    if (!video.paused && !video.ended) {
-      playing = true;
-      drawFrame();
-    }
+    drawFrame();
 
     return () => cancelAnimationFrame(animationId);
   }, []);
@@ -73,7 +61,7 @@ function CanvasWebM() {
         loop
         muted
         playsInline
-        style={{ display: 'none' }}
+        style={{ position: 'absolute', opacity: 0, width: '1px', height: '1px', pointerEvents: 'none' }}
       />
       <canvas
         ref={canvasRef}
