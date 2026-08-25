@@ -144,16 +144,16 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
           
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none mix-blend-screen">
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <video
-              src="/logo-3d.mp4" 
+              src="/logo-3d_sin_fondo.webm" 
               autoPlay 
               loop 
               muted 
               playsInline
               className="w-64 h-64 lg:w-96 lg:h-96 object-cover"
               style={{ 
-                filter: 'contrast(1.6) brightness(0.6) drop-shadow(0 0 20px rgba(37,99,235,0.4))'
+                filter: 'drop-shadow(0 0 20px rgba(37,99,235,0.4))'
               }}
             />
           </div>
