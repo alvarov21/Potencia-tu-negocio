@@ -21,8 +21,6 @@ const FAQS = [
   { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en Trustpilot, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
 ];
 
-import { ThreeLogo } from "../components/ThreeLogo";
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -146,8 +144,16 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-float">
-          <ThreeLogo />
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <img 
+            src="/logo-cristal.png" 
+            alt="Logo Cristal 3D" 
+            className="w-80 h-80 lg:w-[32rem] lg:h-[32rem] object-contain animate-rock-3d"
+            style={{ 
+              transformPerspective: '1200px',
+              filter: 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))'
+            }}
+          />
         </div>
       </div>
 
