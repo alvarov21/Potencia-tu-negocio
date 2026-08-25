@@ -55,7 +55,7 @@ function CanvasWebM() {
   }, []);
 
   return (
-    <div style={{ isolation: 'isolate' }} className="w-64 h-64 lg:w-96 lg:h-96">
+    <div className="w-64 h-64 lg:w-96 lg:h-96">
       <video
         ref={videoRef}
         src="/logo-3d_sin_fondo.webm"
@@ -67,11 +67,7 @@ function CanvasWebM() {
       />
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-cover mix-blend-screen"
-        style={{ 
-          // Drop shadow is safe to keep if applied here, but Safari hates filters with mix-blend.
-          // Since we moved contrast/brightness to ctx, we'll omit CSS filters entirely to guarantee Safari compatibility.
-        }}
+        className="w-full h-full object-cover"
       />
     </div>
   );
@@ -200,7 +196,7 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-float">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none animate-float mix-blend-screen">
           <CanvasWebM />
         </div>
       </div>
