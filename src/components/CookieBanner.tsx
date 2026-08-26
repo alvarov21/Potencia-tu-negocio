@@ -13,7 +13,13 @@ export function CookieBanner() {
   });
 
   const [mounted, setMounted] = useState(false);
-  React.useEffect(() => setMounted(true), []);
+  
+  React.useEffect(() => {
+    // Wait for the preloader to finish its animation (approx 2.8s) before showing the banner.
+    // This prevents overlap and provides a much cleaner, professional entry.
+    const timer = setTimeout(() => setMounted(true), 2800);
+    return () => clearTimeout(timer);
+  }, []);
 
   if (!mounted) return null;
   if (hasInteracted && !isSettingsOpen) return null;
@@ -26,7 +32,7 @@ export function CookieBanner() {
     <>
       {/* Banner */}
       {!hasInteracted && !isSettingsOpen && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 pointer-events-none">
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 pointer-events-none animate-fade-up" style={{ animationDuration: '800ms' }}>
           <div className="max-w-4xl mx-auto bg-card border border-border shadow-2xl rounded-2xl p-6 pointer-events-auto flex flex-col md:flex-row items-start md:items-center gap-6">
             <div className="flex-1">
               <h3 className="text-lg font-bold mb-2">Valoramos tu privacidad</h3>

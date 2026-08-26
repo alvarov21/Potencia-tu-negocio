@@ -30,15 +30,15 @@ export function Preloader() {
     >
       <div className={`transition-opacity duration-500 ${animatingOut ? 'opacity-0' : 'opacity-100'}`}>
         <h1 
-          className="text-[#fcfcfc] font-bold tracking-tighter flex items-start antialiased"
+          className="text-[#fcfcfc] font-bold tracking-tighter flex items-start antialiased overflow-hidden pt-2 pb-4 -mb-4"
           style={{ 
             fontFamily: 'system-ui, -apple-system, sans-serif',
             fontSize: 'clamp(2rem, 5vw, 4rem)',
-            lineHeight: 1
+            lineHeight: 1.1
           }}
         >
           {letters.map((char, i) => (
-            <span key={i} className="inline-block overflow-hidden" style={{ verticalAlign: 'bottom' }}>
+            <span key={i} className="inline-block" style={{ verticalAlign: 'bottom' }}>
               <span 
                 className="inline-block animate-mask-up"
                 style={{ 
@@ -51,7 +51,7 @@ export function Preloader() {
             </span>
           ))}
           
-          <span className="inline-block overflow-hidden" style={{ verticalAlign: 'top', marginTop: '0.2em', marginLeft: '0.1em' }}>
+          <span className="inline-block" style={{ verticalAlign: 'top', marginTop: '0.2em', marginLeft: '0.1em' }}>
             <span 
               className="inline-block font-medium animate-mask-up"
               style={{ 
