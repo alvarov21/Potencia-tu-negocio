@@ -238,20 +238,42 @@ function Hero() {
             </a>
           </div>
 
-          {/* Mobile Logo (Relative Bottom) */}
-          <div className="lg:hidden mt-12 flex justify-center items-center pointer-events-none relative">
-            <div className="absolute w-[400px] h-[400px] animate-float">
-              {[1, 2, 3, 4, 5, 6].map(i => (
-                <div
-                  key={i}
-                  className="absolute inset-0 rounded-full border border-accent/30"
-                  style={{ transform: `scale(${1 - i * 0.13})`, opacity: 1 - i * 0.12 }}
-                />
-              ))}
-              <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
+          {/* Mobile Logo & Button */}
+          <div className="lg:hidden mt-12 flex flex-col items-center relative">
+            <div className="flex justify-center items-center pointer-events-none relative w-full h-[320px]">
+              <div className="absolute w-[400px] h-[400px] animate-float">
+                {[1, 2, 3, 4, 5, 6].map(i => (
+                  <div
+                    key={i}
+                    className="absolute inset-0 rounded-full border border-accent/30"
+                    style={{ transform: `scale(${1 - i * 0.13})`, opacity: 1 - i * 0.12 }}
+                  />
+                ))}
+                <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
+              </div>
+              <div style={{ perspective: '1200px' }} className="relative z-10">
+                <ResponsiveLogo />
+              </div>
             </div>
-            <div style={{ perspective: '1200px' }} className="relative z-10">
-              <ResponsiveLogo />
+
+            {/* Mobile Button (Minimalist Liquid Glass) */}
+            <div className="mt-8 relative z-20">
+              <a 
+                href="#contacto" 
+                className="group relative inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full transition-transform active:scale-95 shadow-[0_4px_16px_rgba(0,0,0,0.3)]"
+              >
+                {/* Backdrop blur & base translucency */}
+                <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-xl border border-white/20" />
+                
+                {/* Liquid highlight */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/25 to-transparent opacity-40 pointer-events-none" />
+                
+                {/* Inner glow */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary/30 to-transparent opacity-50 pointer-events-none" />
+                
+                <span className="relative z-10 font-medium text-sm text-white tracking-wide drop-shadow-sm">Prediseño gratis</span>
+                <ArrowRight className="relative z-10 w-4 h-4 text-white/90 drop-shadow-sm" />
+              </a>
             </div>
           </div>
         </div>
