@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ThreeLogoInstanced } from "../components/ThreeLogoInstanced";
+import { Preloader } from "../components/Preloader";
 import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
@@ -78,7 +79,8 @@ const FEATURES = [
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="bg-[#0a0a0a] min-h-screen text-white font-sans overflow-x-hidden selection:bg-blue-500/30">
+      <Preloader />
       <Nav />
       <main>
         <Hero />
