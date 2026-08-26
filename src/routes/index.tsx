@@ -112,7 +112,7 @@ const FEATURES = [
 
 function Home() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white font-sans overflow-x-hidden selection:bg-blue-500/30">
+    <div className="min-h-screen bg-background text-foreground">
       <Preloader />
       <Nav />
       <main>
