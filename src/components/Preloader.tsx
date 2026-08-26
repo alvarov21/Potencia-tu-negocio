@@ -24,11 +24,11 @@ export function Preloader() {
         <img 
           src="/logo-cristal.png" 
           alt="Potencia tu negocio" 
-          className="w-24 h-24 sm:w-32 sm:h-32 object-contain animate-fade-up" 
+          className="w-24 h-24 sm:w-32 sm:h-32 object-contain animate-zoom-in" 
           style={{ animationDuration: '800ms' }}
         />
         <h1 
-          className="text-foreground text-3xl sm:text-5xl font-bold tracking-tight text-center antialiased animate-fade-up"
+          className="text-foreground text-3xl sm:text-5xl font-bold tracking-tight text-center antialiased animate-zoom-in"
           style={{ 
             fontFamily: 'system-ui, -apple-system, sans-serif',
             animationDuration: '800ms',
