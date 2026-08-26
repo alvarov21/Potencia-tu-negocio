@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Preloader } from "../components/Preloader";
+import { Card3DWrapper } from "../components/ui/animated-3d-card";
 import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
@@ -479,100 +480,104 @@ function Pricing() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
           {/* Plan Presencia */}
-          <article className="bg-card border border-border rounded-3xl p-8 flex flex-col hover:border-primary/50 transition">
-            <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
-            <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.</p>
-            <div className="mb-6">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">350€</span>
-                <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
+          <Card3DWrapper className="h-full">
+            <div className="bg-card border border-border rounded-3xl p-8 flex flex-col h-full hover:border-primary/50 transition">
+              <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
+              <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.</p>
+              <div className="mb-6">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">350€</span>
+                  <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
+                </div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-5xl font-black text-foreground">295€</span>
+                </div>
+                <div className="text-sm text-muted-foreground mt-2 leading-snug">
+                  Pago único &middot; después 89,90€/año<br />
+                  (dominio, hosting y soporte)
+                </div>
               </div>
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-5xl font-black text-foreground">295€</span>
-              </div>
-              <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                Pago único &middot; después 89,90€/año<br />
-                (dominio, hosting y soporte)
-              </div>
+              <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
+                {[
+                  "Web landing/ multipágina: inicio, servicios/carta, galería y contacto",
+                  "Sistema de reservas o citas conectado a WhatsApp/email",
+                  "Carta digital o catálogo de servicios con fotos y precios",
+                  "Dominio propio + hosting + SSL (primer año incluido)",
+                  "Botón de WhatsApp directo y formulario de contacto",
+                  "Google Maps integrado y ficha de Google Business dada de alta",
+                  "SEO local básico: apareces en Google al buscar tu negocio en tu ciudad",
+                  "Textos legales RGPD (aviso legal, privacidad, cookies)",
+                  "Diseño responsive (móvil, tablet, ordenador)",
+                ].map((f, i) => (
+                  <li key={i} className="flex gap-3">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground italic mb-5">Renovación anual opcional por 89,90 € o transferencia del dominio a tu nombre (gratis).</p>
+              <a href="#contacto" className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition relative z-20">
+                Contratar ahora
+              </a>
             </div>
-            <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
-              {[
-                "Web landing/ multipágina: inicio, servicios/carta, galería y contacto",
-                "Sistema de reservas o citas conectado a WhatsApp/email",
-                "Carta digital o catálogo de servicios con fotos y precios",
-                "Dominio propio + hosting + SSL (primer año incluido)",
-                "Botón de WhatsApp directo y formulario de contacto",
-                "Google Maps integrado y ficha de Google Business dada de alta",
-                "SEO local básico: apareces en Google al buscar tu negocio en tu ciudad",
-                "Textos legales RGPD (aviso legal, privacidad, cookies)",
-                "Diseño responsive (móvil, tablet, ordenador)",
-              ].map((f, i) => (
-                <li key={i} className="flex gap-3">
-                  <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs text-muted-foreground italic mb-5">Renovación anual opcional por 89,90 € o transferencia del dominio a tu nombre (gratis).</p>
-            <a href="#contacto" className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
-              Contratar ahora
-            </a>
-          </article>
+          </Card3DWrapper>
 
           {/* Plan Crecimiento (Premium) */}
-          <article className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow h-full">
-            <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider whitespace-nowrap">
-              Más elegido
-            </span>
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Premium</span>
-            <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
-            <p className="text-sm text-muted-foreground mb-6 leading-relaxed">No solo tienes web: nos encargamos de que te encuentren antes que a tu competencia. Todo lo del Plan Presencia, y además:</p>
-            <div className="mb-6 mt-4">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">850€</span>
-                <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
+          <Card3DWrapper className="h-full">
+            <div className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow h-full">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+                Más elegido
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Premium</span>
+              <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">No solo tienes web: nos encargamos de que te encuentren antes que a tu competencia. Todo lo del Plan Presencia, y además:</p>
+              <div className="mb-6 mt-4">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">850€</span>
+                  <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
+                </div>
+                <span className="text-5xl font-black">675€</span>
+                <div className="text-sm text-muted-foreground mt-2 leading-snug">
+                  Pago único incluido &middot; después 65,90€/mes<br />
+                  (dominio, hosting, gestión SEO y soporte)
+                </div>
               </div>
-              <span className="text-5xl font-black">675€</span>
-              <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                Pago único incluido &middot; después 65,90€/mes<br />
-                (dominio, hosting, gestión SEO y soporte)
-              </div>
+              <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
+                {[
+                  "Todo lo incluido en el Plan Presencia, además de:",
+                  <span className="inline" key="seo">
+                    <strong className="text-foreground">Análisis SEO exhaustivo con seguimiento continuo:</strong>
+                    <ul className="mt-2 space-y-1 ml-4 text-sm text-muted-foreground list-disc list-outside">
+                      <li>Revisión técnica inicial para que tu web cargue rápido y sea fácil de encontrar en Google</li>
+                      <li>Estudio de las búsquedas de tus clientes en tu ciudad y sector, para posicionar tu web en ellas</li>
+                      <li>Optimización continua de contenido para mejorar tu posicionamiento con el tiempo</li>
+                      <li>Informe de resultados con visitas, posición en Google y clics desde Maps</li>
+                    </ul>
+                    <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
+                  </span>,
+                  "Cambios ilimitados de contenido (carta, precios, horarios, promociones) en menos de 24h",
+                  "Gestión activa de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
+                  "Informe mensual de resultados: visitas, llamadas y contactos por WhatsApp",
+                  "Soporte prioritario 24/7 en español",
+                  "Copias de seguridad automáticas"
+                ].map((f, i) => (
+                  <li key={i} className="flex gap-3">
+                    {i === 1 ? (
+                      <Star fill="currentColor" className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    ) : (
+                      <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    )}
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground italic mb-5">Cancela cuando quieras</p>
+              <a href="#contacto" className="block text-center py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition relative z-20">
+                Contratar ahora
+              </a>
             </div>
-            <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
-              {[
-                "Todo lo incluido en el Plan Presencia, además de:",
-                <span className="inline" key="seo">
-                  <strong className="text-foreground">Análisis SEO exhaustivo con seguimiento continuo:</strong>
-                  <ul className="mt-2 space-y-1 ml-4 text-sm text-muted-foreground list-disc list-outside">
-                    <li>Revisión técnica inicial para que tu web cargue rápido y sea fácil de encontrar en Google</li>
-                    <li>Estudio de las búsquedas de tus clientes en tu ciudad y sector, para posicionar tu web en ellas</li>
-                    <li>Optimización continua de contenido para mejorar tu posicionamiento con el tiempo</li>
-                    <li>Informe de resultados con visitas, posición en Google y clics desde Maps</li>
-                  </ul>
-                  <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
-                </span>,
-                "Cambios ilimitados de contenido (carta, precios, horarios, promociones) en menos de 24h",
-                "Gestión activa de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
-                "Informe mensual de resultados: visitas, llamadas y contactos por WhatsApp",
-                "Soporte prioritario 24/7 en español",
-                "Copias de seguridad automáticas"
-              ].map((f, i) => (
-                <li key={i} className="flex gap-3">
-                  {i === 1 ? (
-                    <Star fill="currentColor" className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
-                  ) : (
-                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
-                  )}
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="text-xs text-muted-foreground italic mb-5">Cancela cuando quieras</p>
-            <a href="#contacto" className="block text-center py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition">
-              Contratar ahora
-            </a>
-          </article>
+          </Card3DWrapper>
 
         </div>
         
