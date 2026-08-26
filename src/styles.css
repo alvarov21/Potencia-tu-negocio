@@ -160,3 +160,15 @@
 .animate-zoom-in {
   animation: zoom-in-fade cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+@keyframes mask-up {
+  0% {
+    transform: translateY(110%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.animate-mask-up {
+  animation: mask-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
