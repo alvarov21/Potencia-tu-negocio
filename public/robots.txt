@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.potenciatunegocio.eu/sitemap.xml
+Sitemap: https://potenciatunegocio.eu/sitemap.xml
