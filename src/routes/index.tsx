@@ -851,36 +851,38 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
             <input type="hidden" name="_subject" value="Nueva propuesta desde Potencia tu Negocio" />
             <input type="hidden" name="_template" value="table" />
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input name="nombre" required placeholder="Nombre" aria-label="Nombre" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
               <input name="email" required type="email" placeholder="Email" aria-label="Email" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+              <input name="telefono" required type="tel" placeholder="Teléfono" aria-label="Teléfono" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition" />
+              
+              <select
+                name="tipoNegocio"
+                required
+                aria-label="Tipo de negocio"
+                value={tipoNegocio}
+                onChange={(e) => setTipoNegocio(e.target.value)}
+                className={`w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition appearance-none ${tipoNegocio === "" ? "text-muted-foreground" : "text-foreground"}`}
+              >
+                <option value="" disabled hidden>Selecciona tipo de negocio</option>
+                <option value="Restaurante / Hostelería">Restaurante / Hostelería</option>
+                <option value="Hotel">Hotel</option>
+                <option value="Clínica dental">Clínica dental</option>
+                <option value="Psicólogo">Psicólogo</option>
+                <option value="Veterinaria">Veterinaria</option>
+                <option value="Academia">Academia</option>
+                <option value="Gimnasio">Gimnasio</option>
+                <option value="Inmobiliaria">Inmobiliaria</option>
+                <option value="Electricista">Electricista</option>
+                <option value="Taller mecánico">Taller mecánico</option>
+                <option value="Peluquería">Peluquería</option>
+                <option value="Centro de estética">Centro de estética</option>
+                <option value="Fotografía">Fotografía</option>
+                <option value="Joyería">Joyería</option>
+                <option value="Gestoría">Gestoría</option>
+                <option value="Otro">Otro</option>
+              </select>
             </div>
-            <select
-              name="tipoNegocio"
-              required
-              aria-label="Tipo de negocio"
-              value={tipoNegocio}
-              onChange={(e) => setTipoNegocio(e.target.value)}
-              className={`w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition appearance-none ${tipoNegocio === "" ? "text-muted-foreground" : "text-foreground"}`}
-            >
-              <option value="" disabled hidden>Selecciona tipo de negocio</option>
-              <option value="Restaurante / Hostelería">Restaurante / Hostelería</option>
-              <option value="Hotel">Hotel</option>
-              <option value="Clínica dental">Clínica dental</option>
-              <option value="Psicólogo">Psicólogo</option>
-              <option value="Veterinaria">Veterinaria</option>
-              <option value="Academia">Academia</option>
-              <option value="Gimnasio">Gimnasio</option>
-              <option value="Inmobiliaria">Inmobiliaria</option>
-              <option value="Electricista">Electricista</option>
-              <option value="Taller mecánico">Taller mecánico</option>
-              <option value="Peluquería">Peluquería</option>
-              <option value="Centro de estética">Centro de estética</option>
-              <option value="Fotografía">Fotografía</option>
-              <option value="Joyería">Joyería</option>
-              <option value="Gestoría">Gestoría</option>
-              <option value="Otro">Otro</option>
-            </select>
             {tipoNegocio === "Otro" && (
               <input name="otroNegocio" required placeholder="Especifica qué tipo de negocio" aria-label="Especifica qué tipo de negocio" className="w-full px-4 py-3 rounded-xl bg-background border border-border focus:border-primary focus:outline-none transition animate-in fade-in slide-in-from-top-2" />
             )}
