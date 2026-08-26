@@ -171,8 +171,9 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative pt-32 pb-24 lg:pt-44 lg:pb-32 overflow-hidden bg-gradient-hero">
-      <div className="absolute top-1/2 -right-40 lg:-right-20 -translate-y-1/2 pointer-events-none" aria-hidden="true">
-        <div className="relative w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] animate-float">
+      {/* Desktop Logo (Absolute Right) */}
+      <div className="absolute top-1/2 -right-20 -translate-y-1/2 pointer-events-none hidden lg:block" aria-hidden="true">
+        <div className="relative w-[800px] h-[800px] animate-float">
           {[1, 2, 3, 4, 5, 6].map(i => (
             <div
               key={i}
@@ -213,13 +214,32 @@ function Hero() {
           <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
             Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
           </p>
-          <div className="flex flex-wrap gap-4">
+          
+          {/* Desktop Buttons */}
+          <div className="hidden lg:flex flex-wrap gap-4">
             <a href="#precios" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:scale-[1.02] transition">
               Ver planes y precios <ArrowRight className="w-4 h-4" />
             </a>
             <a href="#nosotros" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
               Ver ejemplo de web
             </a>
+          </div>
+
+          {/* Mobile Logo (Relative Bottom) */}
+          <div className="lg:hidden mt-12 flex justify-center items-center pointer-events-none relative">
+            <div className="absolute w-[400px] h-[400px] animate-float">
+              {[1, 2, 3, 4, 5, 6].map(i => (
+                <div
+                  key={i}
+                  className="absolute inset-0 rounded-full border border-accent/30"
+                  style={{ transform: `scale(${1 - i * 0.13})`, opacity: 1 - i * 0.12 }}
+                />
+              ))}
+              <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
+            </div>
+            <div style={{ perspective: '1200px' }} className="relative z-10">
+              <ResponsiveLogo />
+            </div>
           </div>
         </div>
       </div>
