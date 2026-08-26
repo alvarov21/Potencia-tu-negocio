@@ -104,7 +104,7 @@ export function Portfolio3D() {
   }, []);
 
   return (
-    <div className="relative w-full h-[550px] bg-background text-foreground font-sans overflow-hidden selection:bg-primary/20 border-y border-border">
+    <div className="relative w-full h-[680px] md:h-[600px] lg:h-[550px] bg-background text-foreground font-sans overflow-hidden selection:bg-primary/20 border-y border-border flex flex-col">
       
       {/* Navbar overlay */}
       <nav className="absolute top-0 left-0 w-full h-16 flex items-center justify-between px-6 z-50 pointer-events-none">
@@ -114,14 +114,14 @@ export function Portfolio3D() {
       </nav>
 
       {/* Headline */}
-      <div className={`absolute top-[12%] left-1/2 -translate-x-1/2 text-center w-full max-w-3xl px-6 transition-all duration-[600ms] ease-out z-20`}>
-        <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4">
+      <div className={`absolute top-12 md:top-[12%] left-1/2 -translate-x-1/2 text-center w-full max-w-3xl px-6 transition-all duration-[600ms] ease-out z-20`}>
+        <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-4 mt-4 md:mt-0">
           PORTFOLIO
         </span>
-        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
           Algunos de nuestros diseños.
         </h2>
-        <p className="text-muted-foreground text-lg leading-relaxed mx-auto max-w-2xl text-balance">
+        <p className="text-muted-foreground text-base md:text-lg leading-relaxed mx-auto max-w-2xl text-balance">
           Estas son algunas de las webs que hemos creado para negocios que buscaban <br className="hidden sm:block" />
           exactamente lo mismo que tú: más presencia, más confianza y más clientes.
         </p>
@@ -130,7 +130,7 @@ export function Portfolio3D() {
       {/* 3D Carousel */}
       <div 
         ref={wrapperRef}
-        className={`absolute bottom-[8vh] left-0 w-full h-[210px] z-40 transition-all duration-[800ms]`} 
+        className={`absolute bottom-16 md:bottom-[8vh] left-0 w-full h-[210px] md:h-[230px] z-40 transition-all duration-[800ms]`} 
         style={{ perspective: "900px", maskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)", WebkitMaskImage: "linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)" }}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
