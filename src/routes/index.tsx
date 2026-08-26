@@ -23,11 +23,13 @@ const FAQS = [
 ];
 
 function ResponsiveLogo() {
-  const [layers, setLayers] = useState(300);
+  // Mobile-first approach: Start with 40 layers for SSR and initial hydration.
+  // This completely prevents mobile browsers from crashing before useEffect runs.
+  const [layers, setLayers] = useState(40);
   
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setLayers(40); // Prevent mobile crash
+    if (window.innerWidth >= 768) {
+      setLayers(300); // Scale up to maximum fidelity on desktop
     }
   }, []);
 
@@ -42,6 +44,7 @@ function ResponsiveLogo() {
             key={i}
             src="/logo-cristal.png" 
             alt={i === 0 ? "Logo Cristal 3D" : ""} 
+            decoding={i === 0 ? "sync" : "async"}
             className="absolute inset-0 w-full h-full object-contain"
             style={{ 
               transform: `translateZ(${-i * gap}px)`,
@@ -65,7 +68,10 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: "Diseño de páginas web profesional para restaurantes, clínicas, talleres y cualquier negocio local. SEO local incluido, primera versión en 48 horas, desde 295€ con dominio y Google Business. Propuesta gratis en 24h." },
       { property: "og:url", content: "https://www.potenciatunegocio.eu/" },
     ],
-    links: [{ rel: "canonical", href: "https://www.potenciatunegocio.eu/" }],
+    links: [
+      { rel: "canonical", href: "https://www.potenciatunegocio.eu/" },
+      { rel: "preload", href: "/logo-cristal.png", as: "image" }
+    ],
     scripts: [
       {
         type: "application/ld+json",
