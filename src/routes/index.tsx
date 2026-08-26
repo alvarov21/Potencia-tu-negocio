@@ -1,5 +1,4 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ThreeLogoInstanced } from "../components/ThreeLogoInstanced";
 import { Preloader } from "../components/Preloader";
 import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
@@ -22,6 +21,40 @@ const FAQS = [
   { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Independencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en 'tu informático': cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
   { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en Trustpilot, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
 ];
+
+function ResponsiveLogo() {
+  const [layers, setLayers] = useState(300);
+  
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setLayers(40); // Prevent mobile crash
+    }
+  }, []);
+
+  const gap = layers === 300 ? 0.125 : 1; // Maintain ~37.5px total thickness
+
+  return (
+    <div className="relative w-80 h-80 lg:w-[32rem] lg:h-[32rem] animate-spin-3d" style={{ transformStyle: 'preserve-3d' }}>
+      {Array.from({ length: layers }).map((_, i) => {
+        const isCap = i === 0 || i === layers - 1;
+        return (
+          <img 
+            key={i}
+            src="/logo-cristal.png" 
+            alt={i === 0 ? "Logo Cristal 3D" : ""} 
+            className="absolute inset-0 w-full h-full object-contain"
+            style={{ 
+              transform: `translateZ(${-i * gap}px)`,
+              filter: isCap ? 'none' : 'brightness(0.5)',
+              opacity: isCap ? 1 : 0.1,
+              mixBlendMode: 'normal'
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -147,10 +180,8 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-80 h-80 lg:w-[32rem] lg:h-[32rem]">
-            <ThreeLogoInstanced />
-          </div>
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ perspective: '1200px' }}>
+          <ResponsiveLogo />
         </div>
       </div>
 
