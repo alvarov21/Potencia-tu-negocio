@@ -156,7 +156,7 @@ function Hero() {
                   className="absolute inset-0 w-full h-full object-contain"
                   style={{ 
                     transform: `translateZ(${-i * 0.25}px)`,
-                    filter: isCap ? 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))' : 'saturate(1.5) brightness(1.4)',
+                    filter: isCap ? 'drop-shadow(0 20px 40px rgba(37,99,235,0.4))' : 'none',
                     opacity: 1,
                     mixBlendMode: 'normal'
                   }}
