@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ThreeLogoInstanced } from "../components/ThreeLogoInstanced";
 import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
@@ -144,25 +145,9 @@ function Hero() {
           ))}
           <div className="absolute inset-0 rounded-full bg-gradient-glow opacity-50" style={{ transform: "scale(0.4)" }} />
         </div>
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ perspective: '1200px' }}>
-          <div className="relative w-80 h-80 lg:w-[32rem] lg:h-[32rem] animate-spin-3d" style={{ transformStyle: 'preserve-3d' }}>
-            {Array.from({ length: 300 }).map((_, i) => {
-              const isCap = i === 0 || i === 299;
-              return (
-                <img 
-                  key={i}
-                  src="/logo-cristal.png" 
-                  alt={i === 0 ? "Logo Cristal 3D" : ""} 
-                  className="absolute inset-0 w-full h-full object-contain"
-                  style={{ 
-                    transform: `translateZ(${-i * 0.125}px)`,
-                    filter: isCap ? 'none' : 'brightness(0.5)',
-                    opacity: isCap ? 1 : 0.1,
-                    mixBlendMode: 'normal'
-                  }}
-                />
-              );
-            })}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-80 h-80 lg:w-[32rem] lg:h-[32rem]">
+            <ThreeLogoInstanced />
           </div>
         </div>
       </div>
