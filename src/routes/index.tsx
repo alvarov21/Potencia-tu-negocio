@@ -215,13 +215,26 @@ function Hero() {
             Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
           </p>
           
-          {/* Desktop Buttons */}
-          <div className="hidden lg:flex flex-wrap gap-4">
-            <a href="#precios" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:scale-[1.02] transition">
-              Ver planes y precios <ArrowRight className="w-4 h-4" />
-            </a>
-            <a href="#nosotros" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
-              Ver ejemplo de web
+          {/* Desktop Button (Liquid Glass iPhone style) */}
+          <div className="hidden lg:flex">
+            <a 
+              href="#contacto" 
+              className="group relative inline-flex items-center justify-center gap-3 px-9 py-4 rounded-full transition-transform duration-300 hover:scale-[1.02] active:scale-95 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            >
+              {/* Backdrop blur & base translucency */}
+              <div className="absolute inset-0 rounded-full bg-white/5 backdrop-blur-2xl border border-white/20 transition-colors duration-500 group-hover:border-white/30" />
+              
+              {/* Liquid highlight (Top edge shine) */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/25 to-transparent opacity-40 pointer-events-none" />
+              
+              {/* Subsurface inner glow (Bottom reflection) */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-t from-primary/30 to-transparent opacity-50 pointer-events-none" />
+              
+              {/* Hover color shift */}
+              <div className="absolute inset-0 rounded-full bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <span className="relative z-10 font-bold text-lg text-white tracking-wide drop-shadow-md">Prediseño gratis</span>
+              <ArrowRight className="relative z-10 w-5 h-5 text-white/90 group-hover:translate-x-1 group-hover:text-white transition-all duration-300 drop-shadow-md" />
             </a>
           </div>
 
