@@ -62,7 +62,7 @@ export function Portfolio3D() {
     { title: "Web Hamburguesería: Dali's Burguer", type: "mockup", url: "https://dali-s-burguer.vercel.app/", image: "/dali-burguer.png" },
     { type: "sparkle" },
     { title: "Web Restaurante: Picoteo", type: "mockup", url: "/portfolio/picoteo", image: "/picoteo.png" },
-    { type: "cursor" },
+    { title: "Peluquería Nievas", type: "mockup", url: "https://peluquer-a-nievas.vercel.app/", image: "/peluqueria-nievas.png" },
   ];
 
   useEffect(() => {
