@@ -60,7 +60,7 @@ export function Portfolio3D() {
     { title: "Centro de Estética: Estetimagen", type: "mockup", url: "/portfolio/estetimagen", image: "/estetimagen-mockup.jpg" },
     { type: "envelope" },
     { title: "Web Hamburguesería: Dali's Burguer", type: "mockup", url: "https://dali-s-burguer.vercel.app/", image: "/dali-burguer.png" },
-    { type: "sparkle" },
+    { title: "Grupo Gastrobró", type: "mockup", url: "https://grupo-gastobr-o.vercel.app/", image: "/grupo-gastrobro.png" },
     { title: "Web Restaurante: Picoteo", type: "mockup", url: "/portfolio/picoteo", image: "/picoteo.png" },
     { title: "Peluquería Nievas", type: "mockup", url: "https://peluquer-a-nievas.vercel.app/", image: "/peluqueria-nievas.png" },
   ];
