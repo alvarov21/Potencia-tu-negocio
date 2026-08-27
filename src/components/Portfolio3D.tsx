@@ -59,7 +59,7 @@ export function Portfolio3D() {
     { type: "cursor" },
     { title: "Centro de Estética: Estetimagen", type: "mockup", url: "/portfolio/estetimagen", image: "/estetimagen-mockup.jpg" },
     { type: "envelope" },
-    { title: "Catálogo: Taller Mecánico", type: "mockup", url: "/portfolio/taller-mecanico" },
+    { title: "Web Hamburguesería: Dali's Burguer", type: "mockup", url: "https://dali-s-burguer.vercel.app/", image: "/dali-burguer.png" },
     { type: "sparkle" },
     { title: "Web Restaurante: Picoteo", type: "mockup", url: "/portfolio/picoteo", image: "/picoteo.png" },
     { type: "cursor" },
