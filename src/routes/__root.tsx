@@ -76,8 +76,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: (ctx) => {
     // Determine the current URL path. ctx.location is available in TanStack Router's head function.
     const path = ctx.location?.pathname === "/" ? "" : (ctx.location?.pathname || "");
-    const canonicalUrl = `https://potenciatunegocio.eu${path}`;
-
     return {
       meta: [
         { charSet: "utf-8" },
@@ -96,7 +94,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
       ],
       links: [
-        { rel: "canonical", href: canonicalUrl },
         { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
         { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
@@ -114,13 +111,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const router = useRouter();
+  const path = router.state.location.pathname === "/" ? "" : router.state.location.pathname;
+  const canonicalUrl = `https://potenciatunegocio.eu${path}`;
+
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Potencia tu Negocio",
     "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
     "email": "info@potenciatunegocio.eu",
-    "url": "https://www.potenciatunegocio.eu",
+    "url": "https://potenciatunegocio.eu",
     "areaServed": "ES",
     "priceRange": "295€-825€",
   };
@@ -129,6 +130,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es">
       <head>
         <HeadContent />
+        <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       </head>
       <body>
