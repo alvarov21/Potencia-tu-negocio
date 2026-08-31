@@ -73,7 +73,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => {
+  head: (ctx) => {
+    // Determine the current URL path. ctx.location is available in TanStack Router's head function.
+    const path = ctx.location?.pathname === "/" ? "" : (ctx.location?.pathname || "");
+    const canonicalUrl = `https://potenciatunegocio.eu${path}`;
+
     return {
       meta: [
         { charSet: "utf-8" },
@@ -92,6 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
       ],
       links: [
+        { rel: "canonical", href: canonicalUrl },
         { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
         { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
         { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },

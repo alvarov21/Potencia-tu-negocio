@@ -65,7 +65,6 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://www.potenciatunegocio.eu/" },
     ],
     links: [
-      { rel: "canonical", href: "https://www.potenciatunegocio.eu/" },
       { rel: "preload", href: "/logo-cristal.png", as: "image" }
     ],
     scripts: [

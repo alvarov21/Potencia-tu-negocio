@@ -37,9 +37,6 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
         { name: "twitter:description", content: description },
         { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
       ],
-      links: [
-        { rel: "canonical", href: url }
-      ],
       scripts: [
         {
           type: "application/ld+json",
