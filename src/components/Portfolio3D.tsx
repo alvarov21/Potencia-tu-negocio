@@ -56,7 +56,7 @@ export function Portfolio3D() {
 
   const mockups = [
     { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "/portfolio/veterinaria-malaga", image: "/veterinaria-mockup.jpg" },
-    { type: "cursor" },
+    { title: "K-Ch-Vere", type: "mockup", url: "https://k-ch-vere.vercel.app/", image: "/k-ch-vere.png" },
     { title: "Centro de Estética: Estetimagen", type: "mockup", url: "/portfolio/estetimagen", image: "/estetimagen-mockup.jpg" },
     { title: "Jota Motor", type: "mockup", url: "https://jota-motor.vercel.app/", image: "/jota-motor.png" },
     { title: "Web Hamburguesería: Dali's Burguer", type: "mockup", url: "https://dali-s-burguer.vercel.app/", image: "/dali-burguer.png" },
