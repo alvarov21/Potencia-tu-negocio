@@ -9,7 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WebParaSectorRouteImport } from './routes/web-para-$sector'
+import { Route as WebParaVeterinariasRouteImport } from './routes/web-para-veterinarias'
+import { Route as WebParaTalleresMecanicosRouteImport } from './routes/web-para-talleres-mecanicos'
+import { Route as WebParaRestaurantesRouteImport } from './routes/web-para-restaurantes'
+import { Route as WebParaPeluqueriasRouteImport } from './routes/web-para-peluquerias'
+import { Route as WebParaGestoriasRouteImport } from './routes/web-para-gestorias'
+import { Route as WebParaFisioterapeutasRouteImport } from './routes/web-para-fisioterapeutas'
+import { Route as WebParaClinicasDentalesRouteImport } from './routes/web-para-clinicas-dentales'
+import { Route as WebParaCentrosDeEsteticaRouteImport } from './routes/web-para-centros-de-estetica'
+import { Route as WebParaAbogadosRouteImport } from './routes/web-para-abogados'
 import { Route as WebConReservasRouteImport } from './routes/web-con-reservas'
 import { Route as SeoLocalRouteImport } from './routes/seo-local'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -30,9 +38,51 @@ import { Route as BlogCuantoCuestaPaginaWebRestauranteRouteImport } from './rout
 import { Route as BlogCuantoCuestaPaginaWebEspanaRouteImport } from './routes/blog.cuanto-cuesta-pagina-web-espana'
 import { Route as LandingTypeCiudadRouteImport } from './routes/$landingType.$ciudad'
 
-const WebParaSectorRoute = WebParaSectorRouteImport.update({
-  id: '/web-para-$sector',
-  path: '/web-para-$sector',
+const WebParaVeterinariasRoute = WebParaVeterinariasRouteImport.update({
+  id: '/web-para-veterinarias',
+  path: '/web-para-veterinarias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaTalleresMecanicosRoute =
+  WebParaTalleresMecanicosRouteImport.update({
+    id: '/web-para-talleres-mecanicos',
+    path: '/web-para-talleres-mecanicos',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WebParaRestaurantesRoute = WebParaRestaurantesRouteImport.update({
+  id: '/web-para-restaurantes',
+  path: '/web-para-restaurantes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaPeluqueriasRoute = WebParaPeluqueriasRouteImport.update({
+  id: '/web-para-peluquerias',
+  path: '/web-para-peluquerias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaGestoriasRoute = WebParaGestoriasRouteImport.update({
+  id: '/web-para-gestorias',
+  path: '/web-para-gestorias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaFisioterapeutasRoute = WebParaFisioterapeutasRouteImport.update({
+  id: '/web-para-fisioterapeutas',
+  path: '/web-para-fisioterapeutas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaClinicasDentalesRoute = WebParaClinicasDentalesRouteImport.update({
+  id: '/web-para-clinicas-dentales',
+  path: '/web-para-clinicas-dentales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebParaCentrosDeEsteticaRoute =
+  WebParaCentrosDeEsteticaRouteImport.update({
+    id: '/web-para-centros-de-estetica',
+    path: '/web-para-centros-de-estetica',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const WebParaAbogadosRoute = WebParaAbogadosRouteImport.update({
+  id: '/web-para-abogados',
+  path: '/web-para-abogados',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WebConReservasRoute = WebConReservasRouteImport.update({
@@ -147,7 +197,15 @@ export interface FileRoutesByFullPath {
   '/portfolio': typeof PortfolioRouteWithChildren
   '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
-  '/web-para-$sector': typeof WebParaSectorRoute
+  '/web-para-abogados': typeof WebParaAbogadosRoute
+  '/web-para-centros-de-estetica': typeof WebParaCentrosDeEsteticaRoute
+  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
+  '/web-para-fisioterapeutas': typeof WebParaFisioterapeutasRoute
+  '/web-para-gestorias': typeof WebParaGestoriasRoute
+  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
+  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/web-para-talleres-mecanicos': typeof WebParaTalleresMecanicosRoute
+  '/web-para-veterinarias': typeof WebParaVeterinariasRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
@@ -169,7 +227,15 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioRouteWithChildren
   '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
-  '/web-para-$sector': typeof WebParaSectorRoute
+  '/web-para-abogados': typeof WebParaAbogadosRoute
+  '/web-para-centros-de-estetica': typeof WebParaCentrosDeEsteticaRoute
+  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
+  '/web-para-fisioterapeutas': typeof WebParaFisioterapeutasRoute
+  '/web-para-gestorias': typeof WebParaGestoriasRoute
+  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
+  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/web-para-talleres-mecanicos': typeof WebParaTalleresMecanicosRoute
+  '/web-para-veterinarias': typeof WebParaVeterinariasRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
@@ -192,7 +258,15 @@ export interface FileRoutesById {
   '/portfolio': typeof PortfolioRouteWithChildren
   '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
-  '/web-para-$sector': typeof WebParaSectorRoute
+  '/web-para-abogados': typeof WebParaAbogadosRoute
+  '/web-para-centros-de-estetica': typeof WebParaCentrosDeEsteticaRoute
+  '/web-para-clinicas-dentales': typeof WebParaClinicasDentalesRoute
+  '/web-para-fisioterapeutas': typeof WebParaFisioterapeutasRoute
+  '/web-para-gestorias': typeof WebParaGestoriasRoute
+  '/web-para-peluquerias': typeof WebParaPeluqueriasRoute
+  '/web-para-restaurantes': typeof WebParaRestaurantesRoute
+  '/web-para-talleres-mecanicos': typeof WebParaTalleresMecanicosRoute
+  '/web-para-veterinarias': typeof WebParaVeterinariasRoute
   '/$landingType/$ciudad': typeof LandingTypeCiudadRoute
   '/blog/cuanto-cuesta-pagina-web-espana': typeof BlogCuantoCuestaPaginaWebEspanaRoute
   '/blog/cuanto-cuesta-pagina-web-restaurante': typeof BlogCuantoCuestaPaginaWebRestauranteRoute
@@ -216,7 +290,15 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/seo-local'
     | '/web-con-reservas'
-    | '/web-para-$sector'
+    | '/web-para-abogados'
+    | '/web-para-centros-de-estetica'
+    | '/web-para-clinicas-dentales'
+    | '/web-para-fisioterapeutas'
+    | '/web-para-gestorias'
+    | '/web-para-peluquerias'
+    | '/web-para-restaurantes'
+    | '/web-para-talleres-mecanicos'
+    | '/web-para-veterinarias'
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
@@ -238,7 +320,15 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/seo-local'
     | '/web-con-reservas'
-    | '/web-para-$sector'
+    | '/web-para-abogados'
+    | '/web-para-centros-de-estetica'
+    | '/web-para-clinicas-dentales'
+    | '/web-para-fisioterapeutas'
+    | '/web-para-gestorias'
+    | '/web-para-peluquerias'
+    | '/web-para-restaurantes'
+    | '/web-para-talleres-mecanicos'
+    | '/web-para-veterinarias'
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
@@ -260,7 +350,15 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/seo-local'
     | '/web-con-reservas'
-    | '/web-para-$sector'
+    | '/web-para-abogados'
+    | '/web-para-centros-de-estetica'
+    | '/web-para-clinicas-dentales'
+    | '/web-para-fisioterapeutas'
+    | '/web-para-gestorias'
+    | '/web-para-peluquerias'
+    | '/web-para-restaurantes'
+    | '/web-para-talleres-mecanicos'
+    | '/web-para-veterinarias'
     | '/$landingType/$ciudad'
     | '/blog/cuanto-cuesta-pagina-web-espana'
     | '/blog/cuanto-cuesta-pagina-web-restaurante'
@@ -283,18 +381,82 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRouteWithChildren
   SeoLocalRoute: typeof SeoLocalRouteWithChildren
   WebConReservasRoute: typeof WebConReservasRoute
-  WebParaSectorRoute: typeof WebParaSectorRoute
+  WebParaAbogadosRoute: typeof WebParaAbogadosRoute
+  WebParaCentrosDeEsteticaRoute: typeof WebParaCentrosDeEsteticaRoute
+  WebParaClinicasDentalesRoute: typeof WebParaClinicasDentalesRoute
+  WebParaFisioterapeutasRoute: typeof WebParaFisioterapeutasRoute
+  WebParaGestoriasRoute: typeof WebParaGestoriasRoute
+  WebParaPeluqueriasRoute: typeof WebParaPeluqueriasRoute
+  WebParaRestaurantesRoute: typeof WebParaRestaurantesRoute
+  WebParaTalleresMecanicosRoute: typeof WebParaTalleresMecanicosRoute
+  WebParaVeterinariasRoute: typeof WebParaVeterinariasRoute
   LandingTypeCiudadRoute: typeof LandingTypeCiudadRoute
   DisenoWebCiudadRoute: typeof DisenoWebCiudadRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/web-para-$sector': {
-      id: '/web-para-$sector'
-      path: '/web-para-$sector'
-      fullPath: '/web-para-$sector'
-      preLoaderRoute: typeof WebParaSectorRouteImport
+    '/web-para-veterinarias': {
+      id: '/web-para-veterinarias'
+      path: '/web-para-veterinarias'
+      fullPath: '/web-para-veterinarias'
+      preLoaderRoute: typeof WebParaVeterinariasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-talleres-mecanicos': {
+      id: '/web-para-talleres-mecanicos'
+      path: '/web-para-talleres-mecanicos'
+      fullPath: '/web-para-talleres-mecanicos'
+      preLoaderRoute: typeof WebParaTalleresMecanicosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-restaurantes': {
+      id: '/web-para-restaurantes'
+      path: '/web-para-restaurantes'
+      fullPath: '/web-para-restaurantes'
+      preLoaderRoute: typeof WebParaRestaurantesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-peluquerias': {
+      id: '/web-para-peluquerias'
+      path: '/web-para-peluquerias'
+      fullPath: '/web-para-peluquerias'
+      preLoaderRoute: typeof WebParaPeluqueriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-gestorias': {
+      id: '/web-para-gestorias'
+      path: '/web-para-gestorias'
+      fullPath: '/web-para-gestorias'
+      preLoaderRoute: typeof WebParaGestoriasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-fisioterapeutas': {
+      id: '/web-para-fisioterapeutas'
+      path: '/web-para-fisioterapeutas'
+      fullPath: '/web-para-fisioterapeutas'
+      preLoaderRoute: typeof WebParaFisioterapeutasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-clinicas-dentales': {
+      id: '/web-para-clinicas-dentales'
+      path: '/web-para-clinicas-dentales'
+      fullPath: '/web-para-clinicas-dentales'
+      preLoaderRoute: typeof WebParaClinicasDentalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-centros-de-estetica': {
+      id: '/web-para-centros-de-estetica'
+      path: '/web-para-centros-de-estetica'
+      fullPath: '/web-para-centros-de-estetica'
+      preLoaderRoute: typeof WebParaCentrosDeEsteticaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/web-para-abogados': {
+      id: '/web-para-abogados'
+      path: '/web-para-abogados'
+      fullPath: '/web-para-abogados'
+      preLoaderRoute: typeof WebParaAbogadosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/web-con-reservas': {
@@ -484,7 +646,15 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRouteWithChildren,
   SeoLocalRoute: SeoLocalRouteWithChildren,
   WebConReservasRoute: WebConReservasRoute,
-  WebParaSectorRoute: WebParaSectorRoute,
+  WebParaAbogadosRoute: WebParaAbogadosRoute,
+  WebParaCentrosDeEsteticaRoute: WebParaCentrosDeEsteticaRoute,
+  WebParaClinicasDentalesRoute: WebParaClinicasDentalesRoute,
+  WebParaFisioterapeutasRoute: WebParaFisioterapeutasRoute,
+  WebParaGestoriasRoute: WebParaGestoriasRoute,
+  WebParaPeluqueriasRoute: WebParaPeluqueriasRoute,
+  WebParaRestaurantesRoute: WebParaRestaurantesRoute,
+  WebParaTalleresMecanicosRoute: WebParaTalleresMecanicosRoute,
+  WebParaVeterinariasRoute: WebParaVeterinariasRoute,
   LandingTypeCiudadRoute: LandingTypeCiudadRoute,
   DisenoWebCiudadRoute: DisenoWebCiudadRoute,
 }

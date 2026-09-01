@@ -1,15 +1,15 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { ArrowRight, Globe, TrendingUp, Smartphone } from "lucide-react";
-import { Contact } from "./index";
+import { Contact } from "../../routes/index";
 
-const VALID_SECTORS = {
+export const VALID_SECTORS = {
   "restaurantes": "restaurantes y hostelería",
   "clinicas-dentales": "clínicas dentales",
   "talleres-mecanicos": "talleres mecánicos",
   "peluquerias": "peluquerías y centros de estética",
   "gestorias": "gestorías y asesorías",
   "veterinarias": "clínicas veterinarias",
-  "centros-estetica": "centros de estética",
+  "centros-de-estetica": "centros de estética",
   "abogados": "despachos de abogados",
   "fisioterapeutas": "clínicas de fisioterapia"
 };
@@ -23,26 +23,7 @@ function capitalize(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
-export const Route = createFileRoute("/web-para-$sector")({
-  beforeLoad: ({ params: { sector } }) => {
-    if (!VALID_SECTORS[sector as keyof typeof VALID_SECTORS]) {
-      throw notFound();
-    }
-  },
-  head: ({ params }) => {
-    const sectorName = VALID_SECTORS[params.sector as keyof typeof VALID_SECTORS];
-    return {
-      meta: [
-        { title: `Diseño web corporativo para ${sectorName} | Potencia tu Negocio` },
-        { name: "description", content: `Servicio especializado de diseño web con IA para ${sectorName}. Atrae más clientes, automatiza tus reservas y domina tu sector en Google.` },
-      ]
-    };
-  },
-  component: SectorPillar,
-});
-
-function SectorPillar() {
-  const { sector } = Route.useParams();
+export function SectorPillar({ sector }: { sector: string }) {
   const sectorDisplay = VALID_SECTORS[sector as keyof typeof VALID_SECTORS];
 
   return (
