@@ -5,7 +5,7 @@ import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
   Star, Lock, FileText, ArrowRight, Check, Plus, Minus, Mail, Phone,
-  Paintbrush, Rocket, X, Info
+  Paintbrush, Rocket, X, Info, Zap, ShieldCheck, Layers
 } from "lucide-react";
 
 const Portfolio3D = lazy(() => import("../components/Portfolio3D").then(m => ({ default: m.Portfolio3D })));
@@ -128,6 +128,7 @@ function Home() {
             <Portfolio3D />
           </Suspense>
         </section>
+        <AntiWordPressSection />
         <Pricing />
         <FAQ />
         <Contact />
@@ -474,6 +475,65 @@ function HowItWorks() {
   );
 }
 
+function AntiWordPressSection() {
+  return (
+    <section className="py-24 lg:py-32 px-6 lg:px-10 bg-muted/30 border-y border-border">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 border border-primary/20">
+            <ShieldCheck className="w-4 h-4" /> El Estándar Premium
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+            ¿Por qué huimos de WordPress? <br className="hidden lg:block" />
+            <span className="text-muted-foreground">La diferencia de jugar en Primera División.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            El 90% de las agencias tradicionales dependen de gestores obsoletos que exigen mantenimientos correctivos simplemente para evitar caídas del servidor. Nosotros desarrollamos arquitecturas inmutables (Serverless): tu inversión mensual se destina íntegramente a soporte premium y crecimiento orgánico, no a parchear vulnerabilidades.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card3DWrapper className="h-full">
+            <div className="group bg-card p-8 rounded-3xl border border-border flex flex-col items-start shadow-sm hover:border-primary/50 transition-all h-full">
+              <div className="w-12 h-12 bg-orange-500/10 text-orange-500 rounded-2xl flex items-center justify-center mb-6 border border-orange-500/20 group-hover:scale-110 group-hover:-rotate-6 transition-transform duration-300">
+                <Zap className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Velocidad Extrema (Serverless)</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Sin bases de datos lentas ni código basura. Tu web se pre-construye y se aloja en una red global de servidores Edge. Carga en milisegundos en cualquier móvil, algo que a Google le encanta para el SEO.
+              </p>
+            </div>
+          </Card3DWrapper>
+
+          <Card3DWrapper className="h-full">
+            <div className="group bg-card p-8 rounded-3xl border border-border flex flex-col items-start shadow-sm hover:border-primary/50 transition-all h-full">
+              <div className="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Seguridad Inhackeable</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Al no usar WordPress ni plugins de terceros, cerramos todas las puertas traseras. Tu web es código compilado y sellado: imposible de hackear. Cero estrés por actualizaciones sorpresa que rompan la página.
+              </p>
+            </div>
+          </Card3DWrapper>
+
+          <Card3DWrapper className="h-full">
+            <div className="group bg-card p-8 rounded-3xl border border-border flex flex-col items-start shadow-sm hover:border-primary/50 transition-all h-full">
+              <div className="w-12 h-12 bg-emerald-500/10 text-emerald-500 rounded-2xl flex items-center justify-center mb-6 border border-emerald-500/20 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+                <Layers className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Máquina de SEO Programático</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                No hacemos "una página". Diseñamos Arquitecturas Silo capaces de generar cientos de URLs locales estratégicas (Sector + Ciudad) que atacan masivamente a tu competencia en Google.
+              </p>
+            </div>
+          </Card3DWrapper>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Pricing() {
   const [isNfcModalOpen, setIsNfcModalOpen] = useState(false);
   const pricingSchema = {
@@ -554,19 +614,18 @@ function Pricing() {
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
                 {[
-                  "Web landing/ multipágina: inicio, servicios/carta, galería y contacto",
-                  "Sistema de reservas o citas conectado a WhatsApp/email",
-                  "Carta digital o catálogo de servicios con fotos y precios",
-                  "Dominio propio + hosting + SSL (primer año incluido)",
-                  "Botón de WhatsApp directo y formulario de contacto",
-                  "Google Maps integrado y ficha de Google Business dada de alta",
-                  "SEO local básico: apareces en Google al buscar tu negocio en tu ciudad",
-                  "Textos legales RGPD (aviso legal, privacidad, cookies)",
-                  "Diseño responsive (móvil, tablet, ordenador)",
+                  "Diseño web a medida y sin plantillas (Inicio, servicios, galería y contacto)",
+                  "Tu negocio visible en Google (SEO local básico enfocado en tu ciudad)",
+                  "Sistemas de contacto rápido (Reservas, citas y botón de WhatsApp directo)",
+                  "Catálogo o Carta digital (Muestra tus servicios con fotos y precios)",
+                  "Aparición en Google Maps (Ficha de negocio configurada al 100%)",
+                  "Todo incluido el primer año (Dominio .com/.es, alojamiento seguro y textos legales)"
                 ].map((f, i) => (
-                  <li key={i} className="flex gap-3">
+                  <li key={i} className="flex gap-3 items-start">
                     <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
-                    <span>{f}</span>
+                    <div className="flex-1 text-muted-foreground/90 font-medium">
+                      {f}
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -587,7 +646,7 @@ function Pricing() {
               <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">No solo tienes web: nos encargamos de que te encuentren antes que a tu competencia. Todo lo del Plan Presencia, y además:</p>
               <div className="mb-6 mt-4">
-                <div className="flex items-center gap-2 mb-1">
+              <div className="flex items-center gap-2 mb-1">
                   <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">850€</span>
                   <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
                 </div>
@@ -599,30 +658,37 @@ function Pricing() {
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
                 {[
-                  "Todo lo incluido en el Plan Presencia, además de:",
-                  <span className="inline" key="seo">
-                    <strong className="text-foreground">Análisis SEO exhaustivo con seguimiento continuo:</strong>
-                    <ul className="mt-2 space-y-1 ml-4 text-sm text-muted-foreground list-disc list-outside">
+                  "Todo lo incluido en el Plan Presencia, impulsado al siguiente nivel:",
+                  <details className="group bg-muted/30 border border-border p-3 rounded-xl" key="seo">
+                    <summary className="list-none cursor-pointer flex items-center justify-between font-bold text-foreground hover:text-primary transition-colors">
+                      <span className="flex items-center gap-2">
+                        Análisis SEO exhaustivo 
+                        <span className="text-muted-foreground font-medium text-[10px] uppercase tracking-wider bg-background border border-border px-2 py-0.5 rounded-full transition-colors group-hover:border-primary/30">¿Qué incluye?</span>
+                      </span>
+                      <Plus className="w-4 h-4 text-muted-foreground group-open:hidden" />
+                      <Minus className="w-4 h-4 text-muted-foreground hidden group-open:block" />
+                    </summary>
+                    <ul className="mt-3 space-y-2 ml-4 text-sm text-muted-foreground list-disc list-outside animate-in slide-in-from-top-1 fade-in duration-200">
                       <li>Revisión técnica inicial para que tu web cargue rápido y sea fácil de encontrar en Google</li>
                       <li>Estudio de las búsquedas de tus clientes en tu ciudad y sector, para posicionar tu web en ellas</li>
                       <li>Optimización continua de contenido para mejorar tu posicionamiento con el tiempo</li>
                       <li>Informe de resultados con visitas, posición en Google y clics desde Maps</li>
                     </ul>
-                    <span className="ml-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary uppercase tracking-wide align-middle">Exclusivo</span>
-                  </span>,
-                  "Cambios ilimitados de contenido (carta, precios, horarios, promociones) en menos de 24h",
-                  "Gestión activa de tu ficha de Google Business: publicaciones, fotos, respuesta a reseñas",
-                  "Informe mensual de resultados: visitas, llamadas y contactos por WhatsApp",
-                  "Soporte prioritario 24/7 en español",
-                  "Copias de seguridad automáticas"
+                  </details>,
+                  "Mantenimiento \"Manos Libres\" (Cambios ilimitados de texto y fotos en menos de 24h)",
+                  "Gestión Activa de Reputación (Respondemos tus reseñas y mimamos tu ficha de Google)",
+                  "Crecimiento Comercial Continuo (Adaptamos la web a tus nuevas campañas, menús o servicios)",
+                  "Soporte Prioritario VIP (Atención directa de tú a tú por WhatsApp, sin tickets ni robots)"
                 ].map((f, i) => (
-                  <li key={i} className="flex gap-3">
+                  <li key={i} className="flex gap-3 items-start">
                     {i === 1 ? (
-                      <Star fill="currentColor" className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                      <Star fill="currentColor" className="w-4 h-4 text-primary flex-shrink-0 mt-3.5" aria-hidden="true" />
                     ) : (
                       <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
                     )}
-                    <span>{f}</span>
+                    <div className="flex-1 text-muted-foreground/90 font-medium">
+                      {f}
+                    </div>
                   </li>
                 ))}
               </ul>
