@@ -534,8 +534,101 @@ function AntiWordPressSection() {
   );
 }
 
+const ADDON_MODALS = {
+  placa_nfc: {
+    title: "Placa NFC de Reseñas",
+    price: "35,50 €",
+    subtitle: "Configuración, programación y envío incluidos.",
+    hook: "Convierte cada visita en una nueva oportunidad para conseguir una reseña de 5 estrellas.",
+    paragraphs: [
+      "Con solo acercar el móvil a la placa, tus clientes accederán directamente a la página de reseñas de Google, sin buscar tu negocio, sin escribir nada y sin complicaciones. Además, incorpora un código QR totalmente programado, para que incluso los clientes que no utilicen NFC puedan escanearlo y dejar su valoración en cuestión de segundos.",
+      "Colócala en el mostrador, la recepción, las mesas o la zona de pago y deja que haga el trabajo por ti. Su diseño discreto y profesional, junto con su adhesivo de alta fijación en la parte trasera, permite colocarla fácilmente sobre cualquier superficie sin necesidad de herramientas.",
+      "Cuanto más fácil sea dejar una reseña, más opiniones conseguirás. Y más reseñas significan más confianza, mayor visibilidad en Google y más clientes para tu negocio."
+    ],
+    quote: "Porque hoy en día, antes de elegir un negocio, la mayoría de personas consulta las valoraciones. La pregunta es: cuando entren en tu ficha de Google, ¿verán 20 reseñas... o 200?",
+    features: [
+      "Tecnología NFC programada con tu perfil de Google.",
+      "Código QR listo para escanear.",
+      "Adhesivo trasero de alta resistencia para una instalación rápida.",
+      "Configuración personalizada.",
+      "Envío incluido.",
+      "Sin cuotas ni suscripciones.",
+      "Compatible con la gran mayoría de smartphones."
+    ],
+    conclusion: "Una pequeña placa. Un simple gesto de un segundo. Un flujo constante de reseñas que puede ayudarte a conseguir muchos más clientes durante años."
+  },
+  tarjeta_nfc: {
+    title: "Tarjeta NFC de Reseñas",
+    price: "17,90 €",
+    subtitle: "Configuración, programación y envío incluidos.",
+    hook: "Convierte el momento de pagar la cuenta en una nueva reseña de 5 estrellas.",
+    paragraphs: [
+      "Del tamaño de una tarjeta de crédito, esta tarjeta NFC se entrega en mano al cliente justo cuando paga: con solo acercar el móvil, accede directamente a tu página de reseñas de Google, sin buscar tu negocio, sin escribir nada y sin complicaciones. Ni siquiera necesita quedarse en la mesa: cabe en cualquier bolsillo, cartera o portafolios, lista para usarse en el instante exacto en que el cliente está más satisfecho.",
+      "Perfecta para el cierre de cuenta en restaurantes, bares, peluquerías o cualquier negocio con atención cara a cara: el camarero o el dependiente la acerca al móvil del cliente junto con el datáfono, y en dos segundos la reseña está en camino. Nada que colocar, nada que mantener en la mesa: se guarda en el delantal, en la carpeta de la cuenta o en el cajón, y se usa solo cuando hace falta.",
+      "Cuanto más fácil y natural sea el gesto, más reseñas conseguirás. Y más reseñas significan más confianza, mayor visibilidad en Google y más clientes para tu negocio."
+    ],
+    quote: "Porque hoy en día, antes de elegir un negocio, la mayoría de personas consulta las valoraciones. La pregunta es: cuando entren en tu ficha de Google, ¿verán 20 reseñas... o 200?",
+    features: [
+      "Tecnología NFC programada con tu perfil de Google.",
+      "Formato tarjeta, ligero y fácil de llevar encima.",
+      "Configuración personalizada.",
+      "Envío incluido.",
+      "Sin cuotas ni suscripciones.",
+      "Compatible con la gran mayoría de smartphones."
+    ],
+    conclusion: "Una tarjeta de bolsillo. Un simple gesto de un segundo, justo cuando el cliente paga. Un flujo constante de reseñas que puede ayudarte a conseguir muchos más clientes durante años."
+  },
+  social_nfc: {
+    title: "Tarjeta NFC de Reseñas",
+    price: "17,90 €",
+    subtitle: "Configuración, programación y envío incluidos.",
+    hook: "Convierte el momento de pagar la cuenta en una nueva reseña de 5 estrellas.",
+    paragraphs: [
+      "Del tamaño de una tarjeta de crédito, esta tarjeta NFC se entrega en mano al cliente justo cuando paga: con solo acercar el móvil, accede directamente a tu página de reseñas de Google, sin buscar tu negocio, sin escribir nada y sin complicaciones. Ni siquiera necesita quedarse en la mesa: cabe en cualquier bolsillo, cartera o portafolios, lista para usarse en el instante exacto en que el cliente está más satisfecho.",
+      "Perfecta para el cierre de cuenta en restaurantes, bares, peluquerías o cualquier negocio con atención cara a cara: el camarero o el dependiente la acerca al móvil del cliente junto con el datáfono, y en dos segundos la reseña está en camino. Nada que colocar, nada que mantener en la mesa: se guarda en el delantal, en la carpeta de la cuenta o en el cajón, y se usa solo cuando hace falta.",
+      "Cuanto más fácil y natural sea el gesto, más reseñas conseguirás. Y más reseñas significan más confianza, mayor visibilidad en Google y más clientes para tu negocio."
+    ],
+    quote: "Porque hoy en día, antes de elegir un negocio, la mayoría de personas consulta las valoraciones. La pregunta es: cuando entren en tu ficha de Google, ¿verán 20 reseñas... o 200?",
+    features: [
+      "Tecnología NFC programada con tu perfil de Google.",
+      "Formato tarjeta, ligero y fácil de llevar encima.",
+      "Configuración personalizada.",
+      "Envío incluido.",
+      "Sin cuotas ni suscripciones.",
+      "Compatible con la gran mayoría de smartphones."
+    ],
+    conclusion: "Una tarjeta de bolsillo. Un simple gesto de un segundo, justo cuando el cliente paga. Un flujo constante de reseñas que puede ayudarte a conseguir muchos más clientes durante años."
+  }
+};
+
 function Pricing() {
-  const [isNfcModalOpen, setIsNfcModalOpen] = useState(false);
+  const [activeAddonModal, setActiveAddonModal] = useState<keyof typeof ADDON_MODALS | null>(null);
+  const [placaIndex, setPlacaIndex] = useState(0);
+
+  const placaImages = [
+    "/nfc-review-card-v4.png",
+    "/nfc-placa-2.jpg",
+    "/nfc-placa-3.png"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPlacaIndex(prev => (prev + 1) % placaImages.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [placaImages.length]);
+
+  useEffect(() => {
+    if (activeAddonModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [activeAddonModal]);
+
   const pricingSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -701,80 +794,139 @@ function Pricing() {
 
         </div>
         
-        {/* Addon Tarjeta NFC */}
-        <div className="mt-16 bg-card border border-primary/30 rounded-3xl p-8 max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-8 relative shadow-glow group">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent rounded-3xl pointer-events-none"></div>
-          
-          <div className="md:w-1/4 flex justify-center relative z-10">
-            <div className="relative" style={{ perspective: '1000px' }}>
-              <img 
-                src="/nfc-review-card-v4.png" 
-                alt="Tarjeta NFC de reseñas de Google" 
-                className="w-48 rounded-xl mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
-                style={{ 
-                  transform: 'rotateY(-15deg) rotateX(10deg)',
-                  filter: 'drop-shadow(-10px 15px 20px rgba(0,0,0,0.25)) contrast(1.1) brightness(1.02)'
-                }}
-              />
-            </div>
+        {/* Catálogo de Add-ons */}
+        <div className="mt-16 max-w-5xl mx-auto">
+          <div className="flex items-center justify-between mb-6 px-2">
+            <h3 className="text-2xl font-bold">Catálogo de Add-ons Opcionales</h3>
+            <span className="text-xs font-semibold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">Hardware Inteligente</span>
           </div>
           
-          <div className="md:w-3/4 text-center md:text-left relative z-10">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary mb-2 bg-primary/10 px-3 py-1 rounded-full">Add-on Opcional</span>
-            <div className="flex flex-col md:flex-row items-center md:items-baseline gap-3 mb-3">
-              <h4 className="text-3xl font-bold">Placa NFC de Reseñas</h4>
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-black text-primary">35,50 €</span>
-                <span className="text-xs font-medium text-white italic whitespace-nowrap">Configuración y envío incl.</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Addon 1: Reseñas */}
+            <div className="bg-card border border-border hover:border-primary/30 rounded-3xl p-6 flex flex-col relative shadow-sm hover:shadow-md transition-all group">
+              <div className="flex justify-center items-center h-40 mb-6 bg-white rounded-2xl relative overflow-hidden p-4">
+                {placaImages.map((src, idx) => (
+                  <img 
+                    key={src}
+                    src={src} 
+                    alt={`Placa NFC Reseñas ${idx + 1}`} 
+                    className={`absolute inset-0 w-full h-full object-contain p-4 transition-all duration-1000 group-hover:scale-110 ${idx === placaIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                    style={{ 
+                      filter: idx === 0 ? 'drop-shadow(-5px 10px 15px rgba(0,0,0,0.15))' : 'none',
+                      mixBlendMode: 'multiply'
+                    }}
+                  />
+                ))}
               </div>
+              <h4 className="text-xl font-bold mb-2">Placa NFC Reseñas</h4>
+              <div className="flex flex-col gap-1.5 mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg font-black text-primary">35,50 €</span>
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase bg-muted px-2 py-0.5 rounded-sm">1 unidad</span>
+                  <span className="text-[10px] font-medium text-muted-foreground uppercase ml-1">Envío incl.</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-black text-primary/80">51,90 €</span>
+                  <span className="text-[10px] font-bold text-primary uppercase bg-primary/10 px-2 py-0.5 rounded-sm">Pack 2 unidades</span>
+                </div>
+                <p className="text-xs text-muted-foreground font-medium mt-0.5">🌎 Disponible en Español e Inglés</p>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                Multiplica tus reseñas de 5 estrellas en piloto automático. Los clientes solo tienen que acercar el móvil.
+              </p>
+              <button onClick={() => setActiveAddonModal('placa_nfc')} className="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-4 py-2.5 rounded-xl mt-auto">
+                <Info className="w-4 h-4" /> Detalles
+              </button>
             </div>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Con esta placa inteligente, los clientes pueden poner directamente una reseña de su negocio solo con acercar el móvil a esta pequeña placa. Ideal para colocar en el mostrador, mesas o recepción y multiplicar tus opiniones de 5 estrellas en piloto automático.
-            </p>
-            <button onClick={() => setIsNfcModalOpen(true)} className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-4 py-2 rounded-full">
-              <Info className="w-4 h-4" /> Ver todos los detalles
-            </button>
+
+            {/* Addon 2: Tarjeta Reseñas (Vertical) */}
+            <div className="bg-card border border-border hover:border-primary/30 rounded-3xl p-6 flex flex-col relative shadow-sm hover:shadow-md transition-all group">
+              <div className="flex justify-center items-center h-40 mb-6 bg-white rounded-2xl relative overflow-hidden p-4">
+                <img 
+                  src="/nfc-review-card-vertical.jpg" 
+                  alt="Tarjeta NFC de Reseñas" 
+                  className="w-auto h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <h4 className="text-xl font-bold mb-2">Tarjeta NFC Reseñas</h4>
+              <div className="flex flex-col gap-1.5 mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg font-black text-primary">17,90 €</span>
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase bg-muted px-2 py-0.5 rounded-sm">1 unidad</span>
+                  <span className="text-[10px] font-medium text-muted-foreground uppercase ml-1">Envío incl.</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-black text-primary/80">64,90 €</span>
+                  <span className="text-[10px] font-bold text-primary uppercase bg-primary/10 px-2 py-0.5 rounded-sm">Pack 4 unidades (Equipo)</span>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                Lleva las reseñas en tu bolsillo. Acerca esta tarjeta al móvil de tus clientes en cualquier lugar para que te valoren.
+              </p>
+              <button onClick={() => setActiveAddonModal('tarjeta_nfc')} className="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-4 py-2.5 rounded-xl mt-auto">
+                <Info className="w-4 h-4" /> Detalles
+              </button>
+            </div>
+
+            {/* Addon 3: Tarjeta Reseñas (Black) */}
+            <div className="bg-card border border-border hover:border-primary/30 rounded-3xl p-6 flex flex-col relative shadow-sm hover:shadow-md transition-all group">
+              <div className="flex justify-center items-center h-40 mb-6 bg-white rounded-2xl relative overflow-hidden p-4">
+                <img 
+                  src="/nfc-review-card-black.png" 
+                  alt="Tarjeta NFC Reseñas (Black Edition)" 
+                  className="w-auto h-full object-contain transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+              <h4 className="text-xl font-bold mb-2">Tarjeta NFC Reseñas</h4>
+              <div className="flex flex-col gap-1.5 mb-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg font-black text-primary">17,90 €</span>
+                  <span className="text-[10px] font-bold text-muted-foreground uppercase bg-muted px-2 py-0.5 rounded-sm">1 unidad</span>
+                  <span className="text-[10px] font-medium text-muted-foreground uppercase ml-1">Envío incl.</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-black text-primary/80">64,90 €</span>
+                  <span className="text-[10px] font-bold text-primary uppercase bg-primary/10 px-2 py-0.5 rounded-sm">Pack 4 unidades (Equipo)</span>
+                </div>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                Lleva las reseñas en tu bolsillo. Acerca esta tarjeta al móvil de tus clientes en cualquier lugar para que te valoren.
+              </p>
+              <button onClick={() => setActiveAddonModal('social_nfc')} className="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors bg-primary/5 hover:bg-primary/10 px-4 py-2.5 rounded-xl mt-auto">
+                <Info className="w-4 h-4" /> Detalles
+              </button>
+            </div>
           </div>
         </div>
 
       </div>
 
-      {/* NFC Modal */}
-      {isNfcModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm" onClick={() => setIsNfcModalOpen(false)}>
+      {/* NFC Modals */}
+      {activeAddonModal && ADDON_MODALS[activeAddonModal] && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm" onClick={() => setActiveAddonModal(null)}>
           <div className="bg-card border border-border shadow-2xl rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative animate-in fade-in zoom-in-95 duration-200" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setIsNfcModalOpen(false)} className="absolute top-4 right-4 p-2 text-muted-foreground hover:bg-muted hover:text-foreground rounded-full transition">
+            <button onClick={() => setActiveAddonModal(null)} className="absolute top-4 right-4 p-2 text-muted-foreground hover:bg-muted hover:text-foreground rounded-full transition">
               <X className="w-5 h-5" />
             </button>
             <div className="p-8">
-              <h3 className="text-3xl font-bold mb-2">Placa NFC de Reseñas</h3>
+              <h3 className="text-3xl font-bold mb-2">{ADDON_MODALS[activeAddonModal].title}</h3>
               <p className="text-xl font-black text-primary mb-1">
-                35,50 € <span className="text-sm font-medium text-muted-foreground bg-muted/50 px-2 py-0.5 rounded-sm ml-2">Configuración, programación y envío incluidos.</span>
+                {ADDON_MODALS[activeAddonModal].price} <span className="text-sm font-medium text-muted-foreground bg-muted/50 px-2 py-0.5 rounded-sm ml-2">{ADDON_MODALS[activeAddonModal].subtitle}</span>
               </p>
               
               <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
-                <p className="text-foreground font-semibold text-lg text-balance">Convierte cada visita en una nueva oportunidad para conseguir una reseña de 5 estrellas.</p>
+                <p className="text-foreground font-semibold text-lg text-balance">{ADDON_MODALS[activeAddonModal].hook}</p>
                 
-                <p>Con solo acercar el móvil a la placa, tus clientes accederán directamente a la página de reseñas de Google, sin buscar tu negocio, sin escribir nada y sin complicaciones. Además, incorpora un código QR totalmente programado, para que incluso los clientes que no utilicen NFC puedan escanearlo y dejar su valoración en cuestión de segundos.</p>
+                {ADDON_MODALS[activeAddonModal].paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
                 
-                <p>Colócala en el mostrador, la recepción, las mesas o la zona de pago y deja que haga el trabajo por ti. Su diseño discreto y profesional, junto con su adhesivo de alta fijación en la parte trasera, permite colocarla fácilmente sobre cualquier superficie sin necesidad de herramientas.</p>
-                
-                <p>Cuanto más fácil sea dejar una reseña, más opiniones conseguirás. Y más reseñas significan más confianza, mayor visibilidad en Google y más clientes para tu negocio.</p>
-                
-                <p className="italic text-foreground border-l-4 border-primary/30 pl-4 py-1">Porque hoy en día, antes de elegir un negocio, la mayoría de personas consulta las valoraciones. La pregunta es: cuando entren en tu ficha de Google, ¿verán 20 reseñas... o 200?</p>
+                <p className="italic text-foreground border-l-4 border-primary/30 pl-4 py-1">{ADDON_MODALS[activeAddonModal].quote}</p>
                 
                 <div className="bg-muted/30 rounded-2xl p-6 mt-8 border border-border/50">
                   <h4 className="font-bold text-foreground mb-4">Incluye:</h4>
                   <ul className="space-y-3">
-                    {[
-                      "Tecnología NFC programada con tu perfil de Google.",
-                      "Código QR listo para escanear.",
-                      "Adhesivo trasero de alta resistencia para una instalación rápida.",
-                      "Configuración personalizada.",
-                      "Envío incluido.",
-                      "Sin cuotas ni suscripciones.",
-                      "Compatible con la gran mayoría de smartphones."
-                    ].map((item, i) => (
+                    {ADDON_MODALS[activeAddonModal].features.map((item, i) => (
                       <li key={i} className="flex gap-3 text-sm items-start">
                         <span className="shrink-0 mt-0.5">✅</span> <span>{item}</span>
                       </li>
@@ -782,11 +934,11 @@ function Pricing() {
                   </ul>
                 </div>
                 
-                <p className="font-semibold text-foreground text-center mt-6 text-balance text-lg">Una pequeña placa. Un simple gesto de un segundo. Un flujo constante de reseñas que puede ayudarte a conseguir muchos más clientes durante años.</p>
+                <p className="font-semibold text-foreground text-center mt-6 text-balance text-lg">{ADDON_MODALS[activeAddonModal].conclusion}</p>
               </div>
               
               <div className="mt-8 flex justify-center">
-                <a href="#contacto" onClick={() => setIsNfcModalOpen(false)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-cta text-white font-semibold shadow-glow hover:scale-[1.02] transition">
+                <a href="#contacto" onClick={() => setActiveAddonModal(null)} className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-cta text-white font-semibold shadow-glow hover:scale-[1.02] transition">
                   Añadir a mi pedido <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
