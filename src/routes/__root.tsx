@@ -86,6 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
         { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
         { property: "og:type", content: "website" },
+        { property: "og:site_name", content: "Potencia Tu Negocio" },
         { property: "og:locale", content: "es_ES" },
         { property: "og:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
         { name: "twitter:card", content: "summary_large_image" },
@@ -126,12 +127,20 @@ function RootShell({ children }: { children: ReactNode }) {
     "priceRange": "295€-825€",
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Potencia Tu Negocio",
+    "url": "https://potenciatunegocio.eu"
+  };
+
   return (
     <html lang="es">
       <head>
         <HeadContent />
         <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
       <body>
         {children}
