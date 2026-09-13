@@ -20,7 +20,7 @@ const FAQS = [
   { q: "¿Qué es eso del SEO local y por qué insistís tanto?", a: "El SEO local es que tu negocio salga en Google cuando alguien de tu zona busca lo que tú vendes — 'fontanero en Móstoles', 'cafetería con terraza en Salamanca'. Insistimos porque es la diferencia entre una web que decora y una web que trae clientes: 8 de cada 10 personas buscan un negocio local desde el móvil antes de llamar o ir. Por eso todas nuestras webs incluyen SEO local desde el primer día — textos optimizados para tu ciudad, ficha de Google Business dada de alta y Google Maps integrado — sin coste extra." },
   { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión, publicada en menos de 7 días. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
   { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Independencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en 'tu informático': cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
-  { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en Trustpilot, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
+  { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en nuestro perfil de Google, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
 ];
 
 function ResponsiveLogo() {
@@ -1130,33 +1130,40 @@ function Footer() {
     <footer className="border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 border-b border-border">
         <a
-          href="https://www.trustpilot.com/review/potenciatunegocio.eu"
+          href="https://g.page/r/Cf57ah10MZfnEBM/review"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Valóranos en Trustpilot"
+          aria-label="Valóranos en Google"
           className="group flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left"
         >
           <div className="flex items-center gap-2">
-            <svg viewBox="0 0 24 24" className="w-7 h-7 fill-[#00B67A]" aria-hidden="true">
-              <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.176L12 19.273l-7.336 3.9 1.402-8.176L.132 9.21l8.2-1.192z" />
+            <svg viewBox="0 0 24 24" className="w-7 h-7" aria-hidden="true">
+              <path fill="#4285F4" d="M23.7449 12.27c0-.82-.07-1.64-.2-2.45H12v4.62h6.63c-.29 1.5-1.14 2.76-2.43 3.63v3.01h3.93c2.3-2.12 3.6149-5.25 3.6149-8.81Z" />
+              <path fill="#34A853" d="M12 24c3.31 0 6.08-1.1 8.11-2.98l-3.93-3.01c-1.1.74-2.51 1.18-4.18 1.18-3.21 0-5.93-2.17-6.9-5.08H1.05v3.13C3.12 21.36 7.24 24 12 24Z" />
+              <path fill="#FBBC05" d="M5.1 14.11c-.25-.74-.39-1.54-.39-2.36s.14-1.62.39-2.36V6.26H1.05C.38 7.6 0 9.12 0 10.75s.38 3.15 1.05 4.49l4.05-3.13Z" />
+              <path fill="#EA4335" d="M12 4.81c1.8 0 3.42.62 4.69 1.83l3.52-3.52C18.08 1.1 15.31 0 12 0 7.24 0 3.12 2.64 1.05 6.26l4.05 3.13c.97-2.91 3.69-5.08 6.9-5.08Z" />
             </svg>
             <span className="text-lg font-semibold text-foreground tracking-tight">
-              Trust<span className="text-[#00B67A]">pilot</span>
+              Google <span className="text-[#FABB05]">Reviews</span>
             </span>
           </div>
           <div className="flex items-center gap-1">
-            {[0, 1, 2, 3, 4].map((i) => (
-              <span key={i} className="w-7 h-7 bg-[#00B67A] flex items-center justify-center rounded-sm">
-                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white" aria-hidden="true">
-                  <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.787 1.402 8.176L12 19.273l-7.336 3.9 1.402-8.176L.132 9.21l8.2-1.192z" />
-                </svg>
-              </span>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <svg
+                key={star}
+                className="w-7 h-7 text-[#FABB05] drop-shadow-sm"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
             ))}
           </div>
           <div className="text-sm">
             <p className="text-foreground font-medium">¿Trabajamos juntos?</p>
             <p className="text-muted-foreground group-hover:text-foreground transition">
-              Valóranos en Trustpilot →
+              Valóranos en Google →
             </p>
           </div>
         </a>
