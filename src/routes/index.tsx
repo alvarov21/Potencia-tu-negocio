@@ -1136,14 +1136,14 @@ function Footer() {
           aria-label="Valóranos en Google"
           className="group flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center sm:text-left"
         >
-          <div className="flex items-center gap-2">
-            <svg viewBox="0 0 24 24" className="w-7 h-7" aria-hidden="true">
-              <path fill="#4285F4" d="M23.7449 12.27c0-.82-.07-1.64-.2-2.45H12v4.62h6.63c-.29 1.5-1.14 2.76-2.43 3.63v3.01h3.93c2.3-2.12 3.6149-5.25 3.6149-8.81Z" />
-              <path fill="#34A853" d="M12 24c3.31 0 6.08-1.1 8.11-2.98l-3.93-3.01c-1.1.74-2.51 1.18-4.18 1.18-3.21 0-5.93-2.17-6.9-5.08H1.05v3.13C3.12 21.36 7.24 24 12 24Z" />
-              <path fill="#FBBC05" d="M5.1 14.11c-.25-.74-.39-1.54-.39-2.36s.14-1.62.39-2.36V6.26H1.05C.38 7.6 0 9.12 0 10.75s.38 3.15 1.05 4.49l4.05-3.13Z" />
-              <path fill="#EA4335" d="M12 4.81c1.8 0 3.42.62 4.69 1.83l3.52-3.52C18.08 1.1 15.31 0 12 0 7.24 0 3.12 2.64 1.05 6.26l4.05 3.13c.97-2.91 3.69-5.08 6.9-5.08Z" />
+          <div className="flex items-center gap-2.5">
+            <svg viewBox="0 0 48 48" className="w-7 h-7" aria-hidden="true">
+              <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.7 17.74 9.5 24 9.5z"/>
+              <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+              <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+              <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
             </svg>
-            <span className="text-lg font-semibold text-foreground tracking-tight">
+            <span className="text-lg font-bold text-foreground tracking-tight">
               Google <span className="text-[#FABB05]">Reviews</span>
             </span>
           </div>
