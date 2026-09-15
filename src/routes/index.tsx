@@ -24,12 +24,10 @@ const FAQS = [
 ];
 
 function ResponsiveLogo() {
-  // Ultra-lightweight configuration: 35 layers with 1px gap.
-  // This provides a completely solid edge at 90 degrees (1px physical distance)
-  // while reducing GPU compositing overhead by 90% compared to 300 layers.
-  // Perfect 60fps on all browsers, eliminating Chrome sluggishness.
-  const layers = 35;
-  const gap = 1;
+  // Ultra-lightweight configuration: 15 layers with 1.5px gap.
+  // This provides a decent 3D effect while saving mobile GPU overhead.
+  const layers = 15;
+  const gap = 1.5;
 
   return (
     <div className="relative w-80 h-80 lg:w-[32rem] lg:h-[32rem] animate-spin-3d" style={{ transformStyle: 'preserve-3d' }}>
@@ -111,6 +109,43 @@ const FEATURES = [
 ];
 
 
+// Lazy wrapper for 3D Portfolio to save main thread on mobile load
+function LazyPortfolio3D() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px" } // Load it a bit before it enters the screen
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section id="portfolio" ref={containerRef} className="w-full min-h-[500px]">
+      {inView ? (
+        <Suspense fallback={<div className="h-[500px] flex items-center justify-center text-muted-foreground">Cargando portfolio 3D...</div>}>
+          <Portfolio3D />
+        </Suspense>
+      ) : (
+        <div className="h-[500px] w-full flex items-center justify-center text-muted-foreground/30">
+          Cargando entorno 3D...
+        </div>
+      )}
+    </section>
+  );
+}
+
 function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -123,11 +158,7 @@ function Home() {
 
         <About />
         <HowItWorks />
-        <section id="portfolio" className="w-full">
-          <Suspense fallback={<div className="h-[500px] flex items-center justify-center text-muted-foreground">Cargando portfolio 3D...</div>}>
-            <Portfolio3D />
-          </Suspense>
-        </section>
+        <LazyPortfolio3D />
         <AntiWordPressSection />
         <IndustryProblems />
         <Pricing />
@@ -338,17 +369,15 @@ function Features() {
 function About() {
   return (
     <section id="nosotros" className="relative py-24 lg:py-32 px-6 lg:px-10 overflow-hidden">
-      {/* Tattoo Watermark Logo */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0 opacity-20 select-none">
+      {/* Tattoo Watermark Logo - Hidden on mobile for performance, lighter filters on desktop */}
+      <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-0 opacity-[0.15] select-none">
         <img 
           src="/logo.png" 
           alt="" 
-          className="w-[150%] md:w-[110%] h-auto object-cover opacity-30 transform translate-x-[20%] md:translate-x-[30%] -rotate-12"
+          loading="lazy"
+          className="w-[110%] h-auto object-cover transform translate-x-[30%] -rotate-12"
           style={{ 
-            filter: 'invert(1) hue-rotate(180deg) contrast(1.2)', 
-            mixBlendMode: 'screen',
-            maskImage: 'radial-gradient(circle, black 50%, transparent 80%)',
-            WebkitMaskImage: 'radial-gradient(circle, black 50%, transparent 80%)'
+            filter: 'invert(1) hue-rotate(180deg)',
           }}
         />
       </div>
