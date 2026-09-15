@@ -8,15 +8,21 @@ export function Preloader() {
   const letters = text.split("");
 
   useEffect(() => {
-    if (typeof navigator !== 'undefined' && /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|chrome-lighthouse|speed/i.test(navigator.userAgent)) {
+    // Si es un bot o ya ha visto la animación en esta sesión, sáltatelo.
+    if (
+      (typeof window !== 'undefined' && sessionStorage.getItem('preloader_seen')) ||
+      (typeof navigator !== 'undefined' && /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|chrome-lighthouse|speed/i.test(navigator.userAgent))
+    ) {
       setLoading(false);
       return;
     }
 
+    sessionStorage.setItem('preloader_seen', 'true');
+
     const timer = setTimeout(() => {
       setAnimatingOut(true);
-      setTimeout(() => setLoading(false), 900); // Wait for slide up
-    }, 2200);
+      setTimeout(() => setLoading(false), 500); // Wait for slide up (faster)
+    }, 600); // Reduced from 2200 to 600ms to prevent LCP penalty
     return () => clearTimeout(timer);
   }, []);
 
