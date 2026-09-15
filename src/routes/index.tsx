@@ -369,15 +369,17 @@ function Features() {
 function About() {
   return (
     <section id="nosotros" className="relative py-24 lg:py-32 px-6 lg:px-10 overflow-hidden">
-      {/* Tattoo Watermark Logo - Hidden on mobile for performance, lighter filters on desktop */}
-      <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-0 opacity-[0.15] select-none">
+      {/* Tattoo Watermark Logo - Hidden on mobile for performance, full premium filters on desktop */}
+      <div className="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none z-0 opacity-10 select-none overflow-hidden">
         <img 
           src="/logo.png" 
           alt="" 
           loading="lazy"
-          className="w-[110%] h-auto object-cover transform translate-x-[30%] -rotate-12"
+          className="w-[110%] h-auto object-cover mix-blend-screen transform translate-x-[30%] -rotate-12"
           style={{ 
-            filter: 'invert(1) hue-rotate(180deg)',
+            filter: 'invert(1) grayscale(1) contrast(1.5) brightness(1.2)',
+            maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 0%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)'
           }}
         />
       </div>

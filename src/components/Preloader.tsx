@@ -22,7 +22,7 @@ export function Preloader() {
     const timer = setTimeout(() => {
       setAnimatingOut(true);
       setTimeout(() => setLoading(false), 500); // Wait for slide up (faster)
-    }, 600); // Reduced from 2200 to 600ms to prevent LCP penalty
+    }, 1600); // 1.6s delay for a more premium feel, we have enough LCP budget now
     return () => clearTimeout(timer);
   }, []);
 
