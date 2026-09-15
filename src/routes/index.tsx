@@ -220,7 +220,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div className="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
         {Array.from({ length: 25 }).map((_, i) => (
           <span
             key={i}
@@ -235,7 +235,7 @@ function Hero() {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="max-w-3xl animate-fade-up">
+        <div className="max-w-3xl">
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-6 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
             Agencia de diseño web con IA · Negocios locales
           </span>
