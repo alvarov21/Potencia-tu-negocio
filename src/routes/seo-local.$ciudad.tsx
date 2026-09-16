@@ -21,7 +21,7 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
   },
   head: ({ params }) => {
     const cityName = getGeoContent("seo-local", params.ciudad).cityName;
-    const url = `https://www.potenciatunegocio.eu/seo-local/${params.ciudad}`;
+    const url = `https://potenciatunegocio.eu/seo-local/${params.ciudad}`;
     
     const title = `Agencia Experta en SEO Local en ${cityName} | Potencia tu Negocio`;
     const description = `Servicios de SEO Local en ${cityName}. Posiciona tu empresa en Google Maps y capta clientes cercanos que buscan tus servicios hoy mismo.`;
@@ -32,10 +32,10 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
-        { property: "og:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
+        { property: "og:image", content: "https://potenciatunegocio.eu/og-image.png" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
-        { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
+        { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
       ],
       scripts: [
         {
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/seo-local/$ciudad")({
             provider: {
               "@type": "LocalBusiness",
               name: "Potencia tu Negocio",
-              url: "https://www.potenciatunegocio.eu"
+              url: "https://potenciatunegocio.eu"
             },
             areaServed: {
               "@type": "City",

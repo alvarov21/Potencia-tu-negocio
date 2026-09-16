@@ -21,7 +21,7 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
   },
   head: ({ params }) => {
     const cityName = getGeoContent("diseno-web", params.ciudad).cityName;
-    const url = `https://www.potenciatunegocio.eu/diseno-web/${params.ciudad}`;
+    const url = `https://potenciatunegocio.eu/diseno-web/${params.ciudad}`;
     
     const title = `Agencia de Diseño Web en ${cityName} | Potencia tu Negocio`;
     const description = `Servicios de diseño de páginas web profesionales en ${cityName}. Atrae más clientes locales con una web rápida, adaptada a móviles y optimizada para Google.`;
@@ -32,10 +32,10 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
-        { property: "og:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
+        { property: "og:image", content: "https://potenciatunegocio.eu/og-image.png" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
-        { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
+        { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
       ],
       scripts: [
         {
@@ -47,7 +47,7 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
             provider: {
               "@type": "LocalBusiness",
               name: "Potencia tu Negocio",
-              url: "https://www.potenciatunegocio.eu"
+              url: "https://potenciatunegocio.eu"
             },
             areaServed: {
               "@type": "City",

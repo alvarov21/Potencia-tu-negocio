@@ -52,7 +52,7 @@ export const Route = createFileRoute("/$landingType/$ciudad")({
     // Usar la función getGeoContent para acceder al nombre correcto con tilde indirectamente, 
     // o simplemente importar la constante si la exportamos. Para no complicar, usaremos un hack rápido o capitalizaremos si no.
     const cityName = getGeoContent(sector, params.ciudad).cityName || capitalize(params.ciudad);
-    const url = `https://www.potenciatunegocio.eu/${params.landingType}/${params.ciudad}`;
+    const url = `https://potenciatunegocio.eu/${params.landingType}/${params.ciudad}`;
     
     const title = `Diseño de páginas web para ${sectorName} en ${cityName} | Potencia tu Negocio`;
     const description = `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 7 días y desde 595€.`;
@@ -63,10 +63,10 @@ export const Route = createFileRoute("/$landingType/$ciudad")({
         { property: "og:title", content: title },
         { property: "og:description", content: description },
         { property: "og:url", content: url },
-        { property: "og:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
+        { property: "og:image", content: "https://potenciatunegocio.eu/og-image.png" },
         { name: "twitter:title", content: title },
         { name: "twitter:description", content: description },
-        { name: "twitter:image", content: "https://www.potenciatunegocio.eu/og-image.png" },
+        { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
       ],
       scripts: [
         {
@@ -78,7 +78,7 @@ export const Route = createFileRoute("/$landingType/$ciudad")({
             provider: {
               "@type": "LocalBusiness",
               name: "Potencia tu Negocio",
-              url: "https://www.potenciatunegocio.eu"
+              url: "https://potenciatunegocio.eu"
             },
             areaServed: {
               "@type": "City",
