@@ -839,7 +839,7 @@ function Pricing() {
             <div className="bg-card border border-primary/30 rounded-3xl p-8 lg:p-10 flex flex-col hover:border-primary transition shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
               
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-5 py-1 rounded-full bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-bold uppercase tracking-wider shadow-[0_0_15px_rgba(245,158,11,0.3)] border border-white/10 whitespace-nowrap z-20">
                 Ideal Peluquerías y Barberías
               </span>
               
