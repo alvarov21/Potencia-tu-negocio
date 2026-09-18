@@ -847,10 +847,17 @@ function Pricing() {
                 <div className="flex-1 text-center lg:text-left">
                   <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">Sistema Integral</span>
                   <h3 className="text-3xl font-bold mb-4">Plan Reservas PRO</h3>
-                  <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+                  <p className="text-base text-muted-foreground mb-4 leading-relaxed">
                     Un sistema de citas 100% tuyo sin las altísimas comisiones de plataformas de terceros. 
                     Te montamos tu web corporativa y una App de gestión privada para tu móvil. Todo integrado.
                   </p>
+                  
+                  <div className="flex items-center justify-center lg:justify-start gap-2 mb-6">
+                    <div className="bg-primary/10 border border-primary/20 text-primary px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-2">
+                      <ShieldCheck className="w-4 h-4" />
+                      <span>Software Propio Exclusivo (Desarrollado por nosotros)</span>
+                    </div>
+                  </div>
                   
                   <ul className="space-y-4 mb-8 text-sm text-left">
                     {[
