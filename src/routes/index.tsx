@@ -716,11 +716,11 @@ function Pricing() {
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-balance">Cuánto cuesta tu página web: elige el plan para tu negocio local</h2>
           <p className="text-muted-foreground text-lg">Sin letra pequeña. Sin permanencias ocultas. Mismo precio para restaurantes, clínicas, talleres o cualquier negocio local.</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           
           {/* Plan Presencia */}
           <Card3DWrapper className="h-full">
-            <div className="bg-card border border-border rounded-3xl p-6 lg:p-8 flex flex-col h-full hover:border-primary/50 transition">
+            <div className="bg-card border border-border rounded-3xl p-8 flex flex-col h-full hover:border-primary/50 transition">
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
               <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.</p>
@@ -761,52 +761,9 @@ function Pricing() {
             </div>
           </Card3DWrapper>
 
-          {/* Plan Reservas PRO (SaaS) */}
-          <Card3DWrapper className="h-full">
-            <div className="bg-card border-2 border-primary/50 rounded-3xl p-6 lg:p-8 flex flex-col h-full hover:border-primary transition shadow-md relative">
-              <span className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider">
-                Ideal Peluquerías / Barberías
-              </span>
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Suscripción SaaS</span>
-              <h3 className="text-2xl font-bold mb-2">Plan Reservas PRO</h3>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Olvídate del papel y boli. Un sistema de citas 100% tuyo sin las altas comisiones de Treatwell o Booksy. Web corporativa + App de gestión privada.</p>
-              <div className="mb-6 mt-2">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-5xl font-black text-foreground">59€</span>
-                  <span className="text-lg text-muted-foreground font-semibold">/mes</span>
-                </div>
-                <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                  + 99€ coste de creación y puesta a punto.<br />
-                  Sin permanencia. Alojamiento incluido.
-                </div>
-              </div>
-              <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
-                {[
-                  "Diseño Web corporativo a medida (Landing page + Servicios)",
-                  "Motor de reservas automático (Reglas anti-solape de 30 min, etc.)",
-                  "App de Gestión (Panel privado en el móvil para ver Historial y Próximas citas)",
-                  "0% Comisiones por reserva",
-                  "Base de datos privada en la nube",
-                  "Hosting, Dominio y Mantenimiento técnico incluido"
-                ].map((f, i) => (
-                  <li key={i} className="flex gap-3 items-start">
-                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
-                    <div className="flex-1 text-muted-foreground/90 font-medium">
-                      {f}
-                    </div>
-                  </li>
-                ))}
-              </ul>
-              <p className="text-xs text-muted-foreground italic mb-5">Digitaliza tu negocio al mejor precio.</p>
-              <a href="#contacto" className="block text-center py-3.5 rounded-full border border-primary text-primary font-semibold hover:bg-primary/10 transition relative z-20">
-                Contratar ahora
-              </a>
-            </div>
-          </Card3DWrapper>
-
           {/* Plan Crecimiento (Premium) */}
           <Card3DWrapper className="h-full">
-            <div className="relative bg-card border-2 border-primary rounded-3xl p-6 lg:p-8 flex flex-col shadow-glow h-full">
+            <div className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow h-full">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider whitespace-nowrap">
                 Más elegido
               </span>
@@ -867,6 +824,72 @@ function Pricing() {
             </div>
           </Card3DWrapper>
 
+        </div>
+
+        {/* Solución SaaS Reservas */}
+        <div className="mt-24 max-w-5xl mx-auto px-4 lg:px-0">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl lg:text-4xl font-bold mb-4 tracking-tight">¿Tu negocio funciona por citas?</h3>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Tenemos una solución específica en modelo suscripción para que te olvides de altas comisiones y agendas de papel.
+            </p>
+          </div>
+
+          <Card3DWrapper>
+            <div className="bg-card border border-primary/30 rounded-3xl p-8 lg:p-10 flex flex-col hover:border-primary transition shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] rounded-full pointer-events-none" />
+              
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold uppercase tracking-wider">
+                Ideal Peluquerías y Barberías
+              </span>
+              
+              <div className="flex flex-col lg:flex-row gap-10 items-center lg:items-start relative z-10">
+                <div className="flex-1 text-center lg:text-left">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3 block">Sistema Integral</span>
+                  <h3 className="text-3xl font-bold mb-4">Plan Reservas PRO</h3>
+                  <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+                    Un sistema de citas 100% tuyo sin las altísimas comisiones de plataformas de terceros. 
+                    Te montamos tu web corporativa y una App de gestión privada para tu móvil. Todo integrado.
+                  </p>
+                  
+                  <ul className="space-y-4 mb-8 text-sm text-left">
+                    {[
+                      "Diseño Web corporativo a medida (Landing page + Servicios)",
+                      "Motor de reservas automático (Reglas anti-solape, control horario)",
+                      "App de Gestión (Panel privado en tu móvil para ver tu agenda)",
+                      "0% Comisiones por reserva",
+                      "Base de datos privada en la nube",
+                      "Hosting, Dominio y Mantenimiento técnico incluido"
+                    ].map((f, i) => (
+                      <li key={i} className="flex gap-3 items-start">
+                        <Check className="w-5 h-5 text-primary flex-shrink-0" aria-hidden="true" />
+                        <div className="flex-1 text-foreground font-medium">
+                          {f}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="w-full lg:w-72 shrink-0 bg-background/50 border border-border rounded-2xl p-6 text-center flex flex-col justify-center">
+                  <div className="mb-6">
+                    <div className="flex items-center justify-center gap-1.5 mb-2">
+                      <span className="text-6xl font-black text-foreground">59€</span>
+                      <span className="text-xl text-muted-foreground font-semibold">/mes</span>
+                    </div>
+                    <div className="text-sm text-muted-foreground mt-3 bg-muted/50 py-2 px-3 rounded-lg border border-border/50">
+                      <span className="font-semibold text-foreground">99€</span> coste único de configuración y puesta a punto.
+                    </div>
+                  </div>
+                  
+                  <a href="#contacto" className="w-full block text-center py-4 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition shadow-lg hover:shadow-primary/25">
+                    Solicitar Demo
+                  </a>
+                  <p className="text-xs text-muted-foreground mt-4">Sin permanencia. Cancela cuando quieras.</p>
+                </div>
+              </div>
+            </div>
+          </Card3DWrapper>
         </div>
         
         {/* Catálogo de Add-ons */}
