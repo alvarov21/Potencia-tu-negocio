@@ -716,11 +716,11 @@ function Pricing() {
           <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-balance">Cuánto cuesta tu página web: elige el plan para tu negocio local</h2>
           <p className="text-muted-foreground text-lg">Sin letra pequeña. Sin permanencias ocultas. Mismo precio para restaurantes, clínicas, talleres o cualquier negocio local.</p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 lg:px-0">
           
           {/* Plan Presencia */}
           <Card3DWrapper className="h-full">
-            <div className="bg-card border border-border rounded-3xl p-8 flex flex-col h-full hover:border-primary/50 transition">
+            <div className="bg-card border border-border rounded-3xl p-6 lg:p-8 flex flex-col h-full hover:border-primary/50 transition">
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
               <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
               <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Tu negocio, disponible en internet las 24 horas. Ideal si solo necesitas que te encuentren cuando alguien busca tu nombre o pasa por tu zona — sin gestión activa de contenido ni SEO continuo.</p>
@@ -761,9 +761,52 @@ function Pricing() {
             </div>
           </Card3DWrapper>
 
+          {/* Plan Reservas PRO (SaaS) */}
+          <Card3DWrapper className="h-full">
+            <div className="bg-card border-2 border-primary/50 rounded-3xl p-6 lg:p-8 flex flex-col h-full hover:border-primary transition shadow-md relative">
+              <span className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold uppercase tracking-wider">
+                Ideal Peluquerías / Barberías
+              </span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Suscripción SaaS</span>
+              <h3 className="text-2xl font-bold mb-2">Plan Reservas PRO</h3>
+              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">Olvídate del papel y boli. Un sistema de citas 100% tuyo sin las altas comisiones de Treatwell o Booksy. Web corporativa + App de gestión privada.</p>
+              <div className="mb-6 mt-2">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-5xl font-black text-foreground">59€</span>
+                  <span className="text-lg text-muted-foreground font-semibold">/mes</span>
+                </div>
+                <div className="text-sm text-muted-foreground mt-2 leading-snug">
+                  + 99€ coste de creación y puesta a punto.<br />
+                  Sin permanencia. Alojamiento incluido.
+                </div>
+              </div>
+              <ul className="space-y-3 mb-8 text-sm mt-auto pt-4">
+                {[
+                  "Diseño Web corporativo a medida (Landing page + Servicios)",
+                  "Motor de reservas automático (Reglas anti-solape de 30 min, etc.)",
+                  "App de Gestión (Panel privado en el móvil para ver Historial y Próximas citas)",
+                  "0% Comisiones por reserva",
+                  "Base de datos privada en la nube",
+                  "Hosting, Dominio y Mantenimiento técnico incluido"
+                ].map((f, i) => (
+                  <li key={i} className="flex gap-3 items-start">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" aria-hidden="true" />
+                    <div className="flex-1 text-muted-foreground/90 font-medium">
+                      {f}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-muted-foreground italic mb-5">Digitaliza tu negocio al mejor precio.</p>
+              <a href="#contacto" className="block text-center py-3.5 rounded-full border border-primary text-primary font-semibold hover:bg-primary/10 transition relative z-20">
+                Contratar ahora
+              </a>
+            </div>
+          </Card3DWrapper>
+
           {/* Plan Crecimiento (Premium) */}
           <Card3DWrapper className="h-full">
-            <div className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow h-full">
+            <div className="relative bg-card border-2 border-primary rounded-3xl p-6 lg:p-8 flex flex-col shadow-glow h-full">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider whitespace-nowrap">
                 Más elegido
               </span>
