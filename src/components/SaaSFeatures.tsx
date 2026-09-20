@@ -2,76 +2,76 @@ import { motion } from "framer-motion";
 import { Scissors, User } from "lucide-react";
 
 export function SaaSFeatures() {
-  const cards = [
+    const cards = [
     {
       num: "01",
       title: "Un precio, todo el equipo",
-      context: "Otras plataformas suman una cuota extra por cada profesional que das de alta.",
-      ti: "Seas uno o seáis seis, pagas lo mismo. Meter a alguien nuevo en el equipo no te sube la factura, y crecer deja de ser un castigo mensual.",
-      cliente: "Puede reservar con el barbero que quiera, porque nadie se queda fuera de la agenda para ahorrar cuota."
+      context: "Crecer no debería ser un castigo en tu factura mensual.",
+      ti: "Paga lo mismo seas 1 o seáis 6. Sin recargos por dar de alta a nuevos profesionales.",
+      cliente: "Su especialista favorito siempre estará en la agenda. Nadie se queda fuera por ahorrar costes."
     },
     {
       num: "02",
-      title: "Cero comisiones por cita",
-      context: "Nunca nos llevamos un porcentaje de tu trabajo. Ni de la primera visita, ni de los clientes nuevos, ni de nada.",
-      ti: "Lo que cobras es lo que cobras. Sabes lo que pagas al mes y no te llevas sustos al final del mes por haber trabajado más.",
-      cliente: "Nadie le mete recargos ni le cobra por gestiones que no ha pedido."
+      title: "0% comisiones por cita",
+      context: "Tu esfuerzo es tuyo. Nunca nos llevamos un porcentaje de tu trabajo.",
+      ti: "Lo que ingresas va íntegro a tu caja. Sin sustos ni facturas infladas a final de mes.",
+      cliente: "Sin "gastos de gestión" ni cargos ocultos al reservar."
     },
     {
       num: "03",
-      title: "Sin permanencia y con tus datos en la mano",
-      context: "Pagas mes a mes y tu base de clientes es tuya.",
-      ti: "Si un día decides irte, te exportas clientes e historial en un clic y te los llevas. No te dejamos enlaces colgados en tu ficha de Google ni redirigimos tus reservas a ningún sitio.",
-      cliente: "Sigue reservando contigo pase lo que pase, sin encontrarse un día con que tu negocio \"ya no está disponible\"."
+      title: "Tus clientes son tuyos",
+      context: "Sin permanencias. Pagas mes a mes, y tus datos te pertenecen.",
+      ti: "No secuestramos tu negocio. Exportas historial y clientes en un clic si decides irte.",
+      cliente: "Tu centro siempre será tu centro, sin intermediarios bloqueando su acceso."
     },
     {
       num: "04",
-      title: "Tu dinero va directo a tu caja",
-      context: "No nos metemos en medio del cobro.",
-      ti: "Cobras en tu TPV de siempre, al momento. Sin esperar liquidaciones, sin comisiones raras y sin perseguir un pago que no llega.",
-      cliente: "Paga como paga siempre, en tu local, sin plataformas intermedias ni cargos que no reconoce en el banco."
+      title: "Cobras al instante, en tu TPV",
+      context: "No nos metemos en medio de tus cobros ni los retenemos.",
+      ti: "Cobras en tu local, al momento. Sin esperar días a que te liquidemos los pagos.",
+      cliente: "Paga con tarjeta o efectivo en tu local, sin dejar sus datos a plataformas desconocidas."
     },
     {
       num: "05",
-      title: "Reservar no exige descargarse nada",
-      context: "Un enlace en tu Instagram, en tu WhatsApp o en tu ficha de Google.",
-      ti: "Reservas que entran solas mientras cortas, sin tener que coger el teléfono ni cuadrar horas por mensajes.",
-      cliente: "Elige servicio, barbero y hora en tres toques. Sin app, sin registro, sin contraseña y sin dar la tarjeta para pedir un corte de pelo. Y cuando entra a reservar contigo, ve tu barbería. Solo la tuya, sin diez competidores al lado."
+      title: "Cero descargas, cero fricción",
+      context: "Quien quiere reservar no quiere registrarse en otra App más.",
+      ti: "Reservas 24/7 automáticas desde tu Instagram, WhatsApp o ficha de Google.",
+      cliente: "Reserva en 3 toques. Sin apps, sin registro y sin dar la tarjeta de crédito."
     },
     {
       num: "06",
-      title: "Los avisos llegan por WhatsApp",
-      context: "Aquí nadie lee un SMS ni activa notificaciones de una app que no usa.",
-      ti: "Menos plantones sin tener que perseguir a nadie, y menos huecos muertos que ya no recuperas.",
-      cliente: "El recordatorio le llega por donde ya habla contigo y confirma con un botón. Si no puede venir, avisa en dos segundos."
+      title: "Avisos automáticos por WhatsApp",
+      context: "Porque hoy en día ya nadie lee un SMS (y mucho menos un email).",
+      ti: "Reduce drásticamente los plantones. Recordatorios que sí se leen.",
+      cliente: "Confirma o avisa de que no llega en dos segundos, desde el chat que ya usa a diario."
     },
     {
       num: "07",
-      title: "La agenda entiende cómo es un servicio de verdad",
-      context: "Un tinte o unas mechas no son un bloque muerto de dos horas: son fases (aplicación, espera, lavado, acabado).",
-      ti: "Durante los cuarenta minutos que el tinte hace efecto, puedes encajar un corte sin liarte la agenda. Es dinero que ahora mismo se te escapa todos los días.",
-      cliente: "Encuentra hueco cuando lo necesita, en horas que con otra agenda aparecerían ocupadas."
+      title: "Huecos inteligentes",
+      context: "Un tratamiento tiene tiempos muertos. Tu agenda debería saberlo.",
+      ti: "Mientras un tratamiento hace efecto, el sistema abre hueco para otra cita. Más ingresos al día.",
+      cliente: "Encuentra horas disponibles que con otras agendas aparecerían como bloqueadas."
     },
     {
       num: "08",
-      title: "La ficha técnica que de verdad usas",
-      context: "Fórmula, volumen, tiempos, marca, alergias y foto de antes y después.",
-      ti: "Cuando vuelva en tres meses no tienes que acordarte de nada: lo tienes delante antes de que se siente.",
-      cliente: "Sale igual de contento que la última vez, sin repetir su historia entera cada visita y sin riesgos con productos que le sientan mal."
+      title: "Fichas técnicas al instante",
+      context: "El secreto para fidelizar es que el cliente se sienta único.",
+      ti: "Fórmulas, manías, alergias y foto del "antes" listos antes de que entre por la puerta.",
+      cliente: "Recibe un trato exquisito sin tener que explicar cómo le gusta el servicio cada vez."
     },
     {
       num: "09",
-      title: "Tu horario real, no el que le cuadre al programa",
-      context: "Turnos partidos, el lunes cerrado, la feria del pueblo, agosto, la semana que solo trabajas de tarde.",
-      ti: "Se configura en segundos desde el móvil o desde la tablet del mostrador, con la semana entera de un vistazo. Sin pelearte con un calendario cada vez que cambia algo.",
-      cliente: "Nunca reserva una hora en la que no estás. Lo que ve disponible, está disponible."
+      title: "Tu horario real a tu manera",
+      context: "Turnos partidos, días libres sueltos o vacaciones.",
+      ti: "Configura cualquier semana irregular en segundos desde tu móvil.",
+      cliente: "Reserva con seguridad. Nunca le darán cita en una hora que no estás."
     },
     {
       num: "10",
-      title: "Al otro lado hay una persona",
-      context: "Ni formularios, ni chats automáticos, ni respuestas en inglés tres semanas después.",
-      ti: "Si algo falla un sábado a las once, escribes por WhatsApp y te contesta alguien que sabe cómo funciona una barbería y está en tu mismo huso horario. Y el primer día te montamos la agenda y migramos tus clientes nosotros.",
-      cliente: "Si algo se tuerce con su reserva, se arregla el mismo día. La cara la das tú, así que lo resolvemos rápido."
+      title: "Soporte 100% humano",
+      context: "Sin bots ni tickets de asistencia que se responden a la semana.",
+      ti: "Nosotros te montamos la agenda el primer día. Y si dudas, escribes por WhatsApp.",
+      cliente: "Si algo técnico falla, lo resolvemos de inmediato para que tú siempre des buena cara."
     }
   ];
 
