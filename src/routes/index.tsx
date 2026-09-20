@@ -899,7 +899,7 @@ function Pricing() {
                     <DialogTrigger asChild>
                       <button className="mt-4 text-sm font-semibold text-primary underline underline-offset-4 hover:text-primary/80 transition inline-flex items-center justify-center gap-1.5">
                         <Star className="w-3.5 h-3.5" />
-                        Ver 10 razones para elegirnos
+                        Ver 4 razones de peso para elegirnos
                       </button>
                     </DialogTrigger>
                     <DialogContent className="max-w-6xl w-[95vw] max-h-[90vh] overflow-y-auto p-0 border-none bg-transparent shadow-none">

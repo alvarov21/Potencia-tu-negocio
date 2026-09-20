@@ -2,83 +2,41 @@ import { motion } from "framer-motion";
 import { Scissors, User } from "lucide-react";
 
 export function SaaSFeatures() {
-    const cards = [
+      const cards = [
     {
       num: "01",
-      title: "Un precio, todo el equipo",
-      context: "Crecer no debería ser un castigo en tu factura mensual.",
-      ti: "Paga lo mismo seas 1 o seáis 6. Sin recargos por dar de alta a nuevos profesionales.",
-      cliente: "Su especialista favorito siempre estará en la agenda. Nadie se queda fuera por ahorrar costes."
+      title: "Cero comisiones. Todo tu equipo por un único precio.",
+      context: "Tu esfuerzo es tuyo. Crecer no debería ser un castigo en tu factura mensual.",
+      ti: "Cobras al momento en tu TPV. Paga lo mismo seas 1 o seáis 6. Sin facturas infladas ni cargos por reservas.",
+      cliente: "Reserva en 3 toques desde Instagram o Google. Sin bajarse Apps, sin \"gastos de gestión\" y con su especialista favorito siempre disponible."
     },
     {
       num: "02",
-      title: "0% comisiones por cita",
-      context: "Tu esfuerzo es tuyo. Nunca nos llevamos un porcentaje de tu trabajo.",
-      ti: "Lo que ingresas va íntegro a tu caja. Sin sustos ni facturas infladas a final de mes.",
-      cliente: "Sin \"gastos de gestión\" ni cargos ocultos al reservar."
+      title: "Control total de tu negocio y tus clientes",
+      context: "Sin permanencias ni secuestros de base de datos. Si te vas, te llevas todo.",
+      ti: "Fórmulas, historial y foto del \"antes\" listos antes de que entre. Exportas tus contactos cuando quieras en un clic.",
+      cliente: "Trato personalizado cada visita sin tener que explicar cómo le gusta el servicio. Y su centro siempre será su centro, sin intermediarios."
     },
     {
       num: "03",
-      title: "Tus clientes son tuyos",
-      context: "Sin permanencias. Pagas mes a mes, y tus datos te pertenecen.",
-      ti: "No secuestramos tu negocio. Exportas historial y clientes en un clic si decides irte.",
-      cliente: "Tu centro siempre será tu centro, sin intermediarios bloqueando su acceso."
+      title: "Tu horario real y huecos inteligentes",
+      context: "Un tratamiento tiene tiempos muertos. Tu agenda debería saberlo para no perder dinero.",
+      ti: "Mientras un tratamiento hace efecto, el sistema abre hueco para otra cita. Configura turnos partidos o vacaciones en segundos.",
+      cliente: "Encuentra horas disponibles que con otras agendas aparecerían como bloqueadas. Nunca reserva en una hora que no estás."
     },
     {
       num: "04",
-      title: "Cobras al instante, en tu TPV",
-      context: "No nos metemos en medio de tus cobros ni los retenemos.",
-      ti: "Cobras en tu local, al momento. Sin esperar días a que te liquidemos los pagos.",
-      cliente: "Paga con tarjeta o efectivo en tu local, sin dejar sus datos a plataformas desconocidas."
-    },
-    {
-      num: "05",
-      title: "Cero descargas, cero fricción",
-      context: "Quien quiere reservar no quiere registrarse en otra App más.",
-      ti: "Reservas 24/7 automáticas desde tu Instagram, WhatsApp o ficha de Google.",
-      cliente: "Reserva en 3 toques. Sin apps, sin registro y sin dar la tarjeta de crédito."
-    },
-    {
-      num: "06",
-      title: "Avisos automáticos por WhatsApp",
-      context: "Porque hoy en día ya nadie lee un SMS (y mucho menos un email).",
-      ti: "Reduce drásticamente los plantones. Recordatorios que sí se leen.",
-      cliente: "Confirma o avisa de que no llega en dos segundos, desde el chat que ya usa a diario."
-    },
-    {
-      num: "07",
-      title: "Huecos inteligentes",
-      context: "Un tratamiento tiene tiempos muertos. Tu agenda debería saberlo.",
-      ti: "Mientras un tratamiento hace efecto, el sistema abre hueco para otra cita. Más ingresos al día.",
-      cliente: "Encuentra horas disponibles que con otras agendas aparecerían como bloqueadas."
-    },
-    {
-      num: "08",
-      title: "Fichas técnicas al instante",
-      context: "El secreto para fidelizar es que el cliente se sienta único.",
-      ti: "Fórmulas, manías, alergias y foto del \"antes\" listos antes de que entre por la puerta.",
-      cliente: "Recibe un trato exquisito sin tener que explicar cómo le gusta el servicio cada vez."
-    },
-    {
-      num: "09",
-      title: "Tu horario real a tu manera",
-      context: "Turnos partidos, días libres sueltos o vacaciones.",
-      ti: "Configura cualquier semana irregular en segundos desde tu móvil.",
-      cliente: "Reserva con seguridad. Nunca le darán cita en una hora que no estás."
-    },
-    {
-      num: "10",
-      title: "Soporte 100% humano",
-      context: "Sin bots ni tickets de asistencia que se responden a la semana.",
-      ti: "Nosotros te montamos la agenda el primer día. Y si dudas, escribes por WhatsApp.",
-      cliente: "Si algo técnico falla, lo resolvemos de inmediato para que tú siempre des buena cara."
+      title: "Adiós plantones, hola soporte 100% humano",
+      context: "Porque hoy en día ya nadie lee un SMS ni quiere hablar con un bot.",
+      ti: "Recordatorios automáticos por WhatsApp. Y si algo falla, nos escribes y te respondemos nosotros (humanos).",
+      cliente: "Confirma su cita por WhatsApp en dos segundos. Si algo falla, se resuelve rápido para que tú siempre des buena cara."
     }
   ];
 
   return (
     <div id="ventajas" className="bg-background rounded-3xl p-6 lg:p-10 border border-border max-w-5xl mx-auto shadow-2xl relative my-auto">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Diez razones por las que esto no es una agenda más.</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">4 razones de peso para no usar una agenda más.</h2>
         <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
           Casi todo el software de reservas está pensado para su propio negocio. Este está pensado para el tuyo y para quien se sienta en tu silla.
         </p>
