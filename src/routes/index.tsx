@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Preloader } from "../components/Preloader";
 import { Card3DWrapper } from "../components/ui/animated-3d-card";
+import { SaaSFeatures } from "../components/SaaSFeatures";
 import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import {
   Search, Calendar, UtensilsCrossed, MonitorSmartphone, MessageCircle,
@@ -898,6 +899,8 @@ function Pricing() {
             </div>
           </Card3DWrapper>
         </div>
+        
+        <SaaSFeatures />
         
         {/* Catálogo de Add-ons */}
         <div className="mt-16 max-w-5xl mx-auto">
