@@ -76,7 +76,7 @@ export function SaaSFeatures() {
   ];
 
   return (
-    <div id="ventajas" className="mt-24 max-w-5xl mx-auto px-4 lg:px-0">
+    <div id="ventajas" className="bg-background rounded-3xl p-6 lg:p-10 border border-border max-w-5xl mx-auto shadow-2xl relative my-auto">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">Diez razones por las que esto no es una agenda más.</h2>
         <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
