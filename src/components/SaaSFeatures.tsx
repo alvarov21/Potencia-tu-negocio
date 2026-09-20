@@ -15,7 +15,7 @@ export function SaaSFeatures() {
       title: "0% comisiones por cita",
       context: "Tu esfuerzo es tuyo. Nunca nos llevamos un porcentaje de tu trabajo.",
       ti: "Lo que ingresas va íntegro a tu caja. Sin sustos ni facturas infladas a final de mes.",
-      cliente: "Sin "gastos de gestión" ni cargos ocultos al reservar."
+      cliente: "Sin \"gastos de gestión\" ni cargos ocultos al reservar."
     },
     {
       num: "03",
@@ -56,7 +56,7 @@ export function SaaSFeatures() {
       num: "08",
       title: "Fichas técnicas al instante",
       context: "El secreto para fidelizar es que el cliente se sienta único.",
-      ti: "Fórmulas, manías, alergias y foto del "antes" listos antes de que entre por la puerta.",
+      ti: "Fórmulas, manías, alergias y foto del \"antes\" listos antes de que entre por la puerta.",
       cliente: "Recibe un trato exquisito sin tener que explicar cómo le gusta el servicio cada vez."
     },
     {
