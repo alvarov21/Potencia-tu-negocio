@@ -901,6 +901,8 @@ function Pricing() {
         </div>
         
         
+        <SaaSFeatures />
+
         {/* Catálogo de Add-ons */}
         <div className="mt-16 max-w-5xl mx-auto">
           <div className="flex items-center justify-between mb-6 px-2">
