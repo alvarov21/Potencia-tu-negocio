@@ -1,83 +1,79 @@
-import { Users, ShieldCheck, Clock, Phone, Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { DialogClose } from "@/components/ui/dialog";
 
-export function SaaSFeatures() {
-  const cards = [
-    {
-      icon: <Users className="w-16 h-16 text-primary/80 group-hover:scale-110 group-hover:text-primary transition-all duration-500" />,
-      title: "Equipo sin límites",
-      context: "Paga una cuota única, sin penalizaciones por crecer.",
-      bullets: [
-        { label: "PARA TI", text: "Cobras al instante en tu TPV. Paga lo mismo seas 1 o seáis 6." },
-        { label: "CLIENTE", text: "Reserva en 3 toques sin descargas ni registros." }
-      ]
-    },
-    {
-      icon: <ShieldCheck className="w-16 h-16 text-primary/80 group-hover:scale-110 group-hover:text-primary transition-all duration-500" />,
-      title: "Control total",
-      context: "Tus datos y tus clientes te pertenecen al 100%.",
-      bullets: [
-        { label: "PARA TI", text: "Sin permanencias. Exportas tu base de clientes cuando quieras." },
-        { label: "CLIENTE", text: "Su centro siempre será su centro, sin intermediarios." }
-      ]
-    },
-    {
-      icon: <Clock className="w-16 h-16 text-primary/80 group-hover:scale-110 group-hover:text-primary transition-all duration-500" />,
-      title: "Huecos inteligentes",
-      context: "El sistema exprime cada minuto de tu agenda.",
-      bullets: [
-        { label: "PARA TI", text: "Abre huecos para cortes mientras un tinte hace efecto." },
-        { label: "CLIENTE", text: "Encuentra horas disponibles que otras agendas bloquean." }
-      ]
-    },
-    {
-      icon: <Phone className="w-16 h-16 text-primary/80 group-hover:scale-110 group-hover:text-primary transition-all duration-500" />,
-      title: "Avisos por WhatsApp",
-      context: "Adiós plantones y a los SMS ignorados.",
-      bullets: [
-        { label: "PARA TI", text: "Recordatorios automáticos por WhatsApp (lo que sí se lee)." },
-        { label: "CLIENTE", text: "Confirma su cita por el chat que ya usa a diario." }
-      ]
-    }
-  ];
-
+export function SaaSFeatures({ onClose }: { onClose?: () => void }) {
   return (
-    <div className="mt-16 max-w-5xl mx-auto" id="ventajas">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 px-2 gap-4">
-        <h3 className="text-2xl font-bold">Por qué somos distintos</h3>
-        <span className="text-xs font-semibold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full w-fit">4 Razones de peso</span>
+    <div className="p-8">
+      <h3 className="text-3xl font-bold mb-2">Por qué somos distintos</h3>
+      <p className="text-xl font-black text-primary mb-1">
+        Software + Equipo Humano
+      </p>
+      
+      <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed">
+        <p className="text-foreground font-semibold text-lg text-balance">
+          La mayoría de plataformas están diseñadas pensando en su propio negocio: en cobrarte comisiones abusivas por cada reserva y en quedarse con los datos de tus clientes.
+        </p>
+        
+        <p>
+          Nosotros hemos construido una herramienta pensada en dos personas a la vez: el profesional que trabaja y el cliente que reserva.
+        </p>
+        
+        <p className="italic text-foreground border-l-4 border-primary/30 pl-4 py-1">
+          "Crecer no debería ser un castigo en tu factura mensual. Tu esfuerzo es tuyo, y tu agenda debería trabajar para ti, no al revés."
+        </p>
+        
+        <div className="bg-muted/30 rounded-2xl p-6 mt-8 border border-border/50">
+          <h4 className="font-bold text-foreground mb-4">¿Qué te llevas realmente?</h4>
+          <ul className="space-y-4">
+            <li className="flex gap-3 text-sm items-start">
+              <span className="shrink-0 mt-0.5">✅</span> 
+              <div>
+                <strong className="text-foreground block mb-0.5">Cero comisiones y equipo ilimitado</strong> 
+                Paga lo mismo seas 1 o seáis 6. Sin facturas infladas ni "gastos de gestión" para el cliente.
+              </div>
+            </li>
+            <li className="flex gap-3 text-sm items-start">
+              <span className="shrink-0 mt-0.5">✅</span> 
+              <div>
+                <strong className="text-foreground block mb-0.5">Control total de tu negocio</strong> 
+                Sin permanencias. Tus datos te pertenecen y el dinero va directo a tu TPV al momento.
+              </div>
+            </li>
+            <li className="flex gap-3 text-sm items-start">
+              <span className="shrink-0 mt-0.5">✅</span> 
+              <div>
+                <strong className="text-foreground block mb-0.5">Huecos inteligentes (Optimización de agenda)</strong> 
+                Mientras un tratamiento hace efecto, el sistema te abre un hueco para otra cita. Más ingresos al día.
+              </div>
+            </li>
+            <li className="flex gap-3 text-sm items-start">
+              <span className="shrink-0 mt-0.5">✅</span> 
+              <div>
+                <strong className="text-foreground block mb-0.5">Recordatorios por WhatsApp</strong> 
+                Reduce drásticamente los plantones. Avisos por el único chat que la gente lee y responde.
+              </div>
+            </li>
+            <li className="flex gap-3 text-sm items-start">
+              <span className="shrink-0 mt-0.5">✅</span> 
+              <div>
+                <strong className="text-foreground block mb-0.5">Soporte 100% Humano</strong> 
+                Si algo técnico falla, nos escribes y lo arreglamos de inmediato para que tú des buena cara siempre.
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <p className="font-semibold text-foreground text-center mt-6 text-balance text-lg">
+          Reserva en 3 toques, sin descargas, sin registros. Pura conversión para tu local.
+        </p>
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-        {cards.map((card, idx) => (
-          <motion.div 
-            key={idx} 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.4, delay: idx * 0.1 }}
-            className="bg-card border border-border hover:border-primary/40 rounded-3xl p-6 lg:p-8 flex flex-col relative shadow-sm hover:shadow-lg transition-all duration-300 group"
-          >
-            <div className="flex justify-center items-center h-32 mb-6 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl relative overflow-hidden p-4 border border-primary/10 group-hover:border-primary/20 transition-colors">
-              {card.icon}
-            </div>
-            
-            <h4 className="text-2xl font-bold mb-2 leading-tight">{card.title}</h4>
-            <p className="text-sm text-muted-foreground mb-6 font-medium leading-relaxed">{card.context}</p>
-
-            <div className="mt-auto space-y-4">
-              {card.bullets.map((bullet, i) => (
-                <div key={i} className="flex gap-3 items-start bg-background/50 p-3.5 rounded-xl border border-border/50">
-                  <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                  <div>
-                    <span className="text-[10px] font-bold text-foreground uppercase tracking-wider block mb-1 opacity-80">{bullet.label}</span>
-                    <p className="text-sm text-muted-foreground leading-snug">{bullet.text}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        ))}
+      <div className="mt-8 flex justify-center">
+        <DialogClose asChild>
+          <a href="#contacto" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-cta text-white font-semibold shadow-glow hover:scale-[1.02] transition">
+            Solicitar Demo Ahora <ArrowRight className="w-4 h-4" />
+          </a>
+        </DialogClose>
       </div>
     </div>
   );
