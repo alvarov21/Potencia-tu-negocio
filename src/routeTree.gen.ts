@@ -23,6 +23,7 @@ import { Route as SeoLocalRouteImport } from './routes/seo-local'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
+import { Route as MapaDelSitioRouteImport } from './routes/mapa-del-sitio'
 import { Route as MantenimientoWebRouteImport } from './routes/mantenimiento-web'
 import { Route as LandingPageRouteImport } from './routes/landing-page'
 import { Route as GoogleBusinessProfileRouteImport } from './routes/google-business-profile'
@@ -110,6 +111,11 @@ const PoliticaDeCookiesRoute = PoliticaDeCookiesRouteImport.update({
   path: '/politica-de-cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MapaDelSitioRoute = MapaDelSitioRouteImport.update({
+  id: '/mapa-del-sitio',
+  path: '/mapa-del-sitio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MantenimientoWebRoute = MantenimientoWebRouteImport.update({
   id: '/mantenimiento-web',
   path: '/mantenimiento-web',
@@ -192,6 +198,7 @@ export interface FileRoutesByFullPath {
   '/google-business-profile': typeof GoogleBusinessProfileRoute
   '/landing-page': typeof LandingPageRoute
   '/mantenimiento-web': typeof MantenimientoWebRoute
+  '/mapa-del-sitio': typeof MapaDelSitioRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRouteWithChildren
@@ -222,6 +229,7 @@ export interface FileRoutesByTo {
   '/google-business-profile': typeof GoogleBusinessProfileRoute
   '/landing-page': typeof LandingPageRoute
   '/mantenimiento-web': typeof MantenimientoWebRoute
+  '/mapa-del-sitio': typeof MapaDelSitioRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRouteWithChildren
@@ -253,6 +261,7 @@ export interface FileRoutesById {
   '/google-business-profile': typeof GoogleBusinessProfileRoute
   '/landing-page': typeof LandingPageRoute
   '/mantenimiento-web': typeof MantenimientoWebRoute
+  '/mapa-del-sitio': typeof MapaDelSitioRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
   '/portfolio': typeof PortfolioRouteWithChildren
@@ -285,6 +294,7 @@ export interface FileRouteTypes {
     | '/google-business-profile'
     | '/landing-page'
     | '/mantenimiento-web'
+    | '/mapa-del-sitio'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
@@ -315,6 +325,7 @@ export interface FileRouteTypes {
     | '/google-business-profile'
     | '/landing-page'
     | '/mantenimiento-web'
+    | '/mapa-del-sitio'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
@@ -345,6 +356,7 @@ export interface FileRouteTypes {
     | '/google-business-profile'
     | '/landing-page'
     | '/mantenimiento-web'
+    | '/mapa-del-sitio'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
     | '/portfolio'
@@ -376,6 +388,7 @@ export interface RootRouteChildren {
   GoogleBusinessProfileRoute: typeof GoogleBusinessProfileRoute
   LandingPageRoute: typeof LandingPageRoute
   MantenimientoWebRoute: typeof MantenimientoWebRoute
+  MapaDelSitioRoute: typeof MapaDelSitioRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
   PortfolioRoute: typeof PortfolioRouteWithChildren
@@ -492,6 +505,13 @@ declare module '@tanstack/react-router' {
       path: '/politica-de-cookies'
       fullPath: '/politica-de-cookies'
       preLoaderRoute: typeof PoliticaDeCookiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapa-del-sitio': {
+      id: '/mapa-del-sitio'
+      path: '/mapa-del-sitio'
+      fullPath: '/mapa-del-sitio'
+      preLoaderRoute: typeof MapaDelSitioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mantenimiento-web': {
@@ -641,6 +661,7 @@ const rootRouteChildren: RootRouteChildren = {
   GoogleBusinessProfileRoute: GoogleBusinessProfileRoute,
   LandingPageRoute: LandingPageRoute,
   MantenimientoWebRoute: MantenimientoWebRoute,
+  MapaDelSitioRoute: MapaDelSitioRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
   PortfolioRoute: PortfolioRouteWithChildren,

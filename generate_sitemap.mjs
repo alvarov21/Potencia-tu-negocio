@@ -21,7 +21,8 @@ const staticRoutes = [
   "/politica-de-privacidad",
   "/politica-de-cookies",
   "/diseno-web-para-empresas",
-  "/portfolio"
+  "/portfolio",
+  "/mapa-del-sitio"
 ];
 
 const baseUrl = "https://potenciatunegocio.eu";

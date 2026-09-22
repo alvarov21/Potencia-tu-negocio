@@ -1457,6 +1457,7 @@ function Footer() {
           <Link to="/aviso-legal" className="hover:text-foreground transition">Aviso Legal</Link>
           <Link to="/politica-de-privacidad" className="hover:text-foreground transition">Política de Privacidad</Link>
           <Link to="/politica-de-cookies" className="hover:text-foreground transition">Política de Cookies</Link>
+          <Link to="/mapa-del-sitio" className="hover:text-foreground transition">Mapa del Sitio</Link>
         </div>
         <div className="text-xs text-center lg:text-right leading-relaxed">
           © 2026 Potencia tu Negocio · Webs profesionales para negocios locales
