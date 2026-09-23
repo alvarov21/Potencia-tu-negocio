@@ -926,6 +926,19 @@ function Pricing() {
                         </div>
                       </DialogContent>
                     </Dialog>
+
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="w-full block text-center py-3.5 rounded-full bg-muted/30 border border-border text-foreground font-semibold hover:bg-muted/60 transition shadow-sm">
+                          Comparativa vs Otras Apps
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl w-[95vw] max-h-[90vh] overflow-y-auto p-4 lg:p-8 border border-border bg-background shadow-2xl rounded-3xl">
+                        <DialogTitle className="sr-only">Comparativa de Software</DialogTitle>
+                        <DialogDescription className="sr-only">Comparativa frente a Booksy y Treatwell</DialogDescription>
+                        <ComparativaBooksy />
+                      </DialogContent>
+                    </Dialog>
                   </div>
                   
                   <Dialog>
@@ -948,8 +961,6 @@ function Pricing() {
               </div>
             </div>
           </Card3DWrapper>
-
-          <ComparativaBooksy />
         </div>
         
         
