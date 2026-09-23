@@ -915,7 +915,7 @@ function Pricing() {
                             </div>
                             <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition" />
                           </a>
-                          <a href="https://corte-real-mua48mjyr-vlvrd.vercel.app/admin" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
+                          <a href="https://corte-real-f48wydfet-vlvrd.vercel.app/admin" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
                             <div className="flex flex-col text-left">
                               <span className="font-semibold text-foreground group-hover:text-primary transition">Vista Barbero / Admin</span>
                               <span className="text-xs text-muted-foreground mt-1">El panel privado donde gestionas tu agenda.</span>
