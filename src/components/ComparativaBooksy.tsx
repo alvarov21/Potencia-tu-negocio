@@ -2,8 +2,8 @@ import { Check, X } from "lucide-react";
 
 export function ComparativaBooksy() {
   return (
-    <div className="mt-16 max-w-5xl mx-auto px-4 lg:px-0">
-      <div className="text-center mb-10">
+    <div className="w-full">
+      <div className="text-center mb-8">
         <span className="text-xs font-semibold uppercase tracking-widest text-primary bg-primary/10 px-4 py-1.5 rounded-full mb-4 inline-block border border-primary/20">La Diferencia</span>
         <h3 className="text-2xl lg:text-3xl font-bold mb-3 tracking-tight">Por qué los profesionales se cambian</h3>
         <p className="text-muted-foreground text-sm lg:text-base max-w-2xl mx-auto leading-relaxed">
@@ -79,7 +79,7 @@ export function ComparativaBooksy() {
             </div>
             <div className="p-6 border-l border-border flex items-center justify-center text-center bg-primary/[0.07] group-hover:bg-primary/[0.12] transition">
               <div>
-                <span className="text-2xl font-black text-primary">59€ <span className="text-sm font-medium text-muted-foreground">/mes</span></span><br/>
+                <span className="text-2xl font-black text-primary">49€ <span className="text-sm font-medium text-muted-foreground">/mes</span></span><br/>
                 <span className="text-xs font-bold text-foreground mt-1 block">Tarifa Plana (IVA incl.)</span>
                 <span className="text-[11px] text-muted-foreground">Empleados ilimitados. Sin sorpresas.</span>
               </div>

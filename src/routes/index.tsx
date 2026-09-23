@@ -883,7 +883,7 @@ function Pricing() {
                 <div className="w-full lg:w-72 shrink-0 bg-background/50 border border-border rounded-2xl p-6 text-center flex flex-col justify-center">
                   <div className="mb-6">
                     <div className="flex items-center justify-center gap-1.5 mb-2">
-                      <span className="text-6xl font-black text-foreground">59€</span>
+                      <span className="text-6xl font-black text-foreground">49€</span>
                       <span className="text-xl text-muted-foreground font-semibold">/mes</span>
                     </div>
                     <div className="text-sm text-muted-foreground mt-3 bg-muted/50 py-2 px-3 rounded-lg border border-border/50">
