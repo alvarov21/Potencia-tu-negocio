@@ -891,9 +891,41 @@ function Pricing() {
                     </div>
                   </div>
                   
-                  <a href="#contacto" className="w-full block text-center py-4 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition shadow-lg hover:shadow-primary/25">
-                    Solicitar Demo
-                  </a>
+                  <div className="space-y-3">
+                    <a href="#contacto" className="w-full block text-center py-4 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition shadow-lg hover:shadow-primary/25">
+                      Solicitar Demo
+                    </a>
+                    
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="w-full block text-center py-3.5 rounded-full bg-background border border-primary/30 text-primary font-semibold hover:bg-primary/5 transition shadow-sm">
+                          Ver ejemplo
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-md p-6">
+                        <DialogTitle className="text-center text-xl font-bold mb-1">Ejemplo del Sistema</DialogTitle>
+                        <DialogDescription className="text-center mb-6">
+                          Selecciona qué interfaz del sistema quieres explorar.
+                        </DialogDescription>
+                        <div className="grid gap-3">
+                          <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
+                            <div className="flex flex-col text-left">
+                              <span className="font-semibold text-foreground group-hover:text-primary transition">Vista Cliente</span>
+                              <span className="text-xs text-muted-foreground mt-1">Cómo reservan tus clientes desde el móvil o web.</span>
+                            </div>
+                            <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition" />
+                          </a>
+                          <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
+                            <div className="flex flex-col text-left">
+                              <span className="font-semibold text-foreground group-hover:text-primary transition">Vista Barbero / Admin</span>
+                              <span className="text-xs text-muted-foreground mt-1">El panel privado donde gestionas tu agenda.</span>
+                            </div>
+                            <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition" />
+                          </a>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
                   
                   <Dialog>
                     <DialogTrigger asChild>
