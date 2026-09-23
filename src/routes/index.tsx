@@ -9,6 +9,7 @@ import {
   Star, Lock, FileText, ArrowRight, Check, Plus, Minus, Mail, Phone,
   Paintbrush, Rocket, X, Info, Zap, ShieldCheck, Layers, Stethoscope, Wrench
 } from "lucide-react";
+import { ComparativaBooksy } from "../components/ComparativaBooksy";
 
 const Portfolio3D = lazy(() => import("../components/Portfolio3D").then(m => ({ default: m.Portfolio3D })));
 
@@ -948,6 +949,8 @@ function Pricing() {
               </div>
             </div>
           </Card3DWrapper>
+
+          <ComparativaBooksy />
         </div>
         
         
