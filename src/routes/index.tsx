@@ -908,17 +908,18 @@ function Pricing() {
                           Selecciona qué interfaz del sistema quieres explorar.
                         </DialogDescription>
                         <div className="grid gap-3">
-                          <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
+                          <a href="https://corte-real-mua48mjyr-vlvrd.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
                             <div className="flex flex-col text-left">
                               <span className="font-semibold text-foreground group-hover:text-primary transition">Vista Cliente</span>
                               <span className="text-xs text-muted-foreground mt-1">Cómo reservan tus clientes desde el móvil o web.</span>
                             </div>
                             <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition" />
                           </a>
-                          <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
+                          <a href="https://corte-real-mua48mjyr-vlvrd.vercel.app/admin" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-border bg-card hover:border-primary/50 hover:bg-muted/50 transition group">
                             <div className="flex flex-col text-left">
                               <span className="font-semibold text-foreground group-hover:text-primary transition">Vista Barbero / Admin</span>
                               <span className="text-xs text-muted-foreground mt-1">El panel privado donde gestionas tu agenda.</span>
+                              <span className="text-[10px] font-medium text-amber-500/80 mt-2 bg-amber-500/10 self-start px-2 py-0.5 rounded border border-amber-500/20">Acceso demo: <b>admin</b> / <b>Corte2026</b></span>
                             </div>
                             <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition" />
                           </a>
