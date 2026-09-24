@@ -887,7 +887,7 @@ function Pricing() {
                       <span className="text-xl text-muted-foreground font-semibold">/mes</span>
                     </div>
                     <div className="text-sm text-muted-foreground mt-3 bg-muted/50 py-2 px-3 rounded-lg border border-border/50">
-                      <span className="font-semibold text-foreground">99€</span> coste único de configuración y puesta a punto.
+                      <span className="font-semibold text-foreground">33€</span> coste único de configuración y puesta a punto.
                     </div>
                   </div>
                   
