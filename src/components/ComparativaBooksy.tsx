@@ -79,7 +79,7 @@ export function ComparativaBooksy() {
             </div>
             <div className="p-6 border-l border-border flex items-center justify-center text-center bg-primary/[0.07] group-hover:bg-primary/[0.12] transition">
               <div>
-                <span className="text-2xl font-black text-primary">49€ <span className="text-sm font-medium text-muted-foreground">/mes</span></span><br/>
+                <span className="text-2xl font-black text-primary">19€ <span className="text-sm font-medium text-muted-foreground">/mes</span></span><br/>
                 <span className="text-xs font-bold text-foreground mt-1 block">Tarifa Plana (IVA incl.)</span>
                 <span className="text-[11px] text-muted-foreground">Empleados ilimitados. Sin sorpresas.</span>
               </div>
