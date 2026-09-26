@@ -119,11 +119,11 @@ export function Portfolio3D() {
           PORTFOLIO
         </span>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-foreground">
-          Algunos de nuestros diseños.
+          Explora nuestros diseños.
         </h2>
         <p className="text-muted-foreground text-base md:text-lg leading-relaxed mx-auto max-w-2xl text-balance">
-          Estas son algunas de las webs que hemos creado para negocios que buscaban <br className="hidden sm:block" />
-          exactamente lo mismo que tú: más presencia, más confianza y más clientes.
+          Estas son algunas de las maquetas y demos funcionales desde las que empezamos a trabajar. <br className="hidden sm:block" />
+          Sistemas premium ya optimizados que adaptamos a tu negocio en 48 horas.
         </p>
       </div>
 

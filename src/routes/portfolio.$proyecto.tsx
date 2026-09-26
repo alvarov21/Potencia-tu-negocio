@@ -65,8 +65,8 @@ export const Route = createFileRoute("/portfolio/$proyecto")({
     const project = PROJECTS[params.proyecto as keyof typeof PROJECTS];
     return {
       meta: [
-        { title: `Caso de Éxito: ${project.title} | Potencia tu Negocio` },
-        { name: "description", content: `Descubre cómo ayudamos a ${project.client} a captar más clientes con su nueva página web optimizada para SEO local.` },
+        { title: `Demo Funcional: ${project.title} | Potencia tu Negocio` },
+        { name: "description", content: `Explora esta maqueta y demo funcional de ${project.title}. Un sistema base optimizado para negocios del sector.` },
       ]
     };
   },
@@ -92,7 +92,7 @@ function PortfolioProject() {
             {project.title}
           </h1>
           <p className="text-xl text-muted-foreground">
-            Cliente: <strong className="text-foreground">{project.client}</strong>
+            Proyecto Base: <strong className="text-foreground">{project.client}</strong>
           </p>
         </div>
 
