@@ -122,7 +122,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "email": "info@potenciatunegocio.eu",
     "url": "https://potenciatunegocio.eu",
     "areaServed": "ES",
-    "priceRange": "33€-675€",
+    "priceRange": "295€-675€",
   };
 
   const websiteSchema = {
