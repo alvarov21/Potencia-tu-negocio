@@ -39,7 +39,7 @@ function ResponsiveLogo() {
         return (
           <img 
             key={i}
-            src="/logo-cristal.png" 
+            src="/logo-cristal.webp" 
             alt={i === 0 ? "Logo Cristal 3D" : ""} 
             decoding="async"
             className="absolute inset-0 w-full h-full object-contain"
@@ -66,7 +66,7 @@ export const Route = createFileRoute("/")({
       { property: "og:url", content: "https://potenciatunegocio.eu/" },
     ],
     links: [
-      { rel: "preload", href: "/logo-cristal.png", as: "image" }
+      { rel: "preload", href: "/logo-cristal.webp", as: "image" }
     ],
     scripts: [
       {
@@ -186,7 +186,7 @@ function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#top" className="font-bold text-base tracking-tight flex items-center gap-2" aria-label="Potencia tu Negocio - Inicio">
-          <img src="/logo-sm.png" alt="Logo Potencia tu Negocio" className="w-7 h-7 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen" />
+          <img src="/logo-sm.webp" alt="Logo Potencia tu Negocio" className="w-7 h-7 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen" />
           <span>Potencia <span className="text-primary">tu negocio</span><sup className="text-[0.55em] ml-0.5 font-medium opacity-80">&reg;</sup></span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground" aria-label="Navegación principal">
@@ -980,7 +980,9 @@ function Pricing() {
                     key={src}
                     src={src} 
                     alt={`Placa NFC Reseñas ${idx + 1}`} 
-                    className={`absolute inset-0 w-full h-full object-contain p-4 transition-all duration-1000 group-hover:scale-110 ${idx === placaIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                    width="300"
+                    height="400"
+                    className={`absolute inset-0 w-full h-full object-contain p-4 transition duration-1000 group-hover:scale-110 ${idx === placaIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
                     style={{ 
                       filter: idx === 0 ? 'drop-shadow(-5px 10px 15px rgba(0,0,0,0.15))' : 'none',
                       mixBlendMode: 'multiply'
@@ -988,7 +990,7 @@ function Pricing() {
                   />
                 ))}
               </div>
-              <h4 className="text-xl font-bold mb-2">Placa NFC Reseñas</h4>
+              <h3 className="text-xl font-bold mb-2">Placa NFC Reseñas</h3>
               <div className="flex flex-col gap-1.5 mb-4">
                 <div className="flex items-center gap-2">
                   <span className="text-lg font-black text-primary">35,50 €</span>
@@ -1015,10 +1017,12 @@ function Pricing() {
                 <img 
                   src="/nfc-review-card-vertical.jpg" 
                   alt="Tarjeta NFC de Reseñas" 
+                  width="300"
+                  height="400"
                   className="w-auto h-full object-contain transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <h4 className="text-xl font-bold mb-2">Tarjeta NFC Reseñas</h4>
+              <h3 className="text-xl font-bold mb-2">Tarjeta NFC Reseñas</h3>
               <div className="flex flex-col gap-1.5 mb-4">
                 <div className="flex items-center gap-2">
                   <span className="text-lg font-black text-primary">17,90 €</span>
@@ -1044,10 +1048,12 @@ function Pricing() {
                 <img 
                   src="/nfc-review-card-black.png" 
                   alt="Tarjeta NFC Reseñas (Black Edition)" 
+                  width="300"
+                  height="400"
                   className="w-auto h-full object-contain transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
-              <h4 className="text-xl font-bold mb-2">Tarjeta NFC Reseñas</h4>
+              <h3 className="text-xl font-bold mb-2">Tarjeta NFC Reseñas</h3>
               <div className="flex flex-col gap-1.5 mb-4">
                 <div className="flex items-center gap-2">
                   <span className="text-lg font-black text-primary">17,90 €</span>
@@ -1094,7 +1100,7 @@ function Pricing() {
                 <p className="italic text-foreground border-l-4 border-primary/30 pl-4 py-1">{ADDON_MODALS[activeAddonModal].quote}</p>
                 
                 <div className="bg-muted/30 rounded-2xl p-6 mt-8 border border-border/50">
-                  <h4 className="font-bold text-foreground mb-4">Incluye:</h4>
+                  <h3 className="font-bold text-foreground mb-4">Incluye:</h3>
                   <ul className="space-y-3">
                     {ADDON_MODALS[activeAddonModal].features.map((item, i) => (
                       <li key={i} className="flex gap-3 text-sm items-start">
@@ -1344,7 +1350,7 @@ function Footer() {
       
       <div className="max-w-7xl mx-auto py-16 px-6 lg:px-10 border-b border-border grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
         <div className="lg:col-span-1">
-          <h4 className="text-foreground font-semibold mb-6">Servicios</h4>
+          <h3 className="text-foreground font-semibold mb-6">Servicios</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/seo-local" className="hover:text-primary transition">SEO Local y Mapas</Link></li>
             <li><Link to="/google-business-profile" className="hover:text-primary transition">Google Business Profile</Link></li>
@@ -1353,7 +1359,7 @@ function Footer() {
           </ul>
         </div>
         <div className="lg:col-span-1">
-          <h4 className="text-foreground font-semibold mb-6">Agencias Locales</h4>
+          <h3 className="text-foreground font-semibold mb-6">Agencias Locales</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/diseno-web/sevilla" className="hover:text-primary transition">Diseño Web Sevilla</Link></li>
             <li><Link to="/diseno-web/malaga" className="hover:text-primary transition">Diseño Web Málaga</Link></li>
@@ -1363,7 +1369,7 @@ function Footer() {
           </ul>
         </div>
         <div className="lg:col-span-1">
-          <h4 className="text-foreground font-semibold mb-6">Sectores (I)</h4>
+          <h3 className="text-foreground font-semibold mb-6">Sectores (I)</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/web-para-restaurantes" className="hover:text-primary transition">Web para Restaurantes</Link></li>
             <li><Link to="/web-para-clinicas-dentales" className="hover:text-primary transition">Web Clínicas Dentales</Link></li>
@@ -1372,7 +1378,7 @@ function Footer() {
           </ul>
         </div>
         <div className="lg:col-span-1">
-          <h4 className="text-foreground font-semibold mb-6">Sectores (II)</h4>
+          <h3 className="text-foreground font-semibold mb-6">Sectores (II)</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/web-para-talleres-mecanicos" className="hover:text-primary transition">Web para Talleres</Link></li>
             <li><Link to="/web-para-veterinarias" className="hover:text-primary transition">Web para Veterinarias</Link></li>
@@ -1381,7 +1387,7 @@ function Footer() {
           </ul>
         </div>
         <div className="lg:col-span-1">
-          <h4 className="text-foreground font-semibold mb-6">Empresa</h4>
+          <h3 className="text-foreground font-semibold mb-6">Empresa</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/blog" className="hover:text-primary transition">Blog y Casos de Estudio</Link></li>
             <li><Link to="/portfolio" className="hover:text-primary transition">Nuestro Portfolio</Link></li>

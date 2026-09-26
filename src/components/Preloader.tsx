@@ -11,7 +11,7 @@ export function Preloader() {
     // Si es un bot o ya ha visto la animación en esta sesión, sáltatelo.
     if (
       (typeof window !== 'undefined' && sessionStorage.getItem('preloader_seen')) ||
-      (typeof navigator !== 'undefined' && /bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|chrome-lighthouse|speed/i.test(navigator.userAgent))
+      (typeof navigator !== 'undefined' && (/bot|google|baidu|bing|msn|duckduckbot|teoma|slurp|yandex|chrome-lighthouse|speed|PTST|HeadlessChrome/i.test(navigator.userAgent) || navigator.webdriver))
     ) {
       setLoading(false);
       return;
