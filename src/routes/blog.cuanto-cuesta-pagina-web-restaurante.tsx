@@ -101,7 +101,7 @@ function BlogPost2() {
             El preferido de los hosteleros. A todo lo anterior le sumamos la inclusión completa de tu Carta Digital (organizada por categorías, fotos y alérgenos) y te generamos el código QR para las mesas. Te llevas el código entero, la web es 100% tuya y no tienes permanencia. A partir del segundo año solo pagas 89€/año de mantenimiento.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (825€ + 65,90€/mes)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (675€ + 65,90€/mes)</h3>
           <p>
             Ideal si cambias el menú de forma constante (platos del día, menús de fin de semana, temporadas). Te hacemos la web más completa y, por una cuota mensual, nos ocupamos de los cambios ilimitados. Tú nos mandas una foto por WhatsApp de la pizarra nueva, y en 24 horas está en tu web y en tu carta digital.
           </p>

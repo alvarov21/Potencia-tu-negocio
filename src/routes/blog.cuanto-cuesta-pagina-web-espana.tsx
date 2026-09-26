@@ -109,7 +109,7 @@ function BlogPost1() {
             El plan más elegido. Aquí te damos la página web completa y, lo más importante: es 100% tuya. Si dentro de un año decides irte con otra empresa, te llevas el código entero. Cero "secuestros" y cero ataduras. Incluye secciones extra como servicios detallados, tabla de precios o carta de restaurante.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (825€ + 65,90€/mes)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (675€ + 65,90€/mes)</h3>
           <p>
             Para los que quieren desentenderse de todo. Incluye la web premium más una suscripción mensual con la que te hacemos cambios ilimitados. ¿Que cambias el menú? Nos mandas un WhatsApp y lo actualizamos en menos de 24 horas.
           </p>
