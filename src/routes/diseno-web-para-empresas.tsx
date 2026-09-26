@@ -180,7 +180,7 @@ function DisenoWebEmpresas() {
             {/* Plan Presencia */}
             <article className="bg-card border border-border rounded-3xl p-8 flex flex-col">
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
-              <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
+              <h3 className="text-2xl font-bold mb-2">Plan Reservas PRO</h3>
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">295€</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
@@ -199,19 +199,19 @@ function DisenoWebEmpresas() {
               </a>
             </article>
 
-            {/* Plan Independencia */}
+            {/* Plan Presencia */}
             <article className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider text-white">Más elegido</span>
               <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Avanzado</span>
-              <h3 className="text-2xl font-bold mb-2">Plan Independencia</h3>
+              <h3 className="text-2xl font-bold mb-2">Plan Reservas PRO</h3>
               <div className="mb-6 mt-4">
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">750€</span>
+                  
                   <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
                 </div>
-                <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">595€</span></div>
+                <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">19€/mes</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                  Primer año incluido &middot; después 89€/año o 24,95€/mes (dominio, hosting y soporte)
+                  33€ setup inicial (dominio, hosting y soporte)
                 </div>
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto">
@@ -229,7 +229,7 @@ function DisenoWebEmpresas() {
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Pro</span>
               <h3 className="text-2xl font-bold mb-2">Plan Crecimiento</h3>
               <div className="mb-6 mt-4">
-                <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">825€</span><span className="text-sm text-muted-foreground">+65,90€/mes</span></div>
+                <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">675€</span><span className="text-sm text-muted-foreground">+65,90€/mes</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
                   Mantenimiento incluido &middot; 65,90€/mes<br />
                   (dominio, hosting, cambios y soporte)

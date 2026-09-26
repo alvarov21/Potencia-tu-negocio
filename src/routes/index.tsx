@@ -22,8 +22,8 @@ const FAQS = [
   { q: "Tengo dos planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia desde 295€ — web multipágina con tu información, WhatsApp, Google Maps y SEO local básico. Si quieres que además trabajemos activamente para que te encuentren antes que tu competencia (un restaurante, una clínica), el Plan Crecimiento desde 675€ + 65,90€/mes — con análisis SEO exhaustivo, reservas o catálogo, gestión de tu ficha de Google y cambios ilimitados. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos." },
   { q: "¿Qué es eso del SEO local y por qué insistís tanto?", a: "El SEO local es que tu negocio salga en Google cuando alguien de tu zona busca lo que tú vendes — 'fontanero en Móstoles', 'cafetería con terraza en Salamanca'. Insistimos porque es la diferencia entre una web que decora y una web que trae clientes: 8 de cada 10 personas buscan un negocio local desde el móvil antes de llamar o ir. Por eso todas nuestras webs incluyen SEO local desde el primer día — textos optimizados para tu ciudad, ficha de Google Business dada de alta y Google Maps integrado — sin coste extra." },
   { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión, publicada en menos de 7 días. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
-  { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Independencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en 'tu informático': cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
-  { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector — y nuestras opiniones están en nuestro perfil de Google, donde puedes leer la experiencia de otros dueños de negocio. Pero lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo." },
+  { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Presencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en 'tu informático': cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
+  { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales y maquetas funcionales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector. Además, lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo genérico." },
 ];
 
 function ResponsiveLogo() {
@@ -732,7 +732,7 @@ function Pricing() {
                   <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
                 </div>
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-5xl font-black text-foreground">295€</span>
+                  <span className="text-5xl font-black text-foreground">295€</span><span className="text-lg font-bold text-muted-foreground ml-1">+ IVA</span>
                 </div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
                   Pago único &middot; después 89,90€/año<br />
@@ -777,9 +777,9 @@ function Pricing() {
                   <span className="text-2xl font-bold text-muted-foreground line-through decoration-primary/60">850€</span>
                   <span className="text-[10px] font-bold text-white uppercase tracking-widest bg-red-500 px-2 py-0.5 rounded-full shadow-sm">Oferta</span>
                 </div>
-                <span className="text-5xl font-black">675€</span>
+                <span className="text-5xl font-black">675€</span><span className="text-lg font-bold text-muted-foreground ml-1">+ IVA</span>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                  Pago único incluido &middot; después 65,90€/mes<br />
+                  Pago único de configuración &middot; 65,90€/mes (a partir del 2º mes)<br />
                   (dominio, hosting, gestión SEO y soporte)
                 </div>
               </div>

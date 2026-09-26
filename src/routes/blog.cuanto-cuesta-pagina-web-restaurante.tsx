@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const FAQS = [
   { q: "¿Tengo que pagar comisiones por las reservas o pedidos a través de mi web?", a: "Cero. Ni un céntimo. A diferencia de las plataformas de delivery o reservas externas que se quedan hasta un 30%, en tu propia web las reservas te llegan directamente a tu WhatsApp o correo, sin intermediarios." },
-  { q: "¿Me incluye el código QR para poner en las mesas?", a: "Sí, si eliges el Plan Independencia o superior, te configuramos la carta digital y te entregamos el código QR para que lo imprimas y lo pongas directamente en las mesas o barra." },
-  { q: "¿Qué pasa si mañana cambio el precio de las bravas o añado un plato nuevo?", a: "Tienes dos opciones: con el Plan Independencia tienes una ronda de cambios gratis el primer mes. Con el Plan Crecimiento (65,90€/mes), nosotros nos encargamos de actualizar tu carta en menos de 24 horas cada vez que nos lo pidas por WhatsApp." }
+  { q: "¿Me incluye el código QR para poner en las mesas?", a: "Sí, si eliges el Plan Presencia o superior, te configuramos la carta digital y te entregamos el código QR para que lo imprimas y lo pongas directamente en las mesas o barra." },
+  { q: "¿Qué pasa si mañana cambio el precio de las bravas o añado un plato nuevo?", a: "Tienes dos opciones: con el Plan Presencia tienes una ronda de cambios gratis el primer mes. Con el Plan Crecimiento (65,90€/mes), nosotros nos encargamos de actualizar tu carta en menos de 24 horas cada vez que nos lo pidas por WhatsApp." }
 ];
 
 export const Route = createFileRoute("/blog/cuanto-cuesta-pagina-web-restaurante")({
@@ -96,7 +96,7 @@ function BlogPost2() {
             La solución rápida y efectiva. Incluye dominio, hosting, SSL, textos redactados por nosotros, formulario y conexión directa por WhatsApp para reservas. Además, dejamos configurada y optimizada tu ficha de Google Business para que el restaurante salga destacado en Google Maps cuando los turistas (o vecinos) busquen dónde comer. Todo en 48 horas (primera versión).
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Independencia (595€ pago único)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
           <p>
             El preferido de los hosteleros. A todo lo anterior le sumamos la inclusión completa de tu Carta Digital (organizada por categorías, fotos y alérgenos) y te generamos el código QR para las mesas. Te llevas el código entero, la web es 100% tuya y no tienes permanencia. A partir del segundo año solo pagas 89€/año de mantenimiento.
           </p>

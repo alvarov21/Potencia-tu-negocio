@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const FAQS = [
   { q: "¿Cuánto cuesta el mantenimiento anual de una página web?", a: "Depende de la agencia. En Potencia tu Negocio, el mantenimiento anual (dominio a tu nombre, hosting rápido y certificado SSL) cuesta exactamente 89€ al año, a partir del segundo año." },
-  { q: "¿Qué pasa si quiero cambiar algo de mi web meses después?", a: "Con nuestro Plan Independencia tienes cambios gratis los primeros 30 días. Con el Plan Crecimiento (65,90€/mes), tienes tarifa plana de cambios ilimitados. Si es un cambio suelto, cobramos una hora técnica estándar sin cuotas extrañas." },
+  { q: "¿Qué pasa si quiero cambiar algo de mi web meses después?", a: "Con nuestro Plan Presencia tienes cambios gratis los primeros 30 días. Con el Plan Crecimiento (65,90€/mes), tienes tarifa plana de cambios ilimitados. Si es un cambio suelto, cobramos una hora técnica estándar sin cuotas extrañas." },
   { q: "¿Por qué algunas agencias tardan un mes y vosotros 48 horas?", a: "Porque usamos inteligencia artificial para agilizar la parte mecánica (estructura, bocetos) y nos centramos en la personalización. Eso elimina semanas de reuniones y esperas." }
 ];
 
@@ -104,7 +104,7 @@ function BlogPost1() {
             Es el plan para los que quieren empezar fuerte pero gastando lo mínimo. Por 295€ (un solo pago) te damos el dominio a tu nombre, el hosting rápido (el servidor donde vive tu web), el diseño adaptado al móvil, textos legales, botón de WhatsApp directo y la configuración de la ficha de Google Business para salir en Google Maps. Todo en menos de 7 días.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Independencia (595€ pago único)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
           <p>
             El plan más elegido. Aquí te damos la página web completa y, lo más importante: es 100% tuya. Si dentro de un año decides irte con otra empresa, te llevas el código entero. Cero "secuestros" y cero ataduras. Incluye secciones extra como servicios detallados, tabla de precios o carta de restaurante.
           </p>

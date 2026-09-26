@@ -55,7 +55,7 @@ export const Route = createFileRoute("/$landingType/$ciudad")({
     const url = `https://potenciatunegocio.eu/${params.landingType}/${params.ciudad}`;
     
     const title = `Diseño de páginas web para ${sectorName} en ${cityName} | Potencia tu Negocio`;
-    const description = `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 7 días y desde 595€.`;
+    const description = `Servicio especializado de diseño web con IA para ${sectorName} en ${cityName}. Tu web profesional, optimizada para SEO local, en 48 horas y desde 295€.`;
     return {
       meta: [
         { title },

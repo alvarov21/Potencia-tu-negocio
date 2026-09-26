@@ -81,17 +81,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         { charSet: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
         { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
-        { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 7 días desde 595€. Especialistas en hostelería." },
+        { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 48 horas desde 295€. Especialistas en hostelería." },
         { name: "keywords", content: "diseño web negocios locales, web para restaurantes, SEO local, web con IA, agencia web hostelería, web para clínicas, web para talleres" },
         { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-        { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
+        { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 48 horas desde 295€." },
         { property: "og:type", content: "website" },
         { property: "og:site_name", content: "Potencia Tu Negocio" },
         { property: "og:locale", content: "es_ES" },
         { property: "og:image", content: "https://potenciatunegocio.eu/og-image.png" },
         { name: "twitter:card", content: "summary_large_image" },
         { name: "twitter:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-        { name: "twitter:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 7 días desde 595€." },
+        { name: "twitter:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 48 horas desde 295€." },
         { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
       ],
       links: [
@@ -122,7 +122,7 @@ function RootShell({ children }: { children: ReactNode }) {
     "email": "info@potenciatunegocio.eu",
     "url": "https://potenciatunegocio.eu",
     "areaServed": "ES",
-    "priceRange": "295€-825€",
+    "priceRange": "33€-675€",
   };
 
   const websiteSchema = {
