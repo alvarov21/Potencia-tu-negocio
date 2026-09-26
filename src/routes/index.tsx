@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { trackEvent } from "../lib/analytics";
 import { Preloader } from "../components/Preloader";
 import { Card3DWrapper } from "../components/ui/animated-3d-card";
 import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
@@ -150,6 +151,50 @@ function LazyPortfolio3D() {
 }
 
 function Home() {
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5
+    };
+
+    const sectionIds = ['servicios', 'portfolio', 'precios', 'faq', 'contacto'];
+    const sectionMap: Record<string, string> = {
+      'servicios': 'que-ofrecemos',
+      'portfolio': 'portfolio',
+      'precios': 'precios',
+      'faq': 'faq',
+      'contacto': 'contacto'
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const sectionName = sectionMap[id];
+          if (sectionName) {
+            import("../lib/analytics").then(({ trackEvent }) => {
+              trackEvent("view_section", { section_name: sectionName });
+            });
+            obs.unobserve(entry.target);
+          }
+        }
+      });
+    }, observerOptions);
+
+    sectionIds.forEach(id => {
+      const element = document.getElementById(id);
+      if (element) {
+        observer.observe(element);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Preloader />
@@ -194,7 +239,7 @@ function Nav() {
             <a key={n.href} href={n.href} className="hover:text-foreground transition-colors">{n.label}</a>
           ))}
         </nav>
-        <a href="#contacto" className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-gradient-cta shadow-glow hover:opacity-90 transition">
+        <a href="#contacto" onClick={() => trackEvent("click_prediseno", { cta_location: "header" })} className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-gradient-cta shadow-glow hover:opacity-90 transition">
           Prediseño gratis <ArrowRight className="w-3.5 h-3.5" />
         </a>
       </div>
@@ -757,7 +802,7 @@ function Pricing() {
                 ))}
               </ul>
               <p className="text-xs text-muted-foreground italic mb-5">Renovación anual opcional por 89,90 € o transferencia del dominio a tu nombre (gratis).</p>
-              <a href="#contacto" className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition relative z-20">
+              <a href="#contacto" onClick={() => trackEvent("select_plan", { plan_name: "Plan Presencia", plan_price: 295 })} className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition relative z-20">
                 Contratar ahora
               </a>
             </div>
@@ -820,7 +865,7 @@ function Pricing() {
                 ))}
               </ul>
               <p className="text-xs text-muted-foreground italic mb-5">Cancela cuando quieras</p>
-              <a href="#contacto" className="block text-center py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition relative z-20">
+              <a href="#contacto" onClick={() => trackEvent("select_plan", { plan_name: "Plan Crecimiento", plan_price: 675 })} className="block text-center py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition relative z-20">
                 Contratar ahora
               </a>
             </div>
@@ -892,7 +937,7 @@ function Pricing() {
                   </div>
                   
                   <div className="space-y-3">
-                    <a href="#contacto" className="w-full block text-center py-4 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition shadow-lg hover:shadow-primary/25">
+                    <a href="#contacto" onClick={() => trackEvent("select_plan", { plan_name: "Plan Reservas PRO", plan_price: 33 })} className="w-full block text-center py-4 rounded-full bg-primary text-primary-foreground font-bold hover:opacity-90 transition shadow-lg hover:shadow-primary/25">
                       Solicitar Demo
                     </a>
                     
@@ -1235,7 +1280,12 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
                   },
                   body: JSON.stringify(Object.fromEntries(formData))
               })
-              .then(() => setSent(true))
+              .then(() => {
+                setSent(true);
+                import("../lib/analytics").then(({ trackEvent }) => {
+                  trackEvent("generate_lead", { form_name: "contacto" });
+                });
+              })
               .catch(() => setSent(true));
             }}
             className="bg-card border border-border rounded-3xl p-6 lg:p-10 text-left space-y-4 shadow-card"
@@ -1289,10 +1339,10 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
           </form>
         )}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm">
-          <a href="mailto:info@potenciatunegocio.eu" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition">
+          <a href="mailto:info@potenciatunegocio.eu" onClick={() => trackEvent("click_email", { cta_location: "footer_contact" })} className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition">
             <Mail className="w-4 h-4" aria-hidden="true" /> info@potenciatunegocio.eu
           </a>
-          <a href="https://wa.me/34644905837" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 text-[#25D366] font-medium hover:bg-[#25D366]/25 transition">
+          <a href="https://wa.me/34644905837" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("click_whatsapp", { cta_location: "footer_contact" })} className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366]/15 border border-[#25D366]/40 text-[#25D366] font-medium hover:bg-[#25D366]/25 transition">
             <Phone className="w-4 h-4" aria-hidden="true" /> WhatsApp
           </a>
         </div>
