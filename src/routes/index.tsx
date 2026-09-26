@@ -156,8 +156,8 @@ function Home() {
 
     const observerOptions = {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.5
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0
     };
 
     const sectionIds = ['servicios', 'portfolio', 'precios', 'faq', 'contacto'];
