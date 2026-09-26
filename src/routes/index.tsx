@@ -187,7 +187,7 @@ function Nav() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#top" className="font-bold text-base tracking-tight flex items-center gap-2" aria-label="Potencia tu Negocio - Inicio">
           <img src="/logo-sm.webp" alt="Logo Potencia tu Negocio" className="w-7 h-7 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen" />
-          <span>Potencia <span className="text-primary">tu negocio</span><sup className="text-[0.55em] ml-0.5 font-medium opacity-80">&reg;</sup></span>
+          <span>Potencia <span className="text-primary">tu negocio</span></span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground" aria-label="Navegación principal">
           {NAV.map(n => (
@@ -522,7 +522,7 @@ function AntiWordPressSection() {
             <span className="text-muted-foreground">La diferencia de jugar en Primera División.</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            El 90% de las agencias tradicionales dependen de gestores obsoletos que exigen mantenimientos correctivos simplemente para evitar caídas del servidor. Nosotros desarrollamos arquitecturas inmutables (Serverless): tu inversión mensual se destina íntegramente a soporte premium y crecimiento orgánico, no a parchear vulnerabilidades.
+            Muchas agencias dependen de gestores obsoletos que exigen mantenimientos correctivos simplemente para evitar caídas del servidor. Nosotros desarrollamos arquitecturas inmutables (Serverless): tu inversión mensual se destina íntegramente a soporte premium y crecimiento orgánico, no a parchear vulnerabilidades.
           </p>
         </div>
 
@@ -544,9 +544,9 @@ function AntiWordPressSection() {
               <div className="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-2xl flex items-center justify-center mb-6 border border-blue-500/20 group-hover:scale-110 group-hover:rotate-6 transition-transform duration-300">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Seguridad Inhackeable</h3>
+              <h3 className="text-xl font-bold mb-3">Sin WordPress ni plugins</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Al no usar WordPress ni plugins de terceros, cerramos todas las puertas traseras. Tu web es código compilado y sellado: imposible de hackear. Cero estrés por actualizaciones sorpresa que rompan la página.
+                Al no usar WordPress ni plugins de terceros, cerramos las puertas traseras habituales. Tu web es código compilado: mucha menos superficie de ataque. Cero estrés por actualizaciones sorpresa que rompan la página.
               </p>
             </div>
           </Card3DWrapper>
@@ -1400,7 +1400,7 @@ function Footer() {
       <div className="max-w-7xl mx-auto py-12 px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
         <div className="font-bold text-foreground flex items-center gap-2">
           <img src="/logo.png" alt="Logo Potencia tu Negocio" loading="lazy" decoding="async" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
-          <span>Potencia <span className="text-primary">tu negocio</span><sup className="text-[0.55em] ml-0.5 font-medium opacity-80">&reg;</sup></span>
+          <span>Potencia <span className="text-primary">tu negocio</span></span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
           <Link to="/aviso-legal" className="hover:text-foreground transition">Aviso Legal</Link>

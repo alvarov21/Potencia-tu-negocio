@@ -15,8 +15,6 @@ const localServices = ["diseno-web", "seo-local"];
 const staticRoutes = [
   "/",
   "/blog",
-  "/blog/cuanto-cuesta-pagina-web-espana",
-  "/blog/cuanto-cuesta-pagina-web-restaurante",
   "/aviso-legal",
   "/politica-de-privacidad",
   "/politica-de-cookies",

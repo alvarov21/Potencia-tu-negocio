@@ -57,19 +57,6 @@ export function Preloader() {
             </span>
           ))}
           
-          <span className="inline-block" style={{ verticalAlign: 'top', marginTop: '0.2em', marginLeft: '0.1em' }}>
-            <span 
-              className="inline-block font-medium animate-mask-up"
-              style={{ 
-                fontSize: '0.35em', 
-                letterSpacing: 'normal',
-                transform: 'translateY(110%)',
-                animationDelay: `${letters.length * 25 + 100}ms`
-              }}
-            >
-              ®
-            </span>
-          </span>
         </h1>
       </div>
     </div>
