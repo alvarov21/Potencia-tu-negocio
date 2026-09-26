@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useCookieConsent } from '../context/CookieConsentContext';
 
+const GA_TRACKING_ID = 'G-K11PW6VF3S';
+
 export function TrackingScripts() {
   const { preferences } = useCookieConsent();
 
@@ -16,6 +18,29 @@ export function TrackingScripts() {
       });
       return;
     }
+
+    // --- INYECCIÓN DE GOOGLE ANALYTICS ---
+    if (document.getElementById('ga-script')) return;
+
+    const script = document.createElement('script');
+    script.id = 'ga-script';
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`;
+    script.async = true;
+    document.head.appendChild(script);
+
+    const configScript = document.createElement('script');
+    configScript.id = 'ga-config-script';
+    configScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${GA_TRACKING_ID}', {
+        page_path: window.location.pathname,
+      });
+      console.log('✅ Google Analytics 4 cargado (Consentimiento concedido)');
+    `;
+    document.head.appendChild(configScript);
+
   }, [preferences?.analytics]);
 
   useEffect(() => {
