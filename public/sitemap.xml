@@ -11,16 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://potenciatunegocio.eu/blog/cuanto-cuesta-pagina-web-espana</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://potenciatunegocio.eu/blog/cuanto-cuesta-pagina-web-restaurante</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://potenciatunegocio.eu/aviso-legal</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -42,6 +32,11 @@
   </url>
   <url>
     <loc>https://potenciatunegocio.eu/portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://potenciatunegocio.eu/mapa-del-sitio</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
