@@ -11,7 +11,7 @@ type Message = {
 export function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: '¡Hola! Soy Álvaro. ¿En qué puedo ayudarte a potenciar tu negocio hoy?' }
+    { role: 'assistant', content: '¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte a potenciar tu negocio hoy?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -75,7 +75,7 @@ export function Chatbot() {
               <Bot className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-bold text-white leading-tight">Álvaro</h3>
+              <h3 className="font-bold text-white leading-tight">Asistente</h3>
               <p className="text-[10px] text-white/80 font-medium">Potencia tu Negocio</p>
             </div>
           </div>
