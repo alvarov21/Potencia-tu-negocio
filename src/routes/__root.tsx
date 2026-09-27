@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { Chatbot } from "../components/Chatbot";
 
 function NotFoundComponent() {
   return (
@@ -142,6 +143,7 @@ function RootShell({ children }: { children: ReactNode }) {
       </head>
       <body>
         {children}
+        <Chatbot />
         <Scripts />
       </body>
     </html>
