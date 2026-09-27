@@ -1,9 +1,6 @@
 import { createServerFn } from '@tanstack/react-start';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
-// Initialize Gemini SDK with the API key from environment variables
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
-
 // Define the system prompt directly from the playbook
 const systemPrompt = `
 Eres el asistente virtual y cerrador de ventas de Potencia tu Negocio (potenciatunegocio.eu). Eres directo, cercano, profesional y usas el tono de un experto "médico" de las ventas, no de un vendedor pesado.
@@ -35,9 +32,13 @@ export const sendChatMessage = createServerFn({ method: 'POST' })
   .validator((data: { messages: Array<{ role: string; content: string }> }) => data)
   .handler(async ({ data }) => {
     try {
-      if (!process.env.GEMINI_API_KEY) {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (!apiKey) {
         return { error: 'La API Key de Gemini no está configurada en el servidor.' };
       }
+
+      // Initialize SDK dynamically to ensure Vercel reads runtime env vars
+      const genAI = new GoogleGenerativeAI(apiKey);
 
       // Convert messages to Gemini format (user vs model)
       const formattedHistory = data.messages.map(m => ({
