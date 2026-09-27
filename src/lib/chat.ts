@@ -41,10 +41,13 @@ export const sendChatMessage = createServerFn({ method: 'POST' })
       const genAI = new GoogleGenerativeAI(apiKey);
 
       // Convert messages to Gemini format (user vs model)
-      const formattedHistory = data.messages.map(m => ({
-        role: m.role === 'assistant' ? 'model' : 'user',
-        parts: [{ text: m.content }],
-      }));
+      // Gemini strict rule: history MUST start with 'user'. We filter out the bot's initial greeting.
+      const formattedHistory = data.messages
+        .filter((m, i) => !(i === 0 && m.role === 'assistant'))
+        .map(m => ({
+          role: m.role === 'assistant' ? 'model' : 'user',
+          parts: [{ text: m.content }],
+        }));
 
       // Create model instance
       const model = genAI.getGenerativeModel({
