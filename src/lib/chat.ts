@@ -61,8 +61,22 @@ export const sendChatMessage = createServerFn({ method: 'POST' })
 
       const chat = model.startChat({ history: formattedHistory });
       
-      const result = await chat.sendMessage(lastMessage.parts[0].text);
-      const text = result.response.text();
+      let text = '';
+      let retries = 3;
+      while (retries > 0) {
+        try {
+          const result = await chat.sendMessage(lastMessage.parts[0].text);
+          text = result.response.text();
+          break;
+        } catch (e: any) {
+          if (e.message && e.message.includes('503') && retries > 1) {
+            retries--;
+            await new Promise(r => setTimeout(r, 1500)); // wait 1.5s before retry
+            continue;
+          }
+          throw e;
+        }
+      }
 
       return { text };
     } catch (error: any) {
