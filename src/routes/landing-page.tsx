@@ -6,7 +6,7 @@ export const Route = createFileRoute("/landing-page")({
   },
   head: () => ({
     meta: [
-      { title: "diseño de landing page | Potencia tu Negocio" },
+      { title: "diseño de landing page | Potencia tu negocio" },
       { name: "description", content: "Expertos en diseño de landing page para captar más clientes." }
     ]
   }),

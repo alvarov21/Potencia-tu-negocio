@@ -1,6 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/politica-de-privacidad')({
+  head: () => ({
+    meta: [
+      { title: "Política de privacidad | Potencia tu negocio" },
+      { name: "description", content: "Cómo tratamos tus datos personales en potenciatunegocio.eu: responsable, finalidades, base legal, plazos de conservación y tus derechos (RGPD)." },
+    ],
+  }),
   component: PrivacyPolicy,
 })
 

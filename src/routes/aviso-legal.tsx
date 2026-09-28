@@ -1,6 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/aviso-legal')({
+  head: () => ({
+    meta: [
+      { title: "Aviso legal | Potencia tu negocio" },
+      { name: "description", content: "Aviso legal y condiciones generales de uso de potenciatunegocio.eu: datos del titular, condiciones de uso del sitio y responsabilidades." },
+    ],
+  }),
   component: LegalNotice,
 })
 
