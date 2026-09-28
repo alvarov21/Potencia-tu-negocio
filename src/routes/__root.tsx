@@ -75,8 +75,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: (ctx) => {
-    // Determine if it's a 404 by checking if the only match is the root route
-    const is404 = ctx.matches.length === 1 && ctx.matches[0].routeId === '__root__';
+    // Es 404 si ninguna ruta coincide (solo el root) o si alguna ruta lanzó notFound()
+    // (p. ej. /portfolio/slug-inexistente o /diseno-web/ciudad-inexistente).
+    const is404 =
+      (ctx.matches.length === 1 && ctx.matches[0].routeId === '__root__') ||
+      ctx.matches.some((m: any) => m.status === 'notFound' || m._notFound === true || m.globalNotFound === true);
     const lastMatch = ctx.matches[ctx.matches.length - 1];
     const rawPath = lastMatch ? lastMatch.pathname : "";
     const path = rawPath === "/" ? "" : rawPath.replace(/\/$/, "");

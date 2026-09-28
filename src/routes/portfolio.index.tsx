@@ -13,10 +13,10 @@ export const Route = createFileRoute('/portfolio/')({
 })
 
 const publishedDemos = [
-  { id: "veterinaria-malaga", title: "Demo · Clínica Veterinaria" },
-  { id: "estetimagen", title: "Demo · Centro de Estética" },
-  { id: "picoteo", title: "Demo · Restaurante" },
-  { id: "padre-pio", title: "Demo · Taberna Tradicional" }
+  { id: "demo-veterinaria", title: "Demo · Clínica Veterinaria" },
+  { id: "demo-centro-estetica", title: "Demo · Centro de Estética" },
+  { id: "demo-restaurante", title: "Demo · Restaurante" },
+  { id: "demo-taberna", title: "Demo · Taberna Tradicional" }
 ];
 
 function Portfolio() {

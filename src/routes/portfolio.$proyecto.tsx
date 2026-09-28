@@ -3,7 +3,7 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Contact } from "./index";
 
 const PROJECTS = {
-  "veterinaria-malaga": {
+  "demo-veterinaria": {
     title: "Web para Clínica Veterinaria",
     sector: "Veterinaria",
     image: "/veterinaria-mockup.jpg",
@@ -12,7 +12,7 @@ const PROJECTS = {
     includes: "Diseño optimizado para móviles, sección de urgencias 24h, botón flotante de WhatsApp, integración de cita previa y SEO local.",
     howItWorks: "Adaptamos los colores, logotipo y servicios a tu clínica. En 48 horas te presentamos la maqueta y en menos de 7 días está publicada."
   },
-  "estetimagen": {
+  "demo-centro-estetica": {
     title: "Web para Centro de Estética",
     sector: "Estética y Belleza",
     image: "/estetimagen-mockup.jpg",
@@ -21,7 +21,7 @@ const PROJECTS = {
     includes: "Catálogo visual de tratamientos, integración de tarifas, botón de reservas directas y diseño elegante.",
     howItWorks: "Seleccionamos la mejor estructura para tus tratamientos. Añadimos tus tarifas y fotos, y la publicamos en una semana."
   },
-  "picoteo": {
+  "demo-restaurante": {
     title: "Web para Restaurante",
     sector: "Hostelería",
     image: "/picoteo.png",
@@ -30,7 +30,7 @@ const PROJECTS = {
     includes: "Carta digital integrada, módulo de contacto para reservas y galería fotográfica de platos.",
     howItWorks: "Digitalizamos tu carta, destacamos tus platos estrella y optimizamos el diseño para que abra muy rápido en el móvil."
   },
-  "taller-mecanico": {
+  "demo-taller": {
     title: "Web para Taller Mecánico",
     sector: "Automoción",
     image: "/nfc-review-card-v4.png",
@@ -39,7 +39,7 @@ const PROJECTS = {
     includes: "Listado claro de servicios (diagnosis, neumáticos, etc.), formulario rápido de presupuestos y mapa de ubicación.",
     howItWorks: "Destacamos tus servicios y preparamos la web para que aparezcas cuando alguien busque un taller en tu zona."
   },
-  "padre-pio": {
+  "demo-taberna": {
     title: "Web para Taberna Tradicional",
     sector: "Hostelería",
     image: "", 
@@ -52,7 +52,18 @@ const PROJECTS = {
 
 export const Route = createFileRoute("/portfolio/$proyecto")({
   beforeLoad: ({ params: { proyecto } }) => {
-    if (proyecto === "taller-mecanico") {
+    // URLs antiguas con nombres de negocio → slugs genéricos (301 permanente)
+    const LEGACY_SLUGS: Record<string, string> = {
+      "veterinaria-malaga": "demo-veterinaria",
+      "estetimagen": "demo-centro-estetica",
+      "picoteo": "demo-restaurante",
+      "padre-pio": "demo-taberna",
+    };
+    if (LEGACY_SLUGS[proyecto]) {
+      throw redirect({ to: "/portfolio/$proyecto", params: { proyecto: LEGACY_SLUGS[proyecto] }, statusCode: 301 });
+    }
+    // Demo sin maqueta propia todavía: 404 real
+    if (proyecto === "demo-taller" || proyecto === "taller-mecanico") {
       throw notFound();
     }
     if (!PROJECTS[proyecto as keyof typeof PROJECTS]) {
