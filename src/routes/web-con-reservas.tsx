@@ -4,7 +4,8 @@ export const Route = createFileRoute("/web-con-reservas")({
   head: () => ({
     meta: [
       { title: "pagina web de reservas | Potencia tu Negocio" },
-      { name: "description", content: "Expertos en pagina web de reservas para captar más clientes." }
+      { name: "description", content: "Expertos en pagina web de reservas para captar más clientes." },
+      { name: "robots", content: "noindex" }
     ]
   }),
   component: WebConReservas,

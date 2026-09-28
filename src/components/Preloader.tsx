@@ -35,7 +35,7 @@ export function Preloader() {
       }`}
     >
       <div className={`transition-opacity duration-500 ${animatingOut ? 'opacity-0' : 'opacity-100'}`}>
-        <h1 
+        <div
           className="text-[#fcfcfc] font-bold tracking-tighter flex items-start antialiased overflow-hidden pt-2 pb-4 -mb-4"
           style={{ 
             fontFamily: 'system-ui, -apple-system, sans-serif',
@@ -57,7 +57,7 @@ export function Preloader() {
             </span>
           ))}
           
-        </h1>
+        </div>
       </div>
     </div>
   );

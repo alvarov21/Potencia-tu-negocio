@@ -85,16 +85,16 @@ function SeoLocalCiudad() {
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">
           <MapPin className="w-10 h-10 text-primary mb-6" />
-          <h3 className="text-xl font-bold mb-3">Google Maps 1º Posición</h3>
+          <h3 className="text-xl font-bold mb-3">Más visibilidad en Google Maps</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Optimizamos tu Perfil de Empresa para que seas el negocio {cityData.adjetivo} más visible y con mejores reseñas en {cityData.zona_centro}.
+            Optimizamos tu Perfil de Empresa en Google para que tu negocio gane visibilidad y reseñas frente a la competencia de {cityDisplay}.
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">
           <Search className="w-10 h-10 text-primary mb-6" />
           <h3 className="text-xl font-bold mb-3">Búsquedas Locales</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Te posicionamos para las palabras clave exactas que usan tus clientes. Si buscan "tu servicio cerca de mi", te encontrarán a ti desde {cityData.referencia}.
+            Trabajamos las palabras clave exactas que usan tus clientes para que, cuando busquen "tu servicio cerca de mí", tengas más opciones de aparecer en {cityData.referencia}.
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">

@@ -1405,7 +1405,7 @@ function Footer() {
             <li><Link to="/seo-local" className="hover:text-primary transition">SEO Local y Mapas</Link></li>
             <li><Link to="/google-business-profile" className="hover:text-primary transition">Google Business Profile</Link></li>
             <li><Link to="/mantenimiento-web" className="hover:text-primary transition">Mantenimiento Web</Link></li>
-            <li><Link to="/diseno-web-seo" className="hover:text-primary transition">Diseño Web SEO</Link></li>
+            <li><Link to="/diseno-web-para-empresas" className="hover:text-primary transition">Diseño Web para Empresas</Link></li>
           </ul>
         </div>
         <div className="lg:col-span-1">
@@ -1424,7 +1424,7 @@ function Footer() {
             <li><Link to="/web-para-restaurantes" className="hover:text-primary transition">Web para Restaurantes</Link></li>
             <li><Link to="/web-para-clinicas-dentales" className="hover:text-primary transition">Web Clínicas Dentales</Link></li>
             <li><Link to="/web-para-abogados" className="hover:text-primary transition">Web para Abogados</Link></li>
-            <li><Link to="/web-para-centros-estetica" className="hover:text-primary transition">Web Centros Estética</Link></li>
+            <li><Link to="/web-para-centros-de-estetica" className="hover:text-primary transition">Web Centros Estética</Link></li>
           </ul>
         </div>
         <div className="lg:col-span-1">

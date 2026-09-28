@@ -131,7 +131,8 @@ export function getGeoContent(sector: string, city: string) {
   const data = CITIES_DATA[cityKey] || FALLBACK_DATA;
   const cityName = data.properName || capitalize(cityKey);
 
-  const fixGrammar = (text: string) => text.replace(/de el /gi, "del ").replace(/a el /gi, "al ");
+  const fixGrammar = (t: string) =>
+    t.replace(/\b([Dd])e el\b/g, "$1el").replace(/\b([Aa]) el\b/g, "$1l");
 
   const baseResponse = { cityName, data };
 

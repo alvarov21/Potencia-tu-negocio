@@ -1,6 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/landing-page")({
+  beforeLoad: () => {
+    throw redirect({ to: "/diseno-web-para-empresas", statusCode: 301 });
+  },
   head: () => ({
     meta: [
       { title: "diseño de landing page | Potencia tu Negocio" },

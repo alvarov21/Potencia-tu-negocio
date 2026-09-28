@@ -1,6 +1,9 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/diseno-web-seo")({
+  beforeLoad: () => {
+    throw redirect({ to: "/diseno-web-para-empresas", statusCode: 301 });
+  },
   head: () => ({
     meta: [
       { title: "diseño web seo | Potencia tu Negocio" },
