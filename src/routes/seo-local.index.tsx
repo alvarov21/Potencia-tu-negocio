@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MapPin, Search, Star } from "lucide-react";
 import { Contact } from "./index";
 
-export const Route = createFileRoute("/seo-local")({
+export const Route = createFileRoute("/seo-local/")({
   head: () => ({
     meta: [
       { title: "Agencia de SEO Local | Posiciona tu negocio en Google Maps" },

@@ -19,8 +19,6 @@ import { Route as WebParaClinicasDentalesRouteImport } from './routes/web-para-c
 import { Route as WebParaCentrosDeEsteticaRouteImport } from './routes/web-para-centros-de-estetica'
 import { Route as WebParaAbogadosRouteImport } from './routes/web-para-abogados'
 import { Route as WebConReservasRouteImport } from './routes/web-con-reservas'
-import { Route as SeoLocalRouteImport } from './routes/seo-local'
-import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PoliticaDePrivacidadRouteImport } from './routes/politica-de-privacidad'
 import { Route as PoliticaDeCookiesRouteImport } from './routes/politica-de-cookies'
 import { Route as MapaDelSitioRouteImport } from './routes/mapa-del-sitio'
@@ -29,9 +27,11 @@ import { Route as LandingPageRouteImport } from './routes/landing-page'
 import { Route as GoogleBusinessProfileRouteImport } from './routes/google-business-profile'
 import { Route as DisenoWebSeoRouteImport } from './routes/diseno-web-seo'
 import { Route as DisenoWebParaEmpresasRouteImport } from './routes/diseno-web-para-empresas'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AvisoLegalRouteImport } from './routes/aviso-legal'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SeoLocalIndexRouteImport } from './routes/seo-local.index'
+import { Route as PortfolioIndexRouteImport } from './routes/portfolio.index'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as SeoLocalCiudadRouteImport } from './routes/seo-local.$ciudad'
 import { Route as PortfolioProyectoRouteImport } from './routes/portfolio.$proyecto'
 import { Route as DisenoWebCiudadRouteImport } from './routes/diseno-web.$ciudad'
@@ -91,16 +91,6 @@ const WebConReservasRoute = WebConReservasRouteImport.update({
   path: '/web-con-reservas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SeoLocalRoute = SeoLocalRouteImport.update({
-  id: '/seo-local',
-  path: '/seo-local',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PortfolioRoute = PortfolioRouteImport.update({
-  id: '/portfolio',
-  path: '/portfolio',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PoliticaDePrivacidadRoute = PoliticaDePrivacidadRouteImport.update({
   id: '/politica-de-privacidad',
   path: '/politica-de-privacidad',
@@ -141,11 +131,6 @@ const DisenoWebParaEmpresasRoute = DisenoWebParaEmpresasRouteImport.update({
   path: '/diseno-web-para-empresas',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AvisoLegalRoute = AvisoLegalRouteImport.update({
   id: '/aviso-legal',
   path: '/aviso-legal',
@@ -156,15 +141,30 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SeoLocalIndexRoute = SeoLocalIndexRouteImport.update({
+  id: '/seo-local/',
+  path: '/seo-local/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioIndexRoute = PortfolioIndexRouteImport.update({
+  id: '/portfolio/',
+  path: '/portfolio/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SeoLocalCiudadRoute = SeoLocalCiudadRouteImport.update({
-  id: '/$ciudad',
-  path: '/$ciudad',
-  getParentRoute: () => SeoLocalRoute,
+  id: '/seo-local/$ciudad',
+  path: '/seo-local/$ciudad',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioProyectoRoute = PortfolioProyectoRouteImport.update({
-  id: '/$proyecto',
-  path: '/$proyecto',
-  getParentRoute: () => PortfolioRoute,
+  id: '/portfolio/$proyecto',
+  path: '/portfolio/$proyecto',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const DisenoWebCiudadRoute = DisenoWebCiudadRouteImport.update({
   id: '/diseno-web/$ciudad',
@@ -173,15 +173,15 @@ const DisenoWebCiudadRoute = DisenoWebCiudadRouteImport.update({
 } as any)
 const BlogCuantoCuestaPaginaWebRestauranteRoute =
   BlogCuantoCuestaPaginaWebRestauranteRouteImport.update({
-    id: '/cuanto-cuesta-pagina-web-restaurante',
-    path: '/cuanto-cuesta-pagina-web-restaurante',
-    getParentRoute: () => BlogRoute,
+    id: '/blog/cuanto-cuesta-pagina-web-restaurante',
+    path: '/blog/cuanto-cuesta-pagina-web-restaurante',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const BlogCuantoCuestaPaginaWebEspanaRoute =
   BlogCuantoCuestaPaginaWebEspanaRouteImport.update({
-    id: '/cuanto-cuesta-pagina-web-espana',
-    path: '/cuanto-cuesta-pagina-web-espana',
-    getParentRoute: () => BlogRoute,
+    id: '/blog/cuanto-cuesta-pagina-web-espana',
+    path: '/blog/cuanto-cuesta-pagina-web-espana',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const LandingTypeCiudadRoute = LandingTypeCiudadRouteImport.update({
   id: '/$landingType/$ciudad',
@@ -192,7 +192,6 @@ const LandingTypeCiudadRoute = LandingTypeCiudadRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
-  '/blog': typeof BlogRouteWithChildren
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
   '/google-business-profile': typeof GoogleBusinessProfileRoute
@@ -201,8 +200,6 @@ export interface FileRoutesByFullPath {
   '/mapa-del-sitio': typeof MapaDelSitioRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
-  '/portfolio': typeof PortfolioRouteWithChildren
-  '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
   '/web-para-abogados': typeof WebParaAbogadosRoute
   '/web-para-centros-de-estetica': typeof WebParaCentrosDeEsteticaRoute
@@ -219,11 +216,13 @@ export interface FileRoutesByFullPath {
   '/diseno-web/$ciudad': typeof DisenoWebCiudadRoute
   '/portfolio/$proyecto': typeof PortfolioProyectoRoute
   '/seo-local/$ciudad': typeof SeoLocalCiudadRoute
+  '/blog/': typeof BlogIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
+  '/seo-local/': typeof SeoLocalIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
-  '/blog': typeof BlogRouteWithChildren
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
   '/google-business-profile': typeof GoogleBusinessProfileRoute
@@ -232,8 +231,6 @@ export interface FileRoutesByTo {
   '/mapa-del-sitio': typeof MapaDelSitioRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
-  '/portfolio': typeof PortfolioRouteWithChildren
-  '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
   '/web-para-abogados': typeof WebParaAbogadosRoute
   '/web-para-centros-de-estetica': typeof WebParaCentrosDeEsteticaRoute
@@ -250,12 +247,14 @@ export interface FileRoutesByTo {
   '/diseno-web/$ciudad': typeof DisenoWebCiudadRoute
   '/portfolio/$proyecto': typeof PortfolioProyectoRoute
   '/seo-local/$ciudad': typeof SeoLocalCiudadRoute
+  '/blog': typeof BlogIndexRoute
+  '/portfolio': typeof PortfolioIndexRoute
+  '/seo-local': typeof SeoLocalIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/aviso-legal': typeof AvisoLegalRoute
-  '/blog': typeof BlogRouteWithChildren
   '/diseno-web-para-empresas': typeof DisenoWebParaEmpresasRoute
   '/diseno-web-seo': typeof DisenoWebSeoRoute
   '/google-business-profile': typeof GoogleBusinessProfileRoute
@@ -264,8 +263,6 @@ export interface FileRoutesById {
   '/mapa-del-sitio': typeof MapaDelSitioRoute
   '/politica-de-cookies': typeof PoliticaDeCookiesRoute
   '/politica-de-privacidad': typeof PoliticaDePrivacidadRoute
-  '/portfolio': typeof PortfolioRouteWithChildren
-  '/seo-local': typeof SeoLocalRouteWithChildren
   '/web-con-reservas': typeof WebConReservasRoute
   '/web-para-abogados': typeof WebParaAbogadosRoute
   '/web-para-centros-de-estetica': typeof WebParaCentrosDeEsteticaRoute
@@ -282,13 +279,15 @@ export interface FileRoutesById {
   '/diseno-web/$ciudad': typeof DisenoWebCiudadRoute
   '/portfolio/$proyecto': typeof PortfolioProyectoRoute
   '/seo-local/$ciudad': typeof SeoLocalCiudadRoute
+  '/blog/': typeof BlogIndexRoute
+  '/portfolio/': typeof PortfolioIndexRoute
+  '/seo-local/': typeof SeoLocalIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/aviso-legal'
-    | '/blog'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
     | '/google-business-profile'
@@ -297,8 +296,6 @@ export interface FileRouteTypes {
     | '/mapa-del-sitio'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
-    | '/portfolio'
-    | '/seo-local'
     | '/web-con-reservas'
     | '/web-para-abogados'
     | '/web-para-centros-de-estetica'
@@ -315,11 +312,13 @@ export interface FileRouteTypes {
     | '/diseno-web/$ciudad'
     | '/portfolio/$proyecto'
     | '/seo-local/$ciudad'
+    | '/blog/'
+    | '/portfolio/'
+    | '/seo-local/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/aviso-legal'
-    | '/blog'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
     | '/google-business-profile'
@@ -328,8 +327,6 @@ export interface FileRouteTypes {
     | '/mapa-del-sitio'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
-    | '/portfolio'
-    | '/seo-local'
     | '/web-con-reservas'
     | '/web-para-abogados'
     | '/web-para-centros-de-estetica'
@@ -346,11 +343,13 @@ export interface FileRouteTypes {
     | '/diseno-web/$ciudad'
     | '/portfolio/$proyecto'
     | '/seo-local/$ciudad'
+    | '/blog'
+    | '/portfolio'
+    | '/seo-local'
   id:
     | '__root__'
     | '/'
     | '/aviso-legal'
-    | '/blog'
     | '/diseno-web-para-empresas'
     | '/diseno-web-seo'
     | '/google-business-profile'
@@ -359,8 +358,6 @@ export interface FileRouteTypes {
     | '/mapa-del-sitio'
     | '/politica-de-cookies'
     | '/politica-de-privacidad'
-    | '/portfolio'
-    | '/seo-local'
     | '/web-con-reservas'
     | '/web-para-abogados'
     | '/web-para-centros-de-estetica'
@@ -377,12 +374,14 @@ export interface FileRouteTypes {
     | '/diseno-web/$ciudad'
     | '/portfolio/$proyecto'
     | '/seo-local/$ciudad'
+    | '/blog/'
+    | '/portfolio/'
+    | '/seo-local/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AvisoLegalRoute: typeof AvisoLegalRoute
-  BlogRoute: typeof BlogRouteWithChildren
   DisenoWebParaEmpresasRoute: typeof DisenoWebParaEmpresasRoute
   DisenoWebSeoRoute: typeof DisenoWebSeoRoute
   GoogleBusinessProfileRoute: typeof GoogleBusinessProfileRoute
@@ -391,8 +390,6 @@ export interface RootRouteChildren {
   MapaDelSitioRoute: typeof MapaDelSitioRoute
   PoliticaDeCookiesRoute: typeof PoliticaDeCookiesRoute
   PoliticaDePrivacidadRoute: typeof PoliticaDePrivacidadRoute
-  PortfolioRoute: typeof PortfolioRouteWithChildren
-  SeoLocalRoute: typeof SeoLocalRouteWithChildren
   WebConReservasRoute: typeof WebConReservasRoute
   WebParaAbogadosRoute: typeof WebParaAbogadosRoute
   WebParaCentrosDeEsteticaRoute: typeof WebParaCentrosDeEsteticaRoute
@@ -404,7 +401,14 @@ export interface RootRouteChildren {
   WebParaTalleresMecanicosRoute: typeof WebParaTalleresMecanicosRoute
   WebParaVeterinariasRoute: typeof WebParaVeterinariasRoute
   LandingTypeCiudadRoute: typeof LandingTypeCiudadRoute
+  BlogCuantoCuestaPaginaWebEspanaRoute: typeof BlogCuantoCuestaPaginaWebEspanaRoute
+  BlogCuantoCuestaPaginaWebRestauranteRoute: typeof BlogCuantoCuestaPaginaWebRestauranteRoute
   DisenoWebCiudadRoute: typeof DisenoWebCiudadRoute
+  PortfolioProyectoRoute: typeof PortfolioProyectoRoute
+  SeoLocalCiudadRoute: typeof SeoLocalCiudadRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+  PortfolioIndexRoute: typeof PortfolioIndexRoute
+  SeoLocalIndexRoute: typeof SeoLocalIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -479,20 +483,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WebConReservasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/seo-local': {
-      id: '/seo-local'
-      path: '/seo-local'
-      fullPath: '/seo-local'
-      preLoaderRoute: typeof SeoLocalRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/portfolio': {
-      id: '/portfolio'
-      path: '/portfolio'
-      fullPath: '/portfolio'
-      preLoaderRoute: typeof PortfolioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/politica-de-privacidad': {
       id: '/politica-de-privacidad'
       path: '/politica-de-privacidad'
@@ -549,13 +539,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DisenoWebParaEmpresasRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/aviso-legal': {
       id: '/aviso-legal'
       path: '/aviso-legal'
@@ -570,19 +553,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/seo-local/': {
+      id: '/seo-local/'
+      path: '/seo-local'
+      fullPath: '/seo-local/'
+      preLoaderRoute: typeof SeoLocalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio/': {
+      id: '/portfolio/'
+      path: '/portfolio'
+      fullPath: '/portfolio/'
+      preLoaderRoute: typeof PortfolioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/seo-local/$ciudad': {
       id: '/seo-local/$ciudad'
-      path: '/$ciudad'
+      path: '/seo-local/$ciudad'
       fullPath: '/seo-local/$ciudad'
       preLoaderRoute: typeof SeoLocalCiudadRouteImport
-      parentRoute: typeof SeoLocalRoute
+      parentRoute: typeof rootRouteImport
     }
     '/portfolio/$proyecto': {
       id: '/portfolio/$proyecto'
-      path: '/$proyecto'
+      path: '/portfolio/$proyecto'
       fullPath: '/portfolio/$proyecto'
       preLoaderRoute: typeof PortfolioProyectoRouteImport
-      parentRoute: typeof PortfolioRoute
+      parentRoute: typeof rootRouteImport
     }
     '/diseno-web/$ciudad': {
       id: '/diseno-web/$ciudad'
@@ -593,17 +597,17 @@ declare module '@tanstack/react-router' {
     }
     '/blog/cuanto-cuesta-pagina-web-restaurante': {
       id: '/blog/cuanto-cuesta-pagina-web-restaurante'
-      path: '/cuanto-cuesta-pagina-web-restaurante'
+      path: '/blog/cuanto-cuesta-pagina-web-restaurante'
       fullPath: '/blog/cuanto-cuesta-pagina-web-restaurante'
       preLoaderRoute: typeof BlogCuantoCuestaPaginaWebRestauranteRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/blog/cuanto-cuesta-pagina-web-espana': {
       id: '/blog/cuanto-cuesta-pagina-web-espana'
-      path: '/cuanto-cuesta-pagina-web-espana'
+      path: '/blog/cuanto-cuesta-pagina-web-espana'
       fullPath: '/blog/cuanto-cuesta-pagina-web-espana'
       preLoaderRoute: typeof BlogCuantoCuestaPaginaWebEspanaRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/$landingType/$ciudad': {
       id: '/$landingType/$ciudad'
@@ -615,47 +619,9 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface BlogRouteChildren {
-  BlogCuantoCuestaPaginaWebEspanaRoute: typeof BlogCuantoCuestaPaginaWebEspanaRoute
-  BlogCuantoCuestaPaginaWebRestauranteRoute: typeof BlogCuantoCuestaPaginaWebRestauranteRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogCuantoCuestaPaginaWebEspanaRoute: BlogCuantoCuestaPaginaWebEspanaRoute,
-  BlogCuantoCuestaPaginaWebRestauranteRoute:
-    BlogCuantoCuestaPaginaWebRestauranteRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
-
-interface PortfolioRouteChildren {
-  PortfolioProyectoRoute: typeof PortfolioProyectoRoute
-}
-
-const PortfolioRouteChildren: PortfolioRouteChildren = {
-  PortfolioProyectoRoute: PortfolioProyectoRoute,
-}
-
-const PortfolioRouteWithChildren = PortfolioRoute._addFileChildren(
-  PortfolioRouteChildren,
-)
-
-interface SeoLocalRouteChildren {
-  SeoLocalCiudadRoute: typeof SeoLocalCiudadRoute
-}
-
-const SeoLocalRouteChildren: SeoLocalRouteChildren = {
-  SeoLocalCiudadRoute: SeoLocalCiudadRoute,
-}
-
-const SeoLocalRouteWithChildren = SeoLocalRoute._addFileChildren(
-  SeoLocalRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AvisoLegalRoute: AvisoLegalRoute,
-  BlogRoute: BlogRouteWithChildren,
   DisenoWebParaEmpresasRoute: DisenoWebParaEmpresasRoute,
   DisenoWebSeoRoute: DisenoWebSeoRoute,
   GoogleBusinessProfileRoute: GoogleBusinessProfileRoute,
@@ -664,8 +630,6 @@ const rootRouteChildren: RootRouteChildren = {
   MapaDelSitioRoute: MapaDelSitioRoute,
   PoliticaDeCookiesRoute: PoliticaDeCookiesRoute,
   PoliticaDePrivacidadRoute: PoliticaDePrivacidadRoute,
-  PortfolioRoute: PortfolioRouteWithChildren,
-  SeoLocalRoute: SeoLocalRouteWithChildren,
   WebConReservasRoute: WebConReservasRoute,
   WebParaAbogadosRoute: WebParaAbogadosRoute,
   WebParaCentrosDeEsteticaRoute: WebParaCentrosDeEsteticaRoute,
@@ -677,7 +641,15 @@ const rootRouteChildren: RootRouteChildren = {
   WebParaTalleresMecanicosRoute: WebParaTalleresMecanicosRoute,
   WebParaVeterinariasRoute: WebParaVeterinariasRoute,
   LandingTypeCiudadRoute: LandingTypeCiudadRoute,
+  BlogCuantoCuestaPaginaWebEspanaRoute: BlogCuantoCuestaPaginaWebEspanaRoute,
+  BlogCuantoCuestaPaginaWebRestauranteRoute:
+    BlogCuantoCuestaPaginaWebRestauranteRoute,
   DisenoWebCiudadRoute: DisenoWebCiudadRoute,
+  PortfolioProyectoRoute: PortfolioProyectoRoute,
+  SeoLocalCiudadRoute: SeoLocalCiudadRoute,
+  BlogIndexRoute: BlogIndexRoute,
+  PortfolioIndexRoute: PortfolioIndexRoute,
+  SeoLocalIndexRoute: SeoLocalIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

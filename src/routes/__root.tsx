@@ -75,34 +75,46 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: (ctx) => {
-    // Determine the current URL path. ctx.location is available in TanStack Router's head function.
-    const path = ctx.location?.pathname === "/" ? "" : (ctx.location?.pathname || "");
-    return {
-      meta: [
-        { charSet: "utf-8" },
-        { name: "viewport", content: "width=device-width, initial-scale=1" },
-        { title: "Web para Negocios Locales con IA | Especialistas en Hostelería | Potencia tu Negocio" },
-        { name: "description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres, veterinarias y cualquier negocio local. SEO incluido, listas en 48 horas desde 295€. Especialistas en hostelería." },
-        { name: "keywords", content: "diseño web negocios locales, web para restaurantes, SEO local, web con IA, agencia web hostelería, web para clínicas, web para talleres" },
-        { property: "og:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-        { property: "og:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 48 horas desde 295€." },
-        { property: "og:type", content: "website" },
-        { property: "og:site_name", content: "Potencia Tu Negocio" },
-        { property: "og:locale", content: "es_ES" },
-        { property: "og:image", content: "https://potenciatunegocio.eu/og-image.png" },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:title", content: "Web para Negocios Locales con IA | Potencia tu Negocio" },
-        { name: "twitter:description", content: "Webs profesionales con IA para restaurantes, clínicas, talleres y cualquier negocio local. SEO incluido, listas en 48 horas desde 295€." },
-        { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
-      ],
-      links: [
-        { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
-        { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
-        { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
-        { rel: "manifest", href: "/manifest.json" },
-        { rel: "stylesheet", href: appCss },
-      ],
-    };
+    // Determine if it's a 404 by checking if the only match is the root route
+    const is404 = ctx.matches.length === 1 && ctx.matches[0].routeId === '__root__';
+    const lastMatch = ctx.matches[ctx.matches.length - 1];
+    const rawPath = lastMatch ? lastMatch.pathname : "";
+    const path = rawPath === "/" ? "" : rawPath.replace(/\/$/, "");
+    const canonicalUrl = `https://potenciatunegocio.eu${path}`;
+
+    const meta: any[] = [
+      { charSet: "utf-8" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Diseño Web Profesional para Negocios Locales | Potencia tu negocio" },
+      { name: "description", content: "Diseño de páginas web con inteligencia artificial para negocios locales. Listas en 48 horas, desde 295 €. Posicionamiento SEO incluido en toda España." },
+      { property: "og:title", content: "Diseño Web Profesional para Negocios Locales | Potencia tu negocio" },
+      { property: "og:description", content: "Diseño de páginas web con inteligencia artificial para negocios locales. Listas en 48 horas, desde 295 €. Posicionamiento SEO incluido." },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Potencia tu negocio" },
+      { property: "og:locale", content: "es_ES" },
+      { property: "og:image", content: "https://potenciatunegocio.eu/og-image.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Diseño Web Profesional para Negocios Locales | Potencia tu negocio" },
+      { name: "twitter:description", content: "Diseño de páginas web con inteligencia artificial para negocios locales. Listas en 48 horas, desde 295 €." },
+      { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
+    ];
+
+    const links: any[] = [
+      { rel: "icon", type: "image/png", href: "/favicon.png", sizes: "48x48" },
+      { rel: "icon", type: "image/png", href: "/favicon-192.png", sizes: "192x192" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png", sizes: "180x180" },
+      { rel: "manifest", href: "/manifest.json" },
+      { rel: "stylesheet", href: appCss },
+    ];
+
+    if (is404) {
+      meta.push({ name: "robots", content: "noindex" });
+    } else {
+      meta.push({ property: "og:url", content: canonicalUrl });
+      links.push({ rel: "canonical", href: canonicalUrl });
+    }
+
+    return { meta, links };
   },
   shellComponent: RootShell,
   component: RootComponent,
@@ -111,14 +123,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
-  const router = useRouter();
-  const path = router.state.location.pathname === "/" ? "" : router.state.location.pathname;
-  const canonicalUrl = `https://potenciatunegocio.eu${path}`;
-
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Potencia tu Negocio",
+    "name": "Potencia tu negocio",
     "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
     "email": "info@potenciatunegocio.eu",
     "url": "https://potenciatunegocio.eu",
@@ -129,7 +137,7 @@ function RootShell({ children }: { children: ReactNode }) {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Potencia Tu Negocio",
+    "name": "Potencia tu negocio",
     "url": "https://potenciatunegocio.eu"
   };
 
@@ -137,7 +145,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es">
       <head>
         <HeadContent />
-        <link rel="canonical" href={canonicalUrl} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
