@@ -43,12 +43,12 @@ export function Chatbot() {
       const response = await sendMessageFn({ data: { messages: newMessages } });
       
       if (response.error) {
-        setMessages(prev => [...prev, { role: 'assistant', content: 'Ups, parece que mis servidores están saturados ahora mismo. ¿Puedes escribirme por WhatsApp mejor?' }]);
+        setMessages(prev => [...prev, { role: 'assistant', content: `DEBUG ERROR: ${response.error}` }]);
       } else if (response.text) {
         setMessages(prev => [...prev, { role: 'assistant', content: response.text }]);
       }
     } catch (error: any) {
-      setMessages(prev => [...prev, { role: 'assistant', content: 'Parece que estoy sin cobertura ahora mismo. Escríbenos por WhatsApp.' }]);
+      setMessages(prev => [...prev, { role: 'assistant', content: `DEBUG CRITICAL: ${error.message || 'Desconocido'}` }]);
     } finally {
       setIsLoading(false);
     }
