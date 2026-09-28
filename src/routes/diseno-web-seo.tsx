@@ -6,7 +6,7 @@ export const Route = createFileRoute("/diseno-web-seo")({
   },
   head: () => ({
     meta: [
-      { title: "diseño web seo | Potencia tu Negocio" },
+      { title: "diseño web seo | Potencia tu negocio" },
       { name: "description", content: "Expertos en diseño web seo para captar más clientes." }
     ]
   }),

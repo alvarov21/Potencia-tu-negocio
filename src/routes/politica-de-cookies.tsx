@@ -1,6 +1,12 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/politica-de-cookies')({
+  head: () => ({
+    meta: [
+      { title: "Política de cookies | Potencia tu negocio" },
+      { name: "description", content: "Qué cookies usa potenciatunegocio.eu, para qué sirven y cómo aceptarlas, rechazarlas o configurarlas desde tu navegador." },
+    ],
+  }),
   component: CookiesPolicy,
 })
 

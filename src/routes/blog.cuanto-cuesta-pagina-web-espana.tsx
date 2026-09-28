@@ -12,7 +12,9 @@ export const Route = createFileRoute("/blog/cuanto-cuesta-pagina-web-espana")({
   head: () => ({
     meta: [
       { title: "Cuánto Cuesta una Página Web en España en 2026 | Precios" },
-      { name: "description", content: "¿Cuánto cuesta una página web profesional en 2026? Descubre los precios reales en España, qué incluye cada plan y cómo evitar estafas ocultas." }
+      { name: "description", content: "¿Cuánto cuesta una página web profesional en 2026? Descubre los precios reales en España, qué incluye cada plan y cómo evitar estafas ocultas." },
+      { property: "og:type", content: "article" },
+      { property: "article:published_time", content: "2026-07-05" },
     ]
   }),
   component: BlogPost1,

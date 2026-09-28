@@ -75,7 +75,8 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "Potencia tu Negocio",
+          "@id": "https://potenciatunegocio.eu/#organization",
+          name: "Potencia tu negocio",
           description: "Agencia de diseño web con IA especializada en negocios locales y hostelería en España.",
           url: "https://potenciatunegocio.eu/",
           areaServed: "ES",
@@ -722,7 +723,7 @@ function Pricing() {
           "image": "https://potenciatunegocio.eu/logo.png",
           "brand": {
             "@type": "Brand",
-            "name": "Potencia tu Negocio"
+            "name": "Potencia tu negocio"
           },
           "offers": {
             "@type": "Offer",
@@ -742,7 +743,7 @@ function Pricing() {
           "image": "https://potenciatunegocio.eu/logo.png",
           "brand": {
             "@type": "Brand",
-            "name": "Potencia tu Negocio"
+            "name": "Potencia tu negocio"
           },
           "offers": {
             "@type": "Offer",

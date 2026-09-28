@@ -12,7 +12,9 @@ export const Route = createFileRoute("/blog/cuanto-cuesta-pagina-web-restaurante
   head: () => ({
     meta: [
       { title: "Cuánto cuesta una página web para un restaurante en 2026 | Precios" },
-      { name: "description", content: "¿Quieres saber cuánto cuesta crear la página web de tu restaurante? Descubre precios, cómo evitar comisiones en reservas y tener tu carta digital." }
+      { name: "description", content: "¿Quieres saber cuánto cuesta crear la página web de tu restaurante? Descubre precios, cómo evitar comisiones en reservas y tener tu carta digital." },
+      { property: "og:type", content: "article" },
+      { property: "article:published_time", content: "2026-07-05" },
     ]
   }),
   component: BlogPost2,

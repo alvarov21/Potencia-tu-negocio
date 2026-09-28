@@ -83,20 +83,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     const lastMatch = ctx.matches[ctx.matches.length - 1];
     const rawPath = lastMatch ? lastMatch.pathname : "";
     const ogPath = rawPath === "/" ? "" : rawPath.replace(/\/$/, "");
+    // og:title / og:description / twitter:title / twitter:description no se fijan
+    // aquí: los emite <SocialMetaFallback /> copiando el título y la descripción
+    // reales de cada página (antes, las páginas sin og:title propio heredaban el
+    // de la home al compartirse en WhatsApp, redes o al leerlas un buscador).
     const meta: any[] = [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Diseño Web Profesional para Negocios Locales | Potencia tu negocio" },
       { name: "description", content: "Diseño de páginas web con inteligencia artificial para negocios locales. Listas en 48 horas, desde 295 €. Posicionamiento SEO incluido en toda España." },
-      { property: "og:title", content: "Diseño Web Profesional para Negocios Locales | Potencia tu negocio" },
-      { property: "og:description", content: "Diseño de páginas web con inteligencia artificial para negocios locales. Listas en 48 horas, desde 295 €. Posicionamiento SEO incluido." },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Potencia tu negocio" },
       { property: "og:locale", content: "es_ES" },
       { property: "og:image", content: "https://potenciatunegocio.eu/og-image.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Diseño Web Profesional para Negocios Locales | Potencia tu negocio" },
-      { name: "twitter:description", content: "Diseño de páginas web con inteligencia artificial para negocios locales. Listas en 48 horas, desde 295 €." },
       { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
       { property: "og:url", content: `https://potenciatunegocio.eu${ogPath}` },
     ];
@@ -118,7 +118,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 // Canonical en las páginas válidas; noindex y sin canonical en cualquier 404
-// (ruta inexistente o notFound() lanzado por una ruta dinámica).
+// (ruta inexistente o notFound() lanzado por una ruta dinámica). Las páginas que
+// ya declaran su propio noindex (p. ej. /web-con-reservas) tampoco llevan
+// canonical: son señales contradictorias para Google.
 function CanonicalAndRobots() {
   // Se selecciona un string (no un objeto) para no provocar renders de más.
   const key = useRouterState({
@@ -126,19 +128,62 @@ function CanonicalAndRobots() {
       const notFound =
         s.matches.length === 0 ||
         s.matches.some((m: any) => m.status === "notFound" || m._notFound === true || m.globalNotFound === true);
-      return notFound ? "404" : s.location.pathname;
+      if (notFound) return "404";
+      const ownNoindex = s.matches.some((m: any) =>
+        (m.meta ?? []).some((t: any) => t && t.name === "robots" && /noindex/i.test(String(t.content ?? ""))),
+      );
+      return ownNoindex ? "noindex" : s.location.pathname;
     },
   });
   if (key === "404") return <meta name="robots" content="noindex" />;
+  if (key === "noindex") return null;
   const path = key === "/" ? "" : key.replace(/\/$/, "");
   const url = `https://potenciatunegocio.eu${path}`;
   return <link rel="canonical" href={url} />;
+}
+
+// og:title, og:description, twitter:title y twitter:description iguales al título
+// y la descripción finales de la página, salvo que la ruta ya los defina.
+// Replica la regla de <HeadContent />: gana la etiqueta de la ruta más profunda.
+function SocialMetaFallback() {
+  const key = useRouterState({
+    select: (s) => {
+      let title = "";
+      let description = "";
+      const own: Record<string, true> = {};
+      for (const m of s.matches as any[]) {
+        for (const t of (m.meta ?? []) as any[]) {
+          if (!t) continue;
+          if (t.title) title = String(t.title);
+          const attr = t.name ?? t.property;
+          if (attr === "description") description = String(t.content ?? "");
+          if (attr === "og:title" || attr === "og:description" || attr === "twitter:title" || attr === "twitter:description") {
+            own[attr] = true;
+          }
+        }
+      }
+      return JSON.stringify([title, description, Object.keys(own).sort()]);
+    },
+  });
+  const [title, description, own] = JSON.parse(key) as [string, string, string[]];
+  const has = (k: string) => own.includes(k);
+  return (
+    <>
+      {title && !has("og:title") && <meta property="og:title" content={title} />}
+      {description && !has("og:description") && <meta property="og:description" content={description} />}
+      {title && !has("twitter:title") && <meta name="twitter:title" content={title} />}
+      {description && !has("twitter:description") && <meta name="twitter:description" content={description} />}
+    </>
+  );
 }
 
 function RootShell({ children }: { children: ReactNode }) {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    // Mismo @id en todos los datos estructurados del sitio: Google y los
+    // buscadores con IA lo tratan como una sola entidad (la empresa).
+    "@id": "https://potenciatunegocio.eu/#organization",
     "name": "Potencia tu negocio",
     "description": "Agencia de diseño web con inteligencia artificial para negocios locales en España. Diseño web profesional para restaurantes, clínicas, talleres y pymes.",
     "email": "info@potenciatunegocio.eu",
@@ -159,6 +204,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
         <CanonicalAndRobots />
+        <SocialMetaFallback />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>

@@ -6,7 +6,7 @@ export const Route = createFileRoute('/web-para-fisioterapeutas')({
     const sectorName = VALID_SECTORS["fisioterapeutas"];
     return {
       meta: [
-        { title: `Diseño web corporativo para ${sectorName} | Potencia tu Negocio` },
+        { title: `Diseño web corporativo para ${sectorName} | Potencia tu negocio` },
         { name: "description", content: `Servicio especializado de diseño web con IA para ${sectorName}. Atrae más clientes, automatiza tus reservas y domina tu sector en Google.` },
       ]
     };
