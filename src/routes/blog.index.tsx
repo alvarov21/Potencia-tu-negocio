@@ -16,14 +16,14 @@ const ARTICLES = [
     slug: "cuanto-cuesta-pagina-web-espana",
     title: "¿Cuánto cuesta una página web en España en 2026?",
     excerpt: "Descubre los precios reales del mercado y qué incluye cada plan. Guía completa para dueños de negocios locales.",
-    date: "14 de agosto de 2026",
+    date: "5 de julio de 2026",
     category: "Precios"
   },
   {
     slug: "cuanto-cuesta-pagina-web-restaurante",
     title: "¿Cuánto cuesta una página web para un restaurante?",
     excerpt: "¿Quieres saber cuánto cuesta crear la página web de tu bar o restaurante? Descubre precios y cómo evitar comisiones.",
-    date: "15 de agosto de 2026",
+    date: "5 de julio de 2026",
     category: "Restaurantes"
   }
 ];

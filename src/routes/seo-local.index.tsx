@@ -23,7 +23,7 @@ function SeoLocal() {
           SEO Local: Sé la primera opción en tu ciudad
         </h1>
         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-          El 80% de las búsquedas locales terminan en una venta. Si tu negocio no aparece en el "Local Pack" de Google (los 3 primeros del mapa), le estás regalando clientes a tu competencia.
+          Quien busca un negocio cerca suele estar listo para llamar, reservar o ir. Si tu negocio no aparece en el "Local Pack" de Google (los 3 primeros del mapa), esos clientes se los lleva tu competencia.
         </p>
       </div>
 
@@ -32,7 +32,7 @@ function SeoLocal() {
           <MapPin className="w-10 h-10 text-primary mb-6" />
           <h3 className="text-xl font-bold mb-3">Google Maps</h3>
           <p className="text-muted-foreground text-sm leading-relaxed">
-            Optimizamos tu ficha para que aparezcas el primero cuando alguien busque tus servicios cerca de tu ubicación.
+            Optimizamos tu ficha para que ganes visibilidad cuando alguien busque tus servicios cerca de tu ubicación.
           </p>
         </div>
         <div className="bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition duration-300">

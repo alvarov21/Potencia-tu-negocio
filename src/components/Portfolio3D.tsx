@@ -55,13 +55,13 @@ export function Portfolio3D() {
   const STEP = 22.5;
 
   const mockups = [
-    { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "/portfolio/veterinaria-malaga", image: "/veterinaria-mockup.jpg" },
+    { title: "Landing Page: Clínica Veterinaria", type: "mockup", url: "/portfolio/demo-veterinaria", image: "/veterinaria-mockup.jpg" },
     { title: "K-Ch-Vere", type: "mockup", url: "https://k-ch-vere.vercel.app/", image: "/k-ch-vere.png" },
-    { title: "Centro de Estética: Estetimagen", type: "mockup", url: "/portfolio/estetimagen", image: "/estetimagen-mockup.jpg" },
+    { title: "Centro de Estética: Estetimagen", type: "mockup", url: "/portfolio/demo-centro-estetica", image: "/estetimagen-mockup.jpg" },
     { title: "Jota Motor", type: "mockup", url: "https://jota-motor.vercel.app/", image: "/jota-motor.png" },
     { title: "Web Hamburguesería: Dali's Burguer", type: "mockup", url: "https://dali-s-burguer.vercel.app/", image: "/dali-burguer.png" },
     { title: "Grupo Gastrobró", type: "mockup", url: "https://grupo-gastobr-o.vercel.app/", image: "/grupo-gastrobro.png" },
-    { title: "Web Restaurante: Picoteo", type: "mockup", url: "/portfolio/picoteo", image: "/picoteo.png" },
+    { title: "Web Restaurante: Picoteo", type: "mockup", url: "/portfolio/demo-restaurante", image: "/picoteo.png" },
     { title: "Peluquería Nievas", type: "mockup", url: "https://peluquer-a-nievas.vercel.app/", image: "/peluqueria-nievas.png" },
   ];
 

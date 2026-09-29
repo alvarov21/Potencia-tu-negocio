@@ -1417,7 +1417,7 @@ function Footer() {
             <li><Link to="/seo-local" className="hover:text-primary transition">SEO Local y Mapas</Link></li>
             <li><Link to="/google-business-profile" className="hover:text-primary transition">Google Business Profile</Link></li>
             <li><Link to="/mantenimiento-web" className="hover:text-primary transition">Mantenimiento Web</Link></li>
-            <li><Link to="/diseno-web-para-empresas" className="hover:text-primary transition">Diseño Web SEO</Link></li>
+            <li><Link to="/diseno-web-para-empresas" className="hover:text-primary transition">Diseño Web para Empresas</Link></li>
           </ul>
         </div>
         <div className="lg:col-span-1">

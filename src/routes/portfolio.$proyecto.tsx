@@ -3,34 +3,34 @@ import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Contact } from "./index";
 
 const PROJECTS = {
-  "veterinaria-malaga": {
+  "demo-veterinaria": {
     title: "Web para Clínica Veterinaria",
     sector: "Veterinaria",
     image: "/veterinaria-mockup.jpg",
     liveUrl: "https://veterinaria-m-laga-premium-landing.vercel.app/",
-    forWho: "Clínicas veterinarias y hospitales de animales que necesitan destacar urgencias y especialidades.",
-    includes: "Diseño optimizado para móviles, sección de urgencias 24h, botón flotante de WhatsApp, integración de cita previa y SEO local.",
-    howItWorks: "Adaptamos los colores, logotipo y servicios a tu clínica. En 48 horas te presentamos la maqueta y en menos de 7 días está publicada."
+    forWho: "Clínicas veterinarias, hospitales de animales y consultas de barrio que quieren que los dueños de mascotas las encuentren rápido cuando las necesitan. Pensada tanto para la clínica que atiende urgencias y quiere que su teléfono se vea a la primera, como para la que vive de las consultas programadas, las vacunas y las revisiones, y necesita llenar la agenda sin depender solo del boca a boca.",
+    includes: "Diseño pensado para el móvil, que es desde donde llegan la mayoría de consultas; botones de llamada y de WhatsApp siempre visibles; sección de urgencias si las atiendes; una ficha para cada servicio (consultas, vacunación, cirugía, peluquería canina); petición de cita previa; mapa y horarios; reseñas de Google en la propia web; SEO local para las búsquedas de tu zona, y textos legales incluidos.",
+    howItWorks: "Nos cuentas cómo trabaja tu clínica en un formulario de dos minutos o en una llamada corta. Adaptamos esta estructura con tu logotipo, tus colores, tus servicios y tus fotos, y en 48 horas te enseñamos la primera versión. Aplicamos los cambios que nos pidas y la publicamos en menos de 7 días, con dominio, alojamiento y ficha de Google configurados."
   },
-  "estetimagen": {
+  "demo-centro-estetica": {
     title: "Web para Centro de Estética",
     sector: "Estética y Belleza",
     image: "/estetimagen-mockup.jpg",
     liveUrl: "#",
-    forWho: "Salones de belleza, centros de estética y spas que quieren mostrar una imagen premium y captar citas.",
-    includes: "Catálogo visual de tratamientos, integración de tarifas, botón de reservas directas y diseño elegante.",
-    howItWorks: "Seleccionamos la mejor estructura para tus tratamientos. Añadimos tus tarifas y fotos, y la publicamos en una semana."
+    forWho: "Centros de estética, salones de belleza, spas y cabinas independientes que quieren transmitir en su web el mismo cuidado que ponen en cada tratamiento. Pensada para quien recibe cada día mensajes preguntando precios y huecos libres, y prefiere que la clienta llegue ya informada y con la cita pedida.",
+    includes: "Catálogo de tratamientos ordenado por categorías (faciales, corporales, depilación, manicura) con descripción y precio; galería de fotos del centro; botón de reserva o de WhatsApp en cada tratamiento; reseñas de Google a la vista; horarios y mapa; diseño elegante adaptado a tu imagen de marca; SEO local para aparecer en las búsquedas de tu ciudad, y textos legales incluidos.",
+    howItWorks: "Nos pasas tu lista de tratamientos con sus precios y unas cuantas fotos del centro. Montamos la web sobre esta estructura y en 48 horas tienes la primera versión para revisarla. Ajustamos textos, colores y orden hasta que te encaje, y en menos de 7 días está publicada con tu dominio y tu ficha de Google al día."
   },
-  "picoteo": {
+  "demo-restaurante": {
     title: "Web para Restaurante",
     sector: "Hostelería",
     image: "/picoteo.png",
     liveUrl: "#",
-    forWho: "Restaurantes, bares y gastrobares que quieren ganar visibilidad local sin depender de plataformas de terceros.",
-    includes: "Carta digital integrada, módulo de contacto para reservas y galería fotográfica de platos.",
-    howItWorks: "Digitalizamos tu carta, destacamos tus platos estrella y optimizamos el diseño para que abra muy rápido en el móvil."
+    forWho: "Restaurantes, bares y gastrobares que quieren que la gente vea la carta y reserve directamente con ellos, sin pagar una comisión por cada mesa a plataformas de terceros. Pensada para el local que ya tiene buenas reseñas en Google, pero cuya web está anticuada, no existe o no se ve bien en el móvil.",
+    includes: "Carta digital con fotos, categorías y precios que puedes actualizar en minutos, también accesible con código QR en la mesa; reservas directas por WhatsApp o formulario; galería de platos y del local; horarios, mapa y botón de llamada; reseñas de Google en la web; enlaces a las plataformas de reparto que ya uses; SEO local y textos legales incluidos.",
+    howItWorks: "Nos mandas la carta y unas fotos; si no tienes buenas, te ayudamos a elegirlas. Digitalizamos la carta, destacamos tus platos estrella y preparamos el diseño para que abra rápido en el móvil. En 48 horas ves la primera versión, la ajustamos contigo y en menos de 7 días está publicada con tu dominio y tu ficha de Google."
   },
-  "taller-mecanico": {
+  "demo-taller": {
     title: "Web para Taller Mecánico",
     sector: "Automoción",
     image: "/nfc-review-card-v4.png",
@@ -39,20 +39,31 @@ const PROJECTS = {
     includes: "Listado claro de servicios (diagnosis, neumáticos, etc.), formulario rápido de presupuestos y mapa de ubicación.",
     howItWorks: "Destacamos tus servicios y preparamos la web para que aparezcas cuando alguien busque un taller en tu zona."
   },
-  "padre-pio": {
+  "demo-taberna": {
     title: "Web para Taberna Tradicional",
     sector: "Hostelería",
     image: "", 
     liveUrl: "#",
-    forWho: "Tabernas, tascas y bares tradicionales que quieren modernizar su captación sin perder su esencia.",
-    includes: "Diseño adaptado al estilo del local, horarios, información de contacto y mapa interactivo.",
-    howItWorks: "Respetamos la identidad de tu local mientras construimos una web sencilla que atrae clientes locales y turistas."
+    forWho: "Tabernas, tascas, bodegas y bares de toda la vida que quieren que también los encuentre quien busca desde el móvil, vecinos y turistas, sin perder su carácter. Pensada para el local con historia y clientela fiel que quiere que los nuevos lo encuentren cuando buscan dónde tapear cerca.",
+    includes: "Diseño que respeta el estilo del local; la historia de la casa en pocas líneas; carta o tapas destacadas con precios; horarios, días de cierre y mapa para llegar; botones de llamada y de WhatsApp para reservar; reseñas de Google a la vista; una web que se lee bien en el móvil, que es desde donde te buscan en la calle; SEO local y textos legales incluidos.",
+    howItWorks: "Hablamos diez minutos sobre el local, su historia y lo que más se pide. Con eso y unas fotos montamos la primera versión en 48 horas. La revisas con calma, ajustamos lo que haga falta y en menos de 7 días está publicada, con tu dominio y tu ficha de Google actualizados."
   }
 };
 
 export const Route = createFileRoute("/portfolio/$proyecto")({
   beforeLoad: ({ params: { proyecto } }) => {
-    if (proyecto === "taller-mecanico") {
+    // URLs antiguas con nombres de negocio → slugs genéricos (301 permanente)
+    const LEGACY_SLUGS: Record<string, string> = {
+      "veterinaria-malaga": "demo-veterinaria",
+      "estetimagen": "demo-centro-estetica",
+      "picoteo": "demo-restaurante",
+      "padre-pio": "demo-taberna",
+    };
+    if (LEGACY_SLUGS[proyecto]) {
+      throw redirect({ to: "/portfolio/$proyecto", params: { proyecto: LEGACY_SLUGS[proyecto] }, statusCode: 301 });
+    }
+    // Demo sin maqueta propia todavía: 404 real
+    if (proyecto === "demo-taller" || proyecto === "taller-mecanico") {
       throw notFound();
     }
     if (!PROJECTS[proyecto as keyof typeof PROJECTS]) {

@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -75,13 +76,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: (ctx) => {
-    // Determine if it's a 404 by checking if the only match is the root route
-    const is404 = ctx.matches.length === 1 && ctx.matches[0].routeId === '__root__';
+    // Canonical y noindex de las 404 se emiten en <CanonicalAndRobots /> (dentro de
+    // RootShell), que lee el estado final del router al renderizar: en head() el
+    // estado de "no encontrado" de las rutas hijas no es fiable en producción.
+    // og:url se queda aquí para que las rutas que ya lo definen lo sobrescriban.
     const lastMatch = ctx.matches[ctx.matches.length - 1];
     const rawPath = lastMatch ? lastMatch.pathname : "";
-    const path = rawPath === "/" ? "" : rawPath.replace(/\/$/, "");
-    const canonicalUrl = `https://potenciatunegocio.eu${path}`;
-
+    const ogPath = rawPath === "/" ? "" : rawPath.replace(/\/$/, "");
     const meta: any[] = [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -97,6 +98,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "Diseño Web Profesional para Negocios Locales | Potencia tu negocio" },
       { name: "twitter:description", content: "Diseño de páginas web con inteligencia artificial para negocios locales. Listas en 48 horas, desde 295 €." },
       { name: "twitter:image", content: "https://potenciatunegocio.eu/og-image.png" },
+      { property: "og:url", content: `https://potenciatunegocio.eu${ogPath}` },
     ];
 
     const links: any[] = [
@@ -107,13 +109,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
     ];
 
-    if (is404) {
-      meta.push({ name: "robots", content: "noindex" });
-    } else {
-      meta.push({ property: "og:url", content: canonicalUrl });
-      links.push({ rel: "canonical", href: canonicalUrl });
-    }
-
     return { meta, links };
   },
   shellComponent: RootShell,
@@ -121,6 +116,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
+// Canonical en las páginas válidas; noindex y sin canonical en cualquier 404
+// (ruta inexistente o notFound() lanzado por una ruta dinámica).
+function CanonicalAndRobots() {
+  // Se selecciona un string (no un objeto) para no provocar renders de más.
+  const key = useRouterState({
+    select: (s) => {
+      const notFound =
+        s.matches.length === 0 ||
+        s.matches.some((m: any) => m.status === "notFound" || m._notFound === true || m.globalNotFound === true);
+      return notFound ? "404" : s.location.pathname;
+    },
+  });
+  if (key === "404") return <meta name="robots" content="noindex" />;
+  const path = key === "/" ? "" : key.replace(/\/$/, "");
+  const url = `https://potenciatunegocio.eu${path}`;
+  return <link rel="canonical" href={url} />;
+}
 
 function RootShell({ children }: { children: ReactNode }) {
   const localBusinessSchema = {
@@ -145,6 +158,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="es">
       <head>
         <HeadContent />
+        <CanonicalAndRobots />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       </head>
