@@ -329,7 +329,7 @@ const BBD2_CSS = `/* broken by design. -----------------------------------------
     opacity: 1;
   }
 }
-\`
+`
 
 /* ------------------------------------------------------------------ */
 /*  broken by design. — big-shard glass hero                          */
@@ -534,9 +534,9 @@ function baseOf(id: string, seed: number): SpringState {
 
 function toTransform(s: SpringState) {
   return (
-    \`translate3d(\${s.px.toFixed(2)}px, \${s.py.toFixed(2)}px, \${s.tz.toFixed(2)}px)\` +
-    \` rotateX(\${s.rx.toFixed(2)}deg) rotateY(\${s.ry.toFixed(2)}deg)\` +
-    \` scale(\${s.sc.toFixed(4)})\`
+    `translate3d(\${s.px.toFixed(2)}px, \${s.py.toFixed(2)}px, \${s.tz.toFixed(2)}px)` +
+    ` rotateX(\${s.rx.toFixed(2)}deg) rotateY(\${s.ry.toFixed(2)}deg)` +
+    ` scale(\${s.sc.toFixed(4)})`
   )
 }
 
@@ -580,9 +580,9 @@ export default function BrokenByDesign({
     let cancelled = false
     setReady(false)
     const urls = [
-      \`\${assetsBase}/\${ATLAS[setKey].url}\`,
-      \`\${assetsBase}/sound-on.png\`,
-      \`\${assetsBase}/sound-off.png\`,
+      `\${assetsBase}/\${ATLAS[setKey].url}`,
+      `\${assetsBase}/sound-on.png`,
+      `\${assetsBase}/sound-off.png`,
     ]
     const timeout = setTimeout(() => { if (!cancelled) setReady(true) }, 2500)
     Promise.all(
@@ -641,8 +641,8 @@ export default function BrokenByDesign({
             {
               opacity: 0,
               transform:
-                \`translate3d(\${ux * 110}px, \${uy * 110}px, 280px)\` +
-                \` rotateX(\${uy * -12}deg) rotateY(\${ux * 12}deg)\`,
+                `translate3d(\${ux * 110}px, \${uy * 110}px, 280px)` +
+                ` rotateX(\${uy * -12}deg) rotateY(\${ux * 12}deg)`,
               filter: 'brightness(2) blur(2px)',
             },
             {
@@ -747,8 +747,8 @@ export default function BrokenByDesign({
         tgt[i].ry = b.ry + lx * 17
         tgt[i].tz = b.tz + 92
         tgt[i].sc = 1.035
-        el.style.setProperty('--mx', \`\${((lx + 0.5) * 100).toFixed(1)}%\`)
-        el.style.setProperty('--my', \`\${((ly + 0.5) * 100).toFixed(1)}%\`)
+        el.style.setProperty('--mx', `\${((lx + 0.5) * 100).toFixed(1)}%`)
+        el.style.setProperty('--my', `\${((ly + 0.5) * 100).toFixed(1)}%`)
         wake()
       }
       const onEnter = () => {
@@ -791,7 +791,7 @@ export default function BrokenByDesign({
     <style>{BBD2_CSS}</style>
     <section
       ref={rootRef}
-      className={\`bbd2 \${portrait ? 'bbd2--portrait' : ''} \${ready ? 'bbd2--ready' : ''} \${className}\`}
+      className={`bbd2 \${portrait ? 'bbd2--portrait' : ''} \${ready ? 'bbd2--ready' : ''} \${className}`}
       style={{ height }}
       aria-label={title}
     >
@@ -815,7 +815,7 @@ export default function BrokenByDesign({
       {/* The fracture network continues through the void. */}
       <svg
         className="bbd2-cracks"
-        viewBox={\`0 0 \${cracks.w} \${cracks.h}\`}
+        viewBox={`0 0 \${cracks.w} \${cracks.h}`}
         preserveAspectRatio="none"
         aria-hidden="true"
       >
@@ -833,7 +833,7 @@ export default function BrokenByDesign({
       <div className="bbd2-pane" aria-hidden="true">
         {pieces.map((p, i) => {
           const j = jitters[i]
-          const atlasUrl = \`\${assetsBase}/\${ATLAS[setKey].url}\`
+          const atlasUrl = `\${assetsBase}/\${ATLAS[setKey].url}`
           const sprite = spriteStyle(setKey, p.id)
           return (
             <div
@@ -841,18 +841,18 @@ export default function BrokenByDesign({
               data-shard
               className="bbd2-shard"
               style={{
-                left: \`\${p.x}%\`,
-                top: \`\${p.y}%\`,
-                width: \`\${p.w}%\`,
-                height: \`\${p.h}%\`,
+                left: `\${p.x}%`,
+                top: `\${p.y}%`,
+                width: `\${p.w}%`,
+                height: `\${p.h}%`,
                 zIndex: 10 + (2 - p.ring),
               }}
             >
               <div
                 className="bbd2-inlay"
                 style={{
-                  WebkitMaskImage: \`url(\${atlasUrl})\`,
-                  maskImage: \`url(\${atlasUrl})\`,
+                  WebkitMaskImage: `url(\${atlasUrl})`,
+                  maskImage: `url(\${atlasUrl})`,
                   WebkitMaskSize: sprite.backgroundSize,
                   maskSize: sprite.backgroundSize,
                   WebkitMaskPosition: sprite.backgroundPosition,
@@ -862,7 +862,7 @@ export default function BrokenByDesign({
                 <div
                   className="bbd2-glassimg"
                   style={{
-                    backgroundImage: \`url(\${atlasUrl})\`,
+                    backgroundImage: `url(\${atlasUrl})`,
                     backgroundSize: sprite.backgroundSize,
                     backgroundPosition: sprite.backgroundPosition,
                   }}
@@ -870,13 +870,13 @@ export default function BrokenByDesign({
                 <div
                   className="bbd2-slice"
                   style={{
-                    width: \`\${10000 / p.w}%\`,
-                    height: \`\${10000 / p.h}%\`,
-                    left: \`\${-(p.x / p.w) * 100}%\`,
-                    top: \`\${-(p.y / p.h) * 100}%\`,
+                    width: `\${10000 / p.w}%`,
+                    height: `\${10000 / p.h}%`,
+                    left: `\${-(p.x / p.w) * 100}%`,
+                    top: `\${-(p.y / p.h) * 100}%`,
                     ['--jt' as string]:
-                      \`translate(\${j.tx.toFixed(1)}px, \${j.ty.toFixed(1)}px)\` +
-                      \` rotate(\${j.rot.toFixed(2)}deg)\`,
+                      `translate(\${j.tx.toFixed(1)}px, \${j.ty.toFixed(1)}px)` +
+                      ` rotate(\${j.rot.toFixed(2)}deg)`,
                   }}
                 >
                   {titleNode}
@@ -905,7 +905,7 @@ export default function BrokenByDesign({
       >
         {ready && (
           <img
-            src={\`\${assetsBase}/\${soundOn ? 'sound-on' : 'sound-off'}.png\`}
+            src={`\${assetsBase}/\${soundOn ? 'sound-on' : 'sound-off'}.png`}
             alt=""
             draggable={false}
           />
