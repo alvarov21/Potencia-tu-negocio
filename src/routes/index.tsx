@@ -295,15 +295,50 @@ function Hero() {
             <p>
               Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
             </p>
-            <div className="inline-flex items-center gap-2 text-base px-4 py-2 rounded-lg bg-secondary/30 border border-border">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-              </span>
-              <span className="text-foreground/90">
-                <strong>¿No tienes local físico?</strong> También creamos webs portfolio para DJs, artistas y freelancers 100% online.
-              </span>
-            </div>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="inline-flex items-center gap-2 text-base px-4 py-2 rounded-lg bg-secondary/30 border border-border hover:bg-secondary/50 transition-colors text-left group">
+                  <span className="relative flex h-2.5 w-2.5 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                  </span>
+                  <span className="text-foreground/90">
+                    <strong>¿Sin local físico?</strong> Descubre para qué otros perfiles trabajamos <span className="inline-block ml-1 text-primary font-bold group-hover:translate-x-1 transition-transform">→</span>
+                  </span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-lg">
+                <DialogTitle className="text-2xl font-bold">Sin local físico, pero con mucha presencia</DialogTitle>
+                <DialogDescription className="text-base text-foreground mb-4">
+                  Aunque nuestro foco principal es el SEO Local para negocios físicos, también diseñamos "bases de operaciones" enfocadas a conversiones para profesionales itinerantes u online:
+                </DialogDescription>
+                <ul className="space-y-4 text-sm text-muted-foreground mb-4">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Freelancers y Consultores online:</strong> Vende tus servicios sin límites geográficos.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Fotografía sin estudio:</strong> Fotógrafos de bodas, eventos o nómadas. Tu portfolio es tu mejor comercial.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>DJs, Artistas y Músicos:</strong> Centraliza tus redes, fechas de bolos y opciones de contratación.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Entrenadores a domicilio o terapeutas online:</strong> Integración de videollamadas y calendarios de reserva.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Marcas personales y Creadores de contenido:</strong> Monetiza tu audiencia sin depender del algoritmo.</span>
+                  </li>
+                </ul>
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm font-medium">¿Encajas en este perfil? Pídenos el prediseño gratis y adaptaremos la estrategia a tu caso.</p>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
           
           {/* Desktop Button (Liquid Glass iPhone style) */}
