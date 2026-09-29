@@ -1423,11 +1423,11 @@ function Footer() {
         <div className="lg:col-span-1">
           <h3 className="text-foreground font-semibold mb-6">Agencias Locales</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/diseno-web/sevilla" className="hover:text-primary transition">Diseño Web Sevilla</Link></li>
-            <li><Link to="/diseno-web/malaga" className="hover:text-primary transition">Diseño Web Málaga</Link></li>
-            <li><Link to="/diseno-web/granada" className="hover:text-primary transition">Diseño Web Granada</Link></li>
-            <li><Link to="/seo-local/madrid" className="hover:text-primary transition">SEO Local Madrid</Link></li>
-            <li><Link to="/seo-local/barcelona" className="hover:text-primary transition">SEO Local Barcelona</Link></li>
+            <li><Link to={"/diseno-web/sevilla" as any} className="hover:text-primary transition">Diseño Web Sevilla</Link></li>
+            <li><Link to={"/diseno-web/malaga" as any} className="hover:text-primary transition">Diseño Web Málaga</Link></li>
+            <li><Link to={"/diseno-web/granada" as any} className="hover:text-primary transition">Diseño Web Granada</Link></li>
+            <li><Link to={"/seo-local/madrid" as any} className="hover:text-primary transition">SEO Local Madrid</Link></li>
+            <li><Link to={"/seo-local/barcelona" as any} className="hover:text-primary transition">SEO Local Barcelona</Link></li>
           </ul>
         </div>
         <div className="lg:col-span-1">

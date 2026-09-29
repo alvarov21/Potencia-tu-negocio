@@ -46,7 +46,7 @@ function BlogIndex() {
       <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {ARTICLES.map(article => (
-            <Link key={article.slug} to={`/blog/${article.slug}`} className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
+            <Link key={article.slug} to={`/blog/${article.slug}` as any} className="group bg-card border border-border rounded-2xl p-8 hover:border-primary/50 transition shadow-sm block">
               <div className="flex justify-between items-center mb-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-primary">{article.category}</span>
                 <span className="text-xs text-muted-foreground">{article.date}</span>
