@@ -28,7 +28,7 @@ function Portfolio() {
         <ul className="flex flex-wrap justify-center gap-4">
           {publishedDemos.map(demo => (
             <li key={demo.id}>
-              <Link to={`/portfolio/${demo.id}`} className="inline-block px-4 py-2 bg-muted hover:bg-primary/10 hover:text-primary rounded-lg text-foreground font-medium transition-colors">
+              <Link to={`/portfolio/${demo.id}` as any} className="inline-block px-4 py-2 bg-muted hover:bg-primary/10 hover:text-primary rounded-lg text-foreground font-medium transition-colors">
                 {demo.title}
               </Link>
             </li>

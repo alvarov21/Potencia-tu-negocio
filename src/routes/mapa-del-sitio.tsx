@@ -52,7 +52,7 @@ function SitemapComponent() {
             <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {CITIES.map(city => (
                 <li key={`seo-${city}`}>
-                  <Link to={`/seo-local/${city}`} className="text-sm text-muted-foreground hover:text-primary transition">
+                  <Link to={`/seo-local/${city}` as any} className="text-sm text-muted-foreground hover:text-primary transition">
                     SEO Local {capitalize(city)}
                   </Link>
                 </li>
@@ -69,7 +69,7 @@ function SitemapComponent() {
             <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {CITIES.map(city => (
                 <li key={`web-${city}`}>
-                  <Link to={`/diseno-web/${city}`} className="text-sm text-muted-foreground hover:text-primary transition">
+                  <Link to={`/diseno-web/${city}` as any} className="text-sm text-muted-foreground hover:text-primary transition">
                     Diseño Web {capitalize(city)}
                   </Link>
                 </li>
@@ -90,7 +90,7 @@ function SitemapComponent() {
                   <ul className="space-y-2">
                     {CITIES.slice(0, 5).map(city => (
                       <li key={`${sector.id}-${city}`}>
-                        <Link to={`/diseno-web-para-${sector.id}/${city}`} className="text-xs text-muted-foreground hover:text-primary transition block">
+                        <Link to={`/diseno-web-para-${sector.id}/${city}` as any} className="text-xs text-muted-foreground hover:text-primary transition block">
                           {sector.label} en {capitalize(city)}
                         </Link>
                       </li>

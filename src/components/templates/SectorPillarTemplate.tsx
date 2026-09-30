@@ -70,7 +70,7 @@ export function SectorPillar({ sector }: { sector: string }) {
           {VALID_CITIES.map(city => (
             <Link 
               key={city} 
-              to={`/diseno-web-para-${sector}/${city}`}
+              to={`/diseno-web-para-${sector}/${city}` as any}
               className="px-4 py-3 bg-card border border-border rounded-xl text-center text-sm font-medium hover:border-primary hover:text-primary transition"
             >
               {capitalize(city)}

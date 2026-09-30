@@ -111,7 +111,7 @@ function DisenoWebLocal() {
         <p className="text-muted-foreground text-lg mb-8 leading-relaxed text-balance">
           Conocemos el mercado de {cityDisplay}. Sabemos cómo buscan tus clientes y qué esperan encontrar. Desde pequeños comercios y restaurantes hasta clínicas y despachos profesionales.
         </p>
-        <Link to="/#precios" className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary font-semibold hover:bg-primary/90 transition text-primary-foreground">
+        <Link to={"/#precios" as any} className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary font-semibold hover:bg-primary/90 transition text-primary-foreground">
           Ver nuestros planes <ArrowRight className="w-5 h-5" />
         </Link>
       </div>

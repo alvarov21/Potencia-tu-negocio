@@ -20,6 +20,7 @@ const FAQS = [
   { q: "¿Qué diferencia hay entre vosotros y una agencia de diseño web tradicional?", a: "Tres cosas: velocidad, precio y que no te mareamos. Una agencia tradicional en España suele cobrar de 800€ a 2.000€, tardar de 4 a 8 semanas y pedirte varias reuniones; en Potencia tu Negocio pagas desde 295€ cerrados, ves tu web en 48 horas y solo necesitamos 10 minutos de conversación. La diferencia está en el método: la inteligencia artificial hace el trabajo lento (primeros diseños, borradores) y nosotros lo personalizamos a mano para tu sector y tu ciudad. Mismo resultado profesional, sin las horas facturables de por medio." },
   { q: "¿Una página web hecha con inteligencia artificial no será peor que una 'de verdad'?", a: "Es la duda más habitual y es razonable. La respuesta corta: la IA no decide cómo queda tu web, la usamos para ir rápido en lo mecánico. Los primeros diseños y borradores de texto salen de la IA; la adaptación a tu sector, las fotos de tu local, los textos finales y el SEO de tu ciudad los trabajamos nosotros. El resultado es una web única para tu negocio — no una plantilla — a una fracción del precio y del tiempo. Y la ves en 48 horas: si no te convence lo que ves, no pagas más rondas ni te quedas atrapado." },
   { q: "¿Para qué tipo de negocios hacéis páginas web?", a: "Para negocios locales de cualquier sector. Donde más experiencia tenemos es en hostelería — restaurantes, bares y cafeterías, con carta digital, reservas y reseñas — pero trabajamos también con clínicas dentales y de salud, psicólogos, veterinarias, talleres mecánicos, gestorías, academias, gimnasios, inmobiliarias, electricistas, peluquerías, centros de estética, fotógrafos y joyerías. Si tu negocio atiende a clientes de tu zona, la metodología es la misma: que te encuentren en Google antes que a tu competencia." },
+  { q: "¿Trabajáis con profesionales puramente online (DJs, freelancers, artistas...)?", a: "¡Por supuesto! Aunque hablamos mucho de locales físicos, también creamos webs para DJs, artistas, consultores y marcas personales. Si tu negocio es 100% online o te desplazas, cambiamos el enfoque local por una estrategia de portfolio puro: destacamos tu trabajo, integramos tus redes/música y ponemos un sistema de contratación o reservas directo para que tus seguidores se conviertan en clientes." },
   { q: "Tengo dos planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia desde 295€ — web multipágina con tu información, WhatsApp, Google Maps y SEO local básico. Si quieres que además trabajemos activamente para que te encuentren antes que tu competencia (un restaurante, una clínica), el Plan Crecimiento desde 675€ + 65,90€/mes — con análisis SEO exhaustivo, reservas o catálogo, gestión de tu ficha de Google y cambios ilimitados. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos." },
   { q: "¿Qué es eso del SEO local y por qué insistís tanto?", a: "El SEO local es que tu negocio salga en Google cuando alguien de tu zona busca lo que tú vendes — 'fontanero en Móstoles', 'cafetería con terraza en Salamanca'. Insistimos porque es la diferencia entre una web que decora y una web que trae clientes: 8 de cada 10 personas buscan un negocio local desde el móvil antes de llamar o ir. Por eso todas nuestras webs incluyen SEO local desde el primer día — textos optimizados para tu ciudad, ficha de Google Business dada de alta y Google Maps integrado — sin coste extra." },
   { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión, publicada en menos de 7 días. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
@@ -284,15 +285,61 @@ function Hero() {
       <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
         <div className="max-w-3xl">
           <span className="inline-block text-xs font-semibold tracking-[0.2em] text-primary uppercase mb-6 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20">
-            Agencia de diseño web con IA · Negocios locales
+            Diseño web con IA · Negocios Locales & Creadores
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05] mb-6">
             Diseño de páginas web profesional para negocios locales. <br className="hidden lg:block" />
             Lista en <span className="text-primary">48 horas</span>, con dominio incluido.
           </h1>
-          <p className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed">
-            Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
-          </p>
+          <div className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed space-y-4">
+            <p>
+              Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
+            </p>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button className="inline-flex items-center gap-2 text-base px-4 py-2 rounded-lg bg-secondary/30 border border-border hover:bg-secondary/50 transition-colors text-left group">
+                  <span className="relative flex h-2.5 w-2.5 shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
+                  </span>
+                  <span className="text-foreground/90">
+                    <strong>¿Sin local físico?</strong> Descubre para qué otros perfiles trabajamos <span className="inline-block ml-1 text-primary font-bold group-hover:translate-x-1 transition-transform">→</span>
+                  </span>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-lg">
+                <DialogTitle className="text-2xl font-bold">Sin local físico, pero con mucha presencia</DialogTitle>
+                <DialogDescription className="text-base text-foreground mb-4">
+                  Aunque nuestro foco principal es el SEO Local para negocios físicos, también diseñamos "bases de operaciones" enfocadas a conversiones para profesionales itinerantes u online:
+                </DialogDescription>
+                <ul className="space-y-4 text-sm text-muted-foreground mb-4">
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Freelancers y Consultores online:</strong> Vende tus servicios sin límites geográficos.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Fotografía sin estudio:</strong> Fotógrafos de bodas, eventos o nómadas. Tu portfolio es tu mejor comercial.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>DJs, Artistas y Músicos:</strong> Centraliza tus redes, fechas de bolos y opciones de contratación.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Entrenadores a domicilio o terapeutas online:</strong> Integración de videollamadas y calendarios de reserva.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Check className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                    <span><strong>Marcas personales y Creadores de contenido:</strong> Monetiza tu audiencia sin depender del algoritmo.</span>
+                  </li>
+                </ul>
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm font-medium">¿Encajas en este perfil? Pídenos el prediseño gratis y adaptaremos la estrategia a tu caso.</p>
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
           
           {/* Desktop Button (Liquid Glass iPhone style) */}
           <div className="hidden lg:flex">
@@ -1411,11 +1458,11 @@ function Footer() {
         <div className="lg:col-span-1">
           <h3 className="text-foreground font-semibold mb-6">Agencias Locales</h3>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/diseno-web/sevilla" className="hover:text-primary transition">Diseño Web Sevilla</Link></li>
-            <li><Link to="/diseno-web/malaga" className="hover:text-primary transition">Diseño Web Málaga</Link></li>
-            <li><Link to="/diseno-web/granada" className="hover:text-primary transition">Diseño Web Granada</Link></li>
-            <li><Link to="/seo-local/madrid" className="hover:text-primary transition">SEO Local Madrid</Link></li>
-            <li><Link to="/seo-local/barcelona" className="hover:text-primary transition">SEO Local Barcelona</Link></li>
+            <li><Link to={"/diseno-web/sevilla" as any} className="hover:text-primary transition">Diseño Web Sevilla</Link></li>
+            <li><Link to={"/diseno-web/malaga" as any} className="hover:text-primary transition">Diseño Web Málaga</Link></li>
+            <li><Link to={"/diseno-web/granada" as any} className="hover:text-primary transition">Diseño Web Granada</Link></li>
+            <li><Link to={"/seo-local/madrid" as any} className="hover:text-primary transition">SEO Local Madrid</Link></li>
+            <li><Link to={"/seo-local/barcelona" as any} className="hover:text-primary transition">SEO Local Barcelona</Link></li>
           </ul>
         </div>
         <div className="lg:col-span-1">
