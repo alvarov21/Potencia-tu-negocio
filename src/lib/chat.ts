@@ -63,35 +63,33 @@ export const sendChatMessage = createServerFn({ method: 'POST' })
           parts: [{ text: m.content }],
         }));
 
-      const model = genAI.getGenerativeModel({
-        model: 'gemini-3.5-flash',
-        systemInstruction: systemPrompt,
-      });
-
       const lastMessage = formattedHistory.pop();
       if (!lastMessage) return { error: 'No hay mensajes en el historial.' };
 
+      const MODELS = ['gemini-3.5-flash', 'gemini-3.5-flash-lite'];
       let text = '';
-      let attempts = 2;
-      while (attempts > 0) {
+      let lastError: any = null;
+
+      for (const modelName of MODELS) {
         try {
+          const model = genAI.getGenerativeModel({
+            model: modelName,
+            systemInstruction: systemPrompt
+          });
           const chat = model.startChat({ history: formattedHistory });
-          const result = await withTimeout(chat.sendMessage(lastMessage.parts[0].text), 10000);
+          const result = await withTimeout(chat.sendMessage(lastMessage.parts[0].text), 9000);
           text = result.response.text();
           break;
         } catch (e: any) {
-          attempts--;
+          lastError = e;
+          console.error(`[Chatbot API Error] ${modelName}:`, e);
           const msg = (e.message || '').toLowerCase();
-          const isRetryable = msg.includes('503') || msg.includes('timeout') || msg.includes('abort') || e.name === 'AbortError';
-          
-          if (isRetryable && attempts > 0) {
-            await new Promise(r => setTimeout(r, 1500));
-            continue;
-          }
-          console.error('[Chatbot API Error]', e);
-          return { error: e.message || 'Error de la API de Gemini.' };
+          const isRetryable = msg.includes('503') || msg.includes('429') || msg.includes('timeout') || msg.includes('abort') || msg.includes('high demand') || msg.includes('overloaded');
+          if (!isRetryable) break;
         }
       }
+
+      if (!text) return { error: lastError?.message || 'Error de la API de Gemini.' };
 
       return { text };
     } catch (error: any) {
