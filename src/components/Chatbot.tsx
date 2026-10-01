@@ -39,8 +39,13 @@ export function Chatbot() {
     setIsLoading(true);
 
     try {
-      // Call secure server function
-      const response = await sendMessageFn({ data: { messages: newMessages } });
+      // Call secure server function with 25s timeout
+      const response = await Promise.race([
+        sendMessageFn({ data: { messages: newMessages } }),
+        new Promise<any>((_, reject) => 
+          setTimeout(() => reject(new Error('Timeout de conexión')), 25000)
+        )
+      ]);
       
       if (response.error) {
         // En desarrollo mostramos el error real en la UI; en producción mostramos el mensaje amable para no alarmar al visitante

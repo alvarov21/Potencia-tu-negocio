@@ -59,7 +59,7 @@ export const sendChatMessage = createServerFn({ method: 'POST' })
       const model = genAI.getGenerativeModel({
         model: 'gemini-3.5-flash',
         systemInstruction: systemPrompt,
-      });
+      }, { timeout: 10000 });
 
       const lastMessage = formattedHistory.pop();
       if (!lastMessage) return { error: 'No hay mensajes en el historial.' };
@@ -67,15 +67,18 @@ export const sendChatMessage = createServerFn({ method: 'POST' })
       const chat = model.startChat({ history: formattedHistory });
       
       let text = '';
-      let retries = 3;
-      while (retries > 0) {
+      let attempts = 2;
+      while (attempts > 0) {
         try {
           const result = await chat.sendMessage(lastMessage.parts[0].text);
           text = result.response.text();
           break;
         } catch (e: any) {
-          if (e.message && e.message.includes('503') && retries > 1) {
-            retries--;
+          attempts--;
+          const msg = (e.message || '').toLowerCase();
+          const isRetryable = msg.includes('503') || msg.includes('timeout') || msg.includes('abort') || e.name === 'AbortError';
+          
+          if (isRetryable && attempts > 0) {
             await new Promise(r => setTimeout(r, 1500));
             continue;
           }
