@@ -43,7 +43,7 @@ export function Chatbot() {
       const response = await sendMessageFn({ data: { messages: newMessages } });
       
       if (response.error) {
-        // Mostramos el error real en la UI temporalmente para depurar
+        // En desarrollo mostramos el error real en la UI; en producción mostramos el mensaje amable para no alarmar al visitante
         console.error('[Chatbot] Error del servidor:', response.error);
         setMessages(prev => [...prev, { role: "assistant", content: import.meta.env.DEV ? `Ups, error técnico: ${response.error}` : "Ups, parece que mis servidores están saturados ahora mismo. ¿Puedes escribirme por WhatsApp mejor?" }]);
       } else if (response.text) {
