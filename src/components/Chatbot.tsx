@@ -45,7 +45,7 @@ export function Chatbot() {
       if (response.error) {
         // Mostramos el error real en la UI temporalmente para depurar
         console.error('[Chatbot] Error del servidor:', response.error);
-        setMessages(prev => [...prev, { role: 'assistant', content: `Ups, error técnico: ${response.error}` }]);
+        setMessages(prev => [...prev, { role: "assistant", content: import.meta.env.DEV ? `Ups, error técnico: ${response.error}` : "Ups, parece que mis servidores están saturados ahora mismo. ¿Puedes escribirme por WhatsApp mejor?" }]);
       } else if (response.text) {
         setMessages(prev => [...prev, { role: 'assistant', content: response.text }]);
       }
