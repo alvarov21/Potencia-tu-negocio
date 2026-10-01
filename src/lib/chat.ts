@@ -38,6 +38,13 @@ REGLAS DE ORO:
 - NUNCA inventes características ni prometas posiciones exactas en Google (número 1 garantizado no existe).
 `;
 
+function withTimeout<T>(p: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([
+    p,
+    new Promise<T>((_, reject) => setTimeout(() => reject(new Error('timeout')), ms))
+  ]);
+}
+
 export const sendChatMessage = createServerFn({ method: 'POST' })
   .validator((data: { messages: Array<{ role: string; content: string }> }) => data)
   .handler(async ({ data }) => {
@@ -59,18 +66,17 @@ export const sendChatMessage = createServerFn({ method: 'POST' })
       const model = genAI.getGenerativeModel({
         model: 'gemini-3.5-flash',
         systemInstruction: systemPrompt,
-      }, { timeout: 10000 });
+      });
 
       const lastMessage = formattedHistory.pop();
       if (!lastMessage) return { error: 'No hay mensajes en el historial.' };
 
-      const chat = model.startChat({ history: formattedHistory });
-      
       let text = '';
       let attempts = 2;
       while (attempts > 0) {
         try {
-          const result = await chat.sendMessage(lastMessage.parts[0].text);
+          const chat = model.startChat({ history: formattedHistory });
+          const result = await withTimeout(chat.sendMessage(lastMessage.parts[0].text), 10000);
           text = result.response.text();
           break;
         } catch (e: any) {
