@@ -3,14 +3,14 @@ import { useState } from "react";
 import { Check, Shield, Globe, MapPin, MessageCircle, FileText, ArrowRight, Paintbrush, Rocket, X, Star, ChevronDown } from "lucide-react";
 
 const FAQS = [
-  { q: "¿Cuánto cuesta hacer una página web para un negocio pequeño?", a: "En Potencia tu Negocio, desde 295€ de configuración inicial (+89,90€/año de mantenimiento). Ese precio inicial ya lleva el diseño, los textos y la ficha de Google Business, y la cuota anual cubre el dominio, el hosting, el certificado de seguridad y el soporte. Para que te hagas una idea del mercado: una agencia tradicional en España suele cobrar entre 800€ y 2.000€ por lo mismo, y tardar semanas. Nuestro precio es cerrado: el número que ves es el número que pagas." },
-  { q: "¿Cuánto se tarda en tener lista una página web?", a: "Con nosotros, ves la primera versión de tu web en 48 horas y está publicada en internet en menos de 7 días. El estándar del sector son 4 a 8 semanas, así que sí, la diferencia es grande. ¿El truco? Usamos inteligencia artificial para diseñar y redactar más rápido, y luego lo personalizamos a mano para tu sector y tu ciudad. Tú solo necesitas dedicarnos 10 minutos para contarnos tu negocio y pasarnos unas fotos." },
+  { q: "¿Cuánto cuesta hacer una página web para un negocio pequeño?", a: "En Potencia tu negocio, desde 295€ + IVA de configuración inicial (y, desde el segundo año, 89,90€/año de mantenimiento). Ese precio inicial ya lleva el diseño, los textos y la ficha de Google Business, y la cuota anual cubre el dominio, el hosting, el certificado de seguridad y el soporte. Para que te hagas una idea del mercado: una agencia tradicional en España suele cobrar entre 800€ y 2.000€ por lo mismo, y tardar semanas. Nuestro precio es cerrado: el número que ves es el número que pagas." },
+  { q: "¿Cuánto se tarda en tener lista una página web?", a: "Con nosotros, ves la primera versión de tu web en 48 horas y está publicada en internet en menos de 7 días desde que la apruebas. El estándar del sector son 4 a 8 semanas, así que sí, la diferencia es grande. ¿El truco? Usamos inteligencia artificial para diseñar y redactar más rápido, y luego lo personalizamos a mano para tu sector y tu ciudad. Tú solo necesitas dedicarnos 10 minutos para contarnos tu negocio y pasarnos unas fotos." },
   { q: "No tengo ni idea de informática, ¿puedo tener una página web igualmente?", a: "Claro que sí — de hecho, la mayoría de nuestros clientes no sabe (ni quiere saber) de tecnología. Tú nos cuentas cómo es tu negocio, como se lo contarías a un amigo, y nosotros hacemos todo lo demás: diseño, textos, dominio, parte legal y publicación. Tu única tarea es mirar la web en tu móvil y decirnos \"me gusta\" o \"cámbiame esto\". No tocas ni un botón técnico, nunca." },
-  { q: "¿Qué incluye exactamente el precio? ¿Luego hay sorpresas?", a: "No hay sorpresas — es nuestra regla número uno. En el plan básico pagas 295€ de configuración y una cuota de 89,90€ al año. Ese precio lo incluye todo: tu dominio (tunegocio.es, a tu nombre), hosting y SSL, diseño adaptado a móvil, textos escritos por nosotros, botón de WhatsApp, formulario de contacto, Google Maps, ficha de Google Business dada de alta y textos legales RGPD. Sabes lo que te va a costar desde el primer día, no te lo encuentras en la factura." },
-  { q: "¿La página web será mía o me quedo atado a vosotros?", a: "Es tuya. El dominio se registra a tu nombre desde el día uno — no al nuestro, como hacen otros — y con el Plan Premium (675€) puedes llevarte también el código completo de la web cuando quieras. Sin permanencias y sin \"secuestros\": si un día decides irte con otro proveedor, te llevas todo. Ambos planes no tienen permanencia: cancela cuando quieras." },
+  { q: "¿Qué incluye exactamente el precio? ¿Luego hay sorpresas?", a: "No hay sorpresas — es nuestra regla número uno. En el Plan Presencia pagas 295€ + IVA de configuración y, desde el segundo año, una cuota de 89,90€ al año. Ese precio lo incluye todo: tu dominio (tunegocio.es, a tu nombre), hosting y SSL, diseño adaptado a móvil, textos escritos por nosotros, botón de WhatsApp, formulario de contacto, Google Maps, ficha de Google Business dada de alta y textos legales RGPD. Sabes lo que te va a costar desde el primer día, no te lo encuentras en la factura." },
+  { q: "¿La página web será mía o me quedo atado a vosotros?", a: "Es tuya. El dominio se registra a tu nombre desde el día uno — no al nuestro, como hacen otros — y, una vez pagada, la web también es tuya en cualquier plan: puedes llevártela entera a otro proveedor cuando quieras. Sin permanencias y sin \"secuestros\": si un día decides irte con otro proveedor, te llevas todo. Ambos planes no tienen permanencia: cancela cuando quieras." },
   { q: "¿Me va a servir la web para conseguir clientes o es solo para quedar bien?", a: "Para conseguir clientes — si no, no tendría sentido. Cada web se optimiza para que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad (\"cerrajero en Getafe\", \"restaurante en Vigo centro\"): eso es el SEO local, y va incluido desde el primer día, no como extra. Además te damos de alta la ficha de Google Business, que es lo que te saca en Google Maps. El 80% de tus clientes potenciales busca desde el móvil; el objetivo es que te encuentren a ti y te escriban por WhatsApp directamente." },
-  { q: "Tengo un restaurante, ¿qué me ponéis en la web?", a: "Los restaurantes son nuestra especialidad. Tu web incluye carta digital con fotos y precios (con QR físico para las mesas si eliges el Plan Premium), reservas directas por WhatsApp o email sin pagar comisiones a plataformas, tus reseñas de Google mostradas en tiempo real y conexión con lo que ya uses: TheFork, TripAdvisor, Glovo, Just Eat, Uber Eats... La idea es que quien te busque reserve contigo directamente, no a través de un intermediario que te cobra por cada mesa." },
-  { q: "¿Qué pasa si quiero cambiar algo después, como el horario o los precios?", a: "Depende del plan, pero nunca te quedas tirado. Con el Plan Básico tienes una ronda de cambios gratis los primeros 30 días. Con el Plan Premium (65,90€/mes), los cambios son ilimitados y los hacemos en menos de 24 horas: nos escribes \"súbeme el menú nuevo\" por WhatsApp y al día siguiente está. Es la opción de quien no quiere volver a pensar en la web nunca más." },
+  { q: "Tengo un restaurante, ¿qué me ponéis en la web?", a: "Los restaurantes son nuestra especialidad. Tu web incluye carta digital con fotos y precios (con su código QR para imprimir y poner en las mesas), reservas directas por WhatsApp o email sin pagar comisiones a plataformas, tus reseñas de Google mostradas en tiempo real y conexión con lo que ya uses: TheFork, TripAdvisor, Glovo, Just Eat, Uber Eats... La idea es que quien te busque reserve contigo directamente, no a través de un intermediario que te cobra por cada mesa." },
+  { q: "¿Qué pasa si quiero cambiar algo después, como el horario o los precios?", a: "Depende del plan, pero nunca te quedas tirado. Con el Plan Presencia tienes 30 días de ajustes gratis en textos, fotos y horarios desde que se publica; después, te pasamos presupuesto antes de cada cambio. Con el Plan Crecimiento (65,90€/mes), los cambios son ilimitados y los hacemos en menos de 24 horas: nos escribes \"súbeme el menú nuevo\" por WhatsApp y al día siguiente está. Es la opción de quien no quiere volver a pensar en la web nunca más." },
   { q: "¿Por qué sois tan baratos? ¿No será una plantilla cutre?", a: "Buena pregunta, y la respuesta es honesta: usamos inteligencia artificial para la parte lenta del trabajo (primeros diseños, borradores de textos), y eso recorta muchísimas horas. Lo que no recortamos es la personalización: cada web se adapta a tu sector, tu ciudad y tus fotos, con SEO local trabajado a mano. No es una plantilla genérica — es un proceso eficiente. Por eso podemos cobrar 295€ donde otros cobran 1.000€, y entregarte en 48 horas lo que otros entregan en un mes." },
   { q: "¿Cómo empiezo? ¿Tengo que firmar algo o pagar por adelantado?", a: "Empiezas gratis y sin compromiso: nos escribes por WhatsApp o rellenas el formulario contándonos tu negocio en 2 minutos, y en menos de 24 horas te enviamos una propuesta personalizada con cómo sería tu web y su precio exacto. Si te encaja, arrancamos y en 48 horas ves la primera versión. Si no te encaja, no pasa nada — no hay llamadas comerciales ni insistencia. La propuesta es gratis precisamente para que decidas viendo algo concreto, no a ciegas." },
 ];
@@ -124,15 +124,15 @@ function DisenoWebEmpresas() {
                 <div className="relative w-16 h-16 rounded-full bg-gradient-cta flex items-center justify-center text-white"><Paintbrush className="w-6 h-6" /></div>
               </div>
               <h3 className="text-xl font-bold mb-3">2. En 48h ves tu web</h3>
-              <p className="text-sm text-muted-foreground">Diseñamos una primera versión funcional para que la veas en tu móvil y nos des el ok.</p>
+              <p className="text-sm text-muted-foreground">Con tus fotos y datos, diseñamos una primera versión funcional para que la veas en tu móvil y nos des el ok.</p>
             </div>
             <div className="flex flex-col items-center text-center group">
               <div className="relative w-24 h-24 flex items-center justify-center mb-6">
                 <div className="absolute inset-0 rounded-full bg-primary/10 blur-xl"></div>
                 <div className="relative w-16 h-16 rounded-full bg-gradient-cta flex items-center justify-center text-white"><Rocket className="w-6 h-6" /></div>
               </div>
-              <h3 className="text-xl font-bold mb-3">3. Publicada en 7 días</h3>
-              <p className="text-sm text-muted-foreground">Aplicamos tus cambios y la lanzamos al mundo para que empieces a recibir clientes.</p>
+              <h3 className="text-xl font-bold mb-3">3. Publicada en menos de 7 días</h3>
+              <p className="text-sm text-muted-foreground">Aplicamos tus cambios (2 rondas incluidas) y, en menos de 7 días desde tu ok, la lanzamos para que empieces a recibir clientes.</p>
             </div>
           </div>
         </div>
@@ -156,7 +156,7 @@ function DisenoWebEmpresas() {
               </ul>
             </div>
             <div className="bg-card border-2 border-primary/50 rounded-2xl p-8 shadow-glow relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-xs font-bold text-primary-foreground uppercase tracking-wider">Potencia tu Negocio</div>
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-primary text-xs font-bold text-primary-foreground uppercase tracking-wider">Potencia tu negocio</div>
               <h3 className="text-xl font-bold mb-6 text-center">Nuestra Web Profesional</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-sm"><Check className="w-5 h-5 text-primary shrink-0" /> 0 horas de tu tiempo. Tú a lo tuyo, nosotros a la web.</li>
@@ -180,26 +180,26 @@ function DisenoWebEmpresas() {
             {/* Plan Presencia */}
             <article className="bg-card border border-border rounded-3xl p-8 flex flex-col">
               <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">Básico</span>
-              <h3 className="text-2xl font-bold mb-2">Plan Reservas PRO</h3>
+              <h3 className="text-2xl font-bold mb-2">Plan Presencia</h3>
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">295€</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                  Pago único &middot; después 24,95€/mes<br />
+                  Pago único + IVA &middot; después 89,90€/año<br />
                   (dominio, hosting y soporte)
                 </div>
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto">
-                <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Web Landing Page</li>
+                <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Web a medida con textos incluidos</li>
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Dominio y SSL</li>
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Google Maps y WhatsApp</li>
               </ul>
-              <p className="text-xs text-muted-foreground italic mb-5 mt-4">Renovación anual opcional por 89,90 € o transferencia del dominio a tu nombre (gratis).</p>
+              <p className="text-xs text-muted-foreground italic mb-5 mt-4">Renovación anual opcional por 89,90 €. Si no renuevas, te pasamos gratis el control de tu dominio y una copia de tu web.</p>
               <a href="#contacto" className="block text-center mt-auto py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition">
                 Solicitar Propuesta
               </a>
             </article>
 
-            {/* Plan Presencia */}
+            {/* Plan Reservas PRO */}
             <article className="relative bg-card border-2 border-primary rounded-3xl p-8 flex flex-col shadow-glow">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-cta text-xs font-bold uppercase tracking-wider text-white">Más elegido</span>
               <span className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Avanzado</span>
@@ -211,13 +211,13 @@ function DisenoWebEmpresas() {
                 </div>
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">19€/mes</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                  33€ setup inicial (dominio, hosting y soporte)
+                  33€ de puesta en marcha (dominio, hosting y soporte)
                 </div>
               </div>
               <ul className="space-y-3 mb-8 text-sm mt-auto">
-                <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Web Multipágina</li>
+                <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Web del negocio (landing + servicios)</li>
                 <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> Sistema de Reservas/Citas</li>
-                <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> SEO Local Trabajado</li>
+                <li className="flex gap-3"><Check className="w-4 h-4 text-primary shrink-0" /> 0% comisiones por reserva</li>
               </ul>
               <a href="#contacto" className="block text-center mt-4 py-3.5 rounded-full bg-gradient-cta font-semibold shadow-glow hover:opacity-90 transition text-white">
                 Solicitar Propuesta
@@ -231,7 +231,7 @@ function DisenoWebEmpresas() {
               <div className="mb-6 mt-4">
                 <div className="flex items-baseline gap-1.5"><span className="text-5xl font-black text-foreground">675€</span><span className="text-sm text-muted-foreground">+65,90€/mes</span></div>
                 <div className="text-sm text-muted-foreground mt-2 leading-snug">
-                  Mantenimiento incluido &middot; 65,90€/mes<br />
+                  Pago único + IVA &middot; 65,90€/mes desde el 2º mes<br />
                   (dominio, hosting, cambios y soporte)
                 </div>
               </div>

@@ -15,16 +15,16 @@ import { ComparativaBooksy } from "../components/ComparativaBooksy";
 const Portfolio3D = lazy(() => import("../components/Portfolio3D").then(m => ({ default: m.Portfolio3D })));
 
 const FAQS = [
-  { q: "¿Qué es Potencia tu Negocio y qué hacéis exactamente?", a: "Potencia tu Negocio es una agencia de diseño web con inteligencia artificial especializada en negocios locales de España: restaurantes, bares, clínicas, talleres, peluquerías, gestorías... Creamos tu página web completa — diseño, textos, dominio, hosting y ficha de Google Business — desde 295€ en pago único, con la primera versión lista en 48 horas y publicada en menos de 7 días. Nuestro objetivo no es que 'tengas una web': es que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad." },
-  { q: "¿Trabajáis en toda España o solo en algunas ciudades?", a: "En toda España. Todo el proceso es por WhatsApp, teléfono o email, así que da igual que tu negocio esté en Madrid, en Albacete o en un pueblo de 5.000 habitantes — de hecho, cuanto más local es la competencia, más fácil es posicionarte el primero en tu zona. Cada web se optimiza específicamente para las búsquedas de tu municipio y provincia, no con textos genéricos que valen para cualquier sitio." },
-  { q: "¿Qué diferencia hay entre vosotros y una agencia de diseño web tradicional?", a: "Tres cosas: velocidad, precio y que no te mareamos. Una agencia tradicional en España suele cobrar de 800€ a 2.000€, tardar de 4 a 8 semanas y pedirte varias reuniones; en Potencia tu Negocio pagas desde 295€ cerrados, ves tu web en 48 horas y solo necesitamos 10 minutos de conversación. La diferencia está en el método: la inteligencia artificial hace el trabajo lento (primeros diseños, borradores) y nosotros lo personalizamos a mano para tu sector y tu ciudad. Mismo resultado profesional, sin las horas facturables de por medio." },
-  { q: "¿Una página web hecha con inteligencia artificial no será peor que una 'de verdad'?", a: "Es la duda más habitual y es razonable. La respuesta corta: la IA no decide cómo queda tu web, la usamos para ir rápido en lo mecánico. Los primeros diseños y borradores de texto salen de la IA; la adaptación a tu sector, las fotos de tu local, los textos finales y el SEO de tu ciudad los trabajamos nosotros. El resultado es una web única para tu negocio — no una plantilla — a una fracción del precio y del tiempo. Y la ves en 48 horas: si no te convence lo que ves, no pagas más rondas ni te quedas atrapado." },
+  { q: "¿Qué es Potencia tu negocio y qué hacéis exactamente?", a: "Potencia tu negocio es una agencia de diseño web con inteligencia artificial especializada en negocios locales de España: restaurantes, bares, clínicas, talleres, peluquerías, gestorías... Creamos tu página web completa — diseño, textos, dominio, hosting y ficha de Google Business — desde 295€ en pago único, con la primera versión lista en 48 horas y publicada en menos de 7 días desde que la apruebas. Nuestro objetivo no es que 'tengas una web': es que aparezcas en Google cuando alguien busca lo que tú haces en tu ciudad." },
+  { q: "¿Trabajáis en toda España o solo en algunas ciudades?", a: "En toda España. Todo el proceso es por WhatsApp, teléfono o email, así que da igual que tu negocio esté en Madrid, en Albacete o en un pueblo de 5.000 habitantes — de hecho, cuanto más local es la competencia, más fácil es destacar en tu zona. Cada web se optimiza específicamente para las búsquedas de tu municipio y provincia, no con textos genéricos que valen para cualquier sitio." },
+  { q: "¿Qué diferencia hay entre vosotros y una agencia de diseño web tradicional?", a: "Tres cosas: velocidad, precio y que no te mareamos. Una agencia tradicional en España suele cobrar de 800€ a 2.000€, tardar de 4 a 8 semanas y pedirte varias reuniones; en Potencia tu negocio pagas desde 295€ cerrados, ves tu web en 48 horas y solo necesitamos 10 minutos de conversación. La diferencia está en el método: la inteligencia artificial hace el trabajo lento (primeros diseños, borradores) y nosotros lo personalizamos a mano para tu sector y tu ciudad. Mismo resultado profesional, sin las horas facturables de por medio." },
+  { q: "¿Una página web hecha con inteligencia artificial no será peor que una 'de verdad'?", a: "Es la duda más habitual y es razonable. La respuesta corta: la IA no decide cómo queda tu web, la usamos para ir rápido en lo mecánico. Los primeros diseños y borradores de texto salen de la IA; la adaptación a tu sector, las fotos de tu local, los textos finales y el SEO de tu ciudad los trabajamos nosotros. El resultado es una web única para tu negocio — no una plantilla — a una fracción del precio y del tiempo. Y antes de pagar ves tu prediseño gratis: si no te convence, no pagas nada ni te quedas atrapado." },
   { q: "¿Para qué tipo de negocios hacéis páginas web?", a: "Para negocios locales de cualquier sector. Donde más experiencia tenemos es en hostelería — restaurantes, bares y cafeterías, con carta digital, reservas y reseñas — pero trabajamos también con clínicas dentales y de salud, psicólogos, veterinarias, talleres mecánicos, gestorías, academias, gimnasios, inmobiliarias, electricistas, peluquerías, centros de estética, fotógrafos y joyerías. Si tu negocio atiende a clientes de tu zona, la metodología es la misma: que te encuentren en Google antes que a tu competencia." },
   { q: "¿Trabajáis con profesionales puramente online (DJs, freelancers, artistas...)?", a: "¡Por supuesto! Aunque hablamos mucho de locales físicos, también creamos webs para DJs, artistas, consultores y marcas personales. Si tu negocio es 100% online o te desplazas, cambiamos el enfoque local por una estrategia de portfolio puro: destacamos tu trabajo, integramos tus redes/música y ponemos un sistema de contratación o reservas directo para que tus seguidores se conviertan en clientes." },
-  { q: "Tengo dos planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia desde 295€ — web multipágina con tu información, WhatsApp, Google Maps y SEO local básico. Si quieres que además trabajemos activamente para que te encuentren antes que tu competencia (un restaurante, una clínica), el Plan Crecimiento desde 675€ + 65,90€/mes — con análisis SEO exhaustivo, reservas o catálogo, gestión de tu ficha de Google y cambios ilimitados. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos." },
+  { q: "Tengo dos planes delante, ¿cuál me conviene?", a: "Regla rápida: si solo necesitas que te encuentren (un electricista, un taller), el Plan Presencia desde 295€ — web multipágina con tu información, WhatsApp, Google Maps y SEO local básico. Si quieres que además trabajemos activamente para que te encuentren antes que tu competencia (un restaurante, una clínica), el Plan Crecimiento desde 675€ + 65,90€/mes — con análisis SEO exhaustivo, gestión de tu ficha de Google y cambios ilimitados. Si dudas, escríbenos: te decimos cuál encaja en 5 minutos." },
   { q: "¿Qué es eso del SEO local y por qué insistís tanto?", a: "El SEO local es que tu negocio salga en Google cuando alguien de tu zona busca lo que tú vendes — 'fontanero en Móstoles', 'cafetería con terraza en Salamanca'. Insistimos porque es la diferencia entre una web que decora y una web que trae clientes: 8 de cada 10 personas buscan un negocio local desde el móvil antes de llamar o ir. Por eso todas nuestras webs incluyen SEO local desde el primer día — textos optimizados para tu ciudad, ficha de Google Business dada de alta y Google Maps integrado — sin coste extra." },
-  { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión, publicada en menos de 7 días. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
-  { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google verificada, WhatsApp conectado y textos legales al día. Con el Plan Presencia tienes 30 días de ajustes gratis. Y si eliges el Plan Crecimiento, nos convertimos en 'tu informático': cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual donde ves cuánta gente visitó tu web, cuántos te llamaron y cuántos te escribieron por WhatsApp." },
+  { q: "¿Ya tengo una página web pero es antigua y no me trae clientes, ¿me la podéis rehacer?", a: "Sí, y es de los casos más frecuentes que nos llegan. Una web de hace 8 años que no se ve bien en el móvil o no aparece en Google te está costando clientes cada semana. La rehacemos desde cero con el mismo proceso: 48 horas para la primera versión y publicada en menos de 7 días desde que la apruebas. Si ya tienes dominio, lo conservamos — es tuyo y sigue siéndolo. Y tus textos, fotos y reseñas de Google se aprovechan; no empiezas de cero, empiezas de mejor." },
+  { q: "¿Qué pasa después de publicar la web? ¿Me quedo solo?", a: "No. Con cualquier plan, la web se entrega funcionando al completo: dominio activo, ficha de Google configurada, WhatsApp conectado y textos legales al día. Con el Plan Presencia tienes 30 días de ajustes gratis en textos, fotos y horarios. Y si eliges el Plan Crecimiento, nos convertimos en 'tu informático': cambios ilimitados en menos de 24 horas, gestión de reseñas y publicaciones en Google, copias de seguridad y un informe mensual con tus visitas, tu posición en Google y los clics desde Maps." },
   { q: "¿Puedo ver trabajos vuestros u opiniones antes de decidirme?", a: "Sí. Te enseñamos webs reales y maquetas funcionales que hemos hecho para negocios como el tuyo — pídenoslas por WhatsApp y te pasamos las de tu sector. Además, lo más útil es la propuesta gratuita: nos cuentas tu negocio en 2 minutos y en menos de 24 horas te enviamos cómo sería tu web y su precio exacto, sin compromiso. Decides viendo algo tuyo, no un catálogo genérico." },
 ];
 
@@ -76,7 +76,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
-          name: "Potencia tu Negocio",
+          name: "Potencia tu negocio",
           description: "Agencia de diseño web con IA especializada en negocios locales y hostelería en España.",
           url: "https://potenciatunegocio.eu/",
           areaServed: "ES",
@@ -103,8 +103,8 @@ const TOOLS = [
 ];
 
 const FEATURES = [
-  { icon: Search, title: "SEO local/exhaustivo optimizado", desc: "Tu negocio aparece primero en Google cuando alguien busca en tu ciudad. Optimizamos tu web y tu perfil de Google Business para restaurantes, clínicas, talleres y cualquier negocio local." },
-  { icon: Calendar, title: "Reservas y citas automáticas", desc: "Sistema de reservas o citas conectado a WhatsApp o email. Perfecto para restaurantes, clínicas, veterinarias y cualquier negocio que trabaje con citas previas." },
+  { icon: Search, title: "SEO local/exhaustivo optimizado", desc: "Trabajamos para que tu negocio salga en Google cuando alguien busca en tu ciudad. Optimizamos tu web y tu perfil de Google Business para restaurantes, clínicas, talleres y cualquier negocio local." },
+  { icon: Calendar, title: "Citas y reservas en un toque", desc: "Botón para pedir cita o reservar por WhatsApp o email. Y si tu negocio vive de las citas, el Plan Reservas PRO añade una agenda online automática." },
   { icon: UtensilsCrossed, title: "Carta digital o catálogo", desc: "Restaurantes con carta digital. Clínicas con tratamientos. Talleres con servicios. Todo con fotos, precios y categorías, actualizable en minutos." },
   { icon: MonitorSmartphone, title: "Diseño 100% responsive", desc: "El 80% de tus clientes te buscan desde el móvil. Tu web se verá perfecta en cualquier pantalla y transmitirá profesionalidad al segundo." },
   { icon: MessageCircle, title: "Botón WhatsApp directo", desc: "Un toque y tu cliente te escribe. Más consultas, más reservas, más ventas. Funciona en cualquier tipo de negocio local." },
@@ -217,7 +217,7 @@ function Home() {
             <h2 className="text-2xl font-bold mb-4">¿Quieres aprender más sobre diseño web y SEO local?</h2>
             <p className="text-muted-foreground mb-6">Visita nuestro blog para descubrir guías y estrategias que te ayudarán a captar más clientes en internet.</p>
             <Link to="/blog" className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border border-primary text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300">
-              Ir al Blog de Potencia tu Negocio
+              Ir al Blog de Potencia tu negocio
             </Link>
           </div>
         </section>
@@ -231,8 +231,8 @@ function Nav() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background/70 border-b border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
-        <a href="#top" className="font-bold text-base tracking-tight flex items-center gap-2" aria-label="Potencia tu Negocio - Inicio">
-          <img src="/logo-sm.webp" alt="Logo Potencia tu Negocio" className="w-7 h-7 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen" />
+        <a href="#top" className="font-bold text-base tracking-tight flex items-center gap-2" aria-label="Potencia tu negocio - Inicio">
+          <img src="/logo-sm.webp" alt="Logo Potencia tu negocio" className="w-7 h-7 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen" />
           <span>Potencia <span className="text-primary">tu negocio</span></span>
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm text-muted-foreground" aria-label="Navegación principal">
@@ -293,7 +293,7 @@ function Hero() {
           </h1>
           <div className="text-lg lg:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed space-y-4">
             <p>
-              Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que aparezcas primero cuando te busquen en tu ciudad.
+              Creamos webs con inteligencia artificial para restaurantes, clínicas, talleres, veterinarias, gestorías y todo tipo de negocio local. SEO incluido para que te encuentren cuando te busquen en tu ciudad.
             </p>
             <Dialog>
               <DialogTrigger asChild>
@@ -486,7 +486,7 @@ function About() {
           </h2>
           <div className="text-muted-foreground text-base lg:text-lg leading-relaxed mb-10 space-y-4">
             <p>
-              En <strong className="text-foreground">Potencia tu Negocio</strong> hacemos una sola cosa, y la hacemos rápido: webs que ponen a tu negocio delante de los clientes que ya te están buscando en Google. Primera versión en 48 horas, publicada en menos de 7 días y desde 295€ con todo incluido.
+              En <strong className="text-foreground">Potencia tu negocio</strong> hacemos una sola cosa, y la hacemos rápido: webs que ponen a tu negocio delante de los clientes que ya te están buscando en Google. Primera versión en 48 horas, publicada en menos de 7 días después de que la apruebes, y desde 295€ con todo incluido.
             </p>
             <p>
               ¿Por qué con inteligencia artificial? Porque hace el trabajo lento — primeros diseños, borradores de textos — y nos deja tiempo para lo que de verdad posiciona: adaptar cada web a tu sector, a tu ciudad y a lo que busca tu cliente. Por eso cobramos 295€ donde otras agencias cobran 1.000€, sin que la web parezca de 295€.
@@ -503,7 +503,7 @@ function About() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
             {[
-              { v: "< 7 días", l: "Tiempo medio hasta publicar tu web" },
+              { v: "< 7 días", l: "Desde tu visto bueno hasta publicarla" },
               { v: "100%", l: "Personalizado a tu sector y ciudad" },
               { v: "24/7", l: "Soporte en el Plan Mantenimiento" },
             ].map((s, i) => (
@@ -572,7 +572,7 @@ function HowItWorks() {
               <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase mb-2">Paso 2</span>
               <h3 className="text-xl font-bold mb-3">Diseño web profesional en 48 horas</h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-                Creamos tu página web completa: diseño, hosting y textos que venden. Primera versión lista para revisar en solo 48 horas.
+                Creamos tu página web completa: diseño, hosting y textos que venden. Primera versión lista para revisar en 48 horas desde que nos pasas tus fotos y datos.
               </p>
             </div>
 
@@ -590,7 +590,7 @@ function HowItWorks() {
               <span className="text-xs font-bold tracking-[0.15em] text-primary uppercase mb-2">Paso 3</span>
               <h3 className="text-xl font-bold mb-3">Revisión y lanzamiento</h3>
               <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
-                Nos dices los cambios y los aplicamos hasta que todo quede tal y como quieres. Publicamos tu web y tu negocio empieza a ser visible en Google.
+                Nos dices los cambios y los aplicamos: incluimos 2 rondas antes de publicar y 30 días de ajustes después. Publicamos tu web y tu negocio empieza a ser visible en Google.
               </p>
             </div>
 
@@ -769,7 +769,7 @@ function Pricing() {
           "image": "https://potenciatunegocio.eu/logo.png",
           "brand": {
             "@type": "Brand",
-            "name": "Potencia tu Negocio"
+            "name": "Potencia tu negocio"
           },
           "offers": {
             "@type": "Offer",
@@ -789,7 +789,7 @@ function Pricing() {
           "image": "https://potenciatunegocio.eu/logo.png",
           "brand": {
             "@type": "Brand",
-            "name": "Potencia tu Negocio"
+            "name": "Potencia tu negocio"
           },
           "offers": {
             "@type": "Offer",
@@ -835,7 +835,7 @@ function Pricing() {
                 {[
                   "Diseño web a medida y sin plantillas (Inicio, servicios, galería y contacto)",
                   "Tu negocio visible en Google (SEO local básico enfocado en tu ciudad)",
-                  "Sistemas de contacto rápido (Reservas, citas y botón de WhatsApp directo)",
+                  "Sistemas de contacto rápido (Botón de WhatsApp directo y botón de cita o reserva)",
                   "Catálogo o Carta digital (Muestra tus servicios con fotos y precios)",
                   "Aparición en Google Maps (Ficha de negocio configurada al 100%)",
                   "Todo incluido el primer año (Dominio .com/.es, alojamiento seguro y textos legales)"
@@ -848,7 +848,7 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-muted-foreground italic mb-5">Renovación anual opcional por 89,90 € o transferencia del dominio a tu nombre (gratis).</p>
+              <p className="text-xs text-muted-foreground italic mb-5">Renovación anual opcional por 89,90 €. Si no renuevas, te pasamos gratis el control de tu dominio y una copia de tu web.</p>
               <a href="#contacto" onClick={() => trackEvent("select_plan", { plan_name: "Plan Presencia", plan_price: 295 })} className="block text-center py-3.5 rounded-full border border-white/30 font-semibold hover:bg-white/5 transition relative z-20">
                 Contratar ahora
               </a>
@@ -1279,7 +1279,7 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
       <div className="absolute inset-0 bg-gradient-glow opacity-40 pointer-events-none" aria-hidden="true" />
       <div className="relative max-w-3xl mx-auto text-center">
         <h2 className="text-4xl lg:text-6xl font-bold tracking-tight mb-4 leading-[1.05]">
-          ¿Listo para que tu negocio aparezca primero en{" "}
+          ¿Listo para que tu negocio aparezca en{" "}
           <span>
             <span className="text-[#4285F4]">G</span>
             <span className="text-[#EA4335]">o</span>
@@ -1338,7 +1338,7 @@ export function Contact({ defaultSector = "" }: { defaultSector?: string }) {
             className="bg-card border border-border rounded-3xl p-6 lg:p-10 text-left space-y-4 shadow-card"
           >
             {/* FormSubmit Configuration */}
-            <input type="hidden" name="_subject" value="Nueva propuesta desde Potencia tu Negocio" />
+            <input type="hidden" name="_subject" value="Nueva propuesta desde Potencia tu negocio" />
             <input type="hidden" name="_template" value="table" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -1496,7 +1496,7 @@ function Footer() {
 
       <div className="max-w-7xl mx-auto py-12 px-6 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-sm text-muted-foreground">
         <div className="font-bold text-foreground flex items-center gap-2">
-          <img src="/logo.png" alt="Logo Potencia tu Negocio" loading="lazy" decoding="async" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
+          <img src="/logo.png" alt="Logo Potencia tu negocio" loading="lazy" decoding="async" className="w-6 h-6 object-contain rounded-sm invert grayscale brightness-200 contrast-125 mix-blend-screen opacity-80" />
           <span>Potencia <span className="text-primary">tu negocio</span></span>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
@@ -1506,7 +1506,7 @@ function Footer() {
           <Link to="/mapa-del-sitio" className="hover:text-foreground transition">Mapa del Sitio</Link>
         </div>
         <div className="text-xs text-center lg:text-right leading-relaxed">
-          © 2026 Potencia tu Negocio · Webs profesionales para negocios locales
+          © 2026 Potencia tu negocio · Webs profesionales para negocios locales
         </div>
 
       </div>
