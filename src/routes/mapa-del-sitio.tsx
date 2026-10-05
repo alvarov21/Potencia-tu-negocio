@@ -26,7 +26,7 @@ function capitalize(s: string) {
 export const Route = createFileRoute("/mapa-del-sitio")({
   head: () => ({
     meta: [
-      { title: "Mapa del Sitio | Potencia tu Negocio" },
+      { title: "Mapa del Sitio | Potencia tu negocio" },
       { name: "description", content: "Explora todas las localidades y sectores donde ofrecemos nuestros servicios de diseño web con inteligencia artificial y SEO local." }
     ]
   }),

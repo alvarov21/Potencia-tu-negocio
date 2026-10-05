@@ -152,7 +152,7 @@ export function Chatbot() {
             </div>
             <div>
               <h3 className="font-bold text-white leading-tight">Asistente</h3>
-              <p className="text-[10px] text-white/80 font-medium">Potencia tu Negocio</p>
+              <p className="text-[10px] text-white/80 font-medium">Potencia tu negocio</p>
             </div>
           </div>
           <button 

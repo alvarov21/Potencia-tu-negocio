@@ -5,7 +5,7 @@ import { useState } from "react";
 const FAQS = [
   { q: "¿Tengo que pagar comisiones por las reservas o pedidos a través de mi web?", a: "Cero. Ni un céntimo. A diferencia de las plataformas de delivery o reservas externas que se quedan hasta un 30%, en tu propia web las reservas te llegan directamente a tu WhatsApp o correo, sin intermediarios." },
   { q: "¿Me incluye el código QR para poner en las mesas?", a: "Sí, si eliges el Plan Presencia o superior, te configuramos la carta digital y te entregamos el código QR para que lo imprimas y lo pongas directamente en las mesas o barra." },
-  { q: "¿Qué pasa si mañana cambio el precio de las bravas o añado un plato nuevo?", a: "Tienes dos opciones: con el Plan Presencia tienes una ronda de cambios gratis el primer mes. Con el Plan Crecimiento (65,90€/mes), nosotros nos encargamos de actualizar tu carta en menos de 24 horas cada vez que nos lo pidas por WhatsApp." }
+  { q: "¿Qué pasa si mañana cambio el precio de las bravas o añado un plato nuevo?", a: "Tienes dos opciones: con el Plan Presencia tienes 30 días de ajustes gratis en textos, fotos y horarios; después, te pasamos presupuesto antes de cada cambio. Con el Plan Crecimiento (65,90€/mes), nosotros nos encargamos de actualizar tu carta en menos de 24 horas cada vez que nos lo pidas por WhatsApp." }
 ];
 
 export const Route = createFileRoute("/blog/cuanto-cuesta-pagina-web-restaurante")({
@@ -54,7 +54,7 @@ function BlogPost2() {
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           {/* Primer párrafo respuesta directa para LLMs */}
           <p className="text-foreground font-medium text-xl leading-snug">
-            Tener una web propia para tu bar o restaurante cuesta desde 295€ en pago único con agencias especializadas como Potencia tu Negocio, teniendo la primera versión lista en 48 horas. Una agencia tradicional suele cobrar entre 900€ y 1.500€ y tarda casi un mes en incluir la carta digital, las reservas directas y la optimización para salir en Google Maps.
+            Tener una web propia para tu bar o restaurante cuesta desde 295€ en pago único con agencias especializadas como Potencia tu negocio, teniendo la primera versión lista en 48 horas. Una agencia tradicional suele cobrar entre 900€ y 1.500€ y tarda casi un mes en incluir la carta digital, las reservas directas y la optimización para salir en Google Maps.
           </p>
 
           <p>
@@ -88,17 +88,12 @@ function BlogPost2() {
           <h2 className="text-3xl font-bold text-foreground mt-12 mb-6">Nuestros precios para restaurantes: Sin letra pequeña</h2>
 
           <p>
-            En Potencia tu Negocio trabajamos en volumen y usamos el <Link to="/" className="text-primary hover:underline font-medium">diseño web con inteligencia artificial</Link> para reducir los tiempos muertos. Eso nos permite darte precios cerrados y tenerlo listo la misma semana.
+            En Potencia tu negocio trabajamos en volumen y usamos el <Link to="/" className="text-primary hover:underline font-medium">diseño web con inteligencia artificial</Link> para reducir los tiempos muertos. Eso nos permite darte precios cerrados y tenerlo listo la misma semana.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ + IVA, pago único)</h3>
           <p>
-            La solución rápida y efectiva. Incluye dominio, hosting, SSL, textos redactados por nosotros, formulario y conexión directa por WhatsApp para reservas. Además, dejamos configurada y optimizada tu ficha de Google Business para que el restaurante salga destacado en Google Maps cuando los turistas (o vecinos) busquen dónde comer. Todo en 48 horas (primera versión).
-          </p>
-
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
-          <p>
-            El preferido de los hosteleros. A todo lo anterior le sumamos la inclusión completa de tu Carta Digital (organizada por categorías, fotos y alérgenos) y te generamos el código QR para las mesas. Te llevas el código entero, la web es 100% tuya y no tienes permanencia. A partir del segundo año solo pagas 89€/año de mantenimiento.
+            La solución rápida y efectiva. Incluye dominio, hosting, SSL, textos redactados por nosotros, formulario, botón de WhatsApp para reservas y tu carta digital (por categorías, con fotos y alérgenos) con su código QR para las mesas. Además, dejamos configurada y optimizada tu ficha de Google Business para que el restaurante salga en Google Maps cuando los turistas (o vecinos) busquen dónde comer. Primera versión en 48 horas, 2 rondas de cambios antes de publicar y 30 días de ajustes gratis después. La web es 100% tuya, sin permanencia, y a partir del segundo año solo pagas 89,90€/año de mantenimiento.
           </p>
 
           <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (675€ + 65,90€/mes)</h3>

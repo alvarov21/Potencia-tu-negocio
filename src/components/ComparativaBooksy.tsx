@@ -18,7 +18,7 @@ export function ComparativaBooksy() {
             <div className="p-6 flex items-center justify-start font-semibold text-muted-foreground">¿Qué ocurre con...?</div>
             <div className="p-6 flex flex-col items-center justify-center border-l border-border bg-primary/5 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-blue-600"></div>
-              <span className="font-bold text-lg text-foreground">Potencia tu Negocio</span>
+              <span className="font-bold text-lg text-foreground">Potencia tu negocio</span>
               <span className="text-xs font-medium text-primary mt-1 bg-primary/10 px-2 py-0.5 rounded-full">Plan Reservas PRO</span>
             </div>
             <div className="p-6 flex flex-col items-center justify-center border-l border-border bg-background/50 opacity-80">

@@ -142,13 +142,13 @@ export function getGeoContent(sector: string, city: string) {
         cityName,
         p1: fixGrammar(`La hostelería en ${cityName} no perdona. Si la gente busca dónde comer esta noche cerca de ${data.barrios[0]} o un buen menú del día por ${data.barrios[1]} y tu restaurante no sale en la primera página de Google, están yendo a la competencia.`),
         p2: fixGrammar(`No necesitas otra web anticuada. Creamos con IA una página atractiva para el público ${data.adjetivo}, integramos tu sistema de reservas y optimizamos tu ficha de Maps para que las reseñas trabajen por ti desde ${data.zona_centro} hasta ${data.referencia}.`),
-        p3: fixGrammar(`Todo listo en menos de 7 días, sin que tengas que dejar la cocina o la barra para hacer de informático. Posiciónate por delante de los demás locales de ${cityName}.`)
+        p3: fixGrammar(`Publicada en menos de 7 días desde que apruebas el diseño, sin que tengas que dejar la cocina o la barra para hacer de informático. Posiciónate por delante de los demás locales de ${cityName}.`)
       };
     case "clinicas-dentales":
       return {
         cityName,
         p1: fixGrammar(`La confianza es clave en la salud. Cuando un paciente en ${cityName} busca "implantes dentales cerca de ${data.barrios[2]}" o una urgencia, la imagen que transmite tu web decide si piden cita o se van a otra clínica por ${data.referencia}.`),
-        p2: fixGrammar(`Diseñamos webs médicas que inspiran profesionalidad, destacando tus tratamientos más rentables y optimizadas para que los vecinos de ${data.barrios[0]} y alrededores te encuentren primero.`),
+        p2: fixGrammar(`Diseñamos webs médicas que inspiran profesionalidad, destacando tus tratamientos más rentables y optimizadas para que los vecinos de ${data.barrios[0]} y alrededores te encuentren cuando te busquen.`),
         p3: fixGrammar(`Consigue más primeras visitas cada mes posicionándote por encima de las grandes franquicias en el mapa ${data.adjetivo}.`)
       };
     case "talleres-mecanicos":
@@ -204,7 +204,7 @@ export function getGeoContent(sector: string, city: string) {
       return {
         cityName,
         p1: fixGrammar(`Si tienes un negocio en ${cityName}, sabes que la competencia es brutal. Cuando alguien busca en Google lo que ofreces cerca de ${data.barrios[0]}, o apareces tú, o aparece tu competencia.`),
-        p2: fixGrammar(`En Potencia tu Negocio creamos webs con IA diseñadas para captar clientes en el mercado ${data.adjetivo}. Integramos Maps, WhatsApp y SEO local desde ${data.zona_centro} hacia toda la provincia.`),
+        p2: fixGrammar(`En Potencia tu negocio creamos webs con IA diseñadas para captar clientes en el mercado ${data.adjetivo}. Integramos Maps, WhatsApp y SEO local desde ${data.zona_centro} hacia toda la provincia.`),
         p3: fixGrammar(`Lo mejor: la primera versión está lista en 48 horas. Te enseñamos cómo queda y, si te gusta, la publicamos para empezar a posicionar en ${cityName}.`)
       };
   }

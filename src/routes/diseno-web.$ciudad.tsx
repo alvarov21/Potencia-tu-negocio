@@ -23,7 +23,7 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
     const cityName = getGeoContent("diseno-web", params.ciudad).cityName;
     const url = `https://potenciatunegocio.eu/diseno-web/${params.ciudad}`;
     
-    const title = `Agencia de Diseño Web en ${cityName} | Potencia tu Negocio`;
+    const title = `Agencia de Diseño Web en ${cityName} | Potencia tu negocio`;
     const description = `Servicios de diseño de páginas web profesionales en ${cityName}. Atrae más clientes locales con una web rápida, adaptada a móviles y optimizada para Google.`;
     return {
       meta: [
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/diseno-web/$ciudad")({
             name: `Agencia de Diseño Web en ${cityName}`,
             provider: {
               "@type": "LocalBusiness",
-              name: "Potencia tu Negocio",
+              name: "Potencia tu negocio",
               url: "https://potenciatunegocio.eu"
             },
             areaServed: {

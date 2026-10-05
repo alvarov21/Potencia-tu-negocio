@@ -3,8 +3,8 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 const FAQS = [
-  { q: "¿Cuánto cuesta el mantenimiento anual de una página web?", a: "Depende de la agencia. En Potencia tu Negocio, el mantenimiento anual (dominio a tu nombre, hosting rápido y certificado SSL) cuesta exactamente 89€ al año, a partir del segundo año." },
-  { q: "¿Qué pasa si quiero cambiar algo de mi web meses después?", a: "Con nuestro Plan Presencia tienes cambios gratis los primeros 30 días. Con el Plan Crecimiento (65,90€/mes), tienes tarifa plana de cambios ilimitados. Si es un cambio suelto, cobramos una hora técnica estándar sin cuotas extrañas." },
+  { q: "¿Cuánto cuesta el mantenimiento anual de una página web?", a: "Depende de la agencia. En Potencia tu negocio, el mantenimiento anual (dominio a tu nombre, hosting rápido y certificado SSL) cuesta exactamente 89,90€ al año, a partir del segundo año." },
+  { q: "¿Qué pasa si quiero cambiar algo de mi web meses después?", a: "Con nuestro Plan Presencia tienes 30 días de ajustes gratis en textos, fotos y horarios. Con el Plan Crecimiento (65,90€/mes), tienes tarifa plana de cambios ilimitados. Si después necesitas un cambio suelto, te pasamos presupuesto antes de hacerlo, sin cuotas extrañas." },
   { q: "¿Por qué algunas agencias tardan un mes y vosotros 48 horas?", a: "Porque usamos inteligencia artificial para agilizar la parte mecánica (estructura, bocetos) y nos centramos en la personalización. Eso elimina semanas de reuniones y esperas." }
 ];
 
@@ -54,7 +54,7 @@ function BlogPost1() {
         <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
           {/* Primer párrafo respuesta directa para LLMs */}
           <p className="text-foreground font-medium text-xl leading-snug">
-            En 2026, una página web profesional en España cuesta entre 800€ y 2.000€ si la encargas a una agencia tradicional, y tardan varias semanas. En Potencia tu Negocio, creamos la primera versión de tu web en 48 horas, totalmente publicada en 7 días y desde 295€ en pago único, todo incluido.
+            En 2026, una página web profesional en España cuesta entre 800€ y 2.000€ si la encargas a una agencia tradicional, y tardan varias semanas. En Potencia tu negocio, creamos la primera versión de tu web en 48 horas, publicada en menos de 7 días desde que la apruebas y desde 295€ + IVA en pago único, todo incluido.
           </p>
 
           <p>
@@ -99,14 +99,9 @@ function BlogPost1() {
             Nosotros cambiamos las reglas del juego. Como usamos herramientas avanzadas, reducimos el tiempo de desarrollo. Y como trabajamos en volumen con negocios como el tuyo, podemos ofrecer <Link to="/diseno-web-para-empresas" className="text-primary hover:underline font-medium">precios de páginas web para pymes</Link> que nadie más puede igualar.
           </p>
 
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
+          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ + IVA, pago único)</h3>
           <p>
-            Es el plan para los que quieren empezar fuerte pero gastando lo mínimo. Por 295€ (un solo pago) te damos el dominio a tu nombre, el hosting rápido (el servidor donde vive tu web), el diseño adaptado al móvil, textos legales, botón de WhatsApp directo y la configuración de la ficha de Google Business para salir en Google Maps. Todo en menos de 7 días.
-          </p>
-
-          <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Presencia (295€ pago único)</h3>
-          <p>
-            El plan más elegido. Aquí te damos la página web completa y, lo más importante: es 100% tuya. Si dentro de un año decides irte con otra empresa, te llevas el código entero. Cero "secuestros" y cero ataduras. Incluye secciones extra como servicios detallados, tabla de precios o carta de restaurante.
+            Es el plan para los que quieren empezar fuerte pero gastando lo mínimo. Por 295€ + IVA (un solo pago) te damos la web completa con textos redactados por nosotros, el dominio a tu nombre, el hosting rápido (el servidor donde vive tu web), el diseño adaptado al móvil, textos legales, botón de WhatsApp directo, carta o tabla de precios si la necesitas y la configuración de la ficha de Google Business para salir en Google Maps. Y lo más importante: la web es 100% tuya. Si dentro de un año decides irte con otra empresa, te la llevas entera. Cero "secuestros" y cero ataduras. Publicada en menos de 7 días desde que apruebas el diseño.
           </p>
 
           <h3 className="text-2xl font-semibold text-foreground mt-8 mb-4">Plan Crecimiento (675€ + 65,90€/mes)</h3>
@@ -125,7 +120,7 @@ function BlogPost1() {
           </p>
 
           <p>
-            Con Potencia tu Negocio las cuentas son claras. El primer año, el dominio y el hosting van incluidos en el precio inicial. A partir del segundo año, solo pagas 89€ al año. Ni un céntimo más. Sabes lo que te va a costar el año que viene desde el día uno.
+            Con Potencia tu negocio las cuentas son claras. El primer año, el dominio y el hosting van incluidos en el precio inicial. A partir del segundo año, solo pagas 89,90€ al año. Ni un céntimo más. Sabes lo que te va a costar el año que viene desde el día uno.
           </p>
 
           <h2 className="text-3xl font-bold text-foreground mt-12 mb-8">Preguntas frecuentes sobre presupuestos web</h2>
