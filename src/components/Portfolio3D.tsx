@@ -122,8 +122,8 @@ export function Portfolio3D() {
           Explora nuestros diseños.
         </h2>
         <p className="text-muted-foreground text-base md:text-lg leading-relaxed mx-auto max-w-2xl text-balance">
-          Estas son algunas de las maquetas y demos funcionales desde las que empezamos a trabajar. <br className="hidden sm:block" />
-          Sistemas premium ya optimizados que adaptamos a tu negocio en 48 horas.
+          Descubre el estándar de calidad visual y técnica que aplicamos a cada proyecto. <br className="hidden sm:block" />
+          Ecosistemas digitales premium, diseñados a medida y con tu primera versión en 48 horas.
         </p>
       </div>
 
