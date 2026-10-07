@@ -7,6 +7,7 @@ export function ScratchOffer() {
   const [open, setOpen] = useState(false);
   const [isRevealed, setIsRevealed] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const location = useLocation();
 
@@ -37,9 +38,11 @@ export function ScratchOffer() {
     const initCanvas = () => {
       if (hasScratched.current) return;
       const canvas = canvasRef.current;
-      if (!canvas) return;
-      const width = canvas.offsetWidth;
-      const height = canvas.offsetHeight;
+      const container = containerRef.current;
+      if (!canvas || !container) return;
+      
+      const width = container.clientWidth;
+      const height = container.clientHeight;
       
       // Si el ancho o alto son 0, el modal está animándose y aún no tiene tamaño
       if (width === 0 || height === 0) return;
@@ -85,14 +88,13 @@ export function ScratchOffer() {
     // Intentar inicializar de inmediato
     initCanvas();
 
-    // Como Radix UI Dialog anima la apertura, el canvas puede tardar en tener offsetWidth > 0
-    // ResizeObserver permitirá que el canvas se redibuje a su tamaño correcto DURANTE la animación
+    // ResizeObserver observará el contenedor, no el canvas, para evitar loops
     const observer = new ResizeObserver(() => {
       initCanvas();
     });
 
-    if (canvasRef.current) {
-      observer.observe(canvasRef.current);
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
     }
 
     // Por seguridad, intentos extra
@@ -191,7 +193,7 @@ export function ScratchOffer() {
           <p className="text-sm text-slate-400 mb-6">Pasa el dedo por el panel</p>
           
           {/* Contenedor del panel rasca */}
-          <div className="relative w-full h-[140px] rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.1)] border border-[#1e2330]">
+          <div ref={containerRef} className="relative w-full h-[140px] rounded-2xl overflow-hidden shadow-[0_0_30px_rgba(37,99,235,0.1)] border border-[#1e2330]">
             
             {/* Premio real de debajo */}
             <div className="absolute inset-0 bg-[#0f131a] flex flex-col items-center justify-center p-4">
@@ -205,7 +207,7 @@ export function ScratchOffer() {
             {/* Canvas para rascar encima */}
             <canvas
               ref={canvasRef}
-              className={`absolute inset-0 z-10 touch-none transition-opacity duration-1000 ${
+              className={`absolute inset-0 z-10 w-full h-full touch-none transition-opacity duration-1000 ${
                 isRevealed ? 'opacity-0 pointer-events-none' : 'opacity-100 cursor-crosshair'
               }`}
               onMouseDown={() => setIsDrawing(true)}
