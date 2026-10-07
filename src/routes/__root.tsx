@@ -174,6 +174,7 @@ function RootShell({ children }: { children: ReactNode }) {
 import { CookieConsentProvider } from '../context/CookieConsentContext';
 import { CookieBanner } from '../components/CookieBanner';
 import { TrackingScripts } from '../components/TrackingScripts';
+import { ScratchOffer } from '../components/ScratchOffer';
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -183,6 +184,7 @@ function RootComponent() {
         <TrackingScripts />
         <Outlet />
         <CookieBanner />
+        <ScratchOffer />
       </CookieConsentProvider>
     </QueryClientProvider>
   );
