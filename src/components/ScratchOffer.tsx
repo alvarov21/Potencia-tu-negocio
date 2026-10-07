@@ -29,21 +29,29 @@ export function ScratchOffer() {
   };
 
   useEffect(() => {
-    if (open && !isRevealed && canvasRef.current) {
+    if (!open || isRevealed) return;
+
+    const initCanvas = () => {
       const canvas = canvasRef.current;
-      const ctx = canvas.getContext('2d');
-      if (!ctx) return;
-      
+      if (!canvas) return;
       const width = canvas.offsetWidth;
       const height = canvas.offsetHeight;
+      
+      // Si el ancho o alto son 0, el modal está animándose y aún no tiene tamaño
+      if (width === 0 || height === 0) return;
+      
+      // Solo inicializar si aún no lo hemos hecho (evitar redibujar en resize si ya rascó algo)
+      if (canvas.width === width && canvas.height === height) return;
+
       canvas.width = width;
       canvas.height = height;
+      
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
       
       // Dibujar fondo oscuro tipo Nira
       ctx.fillStyle = '#1c1f26'; 
       ctx.fillRect(0, 0, width, height);
-      
-      // Dibujar borde tenue (opcional, se puede hacer con CSS pero canvas lo tapa)
       
       // Texto "RASCA AQUÍ"
       ctx.fillStyle = '#9ca3af'; // muted-foreground
@@ -65,7 +73,29 @@ export function ScratchOffer() {
       ctx.strokeStyle = '#2563eb';
       ctx.lineWidth = 1.5;
       ctx.stroke();
+    };
+
+    // Intentar inicializar de inmediato
+    initCanvas();
+
+    // Como Radix UI Dialog anima la apertura, el canvas puede tardar unos ms en tener offsetWidth > 0
+    const observer = new ResizeObserver(() => {
+      if (canvasRef.current && canvasRef.current.width === 0) {
+        initCanvas();
+      }
+    });
+
+    if (canvasRef.current) {
+      observer.observe(canvasRef.current);
     }
+
+    // Por seguridad, un intento extra al terminar la animación (~300ms)
+    const timer = setTimeout(initCanvas, 350);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timer);
+    };
   }, [open, isRevealed]);
 
   const scratch = (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
