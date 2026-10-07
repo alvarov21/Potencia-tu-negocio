@@ -29,13 +29,13 @@ export function ScratchOffer() {
   };
 
   const [isReady, setIsReady] = useState(false);
-  const hasDrawn = useRef(false);
+  const hasScratched = useRef(false);
 
   useEffect(() => {
     if (!open || isRevealed) return;
 
     const initCanvas = () => {
-      if (hasDrawn.current) return;
+      if (hasScratched.current) return;
       const canvas = canvasRef.current;
       if (!canvas) return;
       const width = canvas.offsetWidth;
@@ -44,6 +44,9 @@ export function ScratchOffer() {
       // Si el ancho o alto son 0, el modal está animándose y aún no tiene tamaño
       if (width === 0 || height === 0) return;
       
+      // Si el tamaño no ha cambiado, no hace falta redibujar
+      if (canvas.width === width && canvas.height === height) return;
+
       canvas.width = width;
       canvas.height = height;
       
@@ -76,7 +79,6 @@ export function ScratchOffer() {
       ctx.lineWidth = 1.5;
       ctx.stroke();
       
-      hasDrawn.current = true;
       setIsReady(true);
     };
 
@@ -84,10 +86,9 @@ export function ScratchOffer() {
     initCanvas();
 
     // Como Radix UI Dialog anima la apertura, el canvas puede tardar en tener offsetWidth > 0
+    // ResizeObserver permitirá que el canvas se redibuje a su tamaño correcto DURANTE la animación
     const observer = new ResizeObserver(() => {
-      if (!hasDrawn.current) {
-        initCanvas();
-      }
+      initCanvas();
     });
 
     if (canvasRef.current) {
@@ -107,6 +108,10 @@ export function ScratchOffer() {
 
   const scratch = (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
     if (!isDrawing || !isReady) return;
+    
+    // Al rascar por primera vez, bloqueamos el redibujado
+    hasScratched.current = true;
+    
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
