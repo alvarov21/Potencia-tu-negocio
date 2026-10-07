@@ -28,10 +28,14 @@ export function ScratchOffer() {
     }
   };
 
+  const [isReady, setIsReady] = useState(false);
+  const hasDrawn = useRef(false);
+
   useEffect(() => {
     if (!open || isRevealed) return;
 
     const initCanvas = () => {
+      if (hasDrawn.current) return;
       const canvas = canvasRef.current;
       if (!canvas) return;
       const width = canvas.offsetWidth;
@@ -40,15 +44,13 @@ export function ScratchOffer() {
       // Si el ancho o alto son 0, el modal está animándose y aún no tiene tamaño
       if (width === 0 || height === 0) return;
       
-      // Solo inicializar si aún no lo hemos hecho (evitar redibujar en resize si ya rascó algo)
-      if (canvas.width === width && canvas.height === height) return;
-
       canvas.width = width;
       canvas.height = height;
       
       const ctx = canvas.getContext('2d');
       if (!ctx) return;
       
+      ctx.globalCompositeOperation = 'source-over';
       // Dibujar fondo oscuro tipo Nira
       ctx.fillStyle = '#1c1f26'; 
       ctx.fillRect(0, 0, width, height);
@@ -73,14 +75,17 @@ export function ScratchOffer() {
       ctx.strokeStyle = '#2563eb';
       ctx.lineWidth = 1.5;
       ctx.stroke();
+      
+      hasDrawn.current = true;
+      setIsReady(true);
     };
 
     // Intentar inicializar de inmediato
     initCanvas();
 
-    // Como Radix UI Dialog anima la apertura, el canvas puede tardar unos ms en tener offsetWidth > 0
+    // Como Radix UI Dialog anima la apertura, el canvas puede tardar en tener offsetWidth > 0
     const observer = new ResizeObserver(() => {
-      if (canvasRef.current && canvasRef.current.width === 0) {
+      if (!hasDrawn.current) {
         initCanvas();
       }
     });
@@ -89,17 +94,19 @@ export function ScratchOffer() {
       observer.observe(canvasRef.current);
     }
 
-    // Por seguridad, un intento extra al terminar la animación (~300ms)
-    const timer = setTimeout(initCanvas, 350);
+    // Por seguridad, intentos extra
+    const timer1 = setTimeout(initCanvas, 150);
+    const timer2 = setTimeout(initCanvas, 400);
 
     return () => {
       observer.disconnect();
-      clearTimeout(timer);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
     };
   }, [open, isRevealed]);
 
   const scratch = (e: React.MouseEvent | React.TouchEvent | MouseEvent | TouchEvent) => {
-    if (!isDrawing) return;
+    if (!isDrawing || !isReady) return;
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
@@ -129,6 +136,7 @@ export function ScratchOffer() {
   };
   
   const checkReveal = () => {
+    if (!isReady) return;
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
     if (!canvas || !ctx) return;
@@ -145,6 +153,8 @@ export function ScratchOffer() {
     }
     
     const totalPixelsChecked = pixels.length / 16;
+    if (totalPixelsChecked === 0) return;
+    
     const percent = (transparent / totalPixelsChecked) * 100;
     
     // Si rasca el 35% del canvas, lo revelamos entero
